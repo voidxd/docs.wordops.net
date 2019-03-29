@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.1">
     
     
       
@@ -42,7 +42,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.982221ab.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.3020aac5.css">
       
       
     
@@ -447,8 +447,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#other-settings" title="Other settings" class="md-nav__link">
-    Other settings
+  <a href="#extra-settings" title="Extra settings" class="md-nav__link">
+    Extra settings
   </a>
   
 </li>
@@ -474,6 +474,13 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update" title="update" class="md-nav__link">
+    update
+  </a>
   
 </li>
         
@@ -525,8 +532,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#sets-of-packages" title="Sets of packages" class="md-nav__link">
-    Sets of packages
+  <a href="#install" title="install" class="md-nav__link">
+    install
   </a>
   
     <nav class="md-nav">
@@ -543,11 +550,6 @@
   <a href="#admin-tools" title="Admin tools" class="md-nav__link">
     Admin tools
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -599,6 +601,11 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#debug" title="debug" class="md-nav__link">
     debug
@@ -642,7 +649,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#update" title="update" class="md-nav__link">
+  <a href="#update_1" title="update" class="md-nav__link">
     update
   </a>
   
@@ -748,7 +755,7 @@
 <pre><code class="bash">wo site create example.com --mysql
 </code></pre>
 
-<p>NOTE: You can find MySQL database details in ee-config.php file.</p>
+<p>NOTE: You can find MySQL database details in wo-config.php file.</p>
 <h5 id="proxy-site">Proxy site</h5>
 <p>To create site with Proxy configuration you can use --proxy during site creation</p>
 <pre><code class="bash">wo site create example.com --proxy=host[:port]
@@ -918,7 +925,7 @@
 </tr>
 </tbody>
 </table>
-<h5 id="other-settings">Other settings</h5>
+<h5 id="extra-settings">Extra settings</h5>
 <p>Define WordPress administrator user To define wordpress administrator user during site creation use</p>
 <pre><code class="bash">wo site create example.com --user=admin
 </code></pre>
@@ -928,18 +935,19 @@
 <pre><code class="bash">wo site create example.com --pass=password
 </code></pre>
 
-<p>This will set defined password as administrator password. If not defined it will generate random pasword for administrator. If you have special characters, you can quote them using single quotes like this Ã¢â‚¬"</p>
+<p>This will set defined password as administrator password. If not defined it will generate random pasword for administrator. If you have special characters, you can quote them using single quotes like this :</p>
 <p>--pass='my$secret&amp;' Define WordPress administrator email To define wordpress administrator email during site creation use</p>
-<pre><code class="bash">wo site create example.com --email=ee@example.com
+<pre><code class="bash">wo site create example.com --email=wo@site.tld
 </code></pre>
 
 <p>This will set defined email as administrator email. If not defined it will set git email as administrator email.</p>
 <h4 id="lets-encrypt">Let's Encrypt</h4>
 <p>WordOps supports Let's Encrypt out of the box.</p>
-<pre><code class="bash">wo site create example.com --letsencrypt
+<pre><code class="bash">wo site create site.tld --letsencrypt
 </code></pre>
 
-<p>It also supports Let's Encrypt on subdomains.</p>
+<p>This command will issue a certificate for site.tld + www.site.tld.</p>
+<p>But WordOps also supports issuing Let's Encrypt certificates with subdomains.</p>
 <pre><code class="bash">wo site create example.com --letsencrypt=subdomain
 </code></pre>
 
@@ -950,31 +958,32 @@
 <pre><code class="bash">wo site create example.com --wp --php73
 </code></pre>
 
-<p>To create simple php(with v7.0) website with no database use this command.</p>
+<p>To create simple php(with v7.3) website with no database use this command.</p>
 <pre><code class="bash">wo site create example.com --php73
 </code></pre>
 
+<h3 id="update">update</h3>
 <hr />
 <h3 id="delete">delete</h3>
-<p>To delete site created with EasyEngine (ee) use</p>
-<pre><code class="bash">ee site delete example.com&lt;/code&gt;
+<p>To delete site created with EasyEngine (wo) use</p>
+<pre><code class="bash">wo site delete example.com&lt;/code&gt;
 </code></pre>
 
 <h4 id="delete-website-without-prompt">Delete website without prompt</h4>
-<pre><code class="bash">ee site delete example.com --no-prompt&lt;/code&gt;
+<pre><code class="bash">wo site delete example.com --no-prompt&lt;/code&gt;
 </code></pre>
 
 <h4 id="delete-website-webroot-only">Delete website webroot only</h4>
-<pre><code class="bash">ee site delete example.com --files&lt;/code&gt;
+<pre><code class="bash">wo site delete example.com --files&lt;/code&gt;
 </code></pre>
 
 <h4 id="delete-website-database-only">Delete website database only</h4>
-<pre><code class="bash">ee site delete example.com --db&lt;/code&gt;
+<pre><code class="bash">wo site delete example.com --db&lt;/code&gt;
 </code></pre>
 
 <h2 id="stack">stack</h2>
-<h4 id="sets-of-packages">Sets of packages</h4>
-<h5 id="web">Web</h5>
+<h3 id="install">install</h3>
+<h4 id="web">Web</h4>
 <p>This will install Nginx, PHP 7.2, MariaDB &amp; additional tools available on port 22222</p>
 <pre><code class="bash">wo stack install
 </code></pre>
@@ -983,7 +992,7 @@
 <pre><code class="bash">wo stack install web
 </code></pre>
 
-<h5 id="admin-tools">Admin tools</h5>
+<h4 id="admin-tools">Admin tools</h4>
 <pre><code class="bash">wo stack install --admin
 </code></pre>
 
@@ -1014,7 +1023,7 @@
 <h3 id="log">log</h3>
 <h3 id="secure">secure</h3>
 <h3 id="maintenance">maintenance</h3>
-<h3 id="update">update</h3>
+<h3 id="update_1">update</h3>
                 
                   
                 
@@ -1049,7 +1058,7 @@
       
     </div>
     
-      <script src="../assets/javascripts/application.2ba8dec4.js"></script>
+      <script src="../assets/javascripts/application.dc02f8ce.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       
