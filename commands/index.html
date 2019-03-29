@@ -628,27 +628,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#log" title="log" class="md-nav__link">
-    log
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#secure" title="secure" class="md-nav__link">
-    secure
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#maintenance" title="maintenance" class="md-nav__link">
-    maintenance
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#update_1" title="update" class="md-nav__link">
     update
   </a>
@@ -1020,10 +999,32 @@
 <h3 id="debug">debug</h3>
 <h3 id="clean">clean</h3>
 <h3 id="info">info</h3>
-<h3 id="log">log</h3>
-<h3 id="secure">secure</h3>
-<h3 id="maintenance">maintenance</h3>
+<pre><code class="bash">
+
+### log
+
+### secure
+
+### maintenance
+
+Update servers packages :
+
+```bash
+wo maintenance
+</code></pre>
+
+<p>This command is equivalent to :</p>
+<pre><code class="bash">apt update
+apt dist-upgrade
+apt autoremove --purge
+apt autoclean
+</code></pre>
+
+<p>Package update is performed in a non-interactive way, with the policy of never overwriting packages configuration with new configuration.</p>
 <h3 id="update_1">update</h3>
+<p>Update WordOps to the latest release with the command :</p>
+<pre><code class="bash">wo update
+</code></pre>
                 
                   
                 
