@@ -454,16 +454,16 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#delete-website" title="Delete website" class="md-nav__link">
-    Delete website
+  <a href="#delete-website" title="delete website" class="md-nav__link">
+    delete website
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#without-prompt" title="Without prompt" class="md-nav__link">
-    Without prompt
+  <a href="#without-prompt" title="without prompt" class="md-nav__link">
+    without prompt
   </a>
   
 </li>
@@ -597,6 +597,27 @@
           <li class="md-nav__item">
   <a href="#info" title="info" class="md-nav__link">
     info
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log" title="log" class="md-nav__link">
+    log
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secure" title="secure" class="md-nav__link">
+    secure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maintenance" title="maintenance" class="md-nav__link">
+    maintenance
   </a>
   
 </li>
@@ -909,16 +930,16 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#delete-website" title="Delete website" class="md-nav__link">
-    Delete website
+  <a href="#delete-website" title="delete website" class="md-nav__link">
+    delete website
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#without-prompt" title="Without prompt" class="md-nav__link">
-    Without prompt
+  <a href="#without-prompt" title="without prompt" class="md-nav__link">
+    without prompt
   </a>
   
 </li>
@@ -1052,6 +1073,27 @@
           <li class="md-nav__item">
   <a href="#info" title="info" class="md-nav__link">
     info
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log" title="log" class="md-nav__link">
+    log
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secure" title="secure" class="md-nav__link">
+    secure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maintenance" title="maintenance" class="md-nav__link">
+    maintenance
   </a>
   
 </li>
@@ -1389,11 +1431,11 @@
 <pre><code class="bash">wo site delete &lt;domain&gt; &lt;options&gt;
 </code></pre>
 
-<h4 id="delete-website">Delete website</h4>
+<h4 id="delete-website">delete website</h4>
 <pre><code class="bash">wo site delete example.com
 </code></pre>
 
-<h5 id="without-prompt">Without prompt</h5>
+<h5 id="without-prompt">without prompt</h5>
 <pre><code class="bash">wo site delete example.com --no-prompt
 </code></pre>
 
@@ -1407,10 +1449,15 @@
 
 <hr />
 <h2 id="stack">stack</h2>
+<p>Usage :</p>
 <pre><code class="bash">wo stack &lt;command&gt; &lt;options&gt;
 </code></pre>
 
 <h3 id="stack-install">stack install</h3>
+<p>Usage :</p>
+<pre><code class="bash">wo stack install &lt;options&gt;
+</code></pre>
+
 <h4 id="web">Web</h4>
 <p>This will install Nginx, PHP 7.2, MariaDB &amp; additional tools available on port 22222</p>
 <pre><code class="bash">wo stack install
@@ -1421,6 +1468,7 @@
 </code></pre>
 
 <h4 id="admin-tools">Admin tools</h4>
+<p>WordOps backend with PHPmyAdmin, Adminer, MemcachedAdmin etc..</p>
 <pre><code class="bash">wo stack install --admin
 </code></pre>
 
@@ -1446,20 +1494,29 @@
 </code></pre>
 
 <h3 id="debug">debug</h3>
+<p>Usage :</p>
+<pre><code class="bash">wo debug &lt;options&gt;
+</code></pre>
+
 <h3 id="clean">clean</h3>
+<p>Usage :</p>
+<pre><code class="bash">wo clean &lt;options&gt;
+</code></pre>
+
 <h3 id="info">info</h3>
-<pre><code class="bash">
+<p>Usage :</p>
+<pre><code class="bash">wo info &lt;options&gt;
+</code></pre>
 
-### log
+<h3 id="log">log</h3>
+<p>Usage :</p>
+<pre><code class="bash">wo log &lt;options&gt;
+</code></pre>
 
-### secure
-
-### maintenance
-
-Update servers packages :
-
-```bash
-wo maintenance
+<h3 id="secure">secure</h3>
+<h3 id="maintenance">maintenance</h3>
+<p>Usage :</p>
+<pre><code class="bash">wo maintenance
 </code></pre>
 
 <p>This command is equivalent to :</p>
@@ -1471,7 +1528,7 @@ apt autoclean
 
 <p>Package update is performed in a non-interactive way, with the policy of never overwriting packages configuration with new configuration.</p>
 <h3 id="update">update</h3>
-<p>Update WordOps to the latest release with the command :</p>
+<p>Usage :</p>
 <pre><code class="bash">wo update
 </code></pre>
                 
