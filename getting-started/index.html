@@ -251,9 +251,45 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Getting Started
+      </label>
+    
     <a href="./" title="Getting Started" class="md-nav__link md-nav__link--active">
       Getting Started
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install-wordops" title="Install WordOps" class="md-nav__link">
+    Install WordOps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-your-first-wordpress-site" title="Create your first WordPress site" class="md-nav__link">
+    Create your first WordPress site
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -443,6 +479,29 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install-wordops" title="Install WordOps" class="md-nav__link">
+    Install WordOps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-your-first-wordpress-site" title="Create your first WordPress site" class="md-nav__link">
+    Create your first WordPress site
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -457,6 +516,22 @@
                 
                 
                 <h1 id="getting-started">Getting Started</h1>
+<h2 id="install-wordops">Install WordOps</h2>
+<pre><code class="bash">wget -qO wo wordops.se/tup &amp;&amp; sudo bash wo
+</code></pre>
+
+<h2 id="create-your-first-wordpress-site">Create your first WordPress site</h2>
+<pre><code class="bash">wo site create site.tld --wp
+</code></pre>
+
+<p>This command will install Nginx, PHP, MariaDB (MySQL), then it will download and configure WordPress.</p>
+<p>Additional informations :</p>
+<ul>
+<li>site files path is <code>/var/www/site.tld/htdocs</code></li>
+<li>wp-config.php path is <code>/var/www/site.tld/wp-config.php</code></li>
+<li>additional nginx configurations path is <code>/var/www/site.ltd/conf/nginx/</code></li>
+<li>nginx logs path is <code>/var/www/site.tld/logs</code></li>
+</ul>
                 
                   
                 
