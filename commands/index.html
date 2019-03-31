@@ -606,6 +606,19 @@
     log
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#log-show" title="log show" class="md-nav__link">
+    log show
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1082,6 +1095,19 @@
     log
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#log-show" title="log show" class="md-nav__link">
+    log show
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1142,7 +1168,7 @@
 <tbody>
 <tr>
 <td><a href="#site">site</a></td>
-<td><a href="#create">create</a>, <a href="#update">update</a>, <a href="#delete">delete</a>, list sites</td>
+<td><a href="#site-create">create</a>, <a href="#site-update">update</a>, <a href="#site-delete">delete</a>, <a href="#site-list">list</a> sites</td>
 <td><code>wo site create site.tld --wp</code></td>
 </tr>
 <tr>
@@ -1189,43 +1215,40 @@
 </table>
 <hr />
 <h2 id="site">site</h2>
+<p>Performs website specific operations</p>
 <p>Usage :</p>
-<pre><code class="bash">wo site &lt;command&gt; &lt;options&gt;
+<pre><code class="bash">wo site (command) [options]
 </code></pre>
 
 <h3 id="site-create">site create</h3>
 <p>Usage :</p>
-<pre><code class="bash">wo site create &lt;domain&gt; &lt;options&gt;
+<pre><code class="bash">wo site create  [&lt;site_name&gt;] [options]
 </code></pre>
 
 <h4 id="basic-sites">Basic sites</h4>
 <h5 id="html-site">HTML site</h5>
 <p>To create simple html website use this command.</p>
-<pre><code class="bash">wo site create example.com --html
+<pre><code class="bash">wo site create site.tld --html
 </code></pre>
 
 <h5 id="php-site">PHP site</h5>
 <p>To create simple php website with no database use this command.</p>
-<pre><code class="bash">wo site create example.com --php
+<pre><code class="bash">wo site create site.tld --php
 </code></pre>
 
 <h5 id="phpmysql-site">PHP+MySQL site</h5>
 <p>To create simple php website with database use this command.</p>
-<pre><code class="bash">wo site create example.com --mysql
+<pre><code class="bash">wo site create site.tld --mysql
 </code></pre>
 
-<p>NOTE: You can find MySQL database details in wo-config.php file.</p>
+<p>NOTE: You can find MySQL database details in <code>/var/www/site.tld/wo-config.php</code>.</p>
 <h5 id="proxy-site">Proxy site</h5>
 <p>To create site with Proxy configuration you can use --proxy during site creation</p>
-<pre><code class="bash">wo site create example.com --proxy=host[:port]
+<pre><code class="bash">wo site create site.tld --proxy=127.0.0.1:3000
 </code></pre>
 
-<p>Here port is optional and default value is 80.</p>
-<p>For example,</p>
-<pre><code class="bash">wo site create example.com --proxy=1.2.3.4
-</code></pre>
-
-<p>This will create proxy site example.com with proxy destination as 1.2.3.4</p>
+<p>This will create proxy site site.tld with proxy destination as 127.0.0.1:3000.
+Port is optional. Default port : 80.</p>
 <h4 id="wordpress">WordPress</h4>
 <p>Following are the WordPress website types you can create website based on Cache Mechanism</p>
 <h5 id="standard-sites">Standard sites</h5>
@@ -1386,17 +1409,17 @@
 </table>
 <h5 id="extra-settings">Extra settings</h5>
 <p>Define WordPress administrator user To define wordpress administrator user during site creation use</p>
-<pre><code class="bash">wo site create example.com --user=admin
+<pre><code class="bash">wo site create site.tld --user=admin
 </code></pre>
 
 <p>This will create admin as administrator user in wordpress during installation. If not defined it will take git user name.</p>
 <p>Define WordPress administrator password To define wordpress administrator password during site creation use</p>
-<pre><code class="bash">wo site create example.com --pass=password
+<pre><code class="bash">wo site create site.tld --pass=password
 </code></pre>
 
 <p>This will set defined password as administrator password. If not defined it will generate random pasword for administrator. If you have special characters, you can quote them using single quotes like this :</p>
 <p>--pass='my$secret&amp;' Define WordPress administrator email To define wordpress administrator email during site creation use</p>
-<pre><code class="bash">wo site create example.com --email=wo@site.tld
+<pre><code class="bash">wo site create site.tld --email=wo@site.tld
 </code></pre>
 
 <p>This will set defined email as administrator email. If not defined it will set git email as administrator email.</p>
@@ -1407,55 +1430,56 @@
 
 <p>This command will issue a certificate for site.tld + www.site.tld.</p>
 <p>But WordOps also supports issuing Let's Encrypt certificates with subdomains.</p>
-<pre><code class="bash">wo site create example.com --letsencrypt=subdomain
+<pre><code class="bash">wo site create site.tld --letsencrypt=subdomain
 </code></pre>
 
 <p>You can add --letsencrypt to any other flag.</p>
 <h4 id="php-73">PHP 7.3</h4>
 <p>To create site with PHP 7.3 you can use --php73 during site creation</p>
 <p>For example, you can create WordPress site running on PHP 7.3 using following command:</p>
-<pre><code class="bash">wo site create example.com --wp --php73
+<pre><code class="bash">wo site create site.tld --wp --php73
 </code></pre>
 
 <p>To create simple php(with v7.3) website with no database use this command.</p>
-<pre><code class="bash">wo site create example.com --php73
+<pre><code class="bash">wo site create site.tld --php73
 </code></pre>
 
 <h3 id="site-update">site update</h3>
 <p>Usage :</p>
-<pre><code class="bash">wo site update &lt;domain&gt; &lt;options&gt;
+<pre><code class="bash">wo site update  [&lt;site_name&gt;] [options]
 </code></pre>
 
 <h3 id="site-delete">site delete</h3>
 <p>Usage :</p>
-<pre><code class="bash">wo site delete &lt;domain&gt; &lt;options&gt;
+<pre><code class="bash">wo site delete  [&lt;site_name&gt;] [options]
 </code></pre>
 
 <h4 id="delete-website">delete website</h4>
-<pre><code class="bash">wo site delete example.com
+<pre><code class="bash">wo site delete site.tld
 </code></pre>
 
 <h5 id="without-prompt">without prompt</h5>
-<pre><code class="bash">wo site delete example.com --no-prompt
+<pre><code class="bash">wo site delete site.tld --no-prompt
 </code></pre>
 
 <h5 id="webroot-only">webroot only</h5>
-<pre><code class="bash">wo site delete example.com --files
+<pre><code class="bash">wo site delete site.tld --files
 </code></pre>
 
 <h5 id="database-only">database only</h5>
-<pre><code class="bash">wo site delete example.com --db
+<pre><code class="bash">wo site delete site.tld --db
 </code></pre>
 
 <hr />
 <h2 id="stack">stack</h2>
+<p>Manage server stack operations</p>
 <p>Usage :</p>
-<pre><code class="bash">wo stack &lt;command&gt; &lt;options&gt;
+<pre><code class="bash">wo stack (command) [options]
 </code></pre>
 
 <h3 id="stack-install">stack install</h3>
 <p>Usage :</p>
-<pre><code class="bash">wo stack install &lt;options&gt;
+<pre><code class="bash">wo stack install [options]
 </code></pre>
 
 <h4 id="web">Web</h4>
@@ -1493,28 +1517,134 @@
 <pre><code class="bash">wo stack install --phpmyadmin
 </code></pre>
 
+<hr />
 <h3 id="debug">debug</h3>
+<p>Used for server level debugging</p>
 <p>Usage :</p>
-<pre><code class="bash">wo debug &lt;options&gt;
+<pre><code class="bash">wo debug [options]
 </code></pre>
 
+<hr />
 <h3 id="clean">clean</h3>
+<p>Clean NGINX FastCGI cache, Opcache, Memcached, Redis Cache</p>
 <p>Usage :</p>
-<pre><code class="bash">wo clean &lt;options&gt;
+<pre><code class="bash">wo clean [options]
 </code></pre>
 
+<p>If options are empty, default is <code>--all</code>.</p>
+<table>
+<thead>
+<tr>
+<th>optional arguments</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>--fastcgi</td>
+<td>clean Nginx fastcgi_cache</td>
+</tr>
+<tr>
+<td>--redis</td>
+<td>clean redis cache</td>
+</tr>
+<tr>
+<td>--memcache</td>
+<td>clean memcached cache</td>
+</tr>
+<tr>
+<td>--opcache</td>
+<td>clean opcache</td>
+</tr>
+<tr>
+<td>--all</td>
+<td>clean all cache</td>
+</tr>
+</tbody>
+</table>
+<hr />
 <h3 id="info">info</h3>
+<p>Display configuration information related to Nginx, PHP and MySQL</p>
 <p>Usage :</p>
-<pre><code class="bash">wo info &lt;options&gt;
+<pre><code class="bash">wo info [options]
 </code></pre>
 
+<table>
+<thead>
+<tr>
+<th>optional arguments</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>--nginx</td>
+<td>Get Nginx configuration information</td>
+</tr>
+<tr>
+<td>--php</td>
+<td>Get PHP 7.2 configuration information</td>
+</tr>
+<tr>
+<td>--php73</td>
+<td>Get PHP 7.3 configuration information</td>
+</tr>
+<tr>
+<td>--mysql</td>
+<td>Get MySQL configuration information</td>
+</tr>
+</tbody>
+</table>
+<hr />
 <h3 id="log">log</h3>
+<p>Perform operations on Nginx, PHP and MySQL log files</p>
 <p>Usage :</p>
-<pre><code class="bash">wo log &lt;options&gt;
+<pre><code class="bash">wo log [&lt;site_name&gt;] [options]&lt;/site_name&gt;
+
 </code></pre>
 
+<h4 id="log-show">log show</h4>
+<p>Show Nginx, PHP, MySQL log file</p>
+<p>Usage :</p>
+<pre><code class="bash">wo log show [&lt;site_name&gt;] [options]&lt;/site_name&gt;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>optional arguments</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>--nginx</td>
+<td>Show Nginx Error logs file</td>
+</tr>
+<tr>
+<td>--php</td>
+<td>Show PHP Error logs file</td>
+</tr>
+<tr>
+<td>--mysql</td>
+<td>Show MySQL logs file</td>
+</tr>
+<tr>
+<td>--wp</td>
+<td>Show Site specific WordPress logs file</td>
+</tr>
+</tbody>
+</table>
+<hr />
 <h3 id="secure">secure</h3>
+<p>Secure backend authentification, ip and port</p>
+<p>Usage :</p>
+<pre><code class="bash">wo secure [options]
+</code></pre>
+
+<hr />
 <h3 id="maintenance">maintenance</h3>
+<p>Update apt-cache and upgrade packages.</p>
 <p>Usage :</p>
 <pre><code class="bash">wo maintenance
 </code></pre>
@@ -1526,8 +1656,10 @@ apt autoremove --purge
 apt autoclean
 </code></pre>
 
-<p>Package update is performed in a non-interactive way, with the policy of never overwriting packages configuration with new configuration.</p>
+<p>Package update is performed in a non-interactive way, with the "--force-confold" policy, to never overwrite packages configurations.</p>
+<hr />
 <h3 id="update">update</h3>
+<p>Update WordOps if a new version is available</p>
 <p>Usage :</p>
 <pre><code class="bash">wo update
 </code></pre>
