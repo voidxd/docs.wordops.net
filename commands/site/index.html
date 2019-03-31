@@ -447,46 +447,6 @@
     site delete
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#delete-website" title="delete website" class="md-nav__link">
-    delete website
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#without-prompt" title="without prompt" class="md-nav__link">
-    without prompt
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#webroot-only" title="webroot only" class="md-nav__link">
-    webroot only
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#database-only" title="database only" class="md-nav__link">
-    database only
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
       
@@ -754,46 +714,6 @@
     site delete
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#delete-website" title="delete website" class="md-nav__link">
-    delete website
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#without-prompt" title="without prompt" class="md-nav__link">
-    without prompt
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#webroot-only" title="webroot only" class="md-nav__link">
-    webroot only
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#database-only" title="database only" class="md-nav__link">
-    database only
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
       
@@ -1045,30 +965,84 @@
 </code></pre>
 
 <h2 id="site-update">site update</h2>
+<p>Update site configuration</p>
 <p>Usage :</p>
 <pre><code class="bash">wo site update  [&lt;site_name&gt;] [options]
 </code></pre>
 
+<table>
+<thead>
+<tr>
+<th>options</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--html</code></td>
+<td>update to html site</td>
+</tr>
+<tr>
+<td><code>--php</code></td>
+<td>update to php site</td>
+</tr>
+<tr>
+<td><code>--mysql</code></td>
+<td>update to MySQL + PHP site</td>
+</tr>
+<tr>
+<td><code>--php73</code></td>
+<td>update site to PHP 7.3</td>
+</tr>
+<tr>
+<td><code>--php73=off</code></td>
+<td>disable PHP 7.3</td>
+</tr>
+<tr>
+<td><code>--wp</code></td>
+<td>update site to WordPress without cache</td>
+</tr>
+<tr>
+<td><code>--wpfc</code></td>
+<td>update site to WordPress with fastcgi_cache</td>
+</tr>
+<tr>
+<td><code>--wpsc</code></td>
+<td>update site to WordPress with wp-super-cache</td>
+</tr>
+<tr>
+<td><code>--wpredis</code></td>
+<td>update site to WordPress with redis-cache</td>
+</tr>
+</tbody>
+</table>
 <h2 id="site-delete">site delete</h2>
 <p>Usage :</p>
 <pre><code class="bash">wo site delete  [&lt;site_name&gt;] [options]
 </code></pre>
 
-<h3 id="delete-website">delete website</h3>
-<pre><code class="bash">wo site delete site.tld
-</code></pre>
-
-<h4 id="without-prompt">without prompt</h4>
-<pre><code class="bash">wo site delete site.tld --no-prompt
-</code></pre>
-
-<h4 id="webroot-only">webroot only</h4>
-<pre><code class="bash">wo site delete site.tld --files
-</code></pre>
-
-<h4 id="database-only">database only</h4>
-<pre><code class="bash">wo site delete site.tld --db
-</code></pre>
+<table>
+<thead>
+<tr>
+<th>options</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--no-prompt</code></td>
+<td>delete website without confirmation prompt</td>
+</tr>
+<tr>
+<td><code>--files</code></td>
+<td>delete only website files</td>
+</tr>
+<tr>
+<td><code>--db</code></td>
+<td>delete only database</td>
+</tr>
+</tbody>
+</table>
                 
                   
                 
