@@ -98,6 +98,10 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
+      <a href="#faq" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -414,10 +418,69 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        F.A.Q
+      </label>
     
     <a href="./" title="F.A.Q" class="md-nav__link md-nav__link--active">
       F.A.Q
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-wordops" title="What is WordOps ?" class="md-nav__link">
+    What is WordOps ?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#which-operating-systems-are-supported-by-wordops" title="Which operating systems are supported by WordOps ?" class="md-nav__link">
+    Which operating systems are supported by WordOps ?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-get-a-list-of-the-wordops-commands" title="How to get a list of the WordOps commands ?" class="md-nav__link">
+    How to get a list of the WordOps commands ?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-best-caching-solution-for-wordpress" title="What is the best caching solution for WordPress ?" class="md-nav__link">
+    What is the best caching solution for WordPress ?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-gzip-compression-is-disabled-by-default" title="Why gzip compression is disabled by default ?" class="md-nav__link">
+    Why gzip compression is disabled by default ?
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -429,6 +492,65 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-wordops" title="What is WordOps ?" class="md-nav__link">
+    What is WordOps ?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#which-operating-systems-are-supported-by-wordops" title="Which operating systems are supported by WordOps ?" class="md-nav__link">
+    Which operating systems are supported by WordOps ?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-get-a-list-of-the-wordops-commands" title="How to get a list of the WordOps commands ?" class="md-nav__link">
+    How to get a list of the WordOps commands ?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-best-caching-solution-for-wordpress" title="What is the best caching solution for WordPress ?" class="md-nav__link">
+    What is the best caching solution for WordPress ?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-gzip-compression-is-disabled-by-default" title="Why gzip compression is disabled by default ?" class="md-nav__link">
+    Why gzip compression is disabled by default ?
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
@@ -437,9 +559,32 @@
                   <a href="https://github.com/WordOps/docs.wordops.net/edit/master/docs/faq.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>F.A.Q</h1>
-                
-                
+                <h1 id="faq">F.A.Q</h1>
+<h2 id="what-is-wordops">What is WordOps ?</h2>
+<p>WordOps is a command line tool which provide the ability to install WordPress on an optimized LEMP stack (Nginx, PHP, MySQL) with simple command like <code>wo site create site.tld --wp</code>.</p>
+<h2 id="which-operating-systems-are-supported-by-wordops">Which operating systems are supported by WordOps ?</h2>
+<p>WordOps can be installed on Ubuntu LTS (Long Term Service) releases (16.04 &amp; 18.04) as well as on Debian 8 (Jessie) or Debian 9 (stretch)
+Support for other linux distribution isn't planned.</p>
+<h2 id="how-to-get-a-list-of-the-wordops-commands">How to get a list of the WordOps commands ?</h2>
+<p>To get the list of WordOps commands, you just have to use the command :</p>
+<pre><code class="bash">wo
+</code></pre>
+
+<p>It's the same with subcommands :</p>
+<pre><code class="bash">wo site
+</code></pre>
+
+<h2 id="what-is-the-best-caching-solution-for-wordpress">What is the best caching solution for WordPress ?</h2>
+<p>There is no "best solution", because there are benefits/disadvantage for each caching solution and it depend on your usage.</p>
+<p>Here some informations :</p>
+<ul>
+<li>fastcgi_cache (<code>--wpfc</code>) is the simplest solution, because it do not rely on any plugin excepted nginx_helper used to purge cache after content updates.</li>
+<li>redis-cache (<code>--wpredis</code>) is a powerful solution which support multi-server setup and it provide full-page cache in redis via Nginx + object-cache via Redis-Object-Cache plugin (also used to purge cache)</li>
+<li>wp-super-cache (<code>--wpsc</code>) is a basic solution based on a plugin which create and serve static html files.</li>
+</ul>
+<h2 id="why-gzip-compression-is-disabled-by-default">Why gzip compression is disabled by default ?</h2>
+<p>We disabled gzip compression by default due to gzip related security issues when using TLS connection. More informations here <a href="https://en.wikipedia.org/wiki/BREACH">BREACH CVE</a>.
+We replaced gzip by brotli, which provide better performance and compression than gzip.</p>
                 
                   
                 
