@@ -244,22 +244,58 @@
       
 
 
-  <li class="md-nav__item">
-    <a href="../../getting-started/" title="Getting Started" class="md-nav__link">
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
       Getting Started
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Getting Started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/" title="Quick start" class="md-nav__link">
+      Quick start
     </a>
   </li>
 
-    
-      
-      
-      
+        
+          
+          
+          
 
 
   <li class="md-nav__item">
     <a href="../../installation-guide/" title="Installation Guide" class="md-nav__link">
       Installation Guide
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../migration-from-EasyEngine-V3/" title="Migration from EasyEngine" class="md-nav__link">
+      Migration from EasyEngine
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -272,13 +308,13 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
-    <label class="md-nav__link" for="nav-4">
+    <label class="md-nav__link" for="nav-3">
       Commands
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
+      <label class="md-nav__title" for="nav-3">
         Commands
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -737,46 +773,88 @@
                   <a href="https://github.com/WordOps/docs.wordops.net/edit/master/docs/commands/site.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="site">site</h1>
+                <h1 id="site">site<a class="headerlink" href="#site" title="Permanent link">&para;</a></h1>
 <p>Performs website specific operations</p>
-<video align="center" src="/images/wo-site.webm" width="720" autoplay loop>
-</video>
-
 <p>Usage :</p>
 <pre><code class="bash">wo site (command) [options]
 </code></pre>
 
-<h2 id="site-create">site create</h2>
+<table>
+<thead>
+<tr>
+<th>subcommand</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#site-create">create</a></td>
+<td>Create site with WordOps</td>
+</tr>
+<tr>
+<td><a href="#site-update">update</a></td>
+<td>Update site type or configuration</td>
+</tr>
+<tr>
+<td><a href="#site-show">show</a></td>
+<td>Show site Nginx configuration</td>
+</tr>
+<tr>
+<td><a href="#site-edit">start</a></td>
+<td>Edit site Nginx configuration</td>
+</tr>
+<tr>
+<td><a href="#site-delete">delete</a></td>
+<td>Delete site</td>
+</tr>
+<tr>
+<td><a href="#site-list">list</a></td>
+<td>list all sites</td>
+</tr>
+<tr>
+<td><a href="#site-enable">enable</a></td>
+<td>Enable site in Nginx</td>
+</tr>
+<tr>
+<td><a href="#site-disable">disable</a></td>
+<td>Disable site in Nginx</td>
+</tr>
+</tbody>
+</table>
+<h2 id="site-create">site create<a class="headerlink" href="#site-create" title="Permanent link">&para;</a></h2>
+<video align="center" src="/images/wo-site.webm" width="720" autoplay loop>
+</video>
+
 <p>Usage :</p>
 <pre><code class="bash">wo site create  [&lt;site_name&gt;] [options]
 </code></pre>
 
-<h3 id="basic-sites">Basic sites</h3>
-<h4 id="html-site">HTML site</h4>
+<h3 id="basic-sites">Basic sites<a class="headerlink" href="#basic-sites" title="Permanent link">&para;</a></h3>
+<h4 id="html-site">HTML site<a class="headerlink" href="#html-site" title="Permanent link">&para;</a></h4>
 <p>To create simple html website use this command.</p>
 <pre><code class="bash">wo site create site.tld --html
 </code></pre>
 
-<h4 id="php-site">PHP site</h4>
+<h4 id="php-site">PHP site<a class="headerlink" href="#php-site" title="Permanent link">&para;</a></h4>
 <p>To create simple php website with no database use this command.</p>
 <pre><code class="bash">wo site create site.tld --php
 </code></pre>
 
-<h4 id="phpmysql-site">PHP+MySQL site</h4>
+<h4 id="phpmysql-site">PHP+MySQL site<a class="headerlink" href="#phpmysql-site" title="Permanent link">&para;</a></h4>
 <p>To create simple php website with database use this command.</p>
 <pre><code class="bash">wo site create site.tld --mysql
 </code></pre>
 
 <p>NOTE: You can find MySQL database details in <code>/var/www/site.tld/wo-config.php</code>.</p>
-<h4 id="proxy-site">Proxy site</h4>
+<h4 id="proxy-site">Proxy site<a class="headerlink" href="#proxy-site" title="Permanent link">&para;</a></h4>
 <p>To create site with Proxy configuration you can use --proxy during site creation</p>
 <pre><code class="bash">wo site create site.tld --proxy=127.0.0.1:3000
 </code></pre>
 
 <p>This will create proxy site site.tld with proxy destination as 127.0.0.1:3000. Port is optional. Default port : 80.</p>
-<h3 id="wordpress">WordPress</h3>
+<h3 id="wordpress">WordPress<a class="headerlink" href="#wordpress" title="Permanent link">&para;</a></h3>
 <p>Following are the WordPress website types you can create website based on Cache Mechanism</p>
-<h4 id="standard-sites">Standard sites</h4>
+<h4 id="standard-sites">Standard sites<a class="headerlink" href="#standard-sites" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
@@ -828,7 +906,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="multisite-subdirectory">Multisite subdirectory</h4>
+<h4 id="multisite-subdirectory">Multisite subdirectory<a class="headerlink" href="#multisite-subdirectory" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
@@ -880,7 +958,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="multisite-subdomain">Multisite subdomain</h4>
+<h4 id="multisite-subdomain">Multisite subdomain<a class="headerlink" href="#multisite-subdomain" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
@@ -932,7 +1010,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="extra-settings">Extra settings</h4>
+<h4 id="extra-settings">Extra settings<a class="headerlink" href="#extra-settings" title="Permanent link">&para;</a></h4>
 <p>Define WordPress administrator user To define wordpress administrator user during site creation use</p>
 <pre><code class="bash">wo site create site.tld --user=admin
 </code></pre>
@@ -948,7 +1026,7 @@
 </code></pre>
 
 <p>This will set defined email as administrator email. If not defined it will set git email as administrator email.</p>
-<h3 id="lets-encrypt">Let's Encrypt</h3>
+<h3 id="lets-encrypt">Let's Encrypt<a class="headerlink" href="#lets-encrypt" title="Permanent link">&para;</a></h3>
 <p>WordOps supports Let's Encrypt out of the box.</p>
 <pre><code class="bash">wo site create site.tld --letsencrypt
 </code></pre>
@@ -959,7 +1037,7 @@
 </code></pre>
 
 <p>You can add --letsencrypt to any other flag.</p>
-<h3 id="php-73">PHP 7.3</h3>
+<h3 id="php-73">PHP 7.3<a class="headerlink" href="#php-73" title="Permanent link">&para;</a></h3>
 <p>To create site with PHP 7.3 you can use --php73 during site creation</p>
 <p>For example, you can create WordPress site running on PHP 7.3 using following command:</p>
 <pre><code class="bash">wo site create site.tld --wp --php73
@@ -969,7 +1047,7 @@
 <pre><code class="bash">wo site create site.tld --php73
 </code></pre>
 
-<h2 id="site-update">site update</h2>
+<h2 id="site-update">site update<a class="headerlink" href="#site-update" title="Permanent link">&para;</a></h2>
 <p>Update site configuration</p>
 <p>Usage :</p>
 <pre><code class="bash">wo site update  [&lt;site_name&gt;] [options]
@@ -1045,7 +1123,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="site-delete">site delete</h2>
+<h2 id="site-delete">site delete<a class="headerlink" href="#site-delete" title="Permanent link">&para;</a></h2>
 <p>Usage :</p>
 <pre><code class="bash">wo site delete  [&lt;site_name&gt;] [options]
 </code></pre>
@@ -1129,7 +1207,7 @@
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Wordops
+            Copyright &copy; 2019 WordOps
           </div>
         
         powered by
@@ -1139,6 +1217,21 @@
           Material for MkDocs</a>
       </div>
       
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://wordops.net" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/WordOps" class="md-footer-social__link fa fa-github-alt"></a>
+    
+      <a href="https://twitter.com/WordOps_" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://community.wordops.io/slack" class="md-footer-social__link fa fa-slack"></a>
+    
+      <a href="https://community.wordops.net" class="md-footer-social__link fa fa-comments"></a>
+    
+  </div>
+
     </div>
   </div>
 </footer>

@@ -38,7 +38,7 @@
     
     
       
-        <title>Getting Started - Docs WordOps</title>
+        <title>Quick start - Docs WordOps</title>
       
     
     
@@ -123,7 +123,7 @@
               Docs WordOps
             </span>
             <span class="md-header-nav__topic">
-              Getting Started
+              Quick start
             </span>
           
         </div>
@@ -246,6 +246,27 @@
   
 
 
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Getting Started
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Getting Started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
   <li class="md-nav__item md-nav__item--active">
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
@@ -254,11 +275,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Getting Started
+        Quick start
       </label>
     
-    <a href="./" title="Getting Started" class="md-nav__link md-nav__link--active">
-      Getting Started
+    <a href="./" title="Quick start" class="md-nav__link md-nav__link--active">
+      Quick start
     </a>
     
       
@@ -396,16 +417,33 @@
     
   </li>
 
-    
-      
-      
-      
+        
+          
+          
+          
 
 
   <li class="md-nav__item">
     <a href="../installation-guide/" title="Installation Guide" class="md-nav__link">
       Installation Guide
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../migration-from-EasyEngine-V3/" title="Migration from EasyEngine" class="md-nav__link">
+      Migration from EasyEngine
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -416,13 +454,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
-    <label class="md-nav__link" for="nav-4">
+    <label class="md-nav__link" for="nav-3">
       Commands
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
+      <label class="md-nav__title" for="nav-3">
         Commands
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -719,21 +757,21 @@
                   <a href="https://github.com/WordOps/docs.wordops.net/edit/master/docs/getting-started.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="getting-started">Getting Started</h1>
-<h2 id="install-wordops">Install WordOps</h2>
+                <h1 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h1>
+<h2 id="install-wordops">Install WordOps<a class="headerlink" href="#install-wordops" title="Permanent link">&para;</a></h2>
 <p>You can use our automated installer to setup WordOps. Additional installation method are available in our <a href="../installation-guide/">installation guide</a></p>
 <pre><code class="bash">wget -qO wo wordops.se/tup &amp;&amp; sudo bash wo
 </code></pre>
 
 <p>During the installation, you will be prompt for an username and an email address. WordOps need those informations to configure Git version control and to use it for saving server configurations.
 Your informations will only be stored in the file .gitconfig.</p>
-<h2 id="installing-server-stacks">Installing server stacks</h2>
-<h3 id="method-1-wordops-full-stack-setup-recommended">Method 1 : WordOps Full stack setup (recommended)</h3>
+<h2 id="installing-server-stacks">Installing server stacks<a class="headerlink" href="#installing-server-stacks" title="Permanent link">&para;</a></h2>
+<h3 id="method-1-wordops-full-stack-setup-recommended">Method 1 : WordOps Full stack setup (recommended)<a class="headerlink" href="#method-1-wordops-full-stack-setup-recommended" title="Permanent link">&para;</a></h3>
 <pre><code class="bash">wo stack install
 </code></pre>
 
 <p>This will setup the LEMP Stack (Nginx, PHP 7.2 and MariaDB) and the admin tools (phpMyAdmin, Netdata, Composer, WP-CLI, MySQLTuner, OpcacheGUI )</p>
-<h3 id="method-2-only-install-required-stack">Method 2 : Only install required stack</h3>
+<h3 id="method-2-only-install-required-stack">Method 2 : Only install required stack<a class="headerlink" href="#method-2-only-install-required-stack" title="Permanent link">&para;</a></h3>
 <p>If you prefer to only install required stack to run your sites, you can directly use the command <code>wo site create</code>.</p>
 <p>For example, the following command will only install Nginx :</p>
 <pre><code class="bash">wo site create site.tld --html
@@ -743,7 +781,7 @@ Your informations will only be stored in the file .gitconfig.</p>
 <pre><code class="bash">wo site create site.tld --php
 </code></pre>
 
-<h3 id="additional-informations">Additional informations</h3>
+<h3 id="additional-informations">Additional informations<a class="headerlink" href="#additional-informations" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -770,7 +808,7 @@ Your informations will only be stored in the file .gitconfig.</p>
 </tr>
 </tbody>
 </table>
-<h2 id="creating-site">Creating site</h2>
+<h2 id="creating-site">Creating site<a class="headerlink" href="#creating-site" title="Permanent link">&para;</a></h2>
 <video align="center" src="/images/wo-site.webm" width="720" autoplay="" loop="">
 </video>
 
@@ -788,33 +826,33 @@ Your informations will only be stored in the file .gitconfig.</p>
 <li>secure site with Let's Encrypt SSL certificate</li>
 </ul>
 <p>You can see all the options available to create site in the command list <a href="../commands/site/#site-create">site create</a></p>
-<h3 id="php-73-support">PHP 7.3 support</h3>
+<h3 id="php-73-support">PHP 7.3 support<a class="headerlink" href="#php-73-support" title="Permanent link">&para;</a></h3>
 <p>To create site running with PHP 7.3, you can add the argument <code>--php73</code> with the command <code>wo site create</code> and <code>wo site update</code>.</p>
 <p>Here few examples :</p>
-<h4 id="wordpress-site">WordPress site</h4>
+<h4 id="wordpress-site">WordPress site<a class="headerlink" href="#wordpress-site" title="Permanent link">&para;</a></h4>
 <pre><code class="bash">wo site create site.tld --wp --php73
 </code></pre>
 
 <p>This command will create site.tld running with PHP 7.3 and install WordPress.</p>
-<h4 id="mysql-php-site">MySQL + PHP site</h4>
+<h4 id="mysql-php-site">MySQL + PHP site<a class="headerlink" href="#mysql-php-site" title="Permanent link">&para;</a></h4>
 <pre><code class="bash">wo site create site.tld --mysql --php73
 </code></pre>
 
-<h3 id="lets-encrypt-ssl-certificates">Let's Encrypt SSL certificates</h3>
+<h3 id="lets-encrypt-ssl-certificates">Let's Encrypt SSL certificates<a class="headerlink" href="#lets-encrypt-ssl-certificates" title="Permanent link">&para;</a></h3>
 <p>To secure your site with Let's Encrypt SSL certificate, you can use the argument <code>--letsencrypt</code> or <code>--le</code> with the command <code>wo site create</code> or with the command <code>wo site update</code> when it's an existing site.</p>
 <p>WordOps always check if a site is already secured with Let's Encrypt before issuing a certificate, and it also configure the certificate with Nginx and add the proper redirection from http to https.</p>
 <p>Here few examples :</p>
-<h4 id="create-ssl-site">Create SSL site</h4>
+<h4 id="create-ssl-site">Create SSL site<a class="headerlink" href="#create-ssl-site" title="Permanent link">&para;</a></h4>
 <pre><code class="bash">wo site create site.tld --wp --letsencrypt
 </code></pre>
 
 <p>This command will create site.tld and issue a certificate for site.tld and www.site.tld</p>
-<h4 id="create-subdomain-ssl-site">Create subdomain SSL site</h4>
+<h4 id="create-subdomain-ssl-site">Create subdomain SSL site<a class="headerlink" href="#create-subdomain-ssl-site" title="Permanent link">&para;</a></h4>
 <pre><code class="bash">wo site create sub.site.tld --wp --letsencrypt=subdomain
 </code></pre>
 
 <p>This command will create sub.site.tld and issue a certificate only for sub.site.tld</p>
-<h4 id="secure-existant-site">Secure existant site</h4>
+<h4 id="secure-existant-site">Secure existant site<a class="headerlink" href="#secure-existant-site" title="Permanent link">&para;</a></h4>
 <pre><code class="bash">wo site update site.tld --letsencrypt
 </code></pre>
 
@@ -876,7 +914,7 @@ Your informations will only be stored in the file .gitconfig.</p>
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Wordops
+            Copyright &copy; 2019 WordOps
           </div>
         
         powered by
@@ -886,6 +924,21 @@ Your informations will only be stored in the file .gitconfig.</p>
           Material for MkDocs</a>
       </div>
       
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    
+      <a href="https://wordops.net" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/WordOps" class="md-footer-social__link fa fa-github-alt"></a>
+    
+      <a href="https://twitter.com/WordOps_" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://community.wordops.io/slack" class="md-footer-social__link fa fa-slack"></a>
+    
+      <a href="https://community.wordops.net" class="md-footer-social__link fa fa-comments"></a>
+    
+  </div>
+
     </div>
   </div>
 </footer>

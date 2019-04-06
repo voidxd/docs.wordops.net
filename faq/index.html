@@ -244,22 +244,58 @@
       
 
 
-  <li class="md-nav__item">
-    <a href="../getting-started/" title="Getting Started" class="md-nav__link">
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
       Getting Started
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Getting Started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../getting-started/" title="Quick start" class="md-nav__link">
+      Quick start
     </a>
   </li>
 
-    
-      
-      
-      
+        
+          
+          
+          
 
 
   <li class="md-nav__item">
     <a href="../installation-guide/" title="Installation Guide" class="md-nav__link">
       Installation Guide
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../migration-from-EasyEngine-V3/" title="Migration from EasyEngine" class="md-nav__link">
+      Migration from EasyEngine
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -270,13 +306,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
-    <label class="md-nav__link" for="nav-4">
+    <label class="md-nav__link" for="nav-3">
       Commands
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
+      <label class="md-nav__title" for="nav-3">
         Commands
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -693,20 +729,20 @@
                   <a href="https://github.com/WordOps/docs.wordops.net/edit/master/docs/faq.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="faq">F.A.Q</h1>
-<h2 id="general-questions">General questions</h2>
-<h3 id="what-is-wordops">What is WordOps ?</h3>
+                <h1 id="faq">F.A.Q<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h1>
+<h2 id="general-questions">General questions<a class="headerlink" href="#general-questions" title="Permanent link">&para;</a></h2>
+<h3 id="what-is-wordops">What is WordOps ?<a class="headerlink" href="#what-is-wordops" title="Permanent link">&para;</a></h3>
 <p>WordOps is a command line tool which ease server administration and WordPress deployment by providing the ability to setup an optimized LEMP stack (Nginx, PHP, MySQL) with simple command like <code>wo stack install --nginx</code>.</p>
-<h3 id="what-are-wordops-main-feature">What are WordOps main feature ?</h3>
+<h3 id="what-are-wordops-main-feature">What are WordOps main feature ?<a class="headerlink" href="#what-are-wordops-main-feature" title="Permanent link">&para;</a></h3>
 <p>WordOps not only installs and configures the packages needed to deploy a site (Nginx, PHP, MariaDB) but it also takes care of creating Nginx vhosts and the database, installing WordPress and even get a Let's Encrypt SSL certificate, all in one command line.
 It support multiple cache backend for WordPress, including Nginx fastcgi_cache, Redis cache (full-page cache + object cache) or wp-super-cache, based on a highly optimized Nginx configuration and an hardened security with strict location directives.</p>
-<h3 id="which-operating-systems-are-supported-by-wordops">Which operating systems are supported by WordOps ?</h3>
+<h3 id="which-operating-systems-are-supported-by-wordops">Which operating systems are supported by WordOps ?<a class="headerlink" href="#which-operating-systems-are-supported-by-wordops" title="Permanent link">&para;</a></h3>
 <p>WordOps can be installed on Ubuntu LTS (Long Term Service) releases (16.04 &amp; 18.04) as well as on Debian 8 (Jessie) or Debian 9 (stretch)
 Support for other linux distribution isn't planned.</p>
-<h2 id="technical-questions">Technical questions</h2>
-<h3 id="which-version-of-php-does-wordops-support">Which version of PHP does WordOps support ?</h3>
+<h2 id="technical-questions">Technical questions<a class="headerlink" href="#technical-questions" title="Permanent link">&para;</a></h2>
+<h3 id="which-version-of-php-does-wordops-support">Which version of PHP does WordOps support ?<a class="headerlink" href="#which-version-of-php-does-wordops-support" title="Permanent link">&para;</a></h3>
 <p>WordOps support PHP 7.2 (default) and PHP 7.3.</p>
-<h3 id="what-is-the-best-caching-solution-for-wordpress">What is the best caching solution for WordPress ?</h3>
+<h3 id="what-is-the-best-caching-solution-for-wordpress">What is the best caching solution for WordPress ?<a class="headerlink" href="#what-is-the-best-caching-solution-for-wordpress" title="Permanent link">&para;</a></h3>
 <p>There is no "best solution", because there are benefits/disadvantage for each caching solution and it depend on your usage.</p>
 <p>Here some informations :</p>
 <ul>
@@ -714,10 +750,10 @@ Support for other linux distribution isn't planned.</p>
 <li>redis-cache (<code>--wpredis</code>) is a powerful solution which support multi-server setup and it provide full-page cache in redis via Nginx + object-cache via Redis-Object-Cache plugin (also used to purge cache)</li>
 <li>wp-super-cache (<code>--wpsc</code>) is a basic solution based on a plugin which create and serve static html files.</li>
 </ul>
-<h3 id="why-gzip-compression-is-disabled-by-default">Why gzip compression is disabled by default ?</h3>
+<h3 id="why-gzip-compression-is-disabled-by-default">Why gzip compression is disabled by default ?<a class="headerlink" href="#why-gzip-compression-is-disabled-by-default" title="Permanent link">&para;</a></h3>
 <p>We disabled gzip compression by default due to gzip related security issues when using TLS connection. More informations here <a href="https://en.wikipedia.org/wiki/BREACH">BREACH CVE</a>. We replaced gzip by brotli, which provide better performance and compression than gzip.</p>
-<h2 id="wordops-usage-questions">WordOps usage questions</h2>
-<h3 id="how-to-get-a-list-of-wordops-commands">How to get a list of WordOps commands ?</h3>
+<h2 id="wordops-usage-questions">WordOps usage questions<a class="headerlink" href="#wordops-usage-questions" title="Permanent link">&para;</a></h2>
+<h3 id="how-to-get-a-list-of-wordops-commands">How to get a list of WordOps commands ?<a class="headerlink" href="#how-to-get-a-list-of-wordops-commands" title="Permanent link">&para;</a></h3>
 <p>To get the list of WordOps commands, you can use the command :</p>
 <pre><code class="bash">wo
 </code></pre>
@@ -726,9 +762,9 @@ Support for other linux distribution isn't planned.</p>
 <pre><code class="bash">wo site --help
 </code></pre>
 
-<h3 id="what-is-the-mysql-root-password">What is the MySQL root password ?</h3>
+<h3 id="what-is-the-mysql-root-password">What is the MySQL root password ?<a class="headerlink" href="#what-is-the-mysql-root-password" title="Permanent link">&para;</a></h3>
 <p>MySQL root password is stored in the file <code>/etc/mysql/conf.d/my.cnf</code></p>
-<h3 id="how-to-change-wordops-backend-on-port-22222-username-and-password">How to change WordOps backend on port 22222 username and password ?</h3>
+<h3 id="how-to-change-wordops-backend-on-port-22222-username-and-password">How to change WordOps backend on port 22222 username and password ?<a class="headerlink" href="#how-to-change-wordops-backend-on-port-22222-username-and-password" title="Permanent link">&para;</a></h3>
 <p>You can use the command :</p>
 <pre><code class="bash">wo secure --auth
 </code></pre>
@@ -775,7 +811,7 @@ Support for other linux distribution isn't planned.</p>
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Wordops
+            Copyright &copy; 2019 WordOps
           </div>
         
         powered by
@@ -785,6 +821,21 @@ Support for other linux distribution isn't planned.</p>
           Material for MkDocs</a>
       </div>
       
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    
+      <a href="https://wordops.net" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/WordOps" class="md-footer-social__link fa fa-github-alt"></a>
+    
+      <a href="https://twitter.com/WordOps_" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://community.wordops.io/slack" class="md-footer-social__link fa fa-slack"></a>
+    
+      <a href="https://community.wordops.net" class="md-footer-social__link fa fa-comments"></a>
+    
+  </div>
+
     </div>
   </div>
 </footer>

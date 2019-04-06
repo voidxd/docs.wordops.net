@@ -244,22 +244,58 @@
       
 
 
-  <li class="md-nav__item">
-    <a href="../../getting-started/" title="Getting Started" class="md-nav__link">
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
       Getting Started
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Getting Started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/" title="Quick start" class="md-nav__link">
+      Quick start
     </a>
   </li>
 
-    
-      
-      
-      
+        
+          
+          
+          
 
 
   <li class="md-nav__item">
     <a href="../../installation-guide/" title="Installation Guide" class="md-nav__link">
       Installation Guide
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../migration-from-EasyEngine-V3/" title="Migration from EasyEngine" class="md-nav__link">
+      Migration from EasyEngine
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -272,13 +308,13 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
-    <label class="md-nav__link" for="nav-4">
+    <label class="md-nav__link" for="nav-3">
       Commands
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
+      <label class="md-nav__title" for="nav-3">
         Commands
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -641,7 +677,7 @@
                   <a href="https://github.com/WordOps/docs.wordops.net/edit/master/docs/commands/stack.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="stack">stack</h1>
+                <h1 id="stack">stack<a class="headerlink" href="#stack" title="Permanent link">&para;</a></h1>
 <p>Manage server stack operations</p>
 <p>Usage :</p>
 <pre><code class="bash">wo stack (command) [options]
@@ -650,7 +686,7 @@
 <table>
 <thead>
 <tr>
-<th>options</th>
+<th>subcommand</th>
 <th>description</th>
 </tr>
 </thead>
@@ -689,14 +725,14 @@
 </tr>
 </tbody>
 </table>
-<h2 id="stack-install">stack install</h2>
+<h2 id="stack-install">stack install<a class="headerlink" href="#stack-install" title="Permanent link">&para;</a></h2>
 <video align="center" src="/images/wo-stack.webm" width="720" autoplay loop></video>
 
 <p>Usage :</p>
 <pre><code class="bash">wo stack install [options]
 </code></pre>
 
-<h3 id="web">Web</h3>
+<h3 id="web">Web<a class="headerlink" href="#web" title="Permanent link">&para;</a></h3>
 <p>This will install Nginx, PHP 7.2, MariaDB &amp; additional tools available on port 22222</p>
 <pre><code class="bash">wo stack install
 </code></pre>
@@ -705,29 +741,29 @@
 <pre><code class="bash">wo stack install web
 </code></pre>
 
-<h3 id="admin-tools">Admin tools</h3>
+<h3 id="admin-tools">Admin tools<a class="headerlink" href="#admin-tools" title="Permanent link">&para;</a></h3>
 <p>WordOps backend with PHPmyAdmin, Adminer, MemcachedAdmin etc..</p>
 <pre><code class="bash">wo stack install --admin
 </code></pre>
 
-<h3 id="individual-packages">Individual packages</h3>
-<h4 id="nginx">Nginx</h4>
+<h3 id="individual-packages">Individual packages<a class="headerlink" href="#individual-packages" title="Permanent link">&para;</a></h3>
+<h4 id="nginx">Nginx<a class="headerlink" href="#nginx" title="Permanent link">&para;</a></h4>
 <pre><code class="bash">wo stack install --nginx
 </code></pre>
 
-<h4 id="php-72">PHP 7.2</h4>
+<h4 id="php-72">PHP 7.2<a class="headerlink" href="#php-72" title="Permanent link">&para;</a></h4>
 <pre><code class="bash">wo stack install --php
 </code></pre>
 
-<h4 id="mariadb-mysql">MariaDB (MySQL)</h4>
+<h4 id="mariadb-mysql">MariaDB (MySQL)<a class="headerlink" href="#mariadb-mysql" title="Permanent link">&para;</a></h4>
 <pre><code class="bash">wo stack install --mysql
 </code></pre>
 
-<h4 id="adminer">Adminer</h4>
+<h4 id="adminer">Adminer<a class="headerlink" href="#adminer" title="Permanent link">&para;</a></h4>
 <pre><code class="bash">wo stack install --adminer
 </code></pre>
 
-<h4 id="phpmyadmin">PHPMyAdmin</h4>
+<h4 id="phpmyadmin">PHPMyAdmin<a class="headerlink" href="#phpmyadmin" title="Permanent link">&para;</a></h4>
 <pre><code class="bash">wo stack install --phpmyadmin
 </code></pre>
                 
@@ -787,7 +823,7 @@
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Wordops
+            Copyright &copy; 2019 WordOps
           </div>
         
         powered by
@@ -797,6 +833,21 @@
           Material for MkDocs</a>
       </div>
       
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://wordops.net" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/WordOps" class="md-footer-social__link fa fa-github-alt"></a>
+    
+      <a href="https://twitter.com/WordOps_" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://community.wordops.io/slack" class="md-footer-social__link fa fa-slack"></a>
+    
+      <a href="https://community.wordops.net" class="md-footer-social__link fa fa-comments"></a>
+    
+  </div>
+
     </div>
   </div>
 </footer>

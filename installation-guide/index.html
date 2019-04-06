@@ -243,17 +243,38 @@
       
       
 
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Getting Started
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Getting Started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
 
   <li class="md-nav__item">
-    <a href="../getting-started/" title="Getting Started" class="md-nav__link">
-      Getting Started
+    <a href="../getting-started/" title="Quick start" class="md-nav__link">
+      Quick start
     </a>
   </li>
 
-    
-      
-      
-      
+        
+          
+          
+          
 
   
 
@@ -334,6 +355,23 @@
     
   </li>
 
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../migration-from-EasyEngine-V3/" title="Migration from EasyEngine" class="md-nav__link">
+      Migration from EasyEngine
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
     
       
       
@@ -342,13 +380,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
-    <label class="md-nav__link" for="nav-4">
+    <label class="md-nav__link" for="nav-3">
       Commands
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
+      <label class="md-nav__title" for="nav-3">
         Commands
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -571,16 +609,16 @@
                   <a href="https://github.com/WordOps/docs.wordops.net/edit/master/docs/installation-guide.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="installation-guide">Installation Guide</h1>
+                <h1 id="installation-guide">Installation Guide<a class="headerlink" href="#installation-guide" title="Permanent link">&para;</a></h1>
 <p>Welcome in WordOps installation guide. WordOps can be installed on Debian 8 (Jessie) or Debian 9 (stretch) as well as on Ubuntu 16.04 LTS(xenial) or  Ubuntu 18.04 LTS(bionic).</p>
-<h2 id="automated-installation">Automated Installation</h2>
+<h2 id="automated-installation">Automated Installation<a class="headerlink" href="#automated-installation" title="Permanent link">&para;</a></h2>
 <p>We provide an installer script which install the required dependencies, before setting-up WordOps. It can be installed with the following command :</p>
 <pre><code class="bash">wget -qO wo wordops.se/tup &amp;&amp; sudo bash wo
 </code></pre>
 
-<h2 id="manual-installation">Manual Installation</h2>
+<h2 id="manual-installation">Manual Installation<a class="headerlink" href="#manual-installation" title="Permanent link">&para;</a></h2>
 <p>If you prefer to perform yourself the same steps than our installer script, here how to install WordOps manually.</p>
-<h3 id="install-wordops-dependencies">Install WordOps dependencies</h3>
+<h3 id="install-wordops-dependencies">Install WordOps dependencies<a class="headerlink" href="#install-wordops-dependencies" title="Permanent link">&para;</a></h3>
 <pre><code class="bash"># On Ubuntu
 apt-get install build-essential curl gzip python3 python3-apt python3-setuptools python3-dev sqlite3 git tar software-properties-common pigz gnupg2 fail2ban cron ccze rsync -y
 
@@ -588,11 +626,11 @@ apt-get install build-essential curl gzip python3 python3-apt python3-setuptools
 apt-get install build-essential curl gzip dirmngr sudo python3 python3-apt python3-setuptools python3-dev ca-certificates sqlite3 git tar software-properties-common pigz apt-transport-https gnupg2 fail2ban cron ccze rsync -y
 </code></pre>
 
-<h3 id="clone-the-github-repository">Clone the github repository</h3>
+<h3 id="clone-the-github-repository">Clone the github repository<a class="headerlink" href="#clone-the-github-repository" title="Permanent link">&para;</a></h3>
 <pre><code class="bash">git clone https://github.com/WordOps/WordOps.git
 </code></pre>
 
-<h3 id="install-wordops">Install WordOps</h3>
+<h3 id="install-wordops">Install WordOps<a class="headerlink" href="#install-wordops" title="Permanent link">&para;</a></h3>
 <pre><code class="bash">cd WordOps/
 python3 setup.py install
 </code></pre>
@@ -616,7 +654,7 @@ python3 setup.py install
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../getting-started/" title="Getting Started" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../getting-started/" title="Quick start" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -625,19 +663,19 @@ python3 setup.py install
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Getting Started
+                Quick start
               </span>
             </div>
           </a>
         
         
-          <a href="../commands/" title="Overview" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../migration-from-EasyEngine-V3/" title="Migration from EasyEngine" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Overview
+                Migration from EasyEngine
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -653,7 +691,7 @@ python3 setup.py install
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Wordops
+            Copyright &copy; 2019 WordOps
           </div>
         
         powered by
@@ -663,6 +701,21 @@ python3 setup.py install
           Material for MkDocs</a>
       </div>
       
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    
+      <a href="https://wordops.net" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/WordOps" class="md-footer-social__link fa fa-github-alt"></a>
+    
+      <a href="https://twitter.com/WordOps_" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://community.wordops.io/slack" class="md-footer-social__link fa fa-slack"></a>
+    
+      <a href="https://community.wordops.net" class="md-footer-social__link fa fa-comments"></a>
+    
+  </div>
+
     </div>
   </div>
 </footer>
