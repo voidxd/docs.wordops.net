@@ -264,6 +264,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../prerequesites/" title="Prerequisites" class="md-nav__link">
+      Prerequisites
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../installation-guide/" title="Installation" class="md-nav__link">
       Installation
     </a>
@@ -776,8 +788,9 @@
                 <h1 id="site">site<a class="headerlink" href="#site" title="Permanent link">&para;</a></h1>
 <p>Performs website specific operations</p>
 <p>Usage :</p>
-<pre><code class="bash">wo site (command) [options]
-</code></pre>
+<div class="codehilite"><pre><span></span>wo site <span class="o">(</span><span class="nb">command</span><span class="o">)</span> <span class="o">[</span>options<span class="o">]</span>
+</pre></div>
+
 
 <table>
 <thead>
@@ -826,30 +839,35 @@
 </video>
 
 <p>Usage :</p>
-<pre><code class="bash">wo site create  [&lt;site_name&gt;] [options]
-</code></pre>
+<div class="codehilite"><pre><span></span>wo site create  <span class="o">[</span>&lt;site_name&gt;<span class="o">]</span> <span class="o">[</span>options<span class="o">]</span>
+</pre></div>
+
 
 <h3 id="basic-sites">Basic sites<a class="headerlink" href="#basic-sites" title="Permanent link">&para;</a></h3>
 <h4 id="html-site">HTML site<a class="headerlink" href="#html-site" title="Permanent link">&para;</a></h4>
 <p>To create simple html website use this command.</p>
-<pre><code class="bash">wo site create site.tld --html
-</code></pre>
+<div class="codehilite"><pre><span></span>wo site create site.tld --html
+</pre></div>
+
 
 <h4 id="php-site">PHP site<a class="headerlink" href="#php-site" title="Permanent link">&para;</a></h4>
 <p>To create simple php website with no database use this command.</p>
-<pre><code class="bash">wo site create site.tld --php
-</code></pre>
+<div class="codehilite"><pre><span></span>wo site create site.tld --php
+</pre></div>
+
 
 <h4 id="phpmysql-site">PHP+MySQL site<a class="headerlink" href="#phpmysql-site" title="Permanent link">&para;</a></h4>
 <p>To create simple php website with database use this command.</p>
-<pre><code class="bash">wo site create site.tld --mysql
-</code></pre>
+<div class="codehilite"><pre><span></span>wo site create site.tld --mysql
+</pre></div>
+
 
 <p>NOTE: You can find MySQL database details in <code>/var/www/site.tld/wo-config.php</code>.</p>
 <h4 id="proxy-site">Proxy site<a class="headerlink" href="#proxy-site" title="Permanent link">&para;</a></h4>
 <p>To create site with Proxy configuration you can use --proxy during site creation</p>
-<pre><code class="bash">wo site create site.tld --proxy=127.0.0.1:3000
-</code></pre>
+<div class="codehilite"><pre><span></span>wo site create site.tld --proxy<span class="o">=</span><span class="m">127</span>.0.0.1:3000
+</pre></div>
+
 
 <p>This will create proxy site site.tld with proxy destination as 127.0.0.1:3000. Port is optional. Default port : 80.</p>
 <h3 id="wordpress">WordPress<a class="headerlink" href="#wordpress" title="Permanent link">&para;</a></h3>
@@ -1012,46 +1030,54 @@
 </table>
 <h4 id="extra-settings">Extra settings<a class="headerlink" href="#extra-settings" title="Permanent link">&para;</a></h4>
 <p>Define WordPress administrator user To define wordpress administrator user during site creation use</p>
-<pre><code class="bash">wo site create site.tld --user=admin
-</code></pre>
+<div class="codehilite"><pre><span></span>wo site create site.tld --user<span class="o">=</span>admin
+</pre></div>
+
 
 <p>This will create admin as administrator user in wordpress during installation. If not defined it will take git user name.</p>
 <p>Define WordPress administrator password To define wordpress administrator password during site creation use</p>
-<pre><code class="bash">wo site create site.tld --pass=password
-</code></pre>
+<div class="codehilite"><pre><span></span>wo site create site.tld --pass<span class="o">=</span>password
+</pre></div>
+
 
 <p>This will set defined password as administrator password. If not defined it will generate random pasword for administrator. If you have special characters, you can quote them using single quotes like this :</p>
 <p>--pass='my$secret&amp;' Define WordPress administrator email To define wordpress administrator email during site creation use</p>
-<pre><code class="bash">wo site create site.tld --email=wo@site.tld
-</code></pre>
+<div class="codehilite"><pre><span></span>wo site create site.tld --email<span class="o">=</span>wo@site.tld
+</pre></div>
+
 
 <p>This will set defined email as administrator email. If not defined it will set git email as administrator email.</p>
 <h3 id="lets-encrypt">Let's Encrypt<a class="headerlink" href="#lets-encrypt" title="Permanent link">&para;</a></h3>
 <p>WordOps supports Let's Encrypt out of the box.</p>
-<pre><code class="bash">wo site create site.tld --letsencrypt
-</code></pre>
+<div class="codehilite"><pre><span></span>wo site create site.tld --letsencrypt
+</pre></div>
+
 
 <p>This command will issue a certificate for site.tld + www.site.tld.</p>
 <p>But WordOps also supports issuing Let's Encrypt certificates with subdomains.</p>
-<pre><code class="bash">wo site create site.tld --letsencrypt=subdomain
-</code></pre>
+<div class="codehilite"><pre><span></span>wo site create site.tld --letsencrypt<span class="o">=</span>subdomain
+</pre></div>
+
 
 <p>You can add --letsencrypt to any other flag.</p>
 <h3 id="php-73">PHP 7.3<a class="headerlink" href="#php-73" title="Permanent link">&para;</a></h3>
 <p>To create site with PHP 7.3 you can use --php73 during site creation</p>
 <p>For example, you can create WordPress site running on PHP 7.3 using following command:</p>
-<pre><code class="bash">wo site create site.tld --wp --php73
-</code></pre>
+<div class="codehilite"><pre><span></span>wo site create site.tld --wp --php73
+</pre></div>
+
 
 <p>To create simple php(with v7.3) website with no database use this command.</p>
-<pre><code class="bash">wo site create site.tld --php73
-</code></pre>
+<div class="codehilite"><pre><span></span>wo site create site.tld --php73
+</pre></div>
+
 
 <h2 id="site-update">site update<a class="headerlink" href="#site-update" title="Permanent link">&para;</a></h2>
 <p>Update site configuration</p>
 <p>Usage :</p>
-<pre><code class="bash">wo site update  [&lt;site_name&gt;] [options]
-</code></pre>
+<div class="codehilite"><pre><span></span>wo site update  <span class="o">[</span>&lt;site_name&gt;<span class="o">]</span> <span class="o">[</span>options<span class="o">]</span>
+</pre></div>
+
 
 <table>
 <thead>
@@ -1125,8 +1151,9 @@
 </table>
 <h2 id="site-delete">site delete<a class="headerlink" href="#site-delete" title="Permanent link">&para;</a></h2>
 <p>Usage :</p>
-<pre><code class="bash">wo site delete  [&lt;site_name&gt;] [options]
-</code></pre>
+<div class="codehilite"><pre><span></span>wo site delete  <span class="o">[</span>&lt;site_name&gt;<span class="o">]</span> <span class="o">[</span>options<span class="o">]</span>
+</pre></div>
+
 
 <table>
 <thead>

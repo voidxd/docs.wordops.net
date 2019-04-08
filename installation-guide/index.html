@@ -264,6 +264,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../prerequesites/" title="Prerequisites" class="md-nav__link">
+      Prerequisites
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -293,8 +305,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#automated-installation" title="Automated Installation" class="md-nav__link">
-    Automated Installation
+  <a href="#one-step-automated-install" title="One-Step Automated Install" class="md-nav__link">
+    One-Step Automated Install
   </a>
   
 </li>
@@ -550,8 +562,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#automated-installation" title="Automated Installation" class="md-nav__link">
-    Automated Installation
+  <a href="#one-step-automated-install" title="One-Step Automated Install" class="md-nav__link">
+    One-Step Automated Install
   </a>
   
 </li>
@@ -610,31 +622,33 @@
                 
                 
                 <h1 id="installation-guide">Installation Guide<a class="headerlink" href="#installation-guide" title="Permanent link">&para;</a></h1>
-<p>Welcome in WordOps installation guide. WordOps can be installed on Debian 8 (Jessie) or Debian 9 (stretch) as well as on Ubuntu 16.04 LTS(xenial) or  Ubuntu 18.04 LTS(bionic).</p>
-<h2 id="automated-installation">Automated Installation<a class="headerlink" href="#automated-installation" title="Permanent link">&para;</a></h2>
+<h2 id="one-step-automated-install">One-Step Automated Install<a class="headerlink" href="#one-step-automated-install" title="Permanent link">&para;</a></h2>
 <p>We provide an installer script which install the required dependencies, before setting-up WordOps. It can be installed with the following command :</p>
-<pre><code class="bash">wget -qO wo wordops.se/tup &amp;&amp; sudo bash wo
-</code></pre>
+<div class="codehilite"><pre><span></span>wget -qO wo wordops.se/tup <span class="o">&amp;&amp;</span> sudo bash wo
+</pre></div>
 
-<p>During the installation, you will be prompt for an username and an email address. WordOps need those informations to configure Git version control and to use it for saving server configurations. Your informations will only be stored in the file .gitconfig.</p>
+
+<p>During the installation, you will be prompt for an username and an email address. WordOps need those informations to configure Git version control and to use it for saving server configurations. Your informations will <strong>only be stored</strong> in the file .gitconfig.</p>
 <h2 id="manual-installation">Manual Installation<a class="headerlink" href="#manual-installation" title="Permanent link">&para;</a></h2>
 <p>If you prefer to perform yourself the same steps than our installer script, here how to install WordOps manually.</p>
 <h3 id="install-wordops-dependencies">Install WordOps dependencies<a class="headerlink" href="#install-wordops-dependencies" title="Permanent link">&para;</a></h3>
-<pre><code class="bash"># On Ubuntu
+<div class="codehilite"><pre><span></span><span class="c1"># On Ubuntu</span>
 apt-get install build-essential curl gzip python3 python3-apt python3-setuptools python3-dev sqlite3 git tar software-properties-common pigz gnupg2 fail2ban cron ccze rsync -y
 
-# On Debian
+<span class="c1"># On Debian</span>
 apt-get install build-essential curl gzip dirmngr sudo python3 python3-apt python3-setuptools python3-dev ca-certificates sqlite3 git tar software-properties-common pigz apt-transport-https gnupg2 fail2ban cron ccze rsync -y
-</code></pre>
+</pre></div>
+
 
 <h3 id="clone-the-github-repository">Clone the github repository<a class="headerlink" href="#clone-the-github-repository" title="Permanent link">&para;</a></h3>
-<pre><code class="bash">git clone https://github.com/WordOps/WordOps.git
-</code></pre>
+<div class="codehilite"><pre><span></span>git clone https://github.com/WordOps/WordOps.git
+</pre></div>
+
 
 <h3 id="install-wordops">Install WordOps<a class="headerlink" href="#install-wordops" title="Permanent link">&para;</a></h3>
-<pre><code class="bash">cd WordOps/
+<div class="codehilite"><pre><span></span><span class="nb">cd</span> WordOps/
 python3 setup.py install
-</code></pre>
+</pre></div>
                 
                   
                 
@@ -655,7 +669,7 @@ python3 setup.py install
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href=".." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../prerequesites/" title="Prerequisites" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -664,7 +678,7 @@ python3 setup.py install
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Home
+                Prerequisites
               </span>
             </div>
           </a>

@@ -266,6 +266,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../prerequesites/" title="Prerequisites" class="md-nav__link">
+      Prerequisites
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../installation-guide/" title="Installation" class="md-nav__link">
       Installation
     </a>
@@ -746,19 +758,22 @@
                 <h1 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h1>
 <h2 id="installing-server-stacks">Installing server stacks<a class="headerlink" href="#installing-server-stacks" title="Permanent link">&para;</a></h2>
 <h3 id="method-1-wordops-full-stack-setup-recommended">Method 1 : WordOps Full stack setup (recommended)<a class="headerlink" href="#method-1-wordops-full-stack-setup-recommended" title="Permanent link">&para;</a></h3>
-<pre><code class="bash">wo stack install
-</code></pre>
+<div class="codehilite"><pre><span></span>wo stack install
+</pre></div>
+
 
 <p>This will setup the LEMP Stack (Nginx, PHP 7.2 and MariaDB) and the admin tools (phpMyAdmin, Netdata, Composer, WP-CLI, MySQLTuner, OpcacheGUI )</p>
 <h3 id="method-2-only-install-required-stack">Method 2 : Only install required stack<a class="headerlink" href="#method-2-only-install-required-stack" title="Permanent link">&para;</a></h3>
 <p>If you prefer to only install required stack to run your sites, you can directly use the command <code>wo site create</code>.</p>
 <p>For example, the following command will only install Nginx :</p>
-<pre><code class="bash">wo site create site.tld --html
-</code></pre>
+<div class="codehilite"><pre><span></span>wo site create site.tld --html
+</pre></div>
+
 
 <p>And this command will only install Nginx and PHP 7.2 :</p>
-<pre><code class="bash">wo site create site.tld --php
-</code></pre>
+<div class="codehilite"><pre><span></span>wo site create site.tld --php
+</pre></div>
+
 
 <h3 id="additional-informations">Additional informations<a class="headerlink" href="#additional-informations" title="Permanent link">&para;</a></h3>
 <table>
@@ -809,31 +824,36 @@
 <p>To create site running with PHP 7.3, you can add the argument <code>--php73</code> with the command <code>wo site create</code> and <code>wo site update</code>.</p>
 <p>Here few examples :</p>
 <h4 id="wordpress-site">WordPress site<a class="headerlink" href="#wordpress-site" title="Permanent link">&para;</a></h4>
-<pre><code class="bash">wo site create site.tld --wp --php73
-</code></pre>
+<div class="codehilite"><pre><span></span>wo site create site.tld --wp --php73
+</pre></div>
+
 
 <p>This command will create site.tld running with PHP 7.3 and install WordPress.</p>
 <h4 id="mysql-php-site">MySQL + PHP site<a class="headerlink" href="#mysql-php-site" title="Permanent link">&para;</a></h4>
-<pre><code class="bash">wo site create site.tld --mysql --php73
-</code></pre>
+<div class="codehilite"><pre><span></span>wo site create site.tld --mysql --php73
+</pre></div>
+
 
 <h3 id="lets-encrypt-ssl-certificates">Let's Encrypt SSL certificates<a class="headerlink" href="#lets-encrypt-ssl-certificates" title="Permanent link">&para;</a></h3>
 <p>To secure your site with Let's Encrypt SSL certificate, you can use the argument <code>--letsencrypt</code> or <code>--le</code> with the command <code>wo site create</code> or with the command <code>wo site update</code> when it's an existing site.</p>
 <p>WordOps always check if a site is already secured with Let's Encrypt before issuing a certificate, and it also configure the certificate with Nginx and add the proper redirection from http to https.</p>
 <p>Here few examples :</p>
 <h4 id="create-ssl-site">Create SSL site<a class="headerlink" href="#create-ssl-site" title="Permanent link">&para;</a></h4>
-<pre><code class="bash">wo site create site.tld --wp --letsencrypt
-</code></pre>
+<div class="codehilite"><pre><span></span>wo site create site.tld --wp --letsencrypt
+</pre></div>
+
 
 <p>This command will create site.tld and issue a certificate for site.tld and www.site.tld</p>
 <h4 id="create-subdomain-ssl-site">Create subdomain SSL site<a class="headerlink" href="#create-subdomain-ssl-site" title="Permanent link">&para;</a></h4>
-<pre><code class="bash">wo site create sub.site.tld --wp --letsencrypt=subdomain
-</code></pre>
+<div class="codehilite"><pre><span></span>wo site create sub.site.tld --wp --letsencrypt<span class="o">=</span>subdomain
+</pre></div>
+
 
 <p>This command will create sub.site.tld and issue a certificate only for sub.site.tld</p>
 <h4 id="secure-existant-site">Secure existant site<a class="headerlink" href="#secure-existant-site" title="Permanent link">&para;</a></h4>
-<pre><code class="bash">wo site update site.tld --letsencrypt
-</code></pre>
+<div class="codehilite"><pre><span></span>wo site update site.tld --letsencrypt
+</pre></div>
+
 
 <p>This command will issue a certificate for site.tld and www.site.tld.</p>
                 
