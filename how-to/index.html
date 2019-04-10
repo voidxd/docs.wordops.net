@@ -522,6 +522,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#how-to-get-mysql-user-and-password-of-a-site" title="How to get MySQL user and password of a site ?" class="md-nav__link">
+    How to get MySQL user and password of a site ?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-access-wordops-backend" title="How to access WordOps backend ?" class="md-nav__link">
+    How to access WordOps backend ?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#how-to-change-wordops-backend-on-port-22222-username-and-password" title="How to change WordOps backend on port 22222 username and password ?" class="md-nav__link">
     How to change WordOps backend on port 22222 username and password ?
   </a>
@@ -623,6 +637,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#how-to-get-mysql-user-and-password-of-a-site" title="How to get MySQL user and password of a site ?" class="md-nav__link">
+    How to get MySQL user and password of a site ?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-access-wordops-backend" title="How to access WordOps backend ?" class="md-nav__link">
+    How to access WordOps backend ?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#how-to-change-wordops-backend-on-port-22222-username-and-password" title="How to change WordOps backend on port 22222 username and password ?" class="md-nav__link">
     How to change WordOps backend on port 22222 username and password ?
   </a>
@@ -655,7 +683,7 @@
                 
                 <h1 id="how-to">How to ?<a class="headerlink" href="#how-to" title="Permanent link">&para;</a></h1>
 <h2 id="general-wordops-usage">General WordOps usage<a class="headerlink" href="#general-wordops-usage" title="Permanent link">&para;</a></h2>
-<h3 id="how-to-get-a-list-of-wordops-commands">How to get a list of WordOps commands ?<a class="headerlink" href="#how-to-get-a-list-of-wordops-commands" title="Permanent link">&para;</a></h3>
+<h4 id="how-to-get-a-list-of-wordops-commands">How to get a list of WordOps commands ?<a class="headerlink" href="#how-to-get-a-list-of-wordops-commands" title="Permanent link">&para;</a></h4>
 <p>To get the list of WordOps commands, you can use the command :</p>
 <div class="codehilite"><pre><span></span>wo
 </pre></div>
@@ -666,9 +694,28 @@
 </pre></div>
 
 
-<h3 id="how-to-get-the-mysql-root-password">How to get the MySQL root password ?<a class="headerlink" href="#how-to-get-the-mysql-root-password" title="Permanent link">&para;</a></h3>
+<h4 id="how-to-get-the-mysql-root-password">How to get the MySQL root password ?<a class="headerlink" href="#how-to-get-the-mysql-root-password" title="Permanent link">&para;</a></h4>
 <p>MySQL root password is stored in the file <code>/etc/mysql/conf.d/my.cnf</code></p>
-<h3 id="how-to-change-wordops-backend-on-port-22222-username-and-password">How to change WordOps backend on port 22222 username and password ?<a class="headerlink" href="#how-to-change-wordops-backend-on-port-22222-username-and-password" title="Permanent link">&para;</a></h3>
+<h4 id="how-to-get-mysql-user-and-password-of-a-site">How to get MySQL user and password of a site ?<a class="headerlink" href="#how-to-get-mysql-user-and-password-of-a-site" title="Permanent link">&para;</a></h4>
+<p>You can use the command :</p>
+<div class="codehilite"><pre><span></span>wo site info site.tld
+</pre></div>
+
+
+<h4 id="how-to-access-wordops-backend">How to access WordOps backend ?<a class="headerlink" href="#how-to-access-wordops-backend" title="Permanent link">&para;</a></h4>
+<p>WordOps backend is available on port 22222, you can access it with the server IP, hostname or with a domain pointed to the server IP :</p>
+<div class="codehilite"><pre><span></span><span class="c1"># with server IP</span>
+https://YOUR.SERVER.IP:22222
+
+<span class="c1"># with server hostname</span>
+https://server.site.tld:22222
+
+<span class="c1"># with a domain hosted on the server</span>
+https://site.tld:22222
+</pre></div>
+
+
+<h4 id="how-to-change-wordops-backend-on-port-22222-username-and-password">How to change WordOps backend on port 22222 username and password ?<a class="headerlink" href="#how-to-change-wordops-backend-on-port-22222-username-and-password" title="Permanent link">&para;</a></h4>
 <p>You can use the command :</p>
 <div class="codehilite"><pre><span></span>wo secure --auth
 </pre></div>
