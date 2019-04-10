@@ -98,7 +98,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#installation-guide" tabindex="1" class="md-skip">
+      <a href="#installation" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -309,6 +309,19 @@
     One-Step Automated Install
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alternative-clone-github-repository-and-run" title="Alternative : Clone Github repository and run" class="md-nav__link">
+    Alternative : Clone Github repository and run
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -362,8 +375,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../getting-started/" title="Quick start" class="md-nav__link">
-      Quick start
+    <a href="../post-install-steps/" title="Post-install steps" class="md-nav__link">
+      Post-install steps
     </a>
   </li>
 
@@ -374,8 +387,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../migration-from-EasyEngine-V3/" title="Migration from EasyEngine" class="md-nav__link">
-      Migration from EasyEngine
+    <a href="../creating-sites/" title="Creating sites" class="md-nav__link">
+      Creating sites
     </a>
   </li>
 
@@ -541,6 +554,54 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../how-to/" title="How to" class="md-nav__link">
+      How to
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Guides
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Guides
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../migration-from-easyengine/" title="EasyEngine Migration" class="md-nav__link">
+      EasyEngine Migration
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -565,6 +626,19 @@
   <a href="#one-step-automated-install" title="One-Step Automated Install" class="md-nav__link">
     One-Step Automated Install
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alternative-clone-github-repository-and-run" title="Alternative : Clone Github repository and run" class="md-nav__link">
+    Alternative : Clone Github repository and run
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -621,22 +695,37 @@
                   <a href="https://github.com/WordOps/docs.wordops.net/edit/master/docs/installation-guide.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="installation-guide">Installation Guide<a class="headerlink" href="#installation-guide" title="Permanent link">&para;</a></h1>
+                <h1 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h1>
 <h2 id="one-step-automated-install">One-Step Automated Install<a class="headerlink" href="#one-step-automated-install" title="Permanent link">&para;</a></h2>
 <p>We provide an installer script which install the required dependencies, before setting-up WordOps. It can be installed with the following command :</p>
-<div class="codehilite"><pre><span></span>wget -qO wo wops.cc <span class="o">&amp;&amp;</span> sudo bash wo
+<div class="codehilite"><pre><span></span>curl -sL wops.cc <span class="p">|</span> sudo -E bash -
 </pre></div>
 
 
+<h3 id="alternative-clone-github-repository-and-run">Alternative : Clone Github repository and run<a class="headerlink" href="#alternative-clone-github-repository-and-run" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>git clone https://github.com/WordOps/WordOps.git <span class="nv">$HOME</span>/WordOps
+<span class="nb">cd</span> <span class="nv">$HOME</span>/WordOps
+sudo bash install
+</pre></div>
+
+
+<div class="admonition info">
+<p class="admonition-title">Information</p>
 <p>During the installation, you will be prompt for an username and an email address. WordOps need those informations to configure Git version control and to use it for saving server configurations. Your informations will <strong>only be stored</strong> in the file .gitconfig.</p>
+</div>
 <h2 id="manual-installation">Manual Installation<a class="headerlink" href="#manual-installation" title="Permanent link">&para;</a></h2>
 <p>If you prefer to perform yourself the same steps than our installer script, here how to install WordOps manually.</p>
 <h3 id="install-wordops-dependencies">Install WordOps dependencies<a class="headerlink" href="#install-wordops-dependencies" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="c1"># On Ubuntu</span>
-apt-get install build-essential curl gzip python3 python3-apt python3-setuptools python3-dev sqlite3 git tar software-properties-common pigz gnupg2 fail2ban cron ccze rsync -y
+apt-get install build-essential bash-completion curl gzip python3 <span class="se">\</span>
+python3-apt python3-setuptools python3-dev sqlite3 git tar <span class="se">\</span>
+software-properties-common pigz gnupg2 fail2ban cron ccze rsync -y
 
 <span class="c1"># On Debian</span>
-apt-get install build-essential curl gzip dirmngr sudo python3 python3-apt python3-setuptools python3-dev ca-certificates sqlite3 git tar software-properties-common pigz apt-transport-https gnupg2 fail2ban cron ccze rsync -y
+apt-get install build-essential bash-completion curl gzip dirmngr <span class="se">\</span>
+sudo python3 python3-apt python3-setuptools python3-dev  <span class="se">\</span>
+ca-certificates sqlite3 git tar software-properties-common <span class="se">\</span>
+pigz apt-transport-https gnupg2 fail2ban cron ccze rsync -y
 </pre></div>
 
 
@@ -684,13 +773,13 @@ python3 setup.py install
           </a>
         
         
-          <a href="../getting-started/" title="Quick start" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../post-install-steps/" title="Post-install steps" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Quick start
+                Post-install steps
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

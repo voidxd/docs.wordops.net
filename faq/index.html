@@ -288,8 +288,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../getting-started/" title="Quick start" class="md-nav__link">
-      Quick start
+    <a href="../post-install-steps/" title="Post-install steps" class="md-nav__link">
+      Post-install steps
     </a>
   </li>
 
@@ -300,8 +300,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../migration-from-EasyEngine-V3/" title="Migration from EasyEngine" class="md-nav__link">
-      Migration from EasyEngine
+    <a href="../creating-sites/" title="Creating sites" class="md-nav__link">
+      Creating sites
     </a>
   </li>
 
@@ -555,40 +555,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#wordops-usage-questions" title="WordOps usage questions" class="md-nav__link">
-    WordOps usage questions
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#how-to-get-a-list-of-wordops-commands" title="How to get a list of WordOps commands ?" class="md-nav__link">
-    How to get a list of WordOps commands ?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#what-is-the-mysql-root-password" title="What is the MySQL root password ?" class="md-nav__link">
-    What is the MySQL root password ?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-to-change-wordops-backend-on-port-22222-username-and-password" title="How to change WordOps backend on port 22222 username and password ?" class="md-nav__link">
-    How to change WordOps backend on port 22222 username and password ?
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
       
       
       
@@ -597,6 +563,54 @@
   
 </nav>
     
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../how-to/" title="How to" class="md-nav__link">
+      How to
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Guides
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Guides
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../migration-from-easyengine/" title="EasyEngine Migration" class="md-nav__link">
+      EasyEngine Migration
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -688,40 +702,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#wordops-usage-questions" title="WordOps usage questions" class="md-nav__link">
-    WordOps usage questions
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#how-to-get-a-list-of-wordops-commands" title="How to get a list of WordOps commands ?" class="md-nav__link">
-    How to get a list of WordOps commands ?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#what-is-the-mysql-root-password" title="What is the MySQL root password ?" class="md-nav__link">
-    What is the MySQL root password ?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-to-change-wordops-backend-on-port-22222-username-and-password" title="How to change WordOps backend on port 22222 username and password ?" class="md-nav__link">
-    How to change WordOps backend on port 22222 username and password ?
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
       
       
       
@@ -764,24 +744,6 @@ Support for other linux distribution isn't planned.</p>
 </ul>
 <h3 id="why-gzip-compression-is-disabled-by-default">Why gzip compression is disabled by default ?<a class="headerlink" href="#why-gzip-compression-is-disabled-by-default" title="Permanent link">&para;</a></h3>
 <p>We disabled gzip compression by default due to gzip related security issues when using TLS connection. More informations here <a href="https://en.wikipedia.org/wiki/BREACH">BREACH CVE</a>. We replaced gzip by brotli, which provide better performance and compression than gzip.</p>
-<h2 id="wordops-usage-questions">WordOps usage questions<a class="headerlink" href="#wordops-usage-questions" title="Permanent link">&para;</a></h2>
-<h3 id="how-to-get-a-list-of-wordops-commands">How to get a list of WordOps commands ?<a class="headerlink" href="#how-to-get-a-list-of-wordops-commands" title="Permanent link">&para;</a></h3>
-<p>To get the list of WordOps commands, you can use the command :</p>
-<div class="codehilite"><pre><span></span>wo
-</pre></div>
-
-
-<p>Then for any subcommand, you just have to add the arugment -h or --help to display command informations with examples.</p>
-<div class="codehilite"><pre><span></span>wo site --help
-</pre></div>
-
-
-<h3 id="what-is-the-mysql-root-password">What is the MySQL root password ?<a class="headerlink" href="#what-is-the-mysql-root-password" title="Permanent link">&para;</a></h3>
-<p>MySQL root password is stored in the file <code>/etc/mysql/conf.d/my.cnf</code></p>
-<h3 id="how-to-change-wordops-backend-on-port-22222-username-and-password">How to change WordOps backend on port 22222 username and password ?<a class="headerlink" href="#how-to-change-wordops-backend-on-port-22222-username-and-password" title="Permanent link">&para;</a></h3>
-<p>You can use the command :</p>
-<div class="codehilite"><pre><span></span>wo secure --auth
-</pre></div>
                 
                   
                 
@@ -816,6 +778,20 @@ Support for other linux distribution isn't planned.</p>
             </div>
           </a>
         
+        
+          <a href="../how-to/" title="How to" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                How to
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
         
       </nav>
     </div>
