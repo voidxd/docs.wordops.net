@@ -560,26 +560,6 @@
     Using the command wo site update
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#wordpress-sites" title="WordPress sites" class="md-nav__link">
-    WordPress sites
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#non-wordpress-sites" title="Non WordPress sites" class="md-nav__link">
-    Non WordPress sites
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
           <li class="md-nav__item">
@@ -663,26 +643,6 @@
     Using the command wo site update
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#wordpress-sites" title="WordPress sites" class="md-nav__link">
-    WordPress sites
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#non-wordpress-sites" title="Non WordPress sites" class="md-nav__link">
-    Non WordPress sites
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
           <li class="md-nav__item">
@@ -755,24 +715,9 @@
 </pre></div>
 
 
-<h5 id="wordpress-sites">WordPress sites<a class="headerlink" href="#wordpress-sites" title="Permanent link">&para;</a></h5>
-<p>To update a WordPress site, you just have to switch to another cache backend before switching back the previous cache backend used. For example, for a site created with the argument <code>--wp</code>, you just have to use another option like <code>--wpfc</code> and to switch back to <code>--wp</code>.</p>
-<p><strong>Example</strong> : for a site created with <code>--wpsc</code>.</p>
-<div class="codehilite"><pre><span></span><span class="c1"># switch to another cache backend to update nginx configuration</span>
-wo site update site.tld --wp
-<span class="c1"># switch back to the cache option previously used</span>
-wo site update site.tld --wpsc
-</pre></div>
-
-
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>It's not possible to update a site created with the argument <code>--wp</code> just by running <code>wo site update site.tld --wp</code> because like EasyEngine, WordOps verify previous type and the new one to make sure it's not the same.</p>
-</div>
-<h5 id="non-wordpress-sites">Non WordPress sites<a class="headerlink" href="#non-wordpress-sites" title="Permanent link">&para;</a></h5>
-<p>For non WordPress sites, the method is pretty similar to the one used for WordPress sites. You can enable PHP 7.3 on your site with the argument <code>--php73</code> before disabling it with the argument <code>--php73=off</code>.</p>
-<p>This will regenerate your site configuration with the new WordOps configurations.</p>
-<p><strong>*Example</strong> : for a basic site  created with <code>--mysql</code></p>
+<p>To update your sites configuration, you can enable PHP 7.3 on your site with the argument <code>--php73</code> and then disable it with the argument <code>--php73=off</code> to use PHP 7.2.
+This will regenerate your site Nginx vhost and apply the new configuration.</p>
+<p><strong>Example</strong> :</p>
 <div class="codehilite"><pre><span></span><span class="c1"># enable PHP 7.3 to regenerate site configuration</span>
 wo site update site.tld --php73
 <span class="c1"># disable PHP 7.3 to use PHP 7.2 (optional)</span>
