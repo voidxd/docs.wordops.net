@@ -698,14 +698,14 @@
                 <h1 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h1>
 <h2 id="one-step-automated-install">One-Step Automated Install<a class="headerlink" href="#one-step-automated-install" title="Permanent link">&para;</a></h2>
 <p>We provide an installer script which install the required dependencies, before setting-up WordOps. It can be installed with the following command :</p>
-<div class="codehilite"><pre><span></span>curl -sL wops.cc <span class="p">|</span> sudo -E bash -
+<div class="codehilite"><pre><span></span>wget -qO wo wops.cc <span class="o">&amp;&amp;</span> sudo bash wo
 </pre></div>
 
 
 <h3 id="alternative-clone-github-repository-and-run">Alternative : Clone Github repository and run<a class="headerlink" href="#alternative-clone-github-repository-and-run" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span>git clone https://github.com/WordOps/WordOps.git <span class="nv">$HOME</span>/WordOps
 <span class="nb">cd</span> <span class="nv">$HOME</span>/WordOps
-sudo bash install
+./wo.sh
 </pre></div>
 
 

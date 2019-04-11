@@ -1137,6 +1137,16 @@ wo site create sub.example.com --wp --letsencrypt<span class="o">=</span>subdoma
 </pre></div>
 
 
+<h1 id="cheatsheet">Cheatsheet<a class="headerlink" href="#cheatsheet" title="Permanent link">&para;</a></h1>
+<div class="codehilite"><pre><span></span>                    | single site | multisite w/ subdir  | multisite w/ subdom
+</pre></div>
+
+
+<p>----------------------- | ----------- | -------------------- | -----------------------
+<strong>NO Cache</strong>            | --wp        | --wpsubdir           | --wpsubdomain
+<strong>WP Super Cache</strong>      | --wpsc      | -wpsubdir --wpsc     | --wpsubdomain --wpsc
+<strong>Nginx fastcgi_cache</strong> | --wpfc      | --wpsubdir --wpfc    | --wpsubdomain --wpfc
+<strong>Redis cache</strong>         | --wpredis   | --wpsubdir --wpredis | --wpsubdomain --wpredis</p>
 <h2 id="site-update">site update<a class="headerlink" href="#site-update" title="Permanent link">&para;</a></h2>
 <p>Update site configuration</p>
 <p>Usage :</p>
