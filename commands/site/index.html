@@ -454,17 +454,18 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#extra-settings" title="Extra settings" class="md-nav__link">
     Extra settings
   </a>
   
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
+    <nav class="md-nav">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#lets-encrypt" title="Let's Encrypt" class="md-nav__link">
@@ -482,6 +483,32 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cheatsheet" title="Cheatsheet" class="md-nav__link">
+    Cheatsheet
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#site-update" title="site update" class="md-nav__link">
+    site update
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#site-delete" title="site delete" class="md-nav__link">
+    site delete
+  </a>
   
 </li>
       
@@ -755,17 +782,18 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#extra-settings" title="Extra settings" class="md-nav__link">
     Extra settings
   </a>
   
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
+    <nav class="md-nav">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#lets-encrypt" title="Let's Encrypt" class="md-nav__link">
@@ -783,6 +811,32 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cheatsheet" title="Cheatsheet" class="md-nav__link">
+    Cheatsheet
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#site-update" title="site update" class="md-nav__link">
+    site update
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#site-delete" title="site delete" class="md-nav__link">
+    site delete
+  </a>
   
 </li>
       
@@ -1048,7 +1102,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="extra-settings">Extra settings<a class="headerlink" href="#extra-settings" title="Permanent link">&para;</a></h4>
+<h3 id="extra-settings">Extra settings<a class="headerlink" href="#extra-settings" title="Permanent link">&para;</a></h3>
 <p>Define WordPress administrator user To define wordpress administrator user during site creation use</p>
 <div class="codehilite"><pre><span></span>wo site create site.tld --user<span class="o">=</span>admin
 </pre></div>
@@ -1067,7 +1121,7 @@
 
 
 <p>This will set defined email as administrator email. If not defined it will set git email as administrator email.</p>
-<h3 id="lets-encrypt">Let's Encrypt<a class="headerlink" href="#lets-encrypt" title="Permanent link">&para;</a></h3>
+<h4 id="lets-encrypt">Let's Encrypt<a class="headerlink" href="#lets-encrypt" title="Permanent link">&para;</a></h4>
 <p>WordOps supports Let's Encrypt out of the box.</p>
 <div class="codehilite"><pre><span></span>wo site create site.tld --letsencrypt
 </pre></div>
@@ -1080,7 +1134,7 @@
 
 
 <p>You can add --letsencrypt to any other flag.</p>
-<h3 id="php-73">PHP 7.3<a class="headerlink" href="#php-73" title="Permanent link">&para;</a></h3>
+<h4 id="php-73">PHP 7.3<a class="headerlink" href="#php-73" title="Permanent link">&para;</a></h4>
 <p>To create site with PHP 7.3 you can use --php73 during site creation</p>
 <p>For example, you can create WordPress site running on PHP 7.3 using following command:</p>
 <div class="codehilite"><pre><span></span>wo site create site.tld --wp --php73
@@ -1092,61 +1146,43 @@
 </pre></div>
 
 
-<h1 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h1>
-<h2 id="standard-wordpress-sites">Standard WordPress sites<a class="headerlink" href="#standard-wordpress-sites" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>wo site create example.com --wp       <span class="c1"># install wordpress without any page caching</span>
-wo site create example.com --wpsc     <span class="c1"># install wordpress with wp-super-cache plugin</span>
-wo site create example.com --wpfc     <span class="c1"># install wordpress + nginx fastcgi_cache</span>
-wo site create example.com --wpredis  <span class="c1"># install wordpress + nginx redis_cache</span>
-</pre></div>
-
-
-<h2 id="wordpress-multisite-with-subdirectory">WordPress multisite with subdirectory<a class="headerlink" href="#wordpress-multisite-with-subdirectory" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>wo site create example.com --wpsubdir            <span class="c1"># install wpmu-subdirectory without any page caching</span>
-wo site create example.com --wpsubdir --wpsc     <span class="c1"># install wpmu-subdirectory with wp-super-cache plugin</span>
-wo site create example.com --wpsubdir --wpfc     <span class="c1"># install wpmu-subdirectory + nginx fastcgi_cache</span>
-wo site create example.com --wpsubdir --wpredis  <span class="c1"># install wpmu-subdirectory + nginx redis_cache</span>
-</pre></div>
-
-
-<h2 id="wordpress-multisite-with-subdomain">WordPress multisite with subdomain<a class="headerlink" href="#wordpress-multisite-with-subdomain" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>wo site create example.com --wpsubdomain            <span class="c1"># install wpmu-subdomain without any page caching</span>
-wo site create example.com --wpsubdomain --wpsc     <span class="c1"># install wpmu-subdomain with wp-super-cache plugin</span>
-wo site create example.com --wpsubdomain --wpfc     <span class="c1"># install wpmu-subdomain + nginx fastcgi_cache</span>
-wo site create example.com --wpsubdomain --wpredis  <span class="c1"># install wpmu-subdomain + nginx redis_cache</span>
-</pre></div>
-
-
-<h2 id="non-wordpress-sites">Non-WordPress sites<a class="headerlink" href="#non-wordpress-sites" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>wo site create example.com --html     <span class="c1"># create example.com for static/html sites</span>
-wo site create example.com --php      <span class="c1"># create example.com with php support</span>
-wo site create example.com --mysql    <span class="c1"># create example.com with php &amp; mysql support</span>
-wo site create example.com --proxy<span class="o">=</span><span class="m">127</span>.0.0.1:3000 <span class="c1">#  create example.com with nginx as reverse-proxy</span>
-</pre></div>
-
-
-<h2 id="php-73-sites">PHP 7.3 sites<a class="headerlink" href="#php-73-sites" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>wo site create site.tld --wp --php73 <span class="c1"># install wordpress with PHP 7.3</span>
-wo site create site.tld --wpredis --php73 <span class="c1"># create site.tld with PHP 7.3 &amp; MySQL support</span>
-</pre></div>
-
-
-<h2 id="sites-secured-with-lets-encrypt">Sites secured with Let's Encrypt<a class="headerlink" href="#sites-secured-with-lets-encrypt" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>wo site create example.com --wp --letsencrypt <span class="c1"># install wordpress &amp; secure site with letsencrypt</span>
-wo site create sub.example.com --wp --letsencrypt<span class="o">=</span>subdomain <span class="c1"># install wordpress and secure subdomain with letsencrypt</span>
-</pre></div>
-
-
-<h1 id="cheatsheet">Cheatsheet<a class="headerlink" href="#cheatsheet" title="Permanent link">&para;</a></h1>
-<div class="codehilite"><pre><span></span>                    | single site | multisite w/ subdir  | multisite w/ subdom
-</pre></div>
-
-
-<p>----------------------- | ----------- | -------------------- | -----------------------
-<strong>NO Cache</strong>            | --wp        | --wpsubdir           | --wpsubdomain
-<strong>WP Super Cache</strong>      | --wpsc      | -wpsubdir --wpsc     | --wpsubdomain --wpsc
-<strong>Nginx fastcgi_cache</strong> | --wpfc      | --wpsubdir --wpfc    | --wpsubdomain --wpfc
-<strong>Redis cache</strong>         | --wpredis   | --wpsubdir --wpredis | --wpsubdomain --wpredis</p>
+<h3 id="cheatsheet">Cheatsheet<a class="headerlink" href="#cheatsheet" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Cache</th>
+<th>single site</th>
+<th>multisite w/ subdir</th>
+<th>multisite w/ subdom</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>NO Cache</strong></td>
+<td>--wp</td>
+<td>--wpsubdir</td>
+<td>--wpsubdomain</td>
+</tr>
+<tr>
+<td><strong>WP Super Cache</strong></td>
+<td>--wpsc</td>
+<td>-wpsubdir --wpsc</td>
+<td>--wpsubdomain --wpsc</td>
+</tr>
+<tr>
+<td><strong>Nginx fastcgi_cache</strong></td>
+<td>--wpfc</td>
+<td>--wpsubdir --wpfc</td>
+<td>--wpsubdomain --wpfc</td>
+</tr>
+<tr>
+<td><strong>Redis cache</strong></td>
+<td>--wpredis</td>
+<td>--wpsubdir --wpredis</td>
+<td>--wpsubdomain --wpredis</td>
+</tr>
+</tbody>
+</table>
 <h2 id="site-update">site update<a class="headerlink" href="#site-update" title="Permanent link">&para;</a></h2>
 <p>Update site configuration</p>
 <p>Usage :</p>

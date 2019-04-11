@@ -732,15 +732,15 @@
 <p class="admonition-title">Info</p>
 <p>Before installing WordOps, the install script will backup all previous EasyEngine configurations. You will find them after the installation in <code>/var/lib/wo-backup</code>.</p>
 </div>
-<p>It will also create all new Nginx configurations before syncing the old nginx directory with the new one. This way, if you have added custom Nginx configuration, you will find them at the same place than before the migration. </p>
+<p>It will also create all new Nginx configurations before syncing the old nginx directory with the new one. This way, if you have added custom Nginx configuration, you will find them at the same place than before the migration.</p>
 <h2 id="post-installation-steps">Post installation steps<a class="headerlink" href="#post-installation-steps" title="Permanent link">&para;</a></h2>
 <p>After installing WordOps, if all your sites are still working properly, you can start using WordOps the same way than EasyEngine. For sites previously created with EasyEngine, you will have to changes some settings in their configuration to use WordOps new configurations. This can be done with the command <code>wo site update</code> or by editing manually their configuration with the command <code>wo site edit</code>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>If some sites are still using php5.6 or php7.0 and are not compatible with newer PHP versions, do not change their vhost configuration. WordOps minimum and default PHP version is PHP 7.2. Additionally sites previously created with <code>--w3tc</code>  will have to use another cache option as we deprecated this stack. </p>
+<p>If some sites are still using php5.6 or php7.0 and are not compatible with newer PHP versions, do not change their vhost configuration. WordOps minimum and default PHP version is PHP 7.2. Additionally sites previously created with <code>--w3tc</code>  will have to use another cache option as we deprecated this stack.</p>
 </div>
 <h3 id="updating-site-configuration">Updating site configuration<a class="headerlink" href="#updating-site-configuration" title="Permanent link">&para;</a></h3>
-<p>You have the choice between two method to update your site configuration : </p>
+<p>You have the choice between two method to update your site configuration :</p>
 <ul>
 <li>
 <p>With the command <code>wo site update</code> (recommended)</p>
@@ -750,13 +750,13 @@
 </li>
 </ul>
 <h4 id="using-the-command-wo-site-update">Using the command <code>wo site update</code><a class="headerlink" href="#using-the-command-wo-site-update" title="Permanent link">&para;</a></h4>
-<p>The easiest way to update your site with the new WordOps configurations is to use the command : </p>
+<p>The easiest way to update your site with the new WordOps configurations is to use the command :</p>
 <div class="codehilite"><pre><span></span>wo site update site.tld &lt;options&gt;
 </pre></div>
 
 
 <h5 id="wordpress-sites">WordPress sites<a class="headerlink" href="#wordpress-sites" title="Permanent link">&para;</a></h5>
-<p>To update a WordPress site, you just have to switch to another cache backend before switching back the previous cache backend used. For example, for a site created with the argument <code>--wp</code>, you just have to use another option like <code>--wpfc</code> and to switch back to <code>--wp</code>. </p>
+<p>To update a WordPress site, you just have to switch to another cache backend before switching back the previous cache backend used. For example, for a site created with the argument <code>--wp</code>, you just have to use another option like <code>--wpfc</code> and to switch back to <code>--wp</code>.</p>
 <p><strong>Example</strong> : for a site created with <code>--wpsc</code>.</p>
 <div class="codehilite"><pre><span></span><span class="c1"># switch to another cache backend to update nginx configuration</span>
 wo site update site.tld --wp
@@ -781,7 +781,7 @@ wo site update site.tld --php73<span class="o">=</span>off
 
 
 <h4 id="manually-editing-site-configuration">Manually editing site configuration<a class="headerlink" href="#manually-editing-site-configuration" title="Permanent link">&para;</a></h4>
-<p>You can edit sites configuration with the command : </p>
+<p>You can edit sites configuration with the command :</p>
 <div class="codehilite"><pre><span></span>wo site edit site.tld
 </pre></div>
 
@@ -790,14 +790,14 @@ wo site update site.tld --php73<span class="o">=</span>off
 <p class="admonition-title">Info</p>
 <p>You will be prompt to choose a text editor, if you are new to linux, we recommend you to choose nano.</p>
 </div>
-<p>In Nginx vhost configuration, you will find several lines beginning with <code>include</code>. </p>
+<p>In Nginx vhost configuration, you will find several lines beginning with <code>include</code>.</p>
 <p>To use new WordOps configuration, you just have to replace the path of the configuration set after <code>include</code>.  For example <code>include common/locations.conf;</code> have to be replaced by <code>include common/locations-wo.conf;</code>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Make sure to not remove the <code>;</code> at the end of the line when updating Nginx configuration.</p>
 </div>
 <p>For all WordPress related configuration files like <code>wpsc.conf</code> or <code>wpfc-php7.conf</code>, new configurations files are just named <code>wpsc-php72.conf</code> or <code>wpfc-php72.conf</code>.</p>
-<p>There are some exceptions, list here : </p>
+<p>There are some exceptions, list here :</p>
 <table>
 <thead>
 <tr>
