@@ -574,6 +574,40 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#removing-previous-php-version" title="Removing previous PHP version" class="md-nav__link">
+    Removing previous PHP version
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upgrading-mariadb-to-103" title="Upgrading MariaDB to 10.3" class="md-nav__link">
+    Upgrading MariaDB to 10.3
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backup-your-databases" title="Backup your databases" class="md-nav__link">
+    Backup your databases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upgrading-mariadb" title="Upgrading MariaDB" class="md-nav__link">
+    Upgrading MariaDB
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -657,6 +691,40 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#removing-previous-php-version" title="Removing previous PHP version" class="md-nav__link">
+    Removing previous PHP version
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upgrading-mariadb-to-103" title="Upgrading MariaDB to 10.3" class="md-nav__link">
+    Upgrading MariaDB to 10.3
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backup-your-databases" title="Backup your databases" class="md-nav__link">
+    Backup your databases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upgrading-mariadb" title="Upgrading MariaDB" class="md-nav__link">
+    Upgrading MariaDB
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -697,7 +765,7 @@
 <p>After installing WordOps, if all your sites are still working properly, you can start using WordOps the same way than EasyEngine. For sites previously created with EasyEngine, you will have to changes some settings in their configuration to use WordOps new configurations. This can be done with the command <code>wo site update</code> or by editing manually their configuration with the command <code>wo site edit</code>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>If some sites are still using php5.6 or php7.0 and are not compatible with newer PHP versions, do not change their vhost configuration. WordOps minimum and default PHP version is PHP 7.2. Additionally sites previously created with <code>--w3tc</code>  will have to use another cache option as we deprecated this stack.</p>
+<p>If some sites are still using php5.6 or php7.0 and are not compatible with newer PHP versions, do not change their vhost configuration. WordOps minimum and default PHP version is PHP 7.2. Additionally, sites previously created with <code>--w3tc</code>  will have to use another cache option as we deprecated this stack.</p>
 </div>
 <h3 id="updating-site-configuration">Updating site configuration<a class="headerlink" href="#updating-site-configuration" title="Permanent link">&para;</a></h3>
 <p>You have the choice between two method to update your site configuration :</p>
@@ -769,6 +837,50 @@ wo site update site.tld --php73<span class="o">=</span>off
 </tr>
 </tbody>
 </table>
+<h3 id="removing-previous-php-version">Removing previous PHP version<a class="headerlink" href="#removing-previous-php-version" title="Permanent link">&para;</a></h3>
+<p>If you do not need php5.6 and php7.0 anymore, you can safely remove them with the following commands :</p>
+<div class="codehilite"><pre><span></span><span class="c1"># php5.6</span>
+apt-get -y autoremove php5.6-fpm php5.6-common --purge
+
+<span class="c1"># php7.0</span>
+apt-get -y autoremove php7.0-fpm php7.0-common --purge
+</pre></div>
+
+
+<h3 id="upgrading-mariadb-to-103">Upgrading MariaDB to 10.3<a class="headerlink" href="#upgrading-mariadb-to-103" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Before upgrading MariaDB, we strongly recommend you to perform a backup of your MySQL databases.</p>
+</div>
+<h4 id="backup-your-databases">Backup your databases<a class="headerlink" href="#backup-your-databases" title="Permanent link">&para;</a></h4>
+<p>You can backup your MySQL databases with this simple bash script :</p>
+<div class="codehilite"><pre><span></span>wget https://raw.githubusercontent.com/VirtuBox/bash-scripts/master/backup/mysqldump/mysqldump.sh -O mysqldump.sh
+chmod +x mysqldump.sh
+</pre></div>
+
+
+<p>Then perform a full backup :</p>
+<div class="codehilite"><pre><span></span>./mysqldump.sh --full
+</pre></div>
+
+
+<p>This will backup the whole MySQL server and store the gzipped dump in /var/www/mysqldump</p>
+<p>Additionally you can make a copy of the <code>/var/lib/mysql</code> directory :</p>
+<div class="codehilite"><pre><span></span>sudo service mysql stop
+sudo cp -rf /var/lib/mysql /var/lib/mysql-bak
+sudo service mysql start
+</pre></div>
+
+
+<h4 id="upgrading-mariadb">Upgrading MariaDB<a class="headerlink" href="#upgrading-mariadb" title="Permanent link">&para;</a></h4>
+<p>At first, you need to remove the current MariaDB-server installed. To do so, use the command :</p>
+<div class="codehilite"><pre><span></span>sudo apt-get autoremove mariadb-server -y
+</pre></div>
+
+
+<p>Then you can reinstall the latest MariaDB-server version with WordOps :</p>
+<div class="codehilite"><pre><span></span>wo stack install --mysql
+</pre></div>
                 
                   
                 
