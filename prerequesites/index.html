@@ -38,7 +38,7 @@
     
     
       
-        <title>Prerequisites - Docs WordOps</title>
+        <title>Prerequisites - WordOps Documentation</title>
       
     
     
@@ -98,7 +98,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#hardware" tabindex="1" class="md-skip">
+      <a href="#prerequesites" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -107,7 +107,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href=".." title="Docs WordOps" class="md-header-nav__button md-logo">
+        <a href=".." title="WordOps Documentation" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -120,7 +120,7 @@
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
             <span class="md-header-nav__topic">
-              Docs WordOps
+              WordOps Documentation
             </span>
             <span class="md-header-nav__topic">
               Prerequisites
@@ -197,12 +197,12 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href=".." title="Docs WordOps" class="md-nav__button md-logo">
+    <a href=".." title="WordOps Documentation" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
     </a>
-    Docs WordOps
+    WordOps Documentation
   </label>
   
     <div class="md-nav__source">
@@ -271,6 +271,8 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
         Prerequisites
@@ -284,14 +286,36 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#hardware" title="Hardware" class="md-nav__link">
-    Hardware
+  <a href="#hardware-requirements" title="Hardware requirements" class="md-nav__link">
+    Hardware requirements
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimum" title="Minimum" class="md-nav__link">
+    Minimum
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended" title="Recommended" class="md-nav__link">
+    Recommended
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -579,14 +603,36 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#hardware" title="Hardware" class="md-nav__link">
-    Hardware
+  <a href="#hardware-requirements" title="Hardware requirements" class="md-nav__link">
+    Hardware requirements
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimum" title="Minimum" class="md-nav__link">
+    Minimum
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended" title="Recommended" class="md-nav__link">
+    Recommended
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -623,15 +669,23 @@
                   <a href="https://github.com/WordOps/docs.wordops.net/edit/master/docs/prerequesites.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Prerequisites</h1>
-                
-                <h3 id="hardware">Hardware<a class="headerlink" href="#hardware" title="Permanent link">&para;</a></h3>
-<p>WordOps is very lightweight, so hardware requirements should not be a problem :</p>
+                <h1 id="prerequesites">Prerequesites<a class="headerlink" href="#prerequesites" title="Permanent link">&para;</a></h1>
+<h2 id="hardware-requirements">Hardware requirements<a class="headerlink" href="#hardware-requirements" title="Permanent link">&para;</a></h2>
+<h3 id="minimum">Minimum<a class="headerlink" href="#minimum" title="Permanent link">&para;</a></h3>
+<p>WordOps is very lightweight, so it do not require a lot of resources</p>
 <ul>
 <li>~30MB of free space</li>
 <li>512MB RAM</li>
 </ul>
-<h3 id="operating-systems">Operating Systems<a class="headerlink" href="#operating-systems" title="Permanent link">&para;</a></h3>
+<h3 id="recommended">Recommended<a class="headerlink" href="#recommended" title="Permanent link">&para;</a></h3>
+<p>However, some services like MySQL or Redis may need more resources, and running WordOps stacks without enough resources could impact your sites performance. Resources usage also highly depend on your site traffic.
+Here our recommended hardware configuration :</p>
+<ul>
+<li>Multi-core CPU</li>
+<li>20GB SSD storage</li>
+<li>2GB RAM</li>
+</ul>
+<h2 id="operating-systems">Operating Systems<a class="headerlink" href="#operating-systems" title="Permanent link">&para;</a></h2>
 <p>The following operating systems are supported:</p>
 <table>
 <thead>
@@ -664,7 +718,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="ports">Ports<a class="headerlink" href="#ports" title="Permanent link">&para;</a></h3>
+<h2 id="ports">Ports<a class="headerlink" href="#ports" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
