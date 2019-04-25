@@ -498,6 +498,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../how-to/secure-22222/" title="Secure WordOps backend" class="md-nav__link">
+      Secure WordOps backend
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -670,6 +682,13 @@
           <li class="md-nav__item">
   <a href="#why-gzip-compression-is-disabled-by-default" title="Why gzip compression is disabled by default ?" class="md-nav__link">
     Why gzip compression is disabled by default ?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is-wordops-lets-encrypt-stack-compatible-with-cloudflare-cdn" title="Is WordOps Let's Encrypt stack compatible with Cloudflare CDN ?" class="md-nav__link">
+    Is WordOps Let's Encrypt stack compatible with Cloudflare CDN ?
   </a>
   
 </li>
@@ -885,6 +904,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#is-wordops-lets-encrypt-stack-compatible-with-cloudflare-cdn" title="Is WordOps Let's Encrypt stack compatible with Cloudflare CDN ?" class="md-nav__link">
+    Is WordOps Let's Encrypt stack compatible with Cloudflare CDN ?
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -959,6 +985,8 @@
 <p>No, currently our custom Nginx package isn't built with OpenSSL 1.1+ and Nginx-wo only support TLSv1.0 TLSv1.1 and TLSv1.2.</p>
 <h4 id="why-gzip-compression-is-disabled-by-default">Why gzip compression is disabled by default ?<a class="headerlink" href="#why-gzip-compression-is-disabled-by-default" title="Permanent link">&para;</a></h4>
 <p>We disabled gzip compression by default due to gzip related security issues when using TLS connection. More informations here <a href="https://en.wikipedia.org/wiki/BREACH">BREACH CVE</a>. We replaced gzip by brotli, which provide better performance and compression than gzip.</p>
+<h4 id="is-wordops-lets-encrypt-stack-compatible-with-cloudflare-cdn">Is WordOps Let's Encrypt stack compatible with Cloudflare CDN ?<a class="headerlink" href="#is-wordops-lets-encrypt-stack-compatible-with-cloudflare-cdn" title="Permanent link">&para;</a></h4>
+<p>WordOps Let's Encrypt stack is compatible with Cloudflare CDN, but we still have an higher failure rate when issuing SSL certificates on domains under Cloudflare CDN. We are working on it and we will keep you update as soon as we find a workaround to this issue.</p>
                 
                   
                 
