@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.2">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.2.0">
     
     
       
@@ -42,12 +42,12 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.3020aac5.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.750b69bd.css">
       
       
     
     
-      <script src="../../assets/javascripts/modernizr.01ccdecf.js"></script>
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
@@ -543,6 +543,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#site-info" title="site info" class="md-nav__link">
+    site info
+  </a>
   
 </li>
       
@@ -1060,6 +1067,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#site-info" title="site info" class="md-nav__link">
+    site info
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#site-delete" title="site delete" class="md-nav__link">
     site delete
   </a>
@@ -1428,6 +1442,9 @@
 <li>While updating current mysql site WordOps uses same database for installing wordpress tables.</li>
 <li>All these backup are stored outside htdocs, in backup directory.</li>
 </ul>
+<p>Example : updating site from basic wp to wp + fastcgi_cache :</p>
+<video align="center" src="/images/wo-site-update.webm" width="720" autoplay loop></video>
+
 <h3 id="usage_1">Usage<a class="headerlink" href="#usage_1" title="Permanent link">&para;</a></h3>
 <p>Usage :</p>
 <div class="codehilite"><pre><span></span>wo site update  <span class="o">[</span>&lt;site_name&gt;<span class="o">]</span> <span class="o">[</span>options<span class="o">]</span>
@@ -1512,6 +1529,13 @@
 </tr>
 </tbody>
 </table>
+<h2 id="site-info">site info<a class="headerlink" href="#site-info" title="Permanent link">&para;</a></h2>
+<p>Get site information including cache backend, PHP version or user database credentials</p>
+<p>Usage :</p>
+<div class="codehilite"><pre><span></span>wo site info <span class="o">[</span>&lt;site_name&gt;<span class="o">]</span>
+</pre></div>
+
+
 <h2 id="site-delete">site delete<a class="headerlink" href="#site-delete" title="Permanent link">&para;</a></h2>
 <p>Usage :</p>
 <div class="codehilite"><pre><span></span>wo site delete  <span class="o">[</span>&lt;site_name&gt;<span class="o">]</span> <span class="o">[</span>options<span class="o">]</span>
@@ -1597,7 +1621,7 @@
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2019 WordOps
+            Copyright &copy; 2019 WordOps - <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img style="display:inline;" alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
           </div>
         
         powered by
@@ -1628,7 +1652,7 @@
       
     </div>
     
-      <script src="../../assets/javascripts/application.267712eb.js"></script>
+      <script src="../../assets/javascripts/application.39abc4af.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
