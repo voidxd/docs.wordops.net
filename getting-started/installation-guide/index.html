@@ -353,6 +353,27 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#create-wordops-db" title="Create WordOps db" class="md-nav__link">
+    Create WordOps db
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-acmesh" title="Install acme.sh" class="md-nav__link">
+    Install acme.sh
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-wp-cli" title="Install WP-CLI" class="md-nav__link">
+    Install WP-CLI
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -815,6 +836,27 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#create-wordops-db" title="Create WordOps db" class="md-nav__link">
+    Create WordOps db
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-acmesh" title="Install acme.sh" class="md-nav__link">
+    Install acme.sh
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-wp-cli" title="Install WP-CLI" class="md-nav__link">
+    Install WP-CLI
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -853,23 +895,20 @@ sudo bash install
 </pre></div>
 
 
-<div class="admonition info">
-<p class="admonition-title">Information</p>
-<p>During the installation, you will be prompt for an username and an email address. WordOps need those informations to configure Git version control and to use it for saving server configurations. Your informations will <strong>only be stored</strong> in the file .gitconfig.</p>
-</div>
+<p>!!! info "Information" During the installation, you will be prompt for an username and an email address. WordOps need those informations to configure Git version control and to use it for saving server configurations. Your informations will <strong>only be stored</strong> in the file .gitconfig.</p>
 <h2 id="manual-installation">Manual Installation<a class="headerlink" href="#manual-installation" title="Permanent link">&para;</a></h2>
 <p>If you prefer to perform yourself the same steps than our installer script, here how to install WordOps manually.</p>
 <h3 id="install-wordops-dependencies">Install WordOps dependencies<a class="headerlink" href="#install-wordops-dependencies" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="c1"># On Ubuntu</span>
 apt-get install build-essential bash-completion curl gzip python3 <span class="se">\</span>
 python3-apt python3-setuptools python3-dev sqlite3 git tar <span class="se">\</span>
-software-properties-common pigz gnupg2 fail2ban cron ccze rsync -y
+software-properties-common pigz gnupg2 cron ccze rsync -y
 
 <span class="c1"># On Debian</span>
 apt-get install build-essential bash-completion curl gzip dirmngr <span class="se">\</span>
 sudo python3 python3-apt python3-setuptools python3-dev  <span class="se">\</span>
 ca-certificates sqlite3 git tar software-properties-common <span class="se">\</span>
-pigz apt-transport-https gnupg2 fail2ban cron ccze rsync -y
+pigz apt-transport-https gnupg2 cron ccze rsync -y
 </pre></div>
 
 
@@ -878,9 +917,75 @@ pigz apt-transport-https gnupg2 fail2ban cron ccze rsync -y
 </pre></div>
 
 
+<p>create log directory</p>
+<div class="codehilite"><pre><span></span>mkdir -p /var/log/wo
+</pre></div>
+
+
 <h3 id="install-wordops">Install WordOps<a class="headerlink" href="#install-wordops" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="nb">cd</span> WordOps/
 python3 setup.py install
+</pre></div>
+
+
+<h3 id="create-wordops-db">Create WordOps db<a class="headerlink" href="#create-wordops-db" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>mkdir -p /var/lib/wo
+
+<span class="c1"># Create an empty database for WordOps</span>
+        <span class="nb">echo</span> <span class="s2">&quot;CREATE TABLE sites (</span>
+<span class="s2">       id INTEGER PRIMARY KEY     AUTOINCREMENT,</span>
+<span class="s2">       sitename UNIQUE,</span>
+<span class="s2">       site_type CHAR,</span>
+<span class="s2">       cache_type CHAR,</span>
+<span class="s2">       site_path  CHAR,</span>
+<span class="s2">       created_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP,</span>
+<span class="s2">       is_enabled INT,</span>
+<span class="s2">       is_ssl INT,</span>
+<span class="s2">       storage_fs CHAR,</span>
+<span class="s2">       storage_db CHAR,</span>
+<span class="s2">       db_name VARCHAR,</span>
+<span class="s2">       db_user VARCHAR,</span>
+<span class="s2">       db_password VARCHAR,</span>
+<span class="s2">       db_host VARCHAR,</span>
+<span class="s2">       is_hhvm INT INT DEFAULT &#39;0&#39;,</span>
+<span class="s2">       php_version VARCHAR</span>
+<span class="s2">        );&quot;</span> <span class="p">|</span> sqlite3 /var/lib/wo/dbase.db
+
+<span class="c1"># secure the db</span>
+chown -R root:root /var/lib/wo
+<span class="c1"># Only allow access by root, block others</span>
+chmod -R <span class="m">600</span> /var/lib/wo
+</pre></div>
+
+
+<h3 id="install-acmesh">Install acme.sh<a class="headerlink" href="#install-acmesh" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="c1"># clone the repository</span>
+git clone &lt;https://github.com/Neilpang/acme.sh.git&gt; /opt/acme.sh -q
+
+<span class="c1"># create conf directory</span>
+mkdir -p /etc/letsencrypt/<span class="o">{</span>config,live,renewal<span class="o">}</span>
+
+<span class="c1"># install acme.sh</span>
+<span class="nb">cd</span> /opt/acme.sh
+./acme.sh --install <span class="se">\</span>
+            --home /etc/letsencrypt <span class="se">\</span>
+            --config-home /etc/letsencrypt/config <span class="se">\</span>
+            --cert-home /etc/letsencrypt/renewal
+
+<span class="c1"># create .well-known directory</span>
+mkdir -p /var/www/html/.well-known/acme-challenge
+
+<span class="c1"># set www-data as owner</span>
+chown -R www-data:www-data /var/www/html /var/www/html/.well-known
+
+<span class="c1"># set permissions</span>
+chmod <span class="m">750</span> /var/www/html /var/www/html/.well-known
+</pre></div>
+
+
+<h3 id="install-wp-cli">Install WP-CLI<a class="headerlink" href="#install-wp-cli" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>wget -qO /usr/local/bin/wp https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+chmod +x /usr/local/bin/wp
 </pre></div>
                 
                   
