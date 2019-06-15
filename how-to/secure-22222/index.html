@@ -36,7 +36,7 @@
 --key-file /etc/letsencrypt/live/<span class="nv">$DOMAIN_NAME</span>/key.pem <span class="se">\</span>
 --fullchain-file /etc/letsencrypt/live/<span class="nv">$DOMAIN_NAME</span>/fullchain.pem <span class="se">\</span>
 --ca-file /etc/letsencrypt/live/<span class="nv">$DOMAIN_NAME</span>/ca.pem <span class="se">\</span>
---reloadcmd <span class="s2">&quot;systemctl restart nginx.service&quot;</span>
+--reloadcmd <span class="s2">&quot;nginx -t &amp;&amp; systemctl restart nginx.service&quot;</span>
 </pre></div>
 
 
