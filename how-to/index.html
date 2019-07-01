@@ -543,6 +543,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#renew-a-lets-encrypt-ssl-certificates-with-wordops" title="Renew a Let's Encrypt SSL Certificates with WordOps" class="md-nav__link">
+    Renew a Let's Encrypt SSL Certificates with WordOps
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -802,6 +809,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#renew-a-lets-encrypt-ssl-certificates-with-wordops" title="Renew a Let's Encrypt SSL Certificates with WordOps" class="md-nav__link">
+    Renew a Let's Encrypt SSL Certificates with WordOps
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -831,6 +845,7 @@
 <ul>
 <li><a href="wp-language/">How to set default language for WordPress install ?</a></li>
 <li><a href="secure-22222/">How to secure WordOps backend with Let's Encrypt SSL certificate ?</a></li>
+<li><a href="#renew-a-lets-encrypt-ssl-certificates-with-wordops">How to renew Let's Encrypt Certificates ?</a></li>
 </ul>
 <h2 id="other-questions">Other questions<a class="headerlink" href="#other-questions" title="Permanent link">&para;</a></h2>
 <h4 id="get-a-list-of-wordops-commands">Get a list of WordOps commands<a class="headerlink" href="#get-a-list-of-wordops-commands" title="Permanent link">&para;</a></h4>
@@ -844,6 +859,7 @@
 </pre></div>
 
 
+<hr />
 <h4 id="get-the-mysql-root-password">Get the MySQL root password<a class="headerlink" href="#get-the-mysql-root-password" title="Permanent link">&para;</a></h4>
 <p>MySQL root password is stored in the file <code>/etc/mysql/conf.d/my.cnf</code></p>
 <h4 id="display-mysql-user-and-password-of-a-site">Display MySQL user and password of a site<a class="headerlink" href="#display-mysql-user-and-password-of-a-site" title="Permanent link">&para;</a></h4>
@@ -852,6 +868,7 @@
 </pre></div>
 
 
+<hr />
 <h4 id="access-wordops-backend">Access WordOps backend<a class="headerlink" href="#access-wordops-backend" title="Permanent link">&para;</a></h4>
 <p>WordOps backend is available on port 22222, you can access it with the server IP, hostname or with a domain pointed to the server IP :</p>
 <div class="codehilite"><pre><span></span><span class="c1"># with server IP</span>
@@ -869,6 +886,12 @@ https://site.tld:22222
 <p>You can use the command :</p>
 <div class="codehilite"><pre><span></span>wo secure --auth
 </pre></div>
+
+
+<hr />
+<h4 id="renew-a-lets-encrypt-ssl-certificates-with-wordops">Renew a Let's Encrypt SSL Certificates with WordOps<a class="headerlink" href="#renew-a-lets-encrypt-ssl-certificates-with-wordops" title="Permanent link">&para;</a></h4>
+<p>Previously with EasyEngine v3, Let's Encrypt certificates were renewed by running the command <code>ee site update --le=renew --all</code> with a cronjob.</p>
+<p>You may have noticed the command <code>site update --le=renew</code> still exist in WordOps, but you shouln't need it because WordOps use the awesome acme client acme.sh to issue and handle Let's Encrypt SSL certificates. All certificates are <strong>automatically renewed every 60 days</strong> by acme.sh using a cronjob.</p>
                 
                   
                 
