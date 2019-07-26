@@ -91,6 +91,10 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
+      <a href="#troubleshooting" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -661,10 +665,68 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Troubleshooting
+      </label>
     
     <a href="./" title="Troubleshooting" class="md-nav__link md-nav__link--active">
       Troubleshooting
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#common-issues" title="Common issues" class="md-nav__link">
+    Common issues
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-command-wo-update-failed" title="The command wo update failed" class="md-nav__link">
+    The command wo update failed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wordops-failed-to-issue-ssl-certificate" title="WordOps failed to issue SSL certificate" class="md-nav__link">
+    WordOps failed to issue SSL certificate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nginx-cpu-usage-is-very-high" title="Nginx CPU usage is very high" class="md-nav__link">
+    Nginx CPU usage is very high
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -760,6 +822,64 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#common-issues" title="Common issues" class="md-nav__link">
+    Common issues
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-command-wo-update-failed" title="The command wo update failed" class="md-nav__link">
+    The command wo update failed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wordops-failed-to-issue-ssl-certificate" title="WordOps failed to issue SSL certificate" class="md-nav__link">
+    WordOps failed to issue SSL certificate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nginx-cpu-usage-is-very-high" title="Nginx CPU usage is very high" class="md-nav__link">
+    Nginx CPU usage is very high
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
@@ -768,9 +888,32 @@
                   <a href="https://github.com/WordOps/docs.wordops.net/edit/master/docs/troubleshooting.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Troubleshooting</h1>
-                
-                
+                <h1 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h1>
+<h2 id="common-issues">Common issues<a class="headerlink" href="#common-issues" title="Permanent link">&para;</a></h2>
+<h3 id="the-command-wo-update-failed">The command <code class="codehilite"><span class="n">wo</span> <span class="k">update</span></code> failed<a class="headerlink" href="#the-command-wo-update-failed" title="Permanent link">&para;</a></h3>
+<p>This is a known issue with WordOps v3.9.6 which has been fixed with the maintenance release v3.9.6.1.
+As a workaround you can either use the command <code class="codehilite"><span class="n">wo</span> <span class="k">update</span> <span class="c1">--beta</span></code> or run again the install command :</p>
+<div class="codehilite"><pre><span></span>wget -qO wo wops.cc <span class="o">&amp;&amp;</span> sudo bash wo
+</pre></div>
+
+<hr />
+<h3 id="wordops-failed-to-issue-ssl-certificate">WordOps failed to issue SSL certificate<a class="headerlink" href="#wordops-failed-to-issue-ssl-certificate" title="Permanent link">&para;</a></h3>
+<p>At first, make sure your domain is pointed to your server IP :</p>
+<ul>
+<li><a href="http://www.site.tld">www.site.tld</a> + site.tld if you use the flag <code class="codehilite"><span class="o">-</span><span class="n">le</span></code> or <code class="codehilite"><span class="c1">--letsencrypt</span></code></li>
+<li>sub.site.tld if you use the flag <code class="codehilite"><span class="o">-</span><span class="n">le</span><span class="o">=</span><span class="n">subdomain</span></code> or <code class="codehilite"><span class="c1">--letsencrypt=subdomain</span></code></li>
+</ul>
+<p>Then if you need to cleanup the previous SSL certificate, you can use the following command to remove existant certificates and keys, as well as other Nginx configurations for your domain :</p>
+<div class="codehilite"><pre><span></span>wo site update site.tld --letsencrypt<span class="o">=</span>clean
+</pre></div>
+
+<h3 id="nginx-cpu-usage-is-very-high">Nginx CPU usage is very high<a class="headerlink" href="#nginx-cpu-usage-is-very-high" title="Permanent link">&para;</a></h3>
+<p>This issue seems to be related to brotli but, but even after investigation, we haven't be able to find the cause of this issue yet.</p>
+<p>You can disable brotli compression by running the following command :</p>
+<div class="codehilite"><pre><span></span>sudo sed -i <span class="s1">&#39;s/brotli on;/brotli off;/&#39;</span> /etc/nginx/nginx.conf
+sudo sed -i <span class="s1">&#39;s/brotli_static on;/brotli_static off;/&#39;</span> /etc/nginx/nginx.conf
+sudo nginx -t <span class="o">&amp;&amp;</span> sudo service nginx reload
+</pre></div>
                 
                   
                 
