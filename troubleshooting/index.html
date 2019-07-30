@@ -715,6 +715,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#when-i-update-a-page-changes-are-not-applied-on-the-site" title="When I update a page, changes are not applied on the site" class="md-nav__link">
+    When I update a page, changes are not applied on the site
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -864,6 +871,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#when-i-update-a-page-changes-are-not-applied-on-the-site" title="When I update a page, changes are not applied on the site" class="md-nav__link">
+    When I update a page, changes are not applied on the site
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -914,6 +928,21 @@ As a workaround you can either use the command <code class="codehilite"><span cl
 sudo sed -i <span class="s1">&#39;s/brotli_static on;/brotli_static off;/&#39;</span> /etc/nginx/nginx.conf
 sudo nginx -t <span class="o">&amp;&amp;</span> sudo service nginx restart
 </pre></div>
+
+<h3 id="when-i-update-a-page-changes-are-not-applied-on-the-site">When I update a page, changes are not applied on the site<a class="headerlink" href="#when-i-update-a-page-changes-are-not-applied-on-the-site" title="Permanent link">&para;</a></h3>
+<p>If you are using Nginx fastcgi_cache, please make sure :</p>
+<ul>
+<li>Nginx-helper plugin is enabled</li>
+<li>the option "purge cache" is enabled in Settings &gt; Nginx-Helper</li>
+<li>the caching method is defined on Nginx Fastcgi cache</li>
+</ul>
+<p>If you are using Redis-cache, please make sure :</p>
+<ul>
+<li>Nginx-helper plugin is enabled</li>
+<li>the option "purge cache" is enabled in Settings &gt; Nginx-Helper</li>
+<li>the caching method is defined on Redis Cache</li>
+<li>the prefix defined is <code class="codehilite"><span class="n">nginx</span><span class="o">-</span><span class="k">cache</span><span class="p">:</span></code></li>
+</ul>
                 
                   
                 
