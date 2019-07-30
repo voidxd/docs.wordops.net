@@ -912,7 +912,7 @@ As a workaround you can either use the command <code class="codehilite"><span cl
 <p>You can disable brotli compression by running the following command :</p>
 <div class="codehilite"><pre><span></span>sudo sed -i <span class="s1">&#39;s/brotli on;/brotli off;/&#39;</span> /etc/nginx/nginx.conf
 sudo sed -i <span class="s1">&#39;s/brotli_static on;/brotli_static off;/&#39;</span> /etc/nginx/nginx.conf
-sudo nginx -t <span class="o">&amp;&amp;</span> sudo service nginx reload
+sudo nginx -t <span class="o">&amp;&amp;</span> sudo service nginx restart
 </pre></div>
                 
                   
