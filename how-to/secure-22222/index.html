@@ -855,7 +855,7 @@
 <p>Those new features are planned for the next WordOps release (v4.0). But we have already make some changes on WordOps backend configuration, and it's already easier to secure the backend available on the port 22222 with Let's Encrypt SSL certificate.</p>
 <h2 id="secure-wordops-backend-with-the-same-certificate-than-another-site">Secure WordOps backend with the same certificate than another site<a class="headerlink" href="#secure-wordops-backend-with-the-same-certificate-than-another-site" title="Permanent link">&para;</a></h2>
 <p>If you already have a site secured with Let's Encrypt, you just have to copy the <code class="codehilite"><span class="n">ssl</span><span class="p">.</span><span class="n">conf</span></code> file stored in <code class="codehilite"><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">site</span><span class="p">.</span><span class="n">tld</span><span class="o">/</span><span class="n">conf</span><span class="o">/</span><span class="n">nginx</span></code>.</p>
-<div class="codehilite"><pre><span></span>sudo cp -f /var/www/site.tld/conf/nginx/ssl.conf /var/www/22222/conf/nginx/ssl.conf
+<div class="codehilite"><pre><span></span>sudo grep <span class="s2">&quot;ssl_&quot;</span> /var/www/site.tld/conf/nginx/ssl.conf &gt; /var/www/22222/conf/nginx/ssl.conf
 </pre></div>
 
 <p>Then reload Nginx :</p>
