@@ -85,6 +85,10 @@
                 font-family: 'Roboto Mono';
             }
 
+            code,kbd,pre {
+            font-family: 'Roboto Mono';
+            }
+
             .md-typeset__table tr :nth-child(1) {
                 word-wrap: break-word;
                 max-width: 30em
