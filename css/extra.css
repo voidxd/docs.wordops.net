@@ -73,3 +73,14 @@
             .codehilite .c1 {
                 color: #222
             }
+
+            #intro {
+                max-width: 100%;
+            }
+
+            @media only screen and (max-width: 600px) {
+            .md-typeset {
+                font-size: .80rem;
+                line-height: 1.;
+            }
+            }
