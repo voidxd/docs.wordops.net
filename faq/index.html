@@ -785,6 +785,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#how-to-uninstall-wordops" title="How to uninstall WordOps ?" class="md-nav__link">
+    How to uninstall WordOps ?
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1008,6 +1015,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#how-to-uninstall-wordops" title="How to uninstall WordOps ?" class="md-nav__link">
+    How to uninstall WordOps ?
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1083,6 +1097,14 @@ Support for other linux distribution isn't planned.</p>
 <p>We disabled gzip compression by default due to gzip related security issues when using TLS connection. More informations here <a href="https://en.wikipedia.org/wiki/BREACH">BREACH CVE</a>. We replaced gzip by brotli, which provide better performance and compression than gzip.</p>
 <h3 id="is-wordops-lets-encrypt-stack-compatible-with-cloudflare-cdn">Is WordOps Let's Encrypt stack compatible with Cloudflare CDN ?<a class="headerlink" href="#is-wordops-lets-encrypt-stack-compatible-with-cloudflare-cdn" title="Permanent link">&para;</a></h3>
 <p>WordOps Let's Encrypt stack is fully compatible with Cloudflare CDN, and you can use Cloudflare DNS API to issue your certificates even if the domain is not pointed to your server IP.</p>
+<h3 id="how-to-uninstall-wordops">How to uninstall WordOps ?<a class="headerlink" href="#how-to-uninstall-wordops" title="Permanent link">&para;</a></h3>
+<p>If you need/want to uninstall WordOps, you can use the following commands :</p>
+<div class="codehilite"><pre><span></span><span class="c1"># purge wordops packages (nginx, mysql, php etc..) - make a backup of your databases before running it</span>
+wo stack purge --all
+
+<span class="c1"># uninstall wordops</span>
+wget -qO wo wops.cc <span class="o">&amp;&amp;</span> sudo bash wo --purge
+</pre></div>
                 
                   
                 
