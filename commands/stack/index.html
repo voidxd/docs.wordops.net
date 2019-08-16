@@ -780,7 +780,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../faq/" title="F.A.Q" class="md-nav__link">
+    <a href="https://wordops.net/f-a-q/" title="F.A.Q" class="md-nav__link">
       F.A.Q
     </a>
   </li>
@@ -1046,76 +1046,94 @@
 <thead>
 <tr>
 <th>options</th>
+<th>type</th>
 <th>description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code class="codehilite"><span class="c1">--web</span></code></td>
-<td>install web  stack (Nginx, PHP, MySQL, WP-CLI)</td>
+<td>group</td>
+<td>Nginx, PHP, MySQL, WP-CLI</td>
 </tr>
 <tr>
 <td><code class="codehilite"><span class="c1">--admin</span></code></td>
-<td>install admin stack (phpMyAdmin, Adminer, Dashboard, Netdata, MySQLTuner ...)</td>
+<td>group</td>
+<td>phpMyAdmin, Adminer, Dashboard, Netdata, MySQLTuner ...</td>
 </tr>
 <tr>
 <td><code class="codehilite"><span class="c1">--nginx</span></code></td>
+<td>APT package</td>
 <td>install nginx stack</td>
 </tr>
 <tr>
 <td><code class="codehilite"><span class="c1">--php</span></code></td>
+<td>APT package</td>
 <td>install PHP7.2-FPM stack</td>
 </tr>
 <tr>
 <td><code class="codehilite"><span class="c1">--php73</span></code></td>
+<td>APT package</td>
 <td>install PHP7.3-FPM stack</td>
 </tr>
 <tr>
 <td><code class="codehilite"><span class="c1">--mysql</span></code></td>
+<td>APT package</td>
 <td>install MariaDB stack</td>
 </tr>
 <tr>
 <td><code class="codehilite"><span class="c1">--redis</span></code></td>
+<td>APT package</td>
 <td>install Redis stack</td>
 </tr>
 <tr>
 <td><code class="codehilite"><span class="c1">--wpcli</span></code></td>
+<td>Binary</td>
 <td>install WP-CLI</td>
 </tr>
 <tr>
 <td><code class="codehilite"><span class="c1">--phpmyadmin</span></code></td>
+<td>Web App</td>
 <td>install phpMyAdmin</td>
 </tr>
 <tr>
 <td><code class="codehilite"><span class="c1">--composer</span></code></td>
+<td>Binary</td>
 <td>install Composer</td>
 </tr>
 <tr>
 <td><code class="codehilite"><span class="c1">--netdata</span></code></td>
+<td>Binary</td>
 <td>install Netdata</td>
 </tr>
 <tr>
 <td><code class="codehilite"><span class="c1">--dashboard</span></code></td>
+<td>Web App</td>
 <td>install WordOps dashboard</td>
 </tr>
 <tr>
 <td><code class="codehilite"><span class="c1">--adminer</span></code></td>
+<td>Web App</td>
 <td>install adminer</td>
 </tr>
 <tr>
 <td><code class="codehilite"><span class="c1">--fail2ban</span></code></td>
+<td>APT package</td>
 <td>install fail2ban</td>
 </tr>
 <tr>
 <td><code class="codehilite"><span class="c1">--utils</span></code></td>
-<td>install several admin tools</td>
+<td>Group</td>
+<td>OpcacheGUI, Webgrind, Anemometer</td>
 </tr>
 <tr>
 <td><code class="codehilite"><span class="c1">--phpredisadmin</span></code></td>
+<td>Webp App</td>
 <td>install phpredisadmin</td>
 </tr>
 <tr>
 <td><code class="codehilite"><span class="c1">--proftpd</span></code></td>
+<td>APT package</td>
 <td>install proftpd stack</td>
 </tr>
 </tbody>
@@ -1127,7 +1145,7 @@
 <video align="center" src="/images/wo-stack.webm" width="720" autoplay loop></video>
 
 <p>This will install the <code class="codehilite"><span class="c1">--web</span></code> stack and <code class="codehilite"><span class="c1">--admin</span></code> stack.</p>
-<p>Nginx, PHP 7.2, MariaDB, Netdata, WordOps dashboard, phpMyAdmin, Adminer, MySQLtuner, OpcacheGUI</p>
+<p>Nginx, PHP 7.2, MariaDB, Netdata, Fail2Ban, WordOps dashboard, phpMyAdmin, Adminer, MySQLtuner, OpcacheGUI</p>
 <h3 id="web">Web<a class="headerlink" href="#web" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span>wo stack install --web
 </pre></div>
