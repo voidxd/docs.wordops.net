@@ -608,16 +608,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#using-another-certificate" title="Using another certificate" class="md-nav__link">
+    Using another certificate
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#secure-wordops-backend-with-the-same-certificate-than-another-site" title="Secure WordOps backend with the same certificate than another site" class="md-nav__link">
     Secure WordOps backend with the same certificate than another site
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#issue-a-new-certificate-to-secure-wordops-backend" title="Issue a new certificate to secure WordOps backend" class="md-nav__link">
     Issue a new certificate to secure WordOps backend
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -850,16 +863,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#using-another-certificate" title="Using another certificate" class="md-nav__link">
+    Using another certificate
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#secure-wordops-backend-with-the-same-certificate-than-another-site" title="Secure WordOps backend with the same certificate than another site" class="md-nav__link">
     Secure WordOps backend with the same certificate than another site
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#issue-a-new-certificate-to-secure-wordops-backend" title="Issue a new certificate to secure WordOps backend" class="md-nav__link">
     Issue a new certificate to secure WordOps backend
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -883,19 +909,20 @@
                 
                 
                 <h1 id="how-to-secure-wordops-backend-with-lets-encrypt-ssl-certificate">How to secure WordOps backend with Let's Encrypt SSL certificate<a class="headerlink" href="#how-to-secure-wordops-backend-with-lets-encrypt-ssl-certificate" title="Permanent link">&para;</a></h1>
-<p>We are currently working on refactoring the Let's Encrypt stack from scratch, to add support for DNS validation, wildcard SSL certificates and to secure WordOps backend automatically.</p>
-<p>Those new features are planned for the next WordOps release (v4.0). But we have already make some changes on WordOps backend configuration, and it's already easier to secure the backend available on the port 22222 with Let's Encrypt SSL certificate.</p>
-<h2 id="secure-wordops-backend-with-the-same-certificate-than-another-site">Secure WordOps backend with the same certificate than another site<a class="headerlink" href="#secure-wordops-backend-with-the-same-certificate-than-another-site" title="Permanent link">&para;</a></h2>
+<p>WordOps will automatically secure the backend on port 22222 with the first SSL certificate issued on the server. So you just have to create basic site with the arguments <code class="codehilite"><span class="c1">--letsencrypt</span></code> or <code class="codehilite"><span class="c1">--letsencrypt=subdomain</span></code> to secure the backend.</p>
+<h2 id="using-another-certificate">Using another certificate<a class="headerlink" href="#using-another-certificate" title="Permanent link">&para;</a></h2>
+<h3 id="secure-wordops-backend-with-the-same-certificate-than-another-site">Secure WordOps backend with the same certificate than another site<a class="headerlink" href="#secure-wordops-backend-with-the-same-certificate-than-another-site" title="Permanent link">&para;</a></h3>
 <p>If you already have a site secured with Let's Encrypt, you just have to copy the <code class="codehilite"><span class="n">ssl</span><span class="p">.</span><span class="n">conf</span></code> file stored in <code class="codehilite"><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">site</span><span class="p">.</span><span class="n">tld</span><span class="o">/</span><span class="n">conf</span><span class="o">/</span><span class="n">nginx</span></code>.</p>
-<div class="codehilite"><pre><span></span>sudo grep <span class="s2">&quot;ssl_&quot;</span> /var/www/site.tld/conf/nginx/ssl.conf &gt; /var/www/22222/conf/nginx/ssl.conf
+<div class="codehilite"><pre><span></span><span class="nv">DOMAIN_NAME</span><span class="o">=</span>site.ltd
+sudo grep <span class="s2">&quot;ssl_&quot;</span> /var/www/<span class="si">${</span><span class="nv">DOMAIN_NAME</span><span class="si">}</span>/conf/nginx/ssl.conf &gt; /var/www/22222/conf/nginx/ssl.conf
 </pre></div>
 
 <p>Then reload Nginx :</p>
-<div class="codehilite"><pre><span></span>sudo service nginx reload
+<div class="codehilite"><pre><span></span>wo stack restart --nginx
 </pre></div>
 
 <p>You should now be able to access to WordOps backend on <code class="codehilite"><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">site</span><span class="p">.</span><span class="n">tld</span><span class="p">:</span><span class="mi">22222</span></code></p>
-<h2 id="issue-a-new-certificate-to-secure-wordops-backend">Issue a new certificate to secure WordOps backend<a class="headerlink" href="#issue-a-new-certificate-to-secure-wordops-backend" title="Permanent link">&para;</a></h2>
+<h3 id="issue-a-new-certificate-to-secure-wordops-backend">Issue a new certificate to secure WordOps backend<a class="headerlink" href="#issue-a-new-certificate-to-secure-wordops-backend" title="Permanent link">&para;</a></h3>
 <p>If you prefer to issue manually a new Let's Encrypt SSL certificate, here the steps to follow :</p>
 <p>Set your domain or subdomain as a variable :</p>
 <div class="codehilite"><pre><span></span><span class="nv">DOMAIN_NAME</span><span class="o">=</span>backend.site.ltd
@@ -927,7 +954,7 @@
 </pre></div>
 
 <p>Then reload nginx</p>
-<div class="codehilite"><pre><span></span>sudo service nginx reload
+<div class="codehilite"><pre><span></span>wo stack restart --nginx
 </pre></div>
                 
                   
