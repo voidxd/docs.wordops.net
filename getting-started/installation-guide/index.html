@@ -429,13 +429,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#create-wordops-db" title="Create WordOps db" class="md-nav__link">
-    Create WordOps db
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#install-acmesh" title="Install acme.sh" class="md-nav__link">
     Install acme.sh
   </a>
@@ -960,13 +953,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#create-wordops-db" title="Create WordOps db" class="md-nav__link">
-    Create WordOps db
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#install-acmesh" title="Install acme.sh" class="md-nav__link">
     Install acme.sh
   </a>
@@ -1048,35 +1034,6 @@ pigz apt-transport-https gnupg2 cron ccze rsync -y
 <h3 id="install-wordops">Install WordOps<a class="headerlink" href="#install-wordops" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="nb">cd</span> WordOps/
 python3 setup.py install
-</pre></div>
-
-<h3 id="create-wordops-db">Create WordOps db<a class="headerlink" href="#create-wordops-db" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>mkdir -p /var/lib/wo
-
-<span class="c1"># Create an empty database for WordOps</span>
-        <span class="nb">echo</span> <span class="s2">&quot;CREATE TABLE sites (</span>
-<span class="s2">       id INTEGER PRIMARY KEY     AUTOINCREMENT,</span>
-<span class="s2">       sitename UNIQUE,</span>
-<span class="s2">       site_type CHAR,</span>
-<span class="s2">       cache_type CHAR,</span>
-<span class="s2">       site_path  CHAR,</span>
-<span class="s2">       created_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP,</span>
-<span class="s2">       is_enabled INT,</span>
-<span class="s2">       is_ssl INT,</span>
-<span class="s2">       storage_fs CHAR,</span>
-<span class="s2">       storage_db CHAR,</span>
-<span class="s2">       db_name VARCHAR,</span>
-<span class="s2">       db_user VARCHAR,</span>
-<span class="s2">       db_password VARCHAR,</span>
-<span class="s2">       db_host VARCHAR,</span>
-<span class="s2">       is_hhvm INT INT DEFAULT &#39;0&#39;,</span>
-<span class="s2">       php_version VARCHAR</span>
-<span class="s2">        );&quot;</span> <span class="p">|</span> sqlite3 /var/lib/wo/dbase.db
-
-<span class="c1"># secure the db</span>
-chown -R root:root /var/lib/wo
-<span class="c1"># Only allow access by root, block others</span>
-chmod -R <span class="m">600</span> /var/lib/wo
 </pre></div>
 
 <h3 id="install-acmesh">Install acme.sh<a class="headerlink" href="#install-acmesh" title="Permanent link">&para;</a></h3>
