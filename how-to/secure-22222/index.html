@@ -309,6 +309,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://github.com/WordOps/WordOps/graphs/contributors" title="Contributors" class="md-nav__link">
+      Contributors
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -909,7 +921,7 @@
                 
                 
                 <h1 id="how-to-secure-wordops-backend-with-lets-encrypt-ssl-certificate">How to secure WordOps backend with Let's Encrypt SSL certificate<a class="headerlink" href="#how-to-secure-wordops-backend-with-lets-encrypt-ssl-certificate" title="Permanent link">&para;</a></h1>
-<p>WordOps will automatically secure the backend on port 22222 with the first SSL certificate issued on the server. So you just have to create basic site with the arguments <code class="codehilite"><span class="c1">--letsencrypt</span></code> or <code class="codehilite"><span class="c1">--letsencrypt=subdomain</span></code> to secure the backend.</p>
+<p>From the release v3.9.8.1 and onward, WordOps will automatically secure the backend on port 22222 with the first SSL certificate issued on the server. So you just have to create basic site with the arguments <code class="codehilite"><span class="c1">--letsencrypt</span></code> or <code class="codehilite"><span class="c1">--letsencrypt=subdomain</span></code> to secure the backend.</p>
 <h2 id="using-another-certificate">Using another certificate<a class="headerlink" href="#using-another-certificate" title="Permanent link">&para;</a></h2>
 <h3 id="secure-wordops-backend-with-the-same-certificate-than-another-site">Secure WordOps backend with the same certificate than another site<a class="headerlink" href="#secure-wordops-backend-with-the-same-certificate-than-another-site" title="Permanent link">&para;</a></h3>
 <p>If you already have a site secured with Let's Encrypt, you just have to copy the <code class="codehilite"><span class="n">ssl</span><span class="p">.</span><span class="n">conf</span></code> file stored in <code class="codehilite"><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">site</span><span class="p">.</span><span class="n">tld</span><span class="o">/</span><span class="n">conf</span><span class="o">/</span><span class="n">nginx</span></code>.</p>
@@ -932,7 +944,7 @@ sudo grep <span class="s2">&quot;ssl_&quot;</span> /var/www/<span class="si">${<
 <div class="codehilite"><pre><span></span>acme.sh --issue -d <span class="nv">$DOMAIN_NAME</span> -k ec-384 -w /var/www/html
 </pre></div>
 
-<p>If the certificate was issued successfully, create a directory to store the certificate</p>
+<p>If the certificate as issued successfully, create a directory to store the certificate</p>
 <div class="codehilite"><pre><span></span>sudo mkdir -p /etc/letsencrypt/live/<span class="si">${</span><span class="nv">DOMAIN_NAME</span><span class="si">}</span>
 </pre></div>
 
