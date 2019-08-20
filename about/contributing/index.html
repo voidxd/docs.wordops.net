@@ -389,6 +389,47 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#languages-and-libraries" title="Languages and Libraries" class="md-nav__link">
+    Languages and Libraries
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-version" title="Python Version" class="md-nav__link">
+    Python Version
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coding-format" title="Coding Format" class="md-nav__link">
+    Coding Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#libraries" title="Libraries" class="md-nav__link">
+    Libraries
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure" title="Structure" class="md-nav__link">
+    Structure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#contributions-ground-rules" title="Contributions Ground Rules" class="md-nav__link">
     Contributions Ground Rules
   </a>
@@ -1011,6 +1052,47 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#languages-and-libraries" title="Languages and Libraries" class="md-nav__link">
+    Languages and Libraries
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-version" title="Python Version" class="md-nav__link">
+    Python Version
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coding-format" title="Coding Format" class="md-nav__link">
+    Coding Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#libraries" title="Libraries" class="md-nav__link">
+    Libraries
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure" title="Structure" class="md-nav__link">
+    Structure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#contributions-ground-rules" title="Contributions Ground Rules" class="md-nav__link">
     Contributions Ground Rules
   </a>
@@ -1071,7 +1153,41 @@
 <h3 id="improve-documentation">Improve documentation<a class="headerlink" href="#improve-documentation" title="Permanent link">&para;</a></h3>
 <p>All of our documentation is in markdown (.md) files inside the WordOps GitHub project. All of our <a href="https://docs.wordops.net">HTML documentation</a> is generated from these files. At the top right of each documentation page you will see a pencil, that leads you directly to the markdown file that was used to generated it. Don't be afraid to click it and edit any of these documents and submit a GitHub Pull Request with your corrections/additions.</p>
 <h2 id="developers">Developers<a class="headerlink" href="#developers" title="Permanent link">&para;</a></h2>
-<p>(available soon)</p>
+<h3 id="languages-and-libraries">Languages and Libraries<a class="headerlink" href="#languages-and-libraries" title="Permanent link">&para;</a></h3>
+<p>WordOps is built with the CLI Framework Cement, with the release v2.8.0 currently.</p>
+<h4 id="python-version">Python Version<a class="headerlink" href="#python-version" title="Permanent link">&para;</a></h4>
+<p>WordOps source code is fully developed in python 3.x version.</p>
+<h4 id="coding-format">Coding Format<a class="headerlink" href="#coding-format" title="Permanent link">&para;</a></h4>
+<p>We are following <a href="https://www.python.org/dev/peps/pep-0008/">PEP8</a> style guide for coding WordOps.</p>
+<h4 id="libraries">Libraries<a class="headerlink" href="#libraries" title="Permanent link">&para;</a></h4>
+<p>Here is the List of Libraries we used for WordOps</p>
+<ul>
+<li><a href="https://pypi.org/project/pystache/">pystache</a></li>
+<li><a href="http://apt.alioth.debian.org/python-apt-doc/library/index.html">python-apt</a></li>
+<li><a href="https://pypi.org/project/pynginxconfig/">pynginxconfig</a></li>
+<li><a href="https://pypi.org/project/PyMySQL/">PyMySQL</a></li>
+<li><a href="https://pypi.org/project/psutil/">psutil</a></li>
+<li><a href="https://amoffat.github.io/sh/">sh</a></li>
+<li><a href="http://www.sqlalchemy.org/">SQLAlchemy</a></li>
+<li><a href="https://pypi.org/project/requests/">requests</a></li>
+<li><a href="https://pypi.org/project/distro/">distro</a></li>
+</ul>
+<h3 id="structure">Structure<a class="headerlink" href="#structure" title="Permanent link">&para;</a></h3>
+<p>WordOps application can be found in the <code class="codehilite"><span class="n">wo</span></code> directory of the github repository
+Here the structure of WordOps with additional comments</p>
+<div class="codehilite"><pre><span></span><span class="n">wo</span>
+<span class="err">├──</span> <span class="n">cli</span> <span class="o">#</span> <span class="n">the</span> <span class="n">main</span> <span class="n">directory</span> <span class="k">of</span> <span class="n">the</span> <span class="n">application</span>
+<span class="err">│</span>   <span class="err">├──</span> <span class="n">__init__</span><span class="p">.</span><span class="n">py</span>
+<span class="err">│</span>   <span class="err">├──</span> <span class="n">bootstrap</span><span class="p">.</span><span class="n">py</span>
+<span class="err">│</span>   <span class="err">├──</span> <span class="n">controllers</span>
+<span class="err">│</span>   <span class="err">├──</span> <span class="n">ext</span>
+<span class="err">│</span>   <span class="err">├──</span> <span class="n">main</span><span class="p">.</span><span class="n">py</span>
+<span class="err">│</span>   <span class="err">├──</span> <span class="n">plugins</span> <span class="o">#</span> <span class="n">WordOps</span> <span class="n">commands</span> <span class="p">(</span><span class="n">stack</span><span class="p">,</span> <span class="n">site</span><span class="p">,</span> <span class="k">update</span> <span class="p">..</span> <span class="n">etc</span><span class="p">)</span>
+<span class="err">│</span>   <span class="err">└──</span> <span class="n">templates</span> <span class="o">#</span> <span class="n">WordOps</span> <span class="n">configuration</span> <span class="k">template</span>
+<span class="err">├──</span> <span class="n">core</span> <span class="o">#</span> <span class="n">functions</span> <span class="n">used</span> <span class="k">in</span> <span class="n">WordOps</span>
+<span class="err">└──</span> <span class="n">utils</span> <span class="o">#</span> <span class="n">testing</span> <span class="n">helper</span>
+</pre></div>
+
 <h3 id="contributions-ground-rules">Contributions Ground Rules<a class="headerlink" href="#contributions-ground-rules" title="Permanent link">&para;</a></h3>
 <h4 id="code-of-conduct-and-cla">Code of Conduct and CLA<a class="headerlink" href="#code-of-conduct-and-cla" title="Permanent link">&para;</a></h4>
 <p>We expect all contributors to abide by the <a href="/about/code-of-conduct.md">Contributor Covenant Code of Conduct</a>.</p>
