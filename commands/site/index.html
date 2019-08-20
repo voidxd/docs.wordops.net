@@ -528,27 +528,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#standard-sites" title="Standard sites" class="md-nav__link">
-    Standard sites
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#multisite-subdirectory" title="Multisite subdirectory" class="md-nav__link">
-    Multisite subdirectory
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#multisite-subdomain" title="Multisite subdomain" class="md-nav__link">
-    Multisite subdomain
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#cheatsheet" title="Cheatsheet" class="md-nav__link">
     Cheatsheet
   </a>
@@ -1179,27 +1158,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#standard-sites" title="Standard sites" class="md-nav__link">
-    Standard sites
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#multisite-subdirectory" title="Multisite subdirectory" class="md-nav__link">
-    Multisite subdirectory
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#multisite-subdomain" title="Multisite subdomain" class="md-nav__link">
-    Multisite subdomain
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#cheatsheet" title="Cheatsheet" class="md-nav__link">
     Cheatsheet
   </a>
@@ -1485,222 +1443,30 @@
 <p>This will create proxy site site.tld with proxy destination as 127.0.0.1:3000. Port is optional. Default port : 80.</p>
 <h3 id="wordpress">WordPress<a class="headerlink" href="#wordpress" title="Permanent link">&para;</a></h3>
 <p>Following are the WordPress website types you can create website based on Cache Mechanism</p>
-<h4 id="standard-sites">Standard sites<a class="headerlink" href="#standard-sites" title="Permanent link">&para;</a></h4>
-<table>
-<thead>
-<tr>
-<th>cache</th>
-<th>PHP</th>
-<th>example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>no cache</td>
-<td>PHP 7.2</td>
-<td><code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">create</span> <span class="n">site</span><span class="p">.</span><span class="n">tld</span> <span class="c1">--wp</span></code></td>
-</tr>
-<tr>
-<td>no cache</td>
-<td>PHP 7.3</td>
-<td><code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">create</span> <span class="n">site</span><span class="p">.</span><span class="n">tld</span> <span class="c1">--wp --php73</span></code></td>
-</tr>
-<tr>
-<td>fastcgi_cache</td>
-<td>PHP 7.2</td>
-<td><code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">create</span> <span class="n">site</span><span class="p">.</span><span class="n">tld</span> <span class="c1">--wpfc</span></code></td>
-</tr>
-<tr>
-<td>fastcgi_cache</td>
-<td>PHP 7.3</td>
-<td><code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">create</span> <span class="n">site</span><span class="p">.</span><span class="n">tld</span> <span class="c1">--wpfc --php73</span></code></td>
-</tr>
-<tr>
-<td>wp-super-cache</td>
-<td>PHP 7.2</td>
-<td><code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">create</span> <span class="n">site</span><span class="p">.</span><span class="n">tld</span> <span class="c1">--wpsc</span></code></td>
-</tr>
-<tr>
-<td>wp-super-cache</td>
-<td>PHP 7.3</td>
-<td><code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">create</span> <span class="n">site</span><span class="p">.</span><span class="n">tld</span> <span class="c1">--wpsc --php73</span></code></td>
-</tr>
-<tr>
-<td>redis-cache</td>
-<td>PHP 7.2</td>
-<td><code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">create</span> <span class="n">site</span><span class="p">.</span><span class="n">tld</span> <span class="c1">--wpredis</span></code></td>
-</tr>
-<tr>
-<td>redis-cache</td>
-<td>PHP 7.3</td>
-<td><code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">create</span> <span class="n">site</span><span class="p">.</span><span class="n">tld</span> <span class="c1">--wpredis --php73</span></code></td>
-</tr>
-<tr>
-<td>WP-Rocket</td>
-<td>PHP 7.2</td>
-<td><code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">create</span> <span class="n">site</span><span class="p">.</span><span class="n">tld</span> <span class="c1">--wprocket</span></code></td>
-</tr>
-<tr>
-<td>WP-Rocket</td>
-<td>PHP 7.3</td>
-<td><code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">create</span> <span class="n">site</span><span class="p">.</span><span class="n">tld</span> <span class="c1">--wprocket --php73</span></code></td>
-</tr>
-<tr>
-<td>Cache-Enabler</td>
-<td>PHP 7.2</td>
-<td><code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">create</span> <span class="n">site</span><span class="p">.</span><span class="n">tld</span> <span class="c1">--wpce</span></code></td>
-</tr>
-<tr>
-<td>Cache-Enabler</td>
-<td>PHP 7.3</td>
-<td><code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">create</span> <span class="n">site</span><span class="p">.</span><span class="n">tld</span> <span class="c1">--wpce --php73</span></code></td>
-</tr>
-</tbody>
-</table>
-<h4 id="multisite-subdirectory">Multisite subdirectory<a class="headerlink" href="#multisite-subdirectory" title="Permanent link">&para;</a></h4>
-<table>
-<thead>
-<tr>
-<th>cache</th>
-<th>PHP</th>
-<th>example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>no cache</td>
-<td>PHP 7.2</td>
-<td><code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">create</span> <span class="n">site</span><span class="p">.</span><span class="n">tld</span> <span class="c1">--wpsubdir</span></code></td>
-</tr>
-<tr>
-<td>no cache</td>
-<td>PHP 7.3</td>
-<td><code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">create</span> <span class="n">site</span><span class="p">.</span><span class="n">tld</span> <span class="c1">--wpsubdir --php73</span></code></td>
-</tr>
-<tr>
-<td>fastcgi_cache</td>
-<td>PHP 7.2</td>
-<td><code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">create</span> <span class="n">site</span><span class="p">.</span><span class="n">tld</span> <span class="c1">--wpsubdir --wpfc</span></code></td>
-</tr>
-<tr>
-<td>fastcgi_cache</td>
-<td>PHP 7.3</td>
-<td><code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">create</span> <span class="n">site</span><span class="p">.</span><span class="n">tld</span> <span class="c1">--wpsubdir --wpfc --php73</span></code></td>
-</tr>
-<tr>
-<td>wp-super-cache</td>
-<td>PHP 7.2</td>
-<td><code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">create</span> <span class="n">site</span><span class="p">.</span><span class="n">tld</span> <span class="c1">--wpsubdir --wpsc</span></code></td>
-</tr>
-<tr>
-<td>wp-super-cache</td>
-<td>PHP 7.3</td>
-<td><code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">create</span> <span class="n">site</span><span class="p">.</span><span class="n">tld</span> <span class="c1">--wpsubdir --wpsc --php73</span></code></td>
-</tr>
-<tr>
-<td>redis-cache</td>
-<td>PHP 7.2</td>
-<td><code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">create</span> <span class="n">site</span><span class="p">.</span><span class="n">tld</span> <span class="c1">--wpsubdir --wpredis</span></code></td>
-</tr>
-<tr>
-<td>redis-cache</td>
-<td>PHP 7.3</td>
-<td><code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">create</span> <span class="n">site</span><span class="p">.</span><span class="n">tld</span> <span class="c1">--wpsubdir --wpredis --php73</span></code></td>
-</tr>
-<tr>
-<td>WP-Rocket</td>
-<td>PHP 7.2</td>
-<td><code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">create</span> <span class="n">site</span><span class="p">.</span><span class="n">tld</span> <span class="c1">--wpsubdir --wprocket</span></code></td>
-</tr>
-<tr>
-<td>WP-Rocket</td>
-<td>PHP 7.3</td>
-<td><code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">create</span> <span class="n">site</span><span class="p">.</span><span class="n">tld</span> <span class="c1">--wpsubdir --wprocket --php73</span></code></td>
-</tr>
-<tr>
-<td>Cache-Enabler</td>
-<td>PHP 7.2</td>
-<td><code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">create</span> <span class="n">site</span><span class="p">.</span><span class="n">tld</span> <span class="c1">--wpsubdir --wpce</span></code></td>
-</tr>
-<tr>
-<td>Cache-Enabler</td>
-<td>PHP 7.3</td>
-<td><code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">create</span> <span class="n">site</span><span class="p">.</span><span class="n">tld</span> <span class="c1">--wpsubdir --wpce --php73</span></code></td>
-</tr>
-</tbody>
-</table>
-<h4 id="multisite-subdomain">Multisite subdomain<a class="headerlink" href="#multisite-subdomain" title="Permanent link">&para;</a></h4>
-<table>
-<thead>
-<tr>
-<th>cache</th>
-<th>PHP</th>
-<th>example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>no cache</td>
-<td>PHP 7.2</td>
-<td><code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">create</span> <span class="n">site</span><span class="p">.</span><span class="n">tld</span> <span class="c1">--wpsubdom</span></code></td>
-</tr>
-<tr>
-<td>no cache</td>
-<td>PHP 7.3</td>
-<td><code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">create</span> <span class="n">site</span><span class="p">.</span><span class="n">tld</span> <span class="c1">--wpsubdom --php73</span></code></td>
-</tr>
-<tr>
-<td>fastcgi_cache</td>
-<td>PHP 7.2</td>
-<td><code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">create</span> <span class="n">site</span><span class="p">.</span><span class="n">tld</span> <span class="c1">--wpsubdom --wpfc</span></code></td>
-</tr>
-<tr>
-<td>fastcgi_cache</td>
-<td>PHP 7.3</td>
-<td><code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">create</span> <span class="n">site</span><span class="p">.</span><span class="n">tld</span> <span class="c1">--wpsubdom --wpfc --php73</span></code></td>
-</tr>
-<tr>
-<td>wp-super-cache</td>
-<td>PHP 7.2</td>
-<td><code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">create</span> <span class="n">site</span><span class="p">.</span><span class="n">tld</span> <span class="c1">--wpsubdom --wpsc</span></code></td>
-</tr>
-<tr>
-<td>wp-super-cache</td>
-<td>PHP 7.3</td>
-<td><code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">create</span> <span class="n">site</span><span class="p">.</span><span class="n">tld</span> <span class="c1">--wpsubdom --wpsc --php73</span></code></td>
-</tr>
-<tr>
-<td>redis-cache</td>
-<td>PHP 7.2</td>
-<td><code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">create</span> <span class="n">site</span><span class="p">.</span><span class="n">tld</span> <span class="c1">--wpsubdom --wpredis</span></code></td>
-</tr>
-<tr>
-<td>redis-cache</td>
-<td>PHP 7.3</td>
-<td><code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">create</span> <span class="n">site</span><span class="p">.</span><span class="n">tld</span> <span class="c1">--wpsubdom --wpredis --php73</span></code></td>
-</tr>
-<tr>
-<td>WP-Rocket</td>
-<td>PHP 7.2</td>
-<td><code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">create</span> <span class="n">site</span><span class="p">.</span><span class="n">tld</span> <span class="c1">--wpsubdom  --wprocket</span></code></td>
-</tr>
-<tr>
-<td>WP-Rocket</td>
-<td>PHP 7.3</td>
-<td><code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">create</span> <span class="n">site</span><span class="p">.</span><span class="n">tld</span> <span class="c1">--wpsubdom  --wprocket --php73</span></code></td>
-</tr>
-<tr>
-<td>Cache-Enabler</td>
-<td>PHP 7.2</td>
-<td><code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">create</span> <span class="n">site</span><span class="p">.</span><span class="n">tld</span> <span class="c1">--wpsubdom  --wpce</span></code></td>
-</tr>
-<tr>
-<td>Cache-Enabler</td>
-<td>PHP 7.3</td>
-<td><code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">create</span> <span class="n">site</span><span class="p">.</span><span class="n">tld</span> <span class="c1">--wpsubdom  --wpce --php73</span></code></td>
-</tr>
-</tbody>
-</table>
+<p>Standard WordPress site</p>
+<div class="codehilite"><pre><span></span>wo site create site.tld --wp
+</pre></div>
+
+<p>WordPress site + Nginx fastcgi_cache</p>
+<div class="codehilite"><pre><span></span>wo site create site.tld --wpfc
+</pre></div>
+
+<p>WordPress site + Redis cache</p>
+<div class="codehilite"><pre><span></span>wo site create site.tld --wpredis
+</pre></div>
+
+<p>WordPress site + WP-Super-cache</p>
+<div class="codehilite"><pre><span></span>wo site create site.tld --wpsc
+</pre></div>
+
+<p>WordPress site + WP-Rocket cache</p>
+<div class="codehilite"><pre><span></span>wo site create site.tld --wprocket
+</pre></div>
+
+<p>WordPress site + Cache enabler</p>
+<div class="codehilite"><pre><span></span>wo site create site.tld --wpce
+</pre></div>
+
 <h4 id="cheatsheet">Cheatsheet<a class="headerlink" href="#cheatsheet" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
