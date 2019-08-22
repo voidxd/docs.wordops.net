@@ -49,7 +49,7 @@
       
         
         
-        <meta name="theme-color" content="#3f51b5">
+        <meta name="theme-color" content="#03a9f4">
       
     
     
@@ -73,7 +73,7 @@
   
     
     
-    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-primary="light-blue" data-md-color-accent="indigo">
   
     <svg class="md-svg">
       <defs>
@@ -98,7 +98,7 @@
       <div class="md-flex__cell md-flex__cell--shrink">
         <a href="../.." title="WordOps Documentation" class="md-header-nav__button md-logo">
           
-            <i class="md-icon"></i>
+            <img src="../../images/logo-icon.png" width="24" height="24">
           
         </a>
       </div>
@@ -190,7 +190,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="../.." title="WordOps Documentation" class="md-nav__button md-logo">
       
-        <i class="md-icon"></i>
+        <img src="../../images/logo-icon.png" width="48" height="48">
       
     </a>
     WordOps Documentation
@@ -997,6 +997,24 @@
 <div class="codehilite"><pre><span></span>wget -qO wo wops.cc <span class="o">&amp;&amp;</span> sudo bash wo
 </pre></div>
 
+<p>Options :</p>
+<ul>
+<li><code class="codehilite"><span class="o">-</span><span class="n">w</span></code> | <code class="codehilite"><span class="c1">--wufw</span></code> | <code class="codehilite"><span class="c1">--without-ufw</span></code> : do not configure UFW during setup</li>
+</ul>
+<details class="info"><summary>What are the tasks performed by the install script ?</summary><ul>
+<li>Installing WordOps dependencies</li>
+<li>Enabling automated security updates with unattended-upgrades</li>
+<li>Enabling NTP World Time Synchronization</li>
+<li>Detecting a previous EasyEngine or WordOps installation</li>
+<li>Importing existant sites into WordOps</li>
+<li>Installing WP-CLI</li>
+<li>Installing Acme.sh</li>
+<li>Installing Wordops</li>
+<li>Applying Linux Kernel tweaks</li>
+<li>Adding systemd service to apply kernel settings on boot (for Netdata &amp; Redis)</li>
+<li>Configuring UFW with minimal rules for WordOps</li>
+</ul>
+</details>
 <h3 id="alternative-clone-github-repository-and-run">Alternative : Clone Github repository and run<a class="headerlink" href="#alternative-clone-github-repository-and-run" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span>git clone https://github.com/WordOps/WordOps.git
 <span class="nb">cd</span> WordOps/
@@ -1014,13 +1032,13 @@ sudo bash install
 <div class="codehilite"><pre><span></span><span class="c1"># On Ubuntu</span>
 apt-get install build-essential bash-completion curl gzip python3 <span class="se">\</span>
 python3-apt python3-setuptools python3-dev sqlite3 git tar <span class="se">\</span>
-software-properties-common pigz gnupg2 cron ccze rsync -y
+software-properties-common pigz gnupg2 cron ufw ccze rsync -y
 
 <span class="c1"># On Debian</span>
 apt-get install build-essential bash-completion curl gzip dirmngr <span class="se">\</span>
 sudo python3 python3-apt python3-setuptools python3-dev  <span class="se">\</span>
 ca-certificates sqlite3 git tar software-properties-common <span class="se">\</span>
-pigz apt-transport-https gnupg2 cron ccze rsync -y
+pigz apt-transport-https gnupg2 cron ccze ufw rsync -y
 </pre></div>
 
 <h3 id="clone-the-github-repository">Clone the github repository<a class="headerlink" href="#clone-the-github-repository" title="Permanent link">&para;</a></h3>

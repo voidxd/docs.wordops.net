@@ -49,7 +49,7 @@
       
         
         
-        <meta name="theme-color" content="#3f51b5">
+        <meta name="theme-color" content="#03a9f4">
       
     
     
@@ -73,7 +73,7 @@
   
     
     
-    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-primary="light-blue" data-md-color-accent="indigo">
   
     <svg class="md-svg">
       <defs>
@@ -98,7 +98,7 @@
       <div class="md-flex__cell md-flex__cell--shrink">
         <a href="../.." title="WordOps Documentation" class="md-header-nav__button md-logo">
           
-            <i class="md-icon"></i>
+            <img src="../../images/logo-icon.png" width="24" height="24">
           
         </a>
       </div>
@@ -190,7 +190,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="../.." title="WordOps Documentation" class="md-nav__button md-logo">
       
-        <i class="md-icon"></i>
+        <img src="../../images/logo-icon.png" width="48" height="48">
       
     </a>
     WordOps Documentation
@@ -425,6 +425,13 @@
           <li class="md-nav__item">
   <a href="#structure" title="Structure" class="md-nav__link">
     Structure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#developement-environnment" title="Developement Environnment" class="md-nav__link">
+    Developement Environnment
   </a>
   
 </li>
@@ -1081,6 +1088,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#developement-environnment" title="Developement Environnment" class="md-nav__link">
+    Developement Environnment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#contributions-ground-rules" title="Contributions Ground Rules" class="md-nav__link">
     Contributions Ground Rules
   </a>
@@ -1132,7 +1146,7 @@
 <h3 id="give-wordops-a-github-star">Give WordOps a GitHub star<a class="headerlink" href="#give-wordops-a-github-star" title="Permanent link">&para;</a></h3>
 <p>This is the minimum open-source users should contribute back to the projects they use. Github stars help the project gain visibility, stand out. So, if you use WordOps, consider pressing that button. <strong>It really matters</strong>.</p>
 <h3 id="spread-the-word">Spread the word<a class="headerlink" href="#spread-the-word" title="Permanent link">&para;</a></h3>
-<p>Community growth allows the project to attract new talent willing to contribute. This talent is then developing new features and improves the project. These new features and improvements attract more users and so on. It is a loop. So, post about WordOps, present it to local meetups you attend, let your online social network or twitter, facebook, reddit, etc. know you are using it. <strong>The more people involved, the faster the project evolves</strong>.</p>
+<p>Community growth allows the project to attract new talent willing to contribute. This talent is then developing new features and improves the project. These new features and improvements attract more users and so on. It is a loop. So, post about WordOps, add a review or suggest it as an alternative to another app on <a href="https://alternativeto.net/software/wordops/">alternativeto.net</a>, present it to local meetups you attend, let your online social network or twitter, facebook, reddit, etc. know you are using it. <strong>The more people involved, the faster the project evolves</strong>.</p>
 <h3 id="provide-feedback">Provide feedback<a class="headerlink" href="#provide-feedback" title="Permanent link">&para;</a></h3>
 <p>Is there anything that bothers you about WordOps? Did you experience an issue while installing it or using it? Would you like to see it evolve to you need? Let us know. <a href="https://github.com/WordOps/WordOps/issues">Open a github issue</a> to discuss it or open a thread on our <a href="https://community.wordops.net/">Community Forum</a>. Feedback is very important for open-source projects. We can't commit we will do everything, but your feedback influences our road-map significantly.</p>
 <h2 id="experienced-users">Experienced Users<a class="headerlink" href="#experienced-users" title="Permanent link">&para;</a></h2>
@@ -1166,16 +1180,41 @@ Here the structure of WordOps with additional comments</p>
 <div class="codehilite"><pre><span></span><span class="n">wo</span>
 <span class="err">├──</span> <span class="n">cli</span> <span class="o">#</span> <span class="n">the</span> <span class="n">main</span> <span class="n">directory</span> <span class="k">of</span> <span class="n">the</span> <span class="n">application</span>
 <span class="err">│</span>   <span class="err">├──</span> <span class="n">__init__</span><span class="p">.</span><span class="n">py</span>
-<span class="err">│</span>   <span class="err">├──</span> <span class="n">bootstrap</span><span class="p">.</span><span class="n">py</span>
-<span class="err">│</span>   <span class="err">├──</span> <span class="n">controllers</span>
-<span class="err">│</span>   <span class="err">├──</span> <span class="n">ext</span>
-<span class="err">│</span>   <span class="err">├──</span> <span class="n">main</span><span class="p">.</span><span class="n">py</span>
+<span class="err">│</span>   <span class="err">├──</span> <span class="n">bootstrap</span><span class="p">.</span><span class="n">py</span> <span class="o">#</span> <span class="n">Cement</span> <span class="n">framework</span>
+<span class="err">│</span>   <span class="err">├──</span> <span class="n">controllers</span> <span class="o">#</span> <span class="n">Cement</span> <span class="n">framework</span>
+<span class="err">│</span>   <span class="err">├──</span> <span class="n">ext</span> <span class="o">#</span> <span class="n">Cement</span> <span class="n">framework</span>
+<span class="err">│</span>   <span class="err">├──</span> <span class="n">main</span><span class="p">.</span><span class="n">py</span> <span class="o">#</span> <span class="n">Cement</span> <span class="n">framework</span>
 <span class="err">│</span>   <span class="err">├──</span> <span class="n">plugins</span> <span class="o">#</span> <span class="n">WordOps</span> <span class="n">commands</span> <span class="p">(</span><span class="n">stack</span><span class="p">,</span> <span class="n">site</span><span class="p">,</span> <span class="k">update</span> <span class="p">..</span> <span class="n">etc</span><span class="p">)</span>
 <span class="err">│</span>   <span class="err">└──</span> <span class="n">templates</span> <span class="o">#</span> <span class="n">WordOps</span> <span class="n">configuration</span> <span class="k">template</span>
-<span class="err">├──</span> <span class="n">core</span> <span class="o">#</span> <span class="n">functions</span> <span class="n">used</span> <span class="k">in</span> <span class="n">WordOps</span>
+<span class="err">├──</span> <span class="n">core</span> <span class="o">#</span> <span class="n">main</span> <span class="n">functions</span> <span class="n">used</span> <span class="k">in</span> <span class="n">WordOps</span> <span class="n">plugins</span>
 <span class="err">└──</span> <span class="n">utils</span> <span class="o">#</span> <span class="n">testing</span> <span class="n">helper</span>
 </pre></div>
 
+<p>Plugins Directory :
+Here the list of plugins with the related command or a short description</p>
+<div class="codehilite"><pre><span></span>├── <span class="nv">plugins</span>
+│   ├── <span class="nv">__init__</span>.<span class="nv">py</span>
+│   ├── <span class="nv">clean</span>.<span class="nv">py</span> # <span class="nv">wo</span> <span class="nv">clean</span>
+│   ├── <span class="nv">debug</span>.<span class="nv">py</span> # <span class="nv">wo</span> <span class="nv">debug</span>
+│   ├── <span class="nv">import_slow_log</span>.<span class="nv">py</span> # <span class="nv">wo</span> <span class="nv">import</span><span class="o">-</span><span class="nv">slow</span><span class="o">-</span><span class="nv">log</span> <span class="ss">(</span><span class="nv">from</span> <span class="nv">EE</span> <span class="nv">v3</span><span class="ss">)</span>
+│   ├── <span class="nv">info</span>.<span class="nv">py</span> # <span class="nv">wo</span> <span class="nv">info</span>
+│   ├── <span class="nv">log</span>.<span class="nv">py</span> # <span class="nv">wo</span> <span class="nv">log</span>
+│   ├── <span class="nv">maintenance</span>.<span class="nv">py</span> # <span class="nv">wo</span> <span class="nv">maintenance</span>
+│   ├── <span class="nv">models</span>.<span class="nv">py</span> # <span class="nv">site</span> <span class="nv">information</span> <span class="nv">structure</span> <span class="k">for</span> <span class="nv">WO</span> <span class="nv">internal</span> <span class="nv">DB</span>
+│   ├── <span class="nv">secure</span>.<span class="nv">py</span> # <span class="nv">wo</span> <span class="nv">secure</span>
+│   ├── <span class="nv">site</span>.<span class="nv">py</span> # <span class="nv">wo</span> <span class="nv">site</span>
+│   ├── <span class="nv">site_functions</span>.<span class="nv">py</span> # <span class="nv">functions</span> <span class="nv">used</span> <span class="nv">by</span> <span class="nv">site</span>.<span class="nv">py</span>
+│   ├── <span class="nv">sitedb</span>.<span class="nv">py</span> # <span class="nv">WO</span> <span class="nv">internal</span> <span class="nv">SQlite3</span> <span class="nv">database</span> <span class="nv">functions</span>
+│   ├── <span class="nv">stack</span>.<span class="nv">py</span> # <span class="nv">wo</span> <span class="nv">stack</span> <span class="nv">install</span><span class="o">/</span><span class="nv">remove</span><span class="o">/</span><span class="nv">purge</span>
+│   ├── <span class="nv">stack_migrate</span>.<span class="nv">py</span> # <span class="nv">wo</span> <span class="nv">stack</span> <span class="nv">migrate</span>
+│   ├── <span class="nv">stack_pref</span>.<span class="nv">py</span> # <span class="nv">stack</span> <span class="nv">configuration</span> <span class="nv">used</span> <span class="nv">by</span> <span class="nv">stack</span>.<span class="nv">py</span> <span class="o">&amp;</span> <span class="nv">stack_upgrade</span>.<span class="nv">py</span>
+│   ├── <span class="nv">stack_services</span>.<span class="nv">py</span> # <span class="nv">wo</span> <span class="nv">stack</span> <span class="nv">start</span><span class="o">/</span><span class="nv">stop</span><span class="o">/</span><span class="nv">restart</span><span class="o">/</span><span class="nv">reload</span>
+│   ├── <span class="nv">stack_upgrade</span>.<span class="nv">py</span> # <span class="nv">wo</span> <span class="nv">stack</span> <span class="nv">upgrade</span>
+│   ├── <span class="nv">sync</span>.<span class="nv">py</span> # <span class="nv">wo</span> <span class="nv">sync</span>
+│   └── <span class="nv">update</span>.<span class="nv">py</span> # <span class="nv">wo</span> <span class="nv">update</span>
+</pre></div>
+
+<h3 id="developement-environnment">Developement Environnment<a class="headerlink" href="#developement-environnment" title="Permanent link">&para;</a></h3>
 <h3 id="contributions-ground-rules">Contributions Ground Rules<a class="headerlink" href="#contributions-ground-rules" title="Permanent link">&para;</a></h3>
 <h4 id="code-of-conduct-and-cla">Code of Conduct and CLA<a class="headerlink" href="#code-of-conduct-and-cla" title="Permanent link">&para;</a></h4>
 <p>We expect all contributors to abide by the <a href="/about/code-of-conduct.md">Contributor Covenant Code of Conduct</a>.</p>
