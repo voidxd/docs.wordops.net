@@ -937,42 +937,37 @@
                 <h1 id="use-wordops-with-digitaloceans-volume">Use WordOps with DigitalOcean's volume<a class="headerlink" href="#use-wordops-with-digitaloceans-volume" title="Permanent link">&para;</a></h1>
 <p>This is assuming you start with a brand new droplet and a brand new volume.</p>
 <h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
-<ol>
-<li>
-<p>Create Droplet.</p>
-</li>
-<li>
-<p>Add volume –&gt; Automatically format and mount</p>
-<p><em>This guide is based as if your volume would be named: <code class="codehilite"><span class="n">YOUR</span><span class="o">-</span><span class="n">VOLUME</span></code></em></p>
-</li>
-<li>
-<p>Login to the droplet from the console, will ask for root password change.</p>
-</li>
-<li>
-<p>Create directory <code class="codehilite"><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span></code> where we will mount the volume and WordOps will be installed.</p>
-<p><code class="codehilite"><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span></code></p>
-</li>
-</ol>
+<p>1) Create Droplet.</p>
+<p>2) Add volume –&gt; Automatically format and mount</p>
+<div class="codehilite"><pre><span></span><span class="o">*</span><span class="nv">This</span> <span class="nv">guide</span> <span class="nv">is</span> <span class="nv">based</span> <span class="nv">as</span> <span class="k">if</span> <span class="nv">your</span> <span class="nv">volume</span> <span class="nv">would</span> <span class="nv">be</span> <span class="nv">named</span>: `<span class="nv">YOUR</span><span class="o">-</span><span class="nv">VOLUME</span>`<span class="o">*</span>
+</pre></div>
+
+
+<p>3)  Login to the droplet from the console, will ask for root password change.</p>
+<p>4) Create directory <code class="codehilite"><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span></code> where we will mount the volume and WordOps will be installed.</p>
+<div class="codehilite"><pre><span></span>mkdir -p /var/www
+</pre></div>
+
 <h2 id="mounting-the-volume">Mounting the volume<a class="headerlink" href="#mounting-the-volume" title="Permanent link">&para;</a></h2>
 <p><em>Steps 5 and 6 are according to DigitalOcean -&gt; Volumes -&gt; 'More' tab of <code class="codehilite"><span class="n">YOUR</span><span class="o">-</span><span class="n">VOLUME</span></code> -&gt; Config instructions</em></p>
-<ol>
-<li>Mount Digital Ocean's volume in <code class="codehilite"><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span></code></li>
-</ol>
-<p><code class="codehilite"><span class="n">mount</span> <span class="o">-</span><span class="n">o</span> <span class="n">discard</span><span class="p">,</span><span class="k">defaults</span><span class="p">,</span><span class="n">noatime</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">disk</span><span class="o">/</span><span class="k">by</span><span class="o">-</span><span class="n">id</span><span class="o">/</span><span class="n">scsi</span><span class="o">-</span><span class="mi">0</span><span class="n">DO_Volume_YOUR</span><span class="o">-</span><span class="n">VOLUME</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span></code></p>
-<ol>
-<li>Change fstab so the volume will be mounted after a reboot</li>
-</ol>
-<p><code class="codehilite"><span class="n">echo</span> <span class="s1">&#39;/dev/disk/by-id/scsi-0DO_Volume_YOUR-VOLUME /var/www/ ext4 defaults,nofail,discard 0 0&#39;</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">tee</span> <span class="o">-</span><span class="n">a</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">fstab</span></code></p>
+<p>5) Mount Digital Ocean's volume in <code class="codehilite"><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span></code></p>
+<div class="codehilite"><pre><span></span>mount -o discard,defaults,noatime /dev/disk/by-id/scsi-0DO_Volume_YOUR-VOLUME /var/www
+</pre></div>
+
+<p>6) Change fstab so the volume will be mounted after a reboot</p>
+<div class="codehilite"><pre><span></span><span class="nb">echo</span> <span class="s1">&#39;/dev/disk/by-id/scsi-0DO_Volume_YOUR-VOLUME /var/www ext4 defaults,nofail,discard 0 0&#39;</span> <span class="p">|</span> sudo tee -a /etc/fstab
+</pre></div>
+
 <h2 id="installing-wordops">Installing WordOps<a class="headerlink" href="#installing-wordops" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Install WordOps <a href="https://docs.wordops.net/getting-started/installation-guide/" title="One-Step Automated WordOps Install">According to One-Step Automated WordOps Install</a></li>
-</ol>
-<p><code class="codehilite"><span class="n">wget</span> <span class="o">-</span><span class="n">qO</span> <span class="n">wo</span> <span class="n">wops</span><span class="p">.</span><span class="n">cc</span> <span class="o">&amp;&amp;</span> <span class="n">sudo</span> <span class="n">bash</span> <span class="n">wo</span></code></p>
+<p>7) Install WordOps <a href="https://docs.wordops.net/getting-started/installation-guide/" title="One-Step Automated WordOps Install">According to One-Step Automated WordOps Install</a></p>
+<div class="codehilite"><pre><span></span>wget -qO wo wops.cc <span class="o">&amp;&amp;</span> sudo bash wo
+</pre></div>
+
 <p>You can enable autocomplete right after install with: <code class="codehilite"><span class="k">source</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">bash_completion</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">wo_auto</span><span class="p">.</span><span class="n">rc</span></code></p>
-<ol>
-<li>Install WordOps stacks (optional)</li>
-</ol>
-<p><code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">install</span></code></p>
+<p>8)  Install WordOps stacks (optional)</p>
+<div class="codehilite"><pre><span></span>wo stack install
+</pre></div>
+
 <p><strong>And that's it!</strong></p>
 <h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
 <ul>
