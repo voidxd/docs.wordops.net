@@ -987,7 +987,7 @@
                 
                 
                 <h1 id="how-to-get-an-a-grade-on-ssllabs-with-wordops">How to get an A+ Grade on ssllabs with WordOps<a class="headerlink" href="#how-to-get-an-a-grade-on-ssllabs-with-wordops" title="Permanent link">&para;</a></h1>
-<p>This tutorial describe how to get the best SSL score on ssllabs.com. To get an A+, it require to enable HSTS (HTTP Strict Transport Security). HSTS allows web servers to declare that web browsers should only interact with it using HTTPS connections and never via the insecure HTTP protocol.</p>
+<p>This tutorial describe how to get the best SSL grade on ssllabs.com. To get an A+, it require to enable HSTS (HTTP Strict Transport Security). HSTS allows web servers to declare that web browsers should only interact with it using HTTPS connections and never via the insecure HTTP protocol.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Make sure your site/domain and subdomains will never need to use HTTP again, because after accessing a single time to your site with HSTS enabled, your web browser will not allow you to access it over http if you remove the SSL certificate for example.</p>
@@ -1032,7 +1032,7 @@
 <div class="codehilite"><pre><span></span>wo site update site.tld --hsts
 </pre></div>
 
-<p>Congratulations, you can now check your score on <a href="https://www.ssllabs.com/ssltest/">https://www.ssllabs.com/ssltest/</a></p>
+<p>Congratulations, you can now check your grade on <a href="https://www.ssllabs.com/ssltest/">https://www.ssllabs.com/ssltest/</a></p>
 <h3 id="switching-hsts-off">Switching HSTS off<a class="headerlink" href="#switching-hsts-off" title="Permanent link">&para;</a></h3>
 <p>It's not recommended to disable HSTS because web browser will store the HSTS directive for a long time (6 months) and will not allow access over HTTP even after disabling HSTS on the server. However, if you absolutely need to disable HSTS, you can use the following command :</p>
 <div class="codehilite"><pre><span></span>wo site update site.tld --hsts<span class="o">=</span>off
