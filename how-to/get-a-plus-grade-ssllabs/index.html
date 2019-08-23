@@ -38,7 +38,7 @@
     
     
       
-        <title>How to get an A+ Grade on ssllabs with WordOps - WordOps Documentation</title>
+        <title>Get A+ grade on ssllabs - WordOps Documentation</title>
       
     
     
@@ -113,7 +113,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                How to get an A+ Grade on ssllabs with WordOps
+                Get A+ grade on ssllabs
               
             </span>
           
@@ -546,10 +546,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
     
     <label class="md-nav__link" for="nav-5">
       How to
@@ -606,6 +608,97 @@
     <a href="../configure-letsencrypt-dns-api-validation/" title="Configure LetsEncrypt DNS API" class="md-nav__link">
       Configure LetsEncrypt DNS API
     </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Get A+ grade on ssllabs
+      </label>
+    
+    <a href="./" title="Get A+ grade on ssllabs" class="md-nav__link md-nav__link--active">
+      Get A+ grade on ssllabs
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#issue-an-ssl-certificate-with-wordops-and-enable-hsts" title="Issue an ssl certificate with WordOps and enable HSTS" class="md-nav__link">
+    Issue an ssl certificate with WordOps and enable HSTS
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-a-new-site" title="For a new site" class="md-nav__link">
+    For a new site
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-an-existant-site-without-ssl" title="For an existant site without SSL" class="md-nav__link">
+    For an existant site without SSL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-an-existant-site-already-secured-with-lets-encrypt" title="For an existant site already secured with Let's Encrypt" class="md-nav__link">
+    For an existant site already secured with Let's Encrypt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switching-hsts-off" title="Switching HSTS off" class="md-nav__link">
+    Switching HSTS off
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hardening-hsts" title="Hardening HSTS" class="md-nav__link">
+    Hardening HSTS
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -827,8 +920,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#step-1-issue-an-ssl-certificate-with-wordops-and-enable-hsts" title="Step 1) Issue an ssl certificate with WordOps and enable HSTS" class="md-nav__link">
-    Step 1) Issue an ssl certificate with WordOps and enable HSTS
+  <a href="#issue-an-ssl-certificate-with-wordops-and-enable-hsts" title="Issue an ssl certificate with WordOps and enable HSTS" class="md-nav__link">
+    Issue an ssl certificate with WordOps and enable HSTS
   </a>
   
     <nav class="md-nav">
@@ -842,21 +935,35 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#for-an-existant-site" title="For an existant site" class="md-nav__link">
-    For an existant site
+  <a href="#for-an-existant-site-without-ssl" title="For an existant site without SSL" class="md-nav__link">
+    For an existant site without SSL
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#enabling-hsts-on-a-site-already-secured-with-lets-encrypt" title="Enabling HSTS on a site already secured with Let's Encrypt" class="md-nav__link">
-    Enabling HSTS on a site already secured with Let's Encrypt
+  <a href="#for-an-existant-site-already-secured-with-lets-encrypt" title="For an existant site already secured with Let's Encrypt" class="md-nav__link">
+    For an existant site already secured with Let's Encrypt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switching-hsts-off" title="Switching HSTS off" class="md-nav__link">
+    Switching HSTS off
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hardening-hsts" title="Hardening HSTS" class="md-nav__link">
+    Hardening HSTS
+  </a>
   
 </li>
       
@@ -880,19 +987,60 @@
                 
                 
                 <h1 id="how-to-get-an-a-grade-on-ssllabs-with-wordops">How to get an A+ Grade on ssllabs with WordOps<a class="headerlink" href="#how-to-get-an-a-grade-on-ssllabs-with-wordops" title="Permanent link">&para;</a></h1>
-<p>This tutorial describe how to get the best score with the SSL your site</p>
-<h2 id="step-1-issue-an-ssl-certificate-with-wordops-and-enable-hsts">Step 1) Issue an ssl certificate with WordOps and enable HSTS<a class="headerlink" href="#step-1-issue-an-ssl-certificate-with-wordops-and-enable-hsts" title="Permanent link">&para;</a></h2>
+<p>This tutorial describe how to get the best SSL score on ssllabs.com. To get an A+, it require to enable HSTS (HTTP Strict Transport Security). HSTS allows web servers to declare that web browsers should only interact with it using HTTPS connections and never via the insecure HTTP protocol.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Make sure your site/domain and subdomains will never need to use HTTP again, because after accessing a single time to your site with HSTS enabled, your web browser will not allow you to access it over http if you remove the SSL certificate for example.</p>
+</div>
+<h2 id="issue-an-ssl-certificate-with-wordops-and-enable-hsts">Issue an ssl certificate with WordOps and enable HSTS<a class="headerlink" href="#issue-an-ssl-certificate-with-wordops-and-enable-hsts" title="Permanent link">&para;</a></h2>
 <h3 id="for-a-new-site">For a new site<a class="headerlink" href="#for-a-new-site" title="Permanent link">&para;</a></h3>
+<p>For a domain</p>
 <div class="codehilite"><pre><span></span>wo site create site.tld --wp -le --hsts
 </pre></div>
 
-<h3 id="for-an-existant-site">For an existant site<a class="headerlink" href="#for-an-existant-site" title="Permanent link">&para;</a></h3>
+<p>For a subdomain</p>
+<div class="codehilite"><pre><span></span>wo site create sub.site.ltd --wp -le<span class="o">=</span>subdomain --hsts
+</pre></div>
+
+<p>For a multisite</p>
+<div class="codehilite"><pre><span></span>wo site create site.tld --wpsubdom -le<span class="o">=</span>wildcard --hsts
+</pre></div>
+
+<h3 id="for-an-existant-site-without-ssl">For an existant site without SSL<a class="headerlink" href="#for-an-existant-site-without-ssl" title="Permanent link">&para;</a></h3>
+<p>For a domain</p>
 <div class="codehilite"><pre><span></span>wo site update site.tld -le --hsts
 </pre></div>
 
-<h3 id="enabling-hsts-on-a-site-already-secured-with-lets-encrypt">Enabling HSTS on a site already secured with Let's Encrypt<a class="headerlink" href="#enabling-hsts-on-a-site-already-secured-with-lets-encrypt" title="Permanent link">&para;</a></h3>
+<p>For a subdomain</p>
+<div class="codehilite"><pre><span></span>wo site update sub.site.ltd -le<span class="o">=</span>subdomain --hsts
+</pre></div>
+
+<p>For a multisite</p>
+<div class="codehilite"><pre><span></span>wo site update site.tld -le<span class="o">=</span>wildcard --hsts
+</pre></div>
+
+<h3 id="for-an-existant-site-already-secured-with-lets-encrypt">For an existant site already secured with Let's Encrypt<a class="headerlink" href="#for-an-existant-site-already-secured-with-lets-encrypt" title="Permanent link">&para;</a></h3>
+<p>For a domain</p>
 <div class="codehilite"><pre><span></span>wo site update site.tld --hsts
 </pre></div>
+
+<p>For a subdomain</p>
+<div class="codehilite"><pre><span></span>wo site update sub.site.ltd --hsts
+</pre></div>
+
+<p>For a multisite</p>
+<div class="codehilite"><pre><span></span>wo site update site.tld --hsts
+</pre></div>
+
+<p>Congratulations, you can now check your score on <a href="https://www.ssllabs.com/ssltest/">https://www.ssllabs.com/ssltest/</a></p>
+<h3 id="switching-hsts-off">Switching HSTS off<a class="headerlink" href="#switching-hsts-off" title="Permanent link">&para;</a></h3>
+<p>It's not recommended to disable HSTS because web browser will store the HSTS directive for a long time (6 months) and will not allow access over HTTP even after disabling HSTS on the server. However, if you absolutely need to disable HSTS, you can use the following command :</p>
+<div class="codehilite"><pre><span></span>wo site update site.tld --hsts<span class="o">=</span>off
+</pre></div>
+
+<h2 id="hardening-hsts">Hardening HSTS<a class="headerlink" href="#hardening-hsts" title="Permanent link">&para;</a></h2>
+<p>You can increase even more your site security by enabling HSTS preloading on your domain. It's the same than HSTS, but this time your domain will be directly added into the hstspreload.org list and web browsers will enable HSTS even without accessing to your site.</p>
+<p>This can be done on <a href="https://hstspreload.org">https://hstspreload.org</a></p>
                 
                   
                 
@@ -909,6 +1057,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../configure-letsencrypt-dns-api-validation/" title="Configure LetsEncrypt DNS API" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Configure LetsEncrypt DNS API
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../guides/" title="Overview" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Overview
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
