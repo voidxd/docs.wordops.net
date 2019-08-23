@@ -38,7 +38,7 @@
     
     
       
-        <title>Use WordOps with DigitalOcean's volume - WordOps Documentation</title>
+        <title>WordOps With DigitalOcean volumes - WordOps Documentation</title>
       
     
     
@@ -113,7 +113,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Use WordOps with DigitalOcean's volume
+                WordOps With DigitalOcean volumes
               
             </span>
           
@@ -618,10 +618,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
     
     <label class="md-nav__link" for="nav-6">
       Guides
@@ -666,6 +668,77 @@
     <a href="../manage-ssl-certificates/" title="LetsEncrypt SSL certificates" class="md-nav__link">
       LetsEncrypt SSL certificates
     </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        WordOps With DigitalOcean volumes
+      </label>
+    
+    <a href="./" title="WordOps With DigitalOcean volumes" class="md-nav__link md-nav__link--active">
+      WordOps With DigitalOcean volumes
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" title="Getting Started" class="md-nav__link">
+    Getting Started
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mounting-the-volume" title="Mounting the volume" class="md-nav__link">
+    Mounting the volume
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-wordops" title="Installing WordOps" class="md-nav__link">
+    Installing WordOps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" title="Notes" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -822,6 +895,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mounting-the-volume" title="Mounting the volume" class="md-nav__link">
+    Mounting the volume
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#installing-wordops" title="Installing WordOps" class="md-nav__link">
     Installing WordOps
   </a>
@@ -857,50 +937,46 @@
                 <h1 id="use-wordops-with-digitaloceans-volume">Use WordOps with DigitalOcean's volume<a class="headerlink" href="#use-wordops-with-digitaloceans-volume" title="Permanent link">&para;</a></h1>
 <p>This is assuming you start with a brand new droplet and a brand new volume.</p>
 <h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
-<p>1) Create Droplet.</p>
-<p>2) Add volume –&gt; Automatically format and mount</p>
-<p>This guide is based as if your volume would be named: <code class="codehilite"><span class="n">YOUR</span><span class="o">-</span><span class="n">VOLUME</span></code></p>
-<p>3) Login to the droplet from the console, will ask for root password change.</p>
+<ol>
+<li>
+<p>Create Droplet.</p>
+</li>
+<li>
+<p>Add volume –&gt; Automatically format and mount</p>
+<p><em>This guide is based as if your volume would be named: <code class="codehilite"><span class="n">YOUR</span><span class="o">-</span><span class="n">VOLUME</span></code></em></p>
+</li>
+<li>
+<p>Login to the droplet from the console, will ask for root password change.</p>
+</li>
+<li>
+<p>Create directory <code class="codehilite"><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span></code> where we will mount the volume and WordOps will be installed.</p>
+<p><code class="codehilite"><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span></code></p>
+</li>
+</ol>
+<h2 id="mounting-the-volume">Mounting the volume<a class="headerlink" href="#mounting-the-volume" title="Permanent link">&para;</a></h2>
+<p><em>Steps 5 and 6 are according to DigitalOcean -&gt; Volumes -&gt; 'More' tab of <code class="codehilite"><span class="n">YOUR</span><span class="o">-</span><span class="n">VOLUME</span></code> -&gt; Config instructions</em></p>
+<ol>
+<li>Mount Digital Ocean's volume in <code class="codehilite"><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span></code></li>
+</ol>
+<p><code class="codehilite"><span class="n">mount</span> <span class="o">-</span><span class="n">o</span> <span class="n">discard</span><span class="p">,</span><span class="k">defaults</span><span class="p">,</span><span class="n">noatime</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">disk</span><span class="o">/</span><span class="k">by</span><span class="o">-</span><span class="n">id</span><span class="o">/</span><span class="n">scsi</span><span class="o">-</span><span class="mi">0</span><span class="n">DO_Volume_YOUR</span><span class="o">-</span><span class="n">VOLUME</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span></code></p>
+<ol>
+<li>Change fstab so the volume will be mounted after a reboot</li>
+</ol>
+<p><code class="codehilite"><span class="n">echo</span> <span class="s1">&#39;/dev/disk/by-id/scsi-0DO_Volume_YOUR-VOLUME /var/www/ ext4 defaults,nofail,discard 0 0&#39;</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">tee</span> <span class="o">-</span><span class="n">a</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">fstab</span></code></p>
 <h2 id="installing-wordops">Installing WordOps<a class="headerlink" href="#installing-wordops" title="Permanent link">&para;</a></h2>
-<p>4) Install WordOps <a href="https://docs.wordops.net/getting-started/installation-guide/" title="One-Step Automated WordOps Install">According to One-Step Automated WordOps Install</a></p>
-<div class="codehilite"><pre><span></span>wget -qO wo wops.cc <span class="o">&amp;&amp;</span> sudo bash wo
-</pre></div>
-
+<ol>
+<li>Install WordOps <a href="https://docs.wordops.net/getting-started/installation-guide/" title="One-Step Automated WordOps Install">According to One-Step Automated WordOps Install</a></li>
+</ol>
+<p><code class="codehilite"><span class="n">wget</span> <span class="o">-</span><span class="n">qO</span> <span class="n">wo</span> <span class="n">wops</span><span class="p">.</span><span class="n">cc</span> <span class="o">&amp;&amp;</span> <span class="n">sudo</span> <span class="n">bash</span> <span class="n">wo</span></code></p>
 <p>You can enable autocomplete right after install with: <code class="codehilite"><span class="k">source</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">bash_completion</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">wo_auto</span><span class="p">.</span><span class="n">rc</span></code></p>
-<p>5) Install WordOps stacks (optional)</p>
-<div class="codehilite"><pre><span></span>wo stack install
-</pre></div>
-
-<p>6) Rename <code class="codehilite"><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span></code>  to something else, I use: <code class="codehilite"><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">NOTwww</span><span class="o">/</span></code></p>
-<div class="codehilite"><pre><span></span>mv /var/www/ /var/NOTwww/
-</pre></div>
-
-<p>7) Create <code class="codehilite"><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span></code></p>
-<div class="codehilite"><pre><span></span>mkdir -p /var/www/
-</pre></div>
-
-<p><em>Steps 8 and 9 are according to DigitalOcean -&gt; Volumes -&gt; 'More' tab of <code class="codehilite"><span class="n">YOUR</span><span class="o">-</span><span class="n">VOLUME</span></code> -&gt; Config instructions</em></p>
-<p>8) Mount Digital Ocean's volume in <code class="codehilite"><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span></code></p>
-<div class="codehilite"><pre><span></span>mount -o discard,defaults,noatime /dev/disk/by-id/scsi-0DO_Volume_YOUR-VOLUME /var/www/
-</pre></div>
-
-<p>9) Change fstab so the volume will be mounted after a reboot</p>
-<div class="codehilite"><pre><span></span><span class="nb">echo</span> <span class="s1">&#39;/dev/disk/by-id/scsi-0DO_Volume_YOUR-VOLUME /var/www/ ext4 defaults,nofail,discard 0 0&#39;</span> <span class="p">|</span> sudo tee -a /etc/fstab
-</pre></div>
-
-<p>10) Merge folders <code class="codehilite"><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">NOTwww</span><span class="o">/</span></code> (where WordOps was installed) with <code class="codehilite"><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span></code> (mounted volume).</p>
-<div class="codehilite"><pre><span></span>rsync -av /var/NOTwww/ /var/www/
-</pre></div>
-
-<p>11) Delete <code class="codehilite"><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">NOTwww</span><span class="o">/</span></code></p>
-<div class="codehilite"><pre><span></span>rm -rf /var/NOTwww/
-</pre></div>
-
+<ol>
+<li>Install WordOps stacks (optional)</li>
+</ol>
+<p><code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">install</span></code></p>
 <p><strong>And that's it!</strong></p>
 <h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
 <ul>
-<li>You should def check if <code class="codehilite"><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span></code> is shown in netdata witht the correct size.</li>
-<li>Only kinda problem I had is that I wasn't able to login to the WordOps dashboard after rebooting the droplet (to test if volume would mount correctly), I thought WordOps wasn't working or that there was something wrong with the volume but after a couple of minutes everything was working great.</li>
+<li>Just check with <code class="codehilite"><span class="n">df</span> <span class="o">-</span><span class="n">h</span></code> or in netdata if <code class="codehilite"><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span></code> is shown with the correct size of your volume.</li>
 </ul>
                 
                   
@@ -918,6 +994,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../manage-ssl-certificates/" title="LetsEncrypt SSL certificates" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                LetsEncrypt SSL certificates
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../troubleshooting/" title="Troubleshooting" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Troubleshooting
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
