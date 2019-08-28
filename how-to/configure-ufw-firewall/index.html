@@ -908,6 +908,10 @@ sudo ufw logging low
 sudo ufw default allow outgoing
 sudo ufw default deny incoming
 
+<span class="c1"># UFW Custom SSH Port</span>
+<span class="nv">CURRENT_SSH_PORT</span><span class="o">=</span><span class="k">$(</span>grep <span class="s2">&quot;Port&quot;</span> /etc/ssh/sshd_config <span class="p">|</span> awk -F <span class="s2">&quot; &quot;</span> <span class="s1">&#39;{print $2}&#39;</span><span class="k">)</span>
+ufw limit <span class="s2">&quot;</span><span class="nv">$CURRENT_SSH_PORT</span><span class="s2">&quot;</span>
+
 <span class="c1">## allow SSH - DNS - HTTP and HTTPS  - NTP</span>
 sudo ufw limit <span class="m">22</span> <span class="c1"># can be replaced with a custom port</span>
 sudo ufw allow http
@@ -915,7 +919,7 @@ sudo ufw allow https
 sudo ufw allow <span class="m">123</span>
 
 <span class="c1">## WordOps backend</span>
-sudo ufw allow <span class="m">22222</span>
+sudo ufw limit <span class="m">22222</span>
 
 <span class="c1">## FTP stack</span>
 sudo ufw allow <span class="m">21</span>
@@ -927,7 +931,7 @@ sudo ufw allow <span class="m">49000</span>:50000/tcp
 </pre></div>
 
 <h2 id="enabling-ufw">Enabling UFW<a class="headerlink" href="#enabling-ufw" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>sudo ufw <span class="nb">enable</span>
+<div class="codehilite"><pre><span></span>sudo ufw --force <span class="nb">enable</span>
 </pre></div>
                 
                   
