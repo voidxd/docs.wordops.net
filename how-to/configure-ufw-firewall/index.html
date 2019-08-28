@@ -913,7 +913,7 @@ sudo ufw default deny incoming
 ufw limit <span class="s2">&quot;</span><span class="nv">$CURRENT_SSH_PORT</span><span class="s2">&quot;</span>
 
 <span class="c1">## allow SSH - DNS - HTTP and HTTPS  - NTP</span>
-sudo ufw limit <span class="m">22</span> <span class="c1"># can be replaced with a custom port</span>
+sudo ufw limit <span class="m">22</span>
 sudo ufw allow http
 sudo ufw allow https
 sudo ufw allow <span class="m">123</span>
