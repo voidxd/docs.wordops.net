@@ -1073,15 +1073,16 @@
 
 <h3 id="lets-encrypt">Let's Encrypt<a class="headerlink" href="#lets-encrypt" title="Permanent link">&para;</a></h3>
 <p>WordPress site secured with Let's Encrypt</p>
-<div class="codehilite"><pre><span></span>wo site create site.tld --wp --letsencrypt
+<div class="codehilite"><pre><span></span>wo site create site.tld --wp -le
 </pre></div>
 
 <p>WordPress site on subdomain secure with Let's Encrypt</p>
-<div class="codehilite"><pre><span></span>wo site create sub.site.tld --wp --letsencrypt<span class="o">=</span>subdomain
+<div class="codehilite"><pre><span></span>wo site create sub.site.tld --wp -le
 </pre></div>
 
+<p><strong>Since the release v3.9.8.4</strong>, WordOps will automatically detect if the site is a domain or a subdomain, and will not issue a certificate for www alias with subdomains</p>
 <p>WordPress site with PHP 7.3 and secured by Let's Encrypt</p>
-<div class="codehilite"><pre><span></span>wo site create site.tld --wp --php73 --letsencrypt
+<div class="codehilite"><pre><span></span>wo site create site.tld --wp --php73 -le
 </pre></div>
 
 <p>Create WordPress subdomain multisite secured with a Let's Encrypt Wildcard SSL certificate</p>

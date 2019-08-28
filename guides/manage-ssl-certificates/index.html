@@ -747,15 +747,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#domain-wwwdomaintld_1" class="md-nav__link">
-    domain + www.domain.tld
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sub-domain_1" class="md-nav__link">
-    sub-domain
+  <a href="#domain-or-subdomain" class="md-nav__link">
+    domain or subdomain
   </a>
   
 </li>
@@ -989,15 +982,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#domain-wwwdomaintld_1" class="md-nav__link">
-    domain + www.domain.tld
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sub-domain_1" class="md-nav__link">
-    sub-domain
+  <a href="#domain-or-subdomain" class="md-nav__link">
+    domain or subdomain
   </a>
   
 </li>
@@ -1055,11 +1041,7 @@
 <tbody>
 <tr>
 <td><code class="codehilite"><span class="c1">--letsencrypt</span></code> / <code class="codehilite"><span class="o">-</span><span class="n">le</span></code></td>
-<td>issue a SSL certificate : <strong>domain.tld + <a href="http://www.domain.tld">www.domain.tld</a></strong></td>
-</tr>
-<tr>
-<td><code class="codehilite"><span class="c1">--letsencrypt=subdomain</span></code></td>
-<td>issue a SSL certificate for a subdomain : <strong>sub.domain.tld</strong></td>
+<td>issue a SSL certificate for domain or subdomain</td>
 </tr>
 <tr>
 <td><code class="codehilite"><span class="c1">--letsencrypt=wildcard</span></code></td>
@@ -1087,11 +1069,11 @@
 
 <h4 id="sub-domain">sub-domain<a class="headerlink" href="#sub-domain" title="Permanent link">&para;</a></h4>
 <p>To create a new site :</p>
-<div class="codehilite"><pre><span></span>wo site create sub.site.tld --wp --letsencrypt<span class="o">=</span>subdomain
+<div class="codehilite"><pre><span></span>wo site create sub.site.tld --wp -le
 </pre></div>
 
 <p>To secure an existant site :</p>
-<div class="codehilite"><pre><span></span>wo site update sub.site.tld --letsencrypt<span class="o">=</span>subdomain
+<div class="codehilite"><pre><span></span>wo site update sub.site.tld -le
 </pre></div>
 
 <h3 id="dns-api-mode">DNS API mode<a class="headerlink" href="#dns-api-mode" title="Permanent link">&para;</a></h3>
@@ -1099,22 +1081,13 @@
 <p class="admonition-title">Warning</p>
 <p>Read first our guide about <a href="/how-to/configure-letsencrypt-dns-api-validation/">DNS API configuration</a></p>
 </div>
-<h4 id="domain-wwwdomaintld_1">domain + <a href="http://www.domain.tld">www.domain.tld</a><a class="headerlink" href="#domain-wwwdomaintld_1" title="Permanent link">&para;</a></h4>
+<h4 id="domain-or-subdomain">domain or subdomain<a class="headerlink" href="#domain-or-subdomain" title="Permanent link">&para;</a></h4>
 <p>To create a new site with Cloudflare DNS API :</p>
 <div class="codehilite"><pre><span></span>wo site create site.tld --wp -le --dns<span class="o">=</span>dns_cf
 </pre></div>
 
 <p>To secure an existant site with DigitalOcean DNS API:</p>
-<div class="codehilite"><pre><span></span>wo site update site.tld -le --dns<span class="o">=</span>dns_do
-</pre></div>
-
-<h4 id="sub-domain_1">sub-domain<a class="headerlink" href="#sub-domain_1" title="Permanent link">&para;</a></h4>
-<p>To create a new site with Cloudflare DNS API :</p>
-<div class="codehilite"><pre><span></span>wo site create sub.site.tld --wp --letsencrypt<span class="o">=</span>subdomain --dns<span class="o">=</span>dns_cf
-</pre></div>
-
-<p>To secure an existant site with DigitalOcean DNS API:</p>
-<div class="codehilite"><pre><span></span>wo site update sub.site.tld --letsencrypt<span class="o">=</span>subdomain --dns<span class="o">=</span>dns_do
+<div class="codehilite"><pre><span></span>wo site update sub.site.tld -le --dns<span class="o">=</span>dns_do
 </pre></div>
 
 <h4 id="wildcard">wildcard<a class="headerlink" href="#wildcard" title="Permanent link">&para;</a></h4>
@@ -1123,7 +1096,7 @@
 </pre></div>
 
 <p>To secure an existant site with DigitalOcean DNS API:</p>
-<div class="codehilite"><pre><span></span>wo site update site.tld --letsencrypt<span class="o">=</span>wildcard --dns<span class="o">=</span>dns_do
+<div class="codehilite"><pre><span></span>wo site update site.tld -le<span class="o">=</span>wildcard --dns<span class="o">=</span>dns_do
 </pre></div>
                 
                   

@@ -1566,9 +1566,10 @@
 <p>This command will issue a certificate for site.tld + <a href="http://www.site.tld">www.site.tld</a>.</p>
 <h5 id="subdomain">Subdomain<a class="headerlink" href="#subdomain" title="Permanent link">&para;</a></h5>
 <p>You can also issue Let's Encrypt certificates with subdomains.</p>
-<div class="codehilite"><pre><span></span>wo site create sub.site.tld --wp --letsencrypt<span class="o">=</span>subdomain
+<div class="codehilite"><pre><span></span>wo site create sub.site.tld --wp --letsencrypt
 </pre></div>
 
+<p><strong>Since the release v3.9.8.4</strong>, WordOps will automatically detect if the site is a domain or a subdomain, and will not issue a certificate for www alias with subdomains</p>
 <h5 id="wildcard">Wildcard<a class="headerlink" href="#wildcard" title="Permanent link">&para;</a></h5>
 <p><strong>Since the release v3.9.6</strong>, WordOps supports Let's Encrypt Wildcard SSL certificates with DNS API validation. Before issuing a wildcard certificate, it require to define the DNS API crendentials for acme.sh.</p>
 <video align="center" src="/images/wo-wildcard.webm" width="720" autoplay loop>
@@ -1733,10 +1734,6 @@
 <tr>
 <td><code class="codehilite"><span class="c1">--letsencrypt</span></code>,<code class="codehilite"><span class="o">-</span><span class="n">le</span></code></td>
 <td>secure site with Let's Encrypt SSL certificate</td>
-</tr>
-<tr>
-<td><code class="codehilite"><span class="c1">--letsencrypt=subdomain</span></code></td>
-<td>secure site running on a subdomain with Let's Encrypt</td>
 </tr>
 <tr>
 <td><code class="codehilite"><span class="c1">--letsencrypt=wildcard</span></code></td>
