@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.1">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.2">
     
     
       
@@ -179,7 +179,7 @@
         
       
       
-      <main class="md-main">
+      <main class="md-main" role="main">
         <div class="md-main__inner md-grid" data-md-component="container">
           
             
@@ -743,7 +743,7 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#common-issues" title="Common issues" class="md-nav__link">
+  <a href="#common-issues" class="md-nav__link">
     Common issues
   </a>
   
@@ -751,29 +751,36 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#the-command-wo-update-failed" title="The command wo update failed" class="md-nav__link">
+  <a href="#the-command-wo-update-failed" class="md-nav__link">
     The command wo update failed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#wordops-failed-to-issue-ssl-certificate" title="WordOps failed to issue SSL certificate" class="md-nav__link">
+  <a href="#wordops-failed-to-issue-ssl-certificate" class="md-nav__link">
     WordOps failed to issue SSL certificate
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#nginx-cpu-usage-is-very-high" title="Nginx CPU usage is very high" class="md-nav__link">
+  <a href="#nginx-cpu-usage-is-very-high" class="md-nav__link">
     Nginx CPU usage is very high
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#when-i-update-a-page-changes-are-not-applied-on-the-site" title="When I update a page, changes are not applied on the site" class="md-nav__link">
+  <a href="#when-i-update-a-page-changes-are-not-applied-on-the-site" class="md-nav__link">
     When I update a page, changes are not applied on the site
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wordops-commands-are-not-working" class="md-nav__link">
+    WordOps commands are not working
   </a>
   
 </li>
@@ -911,7 +918,7 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#common-issues" title="Common issues" class="md-nav__link">
+  <a href="#common-issues" class="md-nav__link">
     Common issues
   </a>
   
@@ -919,29 +926,36 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#the-command-wo-update-failed" title="The command wo update failed" class="md-nav__link">
+  <a href="#the-command-wo-update-failed" class="md-nav__link">
     The command wo update failed
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#wordops-failed-to-issue-ssl-certificate" title="WordOps failed to issue SSL certificate" class="md-nav__link">
+  <a href="#wordops-failed-to-issue-ssl-certificate" class="md-nav__link">
     WordOps failed to issue SSL certificate
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#nginx-cpu-usage-is-very-high" title="Nginx CPU usage is very high" class="md-nav__link">
+  <a href="#nginx-cpu-usage-is-very-high" class="md-nav__link">
     Nginx CPU usage is very high
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#when-i-update-a-page-changes-are-not-applied-on-the-site" title="When I update a page, changes are not applied on the site" class="md-nav__link">
+  <a href="#when-i-update-a-page-changes-are-not-applied-on-the-site" class="md-nav__link">
     When I update a page, changes are not applied on the site
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wordops-commands-are-not-working" class="md-nav__link">
+    WordOps commands are not working
   </a>
   
 </li>
@@ -1011,6 +1025,29 @@ sudo nginx -t <span class="o">&amp;&amp;</span> sudo service nginx restart
 <li>the caching method is defined on Redis Cache</li>
 <li>the prefix defined is <code class="codehilite"><span class="n">nginx</span><span class="o">-</span><span class="k">cache</span><span class="p">:</span></code></li>
 </ul>
+<h3 id="wordops-commands-are-not-working">WordOps commands are not working<a class="headerlink" href="#wordops-commands-are-not-working" title="Permanent link">&para;</a></h3>
+<p>If the error output looks like :</p>
+<div class="codehilite"><pre><span></span>Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+  File <span class="s2">&quot;/usr/local/bin/wo&quot;</span>, line <span class="m">6</span>, in &lt;module&gt;
+    from pkg_resources import load_entry_point
+  File <span class="s2">&quot;/usr/lib/python3/dist-packages/pkg_resources/__init__.py&quot;</span>, line <span class="m">3088</span>, in &lt;module&gt;
+    @_call_aside
+  File <span class="s2">&quot;/usr/lib/python3/dist-packages/pkg_resources/__init__.py&quot;</span>, line <span class="m">3072</span>, in _call_aside
+    f<span class="o">(</span>*args, **kwargs<span class="o">)</span>
+  File <span class="s2">&quot;/usr/lib/python3/dist-packages/pkg_resources/__init__.py&quot;</span>, line <span class="m">3101</span>, in _initialize_master_working_set
+    <span class="nv">working_set</span> <span class="o">=</span> WorkingSet._build_master<span class="o">()</span>
+  File <span class="s2">&quot;/usr/lib/python3/dist-packages/pkg_resources/__init__.py&quot;</span>, line <span class="m">574</span>, in _build_master
+    ws.require<span class="o">(</span>__requires__<span class="o">)</span>
+  File <span class="s2">&quot;/usr/lib/python3/dist-packages/pkg_resources/__init__.py&quot;</span>, line <span class="m">892</span>, in require
+    <span class="nv">needed</span> <span class="o">=</span> self.resolve<span class="o">(</span>parse_requirements<span class="o">(</span>requirements<span class="o">))</span>
+  File <span class="s2">&quot;/usr/lib/python3/dist-packages/pkg_resources/__init__.py&quot;</span>, line <span class="m">778</span>, in resolve
+    raise DistributionNotFound<span class="o">(</span>req, requirers<span class="o">)</span>
+pkg_resources.DistributionNotFound: The <span class="s1">&#39;wo==3.9.8.2&#39;</span> distribution was not found and is required by the application
+</pre></div>
+
+<p>Just remove the executable <code class="codehilite"><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="k">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">wo</span></code> and reinstall WordOps :</p>
+<div class="codehilite"><pre><span></span>sudo rm /usr/local/bin/wo <span class="o">&amp;&amp;</span> wget -qO wo wops.cc <span class="o">&amp;&amp;</span> sudo bash wo
+</pre></div>
                 
                   
                 
