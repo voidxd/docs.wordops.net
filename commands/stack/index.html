@@ -1086,7 +1086,7 @@
                 
                 <h1 id="stack">stack<a class="headerlink" href="#stack" title="Permanent link">&para;</a></h1>
 <p>Manage server stack operations</p>
-<p>Usage :</p>
+<p>Usage:</p>
 <div class="codehilite"><pre><span></span>wo stack <span class="o">(</span><span class="nb">command</span><span class="o">)</span> <span class="o">[</span>options<span class="o">]</span>
 </pre></div>
 
@@ -1136,7 +1136,7 @@
 <p class="admonition-title">Info</p>
 <p>Options are the same for <code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">install</span></code>, <code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">remove</span></code> and <code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">purge</span></code></p>
 </div>
-<p>Stack available are :</p>
+<p>Stack available are:</p>
 <table>
 <thead>
 <tr>
@@ -1245,7 +1245,7 @@
 <li>Web App are php based applications</li>
 </ul>
 <h2 id="stack-install">stack install<a class="headerlink" href="#stack-install" title="Permanent link">&para;</a></h2>
-<p>Usage :</p>
+<p>Usage:</p>
 <div class="codehilite"><pre><span></span>wo stack install <span class="o">[</span>options<span class="o">]</span>
 </pre></div>
 
@@ -1271,7 +1271,7 @@
 <p>After installing the Admin stack, WordOps dashboard will be available on <a href="https://YOUR.SERVER.IP:22222">https://YOUR.SERVER.IP:22222</a> with the credentials displayed during the stack installation.</p>
 <h2 id="stack-upgrade">stack upgrade<a class="headerlink" href="#stack-upgrade" title="Permanent link">&para;</a></h2>
 <p>Upgrade stack safely and apply new configurations and optimizations</p>
-<p>Usage :</p>
+<p>Usage:</p>
 <div class="codehilite"><pre><span></span>wo stack upgrade <span class="o">[</span>options<span class="o">]</span>
 </pre></div>
 
@@ -1284,63 +1284,63 @@
 </thead>
 <tbody>
 <tr>
-<td>--all</td>
+<td><code class="codehilite"><span class="c1">--all</span></code></td>
 <td>Upgrade all stack</td>
 </tr>
 <tr>
-<td>--web</td>
+<td><code class="codehilite"><span class="c1">--web</span></code></td>
 <td>Upgrade web stack</td>
 </tr>
 <tr>
-<td>--admin</td>
+<td><code class="codehilite"><span class="c1">--admin</span></code></td>
 <td>Upgrade admin tools stack</td>
 </tr>
 <tr>
-<td>--nginx</td>
+<td><code class="codehilite"><span class="c1">--nginx</span></code></td>
 <td>Upgrade Nginx stack</td>
 </tr>
 <tr>
-<td>--php</td>
+<td><code class="codehilite"><span class="c1">--php</span></code></td>
 <td>Upgrade PHP 7.2 stack</td>
 </tr>
 <tr>
-<td>--php73</td>
+<td><code class="codehilite"><span class="c1">--php73</span></code></td>
 <td>Upgrade PHP 7.3 stack</td>
 </tr>
 <tr>
-<td>--mysql</td>
+<td><code class="codehilite"><span class="c1">--mysql</span></code></td>
 <td>Upgrade MySQL stack</td>
 </tr>
 <tr>
-<td>--wpcli</td>
+<td><code class="codehilite"><span class="c1">--wpcli</span></code></td>
 <td>Upgrade WPCLI</td>
 </tr>
 <tr>
-<td>--redis</td>
+<td><code class="codehilite"><span class="c1">--redis</span></code></td>
 <td>Upgrade Redis</td>
 </tr>
 <tr>
-<td>--netdata</td>
+<td><code class="codehilite"><span class="c1">--netdata</span></code></td>
 <td>Upgrade Netdata</td>
 </tr>
 <tr>
-<td>--dashboard</td>
+<td><code class="codehilite"><span class="c1">--dashboard</span></code></td>
 <td>Upgrade WordOps Dashboard</td>
 </tr>
 <tr>
-<td>--composer</td>
+<td><code class="codehilite"><span class="c1">--composer</span></code></td>
 <td>Upgrade Composer</td>
 </tr>
 <tr>
-<td>--phpmyadmin</td>
+<td><code class="codehilite"><span class="c1">--phpmyadmin</span></code></td>
 <td>Upgrade phpMyAdmin</td>
 </tr>
 <tr>
-<td>--no-prompt</td>
+<td><code class="codehilite"><span class="c1">--no-prompt</span></code></td>
 <td>Upgrade Packages without any prompt</td>
 </tr>
 <tr>
-<td>--force</td>
+<td><code class="codehilite"><span class="c1">--force</span></code></td>
 <td>Force Packages upgrade without any prompt</td>
 </tr>
 </tbody>
@@ -1349,7 +1349,7 @@
 <p>Currently <code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">upgrade</span> <span class="c1">--mysql</span></code> will only update the package from the current MariaDB repository, but will not perform upgrades between major releases (10.1 -&gt; 10.3), mostly because there is a risk of failures when upgrading MariaDB, and we will have to run more tests to make sure our upgrading process is stable and will not impact your sites availability.</p>
 <h2 id="stack-remove">stack remove<a class="headerlink" href="#stack-remove" title="Permanent link">&para;</a></h2>
 <p>Remove stacks (without removing configurations or data for APT packages)</p>
-<p>Usage :</p>
+<p>Usage:</p>
 <div class="codehilite"><pre><span></span>wo stack remove &lt;stack&gt; <span class="o">[</span>options<span class="o">]</span>
 </pre></div>
 
@@ -1362,11 +1362,11 @@
 </thead>
 <tbody>
 <tr>
-<td>--all</td>
+<td><code class="codehilite"><span class="c1">--all</span></code></td>
 <td>Remove all stacks at once</td>
 </tr>
 <tr>
-<td>--force</td>
+<td><code class="codehilite"><span class="c1">--force</span></code></td>
 <td>Force install/remove/purge without prompt</td>
 </tr>
 </tbody>
@@ -1378,7 +1378,7 @@
 <p class="admonition-title">Warning</p>
 <p>Please be careful when using <code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">purge</span></code> because it will remove APT packages but also purge all configurations or data, including MySQL databases, Redis databases or Nginx vhosts.</p>
 </div>
-<p>Usage :</p>
+<p>Usage:</p>
 <div class="codehilite"><pre><span></span>wo stack purge &lt;stack&gt; <span class="o">[</span>options<span class="o">]</span>
 </pre></div>
 
@@ -1402,31 +1402,31 @@
 </table>
 <h2 id="stack-restart">stack restart<a class="headerlink" href="#stack-restart" title="Permanent link">&para;</a></h2>
 <p>Restart Stack service</p>
-<p>Usage :</p>
+<p>Usage:</p>
 <div class="codehilite"><pre><span></span>wo stack restart <span class="o">[</span>options<span class="o">]</span>
 </pre></div>
 
 <h2 id="stack-reload">stack reload<a class="headerlink" href="#stack-reload" title="Permanent link">&para;</a></h2>
 <p>Reload Stack service</p>
-<p>Usage :</p>
+<p>Usage:</p>
 <div class="codehilite"><pre><span></span>wo stack reload <span class="o">[</span>options<span class="o">]</span>
 </pre></div>
 
 <h2 id="stack-start">stack start<a class="headerlink" href="#stack-start" title="Permanent link">&para;</a></h2>
 <p>Start Stack service</p>
-<p>Usage :</p>
+<p>Usage:</p>
 <div class="codehilite"><pre><span></span>wo stack start <span class="o">[</span>options<span class="o">]</span>
 </pre></div>
 
 <h2 id="stack-stop">stack stop<a class="headerlink" href="#stack-stop" title="Permanent link">&para;</a></h2>
 <p>Stop Stack service</p>
-<p>Usage :</p>
+<p>Usage:</p>
 <div class="codehilite"><pre><span></span>wo stack stop <span class="o">[</span>options<span class="o">]</span>
 </pre></div>
 
 <h2 id="stop-status">stop status<a class="headerlink" href="#stop-status" title="Permanent link">&para;</a></h2>
 <p>Display Stack service status</p>
-<p>Usage :</p>
+<p>Usage:</p>
 <div class="codehilite"><pre><span></span>wo stack status <span class="o">[</span>options<span class="o">]</span>
 </pre></div>
                 

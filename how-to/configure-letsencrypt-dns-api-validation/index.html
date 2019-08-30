@@ -641,21 +641,21 @@
         
           <li class="md-nav__item">
   <a href="#step-1-get-your-api-credentials" class="md-nav__link">
-    Step 1 : get your API credentials
+    Step 1: get your API credentials
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#step-2-set-your-credentials-with-acmesh-variables" class="md-nav__link">
-    Step 2 : set your credentials with acme.sh variables
+    Step 2: set your credentials with acme.sh variables
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#step-3-issue-your-certificate" class="md-nav__link">
-    Step 3 : issue your certificate
+    Step 3: issue your certificate
   </a>
   
 </li>
@@ -922,21 +922,21 @@
         
           <li class="md-nav__item">
   <a href="#step-1-get-your-api-credentials" class="md-nav__link">
-    Step 1 : get your API credentials
+    Step 1: get your API credentials
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#step-2-set-your-credentials-with-acmesh-variables" class="md-nav__link">
-    Step 2 : set your credentials with acme.sh variables
+    Step 2: set your credentials with acme.sh variables
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#step-3-issue-your-certificate" class="md-nav__link">
-    Step 3 : issue your certificate
+    Step 3: issue your certificate
   </a>
   
 </li>
@@ -986,28 +986,28 @@ This feature is optional to issue domain and subdomain certificates, but is requ
 <p class="admonition-title">Info</p>
 <p>DNS providers list and configurations are available in <a href="https://github.com/Neilpang/acme.sh/wiki/dnsapi">acme.sh wiki</a></p>
 </div>
-<h3 id="step-1-get-your-api-credentials">Step 1 : get your API credentials<a class="headerlink" href="#step-1-get-your-api-credentials" title="Permanent link">&para;</a></h3>
-<p>Requirements :</p>
+<h3 id="step-1-get-your-api-credentials">Step 1: get your API credentials<a class="headerlink" href="#step-1-get-your-api-credentials" title="Permanent link">&para;</a></h3>
+<p>Requirements:</p>
 <ul>
 <li>your Cloudflare account email address</li>
 <li>your Global API Key available in your <a href="https://dash.cloudflare.com/profile">Cloudflare profile</a></li>
 </ul>
-<h3 id="step-2-set-your-credentials-with-acmesh-variables">Step 2 : set your credentials with acme.sh variables<a class="headerlink" href="#step-2-set-your-credentials-with-acmesh-variables" title="Permanent link">&para;</a></h3>
-<p>Before issuing your first SSL certificate with DNS API, you have to define your API credentials with the command <code class="codehilite"><span class="n">export</span></code>  :</p>
-<p>Example for Cloudflare :</p>
+<h3 id="step-2-set-your-credentials-with-acmesh-variables">Step 2: set your credentials with acme.sh variables<a class="headerlink" href="#step-2-set-your-credentials-with-acmesh-variables" title="Permanent link">&para;</a></h3>
+<p>Before issuing your first SSL certificate with DNS API, you have to define your API credentials with the command <code class="codehilite"><span class="n">export</span></code> :</p>
+<p>Example for Cloudflare:</p>
 <div class="codehilite"><pre><span></span><span class="nb">export</span> <span class="nv">CF_Key</span><span class="o">=</span><span class="s2">&quot;sdfsdfsdfljlbjkljlkjsdfoiwje&quot;</span>
 <span class="nb">export</span> <span class="nv">CF_Email</span><span class="o">=</span><span class="s2">&quot;xxxx@sss.com&quot;</span>
 </pre></div>
 
 <ul>
-<li>CF_Key : Cloudflare Global API key available in your <a href="https://dash.cloudflare.com/profile">Cloudflare profile</a></li>
-<li>CF_Email : Your Cloudflare account email address</li>
+<li>CF_Key: Cloudflare Global API key available in your <a href="https://dash.cloudflare.com/profile">Cloudflare profile</a></li>
+<li>CF_Email: Your Cloudflare account email address</li>
 </ul>
-<p>Example with DigitalOcean :</p>
+<p>Example with DigitalOcean:</p>
 <div class="codehilite"><pre><span></span><span class="nb">export</span> <span class="nv">DO_API_KEY</span><span class="o">=</span><span class="s2">&quot;75310dc4ca779ac39a19f6355db573b49ce92ae126553ebd61ac3a3ae34834cc&quot;</span>
 </pre></div>
 
-<p>Example with GoDaddy :</p>
+<p>Example with GoDaddy:</p>
 <div class="codehilite"><pre><span></span><span class="nb">export</span> <span class="nv">GD_Key</span><span class="o">=</span><span class="s2">&quot;sdfsdfsdfljlbjkljlkjsdfoiwje&quot;</span>
 <span class="nb">export</span> <span class="nv">GD_Secret</span><span class="o">=</span><span class="s2">&quot;asdfsdafdsfdsfdsfdsfdsafd&quot;</span>
 </pre></div>
@@ -1016,22 +1016,22 @@ This feature is optional to issue domain and subdomain certificates, but is requ
 <p class="admonition-title">Info</p>
 <p>DNS providers list and configurations are available in <a href="https://github.com/Neilpang/acme.sh/wiki/dnsapi">Acme.sh Wiki</a></p>
 </div>
-<h3 id="step-3-issue-your-certificate">Step 3 : issue your certificate<a class="headerlink" href="#step-3-issue-your-certificate" title="Permanent link">&para;</a></h3>
+<h3 id="step-3-issue-your-certificate">Step 3: issue your certificate<a class="headerlink" href="#step-3-issue-your-certificate" title="Permanent link">&para;</a></h3>
 <p>For a new site secured with a wildcard SSL certificates with Cloudflare DNS API</p>
 <div class="codehilite"><pre><span></span>wo site create site.tld --wp --letsencrypt<span class="o">=</span>wildcard --dns<span class="o">=</span>dns_cf
 </pre></div>
 
 <ul>
-<li><code class="codehilite"><span class="c1">--letsencrypt=wildcard</span></code> : issue a wildcard certificate <code class="codehilite"><span class="k">domain</span><span class="p">.</span><span class="n">tld</span></code> + <code class="codehilite"><span class="o">*</span><span class="p">.</span><span class="k">domain</span><span class="p">.</span><span class="n">tld</span></code></li>
-<li><code class="codehilite"><span class="c1">--dns=dns_cf</span></code> : enable DNS API mode with Cloudflare.</li>
+<li><code class="codehilite"><span class="c1">--letsencrypt=wildcard</span></code>: issue a wildcard certificate <code class="codehilite"><span class="k">domain</span><span class="p">.</span><span class="n">tld</span></code> + <code class="codehilite"><span class="o">*</span><span class="p">.</span><span class="k">domain</span><span class="p">.</span><span class="n">tld</span></code></li>
+<li><code class="codehilite"><span class="c1">--dns=dns_cf</span></code>: enable DNS API mode with Cloudflare.</li>
 </ul>
 <p>For an existant secured with a simple SSL certificate (site + <a href="http://www.site.tld">www.site.tld</a>) with DigitalOcean DNS API</p>
 <div class="codehilite"><pre><span></span>wo site update site.tld -le --dns<span class="o">=</span>dns_do
 </pre></div>
 
 <ul>
-<li><code class="codehilite"><span class="o">-</span><span class="n">le</span></code> : issue a certificate for <code class="codehilite"><span class="k">domain</span><span class="p">.</span><span class="n">tld</span></code> + <code class="codehilite"><span class="n">www</span><span class="p">.</span><span class="k">domain</span><span class="p">.</span><span class="n">tld</span></code></li>
-<li><code class="codehilite"><span class="c1">--dns=dns_do</span></code> : enable DNS API mode with DigitalOcean</li>
+<li><code class="codehilite"><span class="o">-</span><span class="n">le</span></code>: issue a certificate for <code class="codehilite"><span class="k">domain</span><span class="p">.</span><span class="n">tld</span></code> + <code class="codehilite"><span class="n">www</span><span class="p">.</span><span class="k">domain</span><span class="p">.</span><span class="n">tld</span></code></li>
+<li><code class="codehilite"><span class="c1">--dns=dns_do</span></code>: enable DNS API mode with DigitalOcean</li>
 </ul>
 <h2 id="informations">Informations<a class="headerlink" href="#informations" title="Permanent link">&para;</a></h2>
 <ul>

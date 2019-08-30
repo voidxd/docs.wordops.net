@@ -1025,7 +1025,7 @@
 </ul>
 <h2 id="other-questions">Other questions<a class="headerlink" href="#other-questions" title="Permanent link">&para;</a></h2>
 <h4 id="get-a-list-of-wordops-commands">Get a list of WordOps commands<a class="headerlink" href="#get-a-list-of-wordops-commands" title="Permanent link">&para;</a></h4>
-<p>To get the list of WordOps commands, you can use the command :</p>
+<p>To get the list of WordOps commands, you can use the command:</p>
 <div class="codehilite"><pre><span></span>wo
 </pre></div>
 
@@ -1037,13 +1037,13 @@
 <h4 id="get-the-mysql-root-password">Get the MySQL root password<a class="headerlink" href="#get-the-mysql-root-password" title="Permanent link">&para;</a></h4>
 <p>MySQL root password is stored in the file <code class="codehilite"><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">mysql</span><span class="o">/</span><span class="n">conf</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">my</span><span class="p">.</span><span class="n">cnf</span></code></p>
 <h4 id="display-mysql-user-and-password-of-a-site">Display MySQL user and password of a site<a class="headerlink" href="#display-mysql-user-and-password-of-a-site" title="Permanent link">&para;</a></h4>
-<p>You can use the command :</p>
+<p>You can use the command:</p>
 <div class="codehilite"><pre><span></span>wo site info site.tld
 </pre></div>
 
 <hr />
 <h4 id="access-wordops-backend">Access WordOps backend<a class="headerlink" href="#access-wordops-backend" title="Permanent link">&para;</a></h4>
-<p>WordOps backend is available on port 22222, you can access it with the server IP, hostname or with a domain pointed to the server IP :</p>
+<p>WordOps backend is available on port 22222, you can access it with the server IP, hostname or with a domain pointed to the server IP:</p>
 <div class="codehilite"><pre><span></span><span class="c1"># with server IP</span>
 https://YOUR.SERVER.IP:22222
 
@@ -1055,7 +1055,7 @@ https://site.tld:22222
 </pre></div>
 
 <h4 id="change-wordops-backend-username-and-password">Change WordOps backend username and password<a class="headerlink" href="#change-wordops-backend-username-and-password" title="Permanent link">&para;</a></h4>
-<p>You can use the command :</p>
+<p>You can use the command:</p>
 <div class="codehilite"><pre><span></span>wo secure --auth
 </pre></div>
 
@@ -1063,7 +1063,7 @@ https://site.tld:22222
 <h4 id="renew-a-lets-encrypt-ssl-certificates-with-wordops">Renew a Let's Encrypt SSL Certificates with WordOps<a class="headerlink" href="#renew-a-lets-encrypt-ssl-certificates-with-wordops" title="Permanent link">&para;</a></h4>
 <p>Previously with EasyEngine v3, Let's Encrypt certificates were renewed by running the command <code class="codehilite"><span class="n">ee</span> <span class="n">site</span> <span class="k">update</span> <span class="c1">--le=renew --all</span></code> with a cronjob.</p>
 <p>You may have noticed the command <code class="codehilite"><span class="n">site</span> <span class="k">update</span> <span class="c1">--le=renew</span></code> still exist in WordOps, but you shouln't need it because WordOps use the awesome acme client acme.sh to issue and handle Let's Encrypt SSL certificates. All certificates are <strong>automatically renewed every 60 days</strong> by acme.sh using a cronjob.</p>
-<p>However, if you really need to renew your certificates, you can directly use acme.sh to renew all certificates with the following command :</p>
+<p>However, if you really need to renew your certificates, you can directly use acme.sh to renew all certificates with the following command:</p>
 <div class="codehilite"><pre><span></span>acme.sh --renew-all --ecc
 </pre></div>
                 

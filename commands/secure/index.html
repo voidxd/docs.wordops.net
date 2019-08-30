@@ -937,11 +937,11 @@
 <video align="center" src="/images/wo-secure.webm" width="720" autoplay loop>
 </video>
 
-<p>Usage :</p>
+<p>Usage:</p>
 <div class="codehilite"><pre><span></span>wo secure <span class="o">[</span>options<span class="o">]</span>
 </pre></div>
 
-<p>Options :</p>
+<p>Options:</p>
 <table>
 <thead>
 <tr>
@@ -951,15 +951,15 @@
 </thead>
 <tbody>
 <tr>
-<td>--auth</td>
+<td><code class="codehilite"><span class="c1">--auth</span></code></td>
 <td>Set backend user credentials (user and)</td>
 </tr>
 <tr>
-<td>--port</td>
-<td>Set backend port (default : 22222)</td>
+<td><code class="codehilite"><span class="c1">--port</span></code></td>
+<td>Set backend port (default: 22222)</td>
 </tr>
 <tr>
-<td>--ip</td>
+<td><code class="codehilite"><span class="c1">--ip</span></code></td>
 <td>Set the list of IP(s) allowed to access without authentification</td>
 </tr>
 </tbody>
@@ -968,8 +968,8 @@
 <h2 id="change-backend-credential">Change backend credential<a class="headerlink" href="#change-backend-credential" title="Permanent link">&para;</a></h2>
 <p>The user name and password of WordOps backend is showed when you create a first site. If you don't remember and want to reset, please use below command.</p>
 <div class="codehilite"><pre><span></span>wo secure --auth
-Provide HTTP authentication user name <span class="o">[</span>admin<span class="o">]</span> :master
-Provide HTTP authentication password <span class="o">[</span>5zVFELjHjShPPFr7qkoMzavP<span class="o">]</span> :
+Provide HTTP authentication user name <span class="o">[</span>admin<span class="o">]</span>:master
+Provide HTTP authentication password <span class="o">[</span>5zVFELjHjShPPFr7qkoMzavP<span class="o">]</span>:
 </pre></div>
 
 <p>Short hand:</p>
@@ -980,7 +980,7 @@ Provide HTTP authentication password <span class="o">[</span>5zVFELjHjShPPFr7qko
 <p>In case you want to change WordOps backend port from <code class="codehilite"><span class="mi">22222</span></code>, use this command:</p>
 <div class="codehilite"><pre><span></span>wo secure --port
 WordOps admin port <span class="o">[</span><span class="m">22222</span><span class="o">]</span>:23456
-Reload : nginx     <span class="o">[</span>OK<span class="o">]</span>
+Reload: nginx     <span class="o">[</span>OK<span class="o">]</span>
 Successfully port changed <span class="m">23456</span>
 </pre></div>
 

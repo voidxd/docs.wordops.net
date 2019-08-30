@@ -1026,7 +1026,7 @@
                 
                 <h1 id="manage-lets-encrypt-ssl-certificates">Manage Let's Encrypt SSL certificates<a class="headerlink" href="#manage-lets-encrypt-ssl-certificates" title="Permanent link">&para;</a></h1>
 <p>In this guide, we will explain how to issue a Let's Encrypt SSL certificate to secure your site and the different options available.</p>
-<p>To issue a SSL certificate with WordOps, you can use the following arguments with the commands :</p>
+<p>To issue a SSL certificate with WordOps, you can use the following arguments with the commands:</p>
 <ul>
 <li><code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">create</span></code></li>
 <li><code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">update</span></code></li>
@@ -1045,7 +1045,7 @@
 </tr>
 <tr>
 <td><code class="codehilite"><span class="c1">--letsencrypt=wildcard</span></code></td>
-<td>issue a wildcard SSL certificate : <strong>domain.tld + *.domain.tld</strong></td>
+<td>issue a wildcard SSL certificate: <strong>domain.tld + *.domain.tld</strong></td>
 </tr>
 <tr>
 <td><code class="codehilite"><span class="c1">--dns</span></code> / <code class="codehilite"><span class="c1">--dns=&lt;dns_api&gt;</span></code></td>
@@ -1059,20 +1059,20 @@
 <h3 id="webroot-mode">Webroot mode<a class="headerlink" href="#webroot-mode" title="Permanent link">&para;</a></h3>
 <p>By default WordOps use the Webroot mode to validate the domain. This mode doesn't require any additional configuration.</p>
 <h4 id="domain-wwwdomaintld">domain + <a href="http://www.domain.tld">www.domain.tld</a><a class="headerlink" href="#domain-wwwdomaintld" title="Permanent link">&para;</a></h4>
-<p>To create a new site :</p>
+<p>To create a new site:</p>
 <div class="codehilite"><pre><span></span>wo site create site.tld --wp -le
 </pre></div>
 
-<p>To secure an existant site :</p>
+<p>To secure an existant site:</p>
 <div class="codehilite"><pre><span></span>wo site update site.tld -le
 </pre></div>
 
 <h4 id="sub-domain">sub-domain<a class="headerlink" href="#sub-domain" title="Permanent link">&para;</a></h4>
-<p>To create a new site :</p>
+<p>To create a new site:</p>
 <div class="codehilite"><pre><span></span>wo site create sub.site.tld --wp -le
 </pre></div>
 
-<p>To secure an existant site :</p>
+<p>To secure an existant site:</p>
 <div class="codehilite"><pre><span></span>wo site update sub.site.tld -le
 </pre></div>
 
@@ -1082,7 +1082,7 @@
 <p>Read first our guide about <a href="/how-to/configure-letsencrypt-dns-api-validation/">DNS API configuration</a></p>
 </div>
 <h4 id="domain-or-subdomain">domain or subdomain<a class="headerlink" href="#domain-or-subdomain" title="Permanent link">&para;</a></h4>
-<p>To create a new site with Cloudflare DNS API :</p>
+<p>To create a new site with Cloudflare DNS API:</p>
 <div class="codehilite"><pre><span></span>wo site create site.tld --wp -le --dns<span class="o">=</span>dns_cf
 </pre></div>
 
@@ -1091,7 +1091,7 @@
 </pre></div>
 
 <h4 id="wildcard">wildcard<a class="headerlink" href="#wildcard" title="Permanent link">&para;</a></h4>
-<p>To create a new site with Cloudflare DNS API :</p>
+<p>To create a new site with Cloudflare DNS API:</p>
 <div class="codehilite"><pre><span></span>wo site create site.tld --wp --letsencrypt<span class="o">=</span>wildcard --dns<span class="o">=</span>dns_cf
 </pre></div>
 

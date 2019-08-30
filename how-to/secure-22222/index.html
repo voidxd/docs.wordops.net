@@ -953,14 +953,14 @@
 sudo grep <span class="s2">&quot;ssl_&quot;</span> /var/www/<span class="si">${</span><span class="nv">DOMAIN_NAME</span><span class="si">}</span>/conf/nginx/ssl.conf &gt; /var/www/22222/conf/nginx/ssl.conf
 </pre></div>
 
-<p>Then reload Nginx :</p>
+<p>Then reload Nginx:</p>
 <div class="codehilite"><pre><span></span>wo stack restart --nginx
 </pre></div>
 
 <p>You should now be able to access to WordOps backend on <code class="codehilite"><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">site</span><span class="p">.</span><span class="n">tld</span><span class="p">:</span><span class="mi">22222</span></code></p>
 <h3 id="issue-a-new-certificate-to-secure-wordops-backend">Issue a new certificate to secure WordOps backend<a class="headerlink" href="#issue-a-new-certificate-to-secure-wordops-backend" title="Permanent link">&para;</a></h3>
-<p>If you prefer to issue manually a new Let's Encrypt SSL certificate, here the steps to follow :</p>
-<p>Set your domain or subdomain as a variable :</p>
+<p>If you prefer to issue manually a new Let's Encrypt SSL certificate, here the steps to follow:</p>
+<p>Set your domain or subdomain as a variable:</p>
 <div class="codehilite"><pre><span></span><span class="nv">DOMAIN_NAME</span><span class="o">=</span>backend.site.ltd
 </pre></div>
 

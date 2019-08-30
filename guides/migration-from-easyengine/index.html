@@ -1054,7 +1054,7 @@
                 
                 <h1 id="migration-from-easyengine-v3">Migration from EasyEngine v3<a class="headerlink" href="#migration-from-easyengine-v3" title="Permanent link">&para;</a></h1>
 <h2 id="running-wordops-install-script">Running WordOps install script<a class="headerlink" href="#running-wordops-install-script" title="Permanent link">&para;</a></h2>
-<p>The first step to migrate from EasyEngine to WordOps is to run WordOps install script with the command :</p>
+<p>The first step to migrate from EasyEngine to WordOps is to run WordOps install script with the command:</p>
 <div class="codehilite"><pre><span></span>wget -qO wo wops.cc <span class="o">&amp;&amp;</span> sudo bash wo
 </pre></div>
 
@@ -1070,7 +1070,7 @@
 <p>If some sites are still using php5.6 or php7.0 and are not compatible with newer PHP versions, do not change their vhost configuration. WordOps minimum and default PHP version is PHP 7.2. Additionally, sites previously created with <code class="codehilite"><span class="c1">--w3tc</span></code>  will have to use another cache option as we deprecated this stack.</p>
 </div>
 <h3 id="updating-site-configuration">Updating site configuration<a class="headerlink" href="#updating-site-configuration" title="Permanent link">&para;</a></h3>
-<p>You have the choice between two method to update your site configuration :</p>
+<p>You have the choice between two method to update your site configuration:</p>
 <ul>
 <li>
 <p>With the command <code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">update</span></code> (recommended)</p>
@@ -1080,13 +1080,13 @@
 </li>
 </ul>
 <h4 id="using-the-command-wo-site-update">Using the command <code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">update</span></code><a class="headerlink" href="#using-the-command-wo-site-update" title="Permanent link">&para;</a></h4>
-<p>The easiest way to update your site with the new WordOps configurations is to use the command :</p>
+<p>The easiest way to update your site with the new WordOps configurations is to use the command:</p>
 <div class="codehilite"><pre><span></span>wo site update site.tld &lt;options&gt;
 </pre></div>
 
 <p>To update your sites configuration, you can enable PHP 7.3 on your site with the argument <code class="codehilite"><span class="c1">--php73</span></code> and then disable it with the argument <code class="codehilite"><span class="c1">--php73=off</span></code> to use PHP 7.2.
 This will regenerate your site Nginx vhost and apply the new configuration.</p>
-<p><strong>Example</strong> :</p>
+<p><strong>Example</strong>:</p>
 <div class="codehilite"><pre><span></span><span class="c1"># enable PHP 7.3 to regenerate site configuration</span>
 wo site update site.tld --php73
 <span class="c1"># disable PHP 7.3 to use PHP 7.2 (optional)</span>
@@ -1094,7 +1094,7 @@ wo site update site.tld --php73<span class="o">=</span>off
 </pre></div>
 
 <h4 id="manually-editing-site-configuration">Manually editing site configuration<a class="headerlink" href="#manually-editing-site-configuration" title="Permanent link">&para;</a></h4>
-<p>You can edit sites configuration with the command :</p>
+<p>You can edit sites configuration with the command:</p>
 <div class="codehilite"><pre><span></span>wo site edit site.tld
 </pre></div>
 
@@ -1109,7 +1109,7 @@ wo site update site.tld --php73<span class="o">=</span>off
 <p>Make sure to not remove the <code class="codehilite"><span class="p">;</span></code> at the end of the line when updating Nginx configuration.</p>
 </div>
 <p>For all WordPress related configuration files like <code class="codehilite"><span class="n">wpsc</span><span class="p">.</span><span class="n">conf</span></code> or <code class="codehilite"><span class="n">wpfc</span><span class="o">-</span><span class="n">php7</span><span class="p">.</span><span class="n">conf</span></code>, new configurations files are just named <code class="codehilite"><span class="n">wpsc</span><span class="o">-</span><span class="n">php72</span><span class="p">.</span><span class="n">conf</span></code> or <code class="codehilite"><span class="n">wpfc</span><span class="o">-</span><span class="n">php72</span><span class="p">.</span><span class="n">conf</span></code>.</p>
-<p>There are some exceptions, list here :</p>
+<p>There are some exceptions, list here:</p>
 <table>
 <thead>
 <tr>
@@ -1137,7 +1137,7 @@ wo site update site.tld --php73<span class="o">=</span>off
 </tbody>
 </table>
 <h3 id="removing-previous-php-version">Removing previous PHP version<a class="headerlink" href="#removing-previous-php-version" title="Permanent link">&para;</a></h3>
-<p>If you do not need php5.6 and php7.0 anymore, you can safely remove them with the following commands :</p>
+<p>If you do not need php5.6 and php7.0 anymore, you can safely remove them with the following commands:</p>
 <div class="codehilite"><pre><span></span><span class="c1"># php5.6</span>
 apt-get -y autoremove php5.6-fpm php5.6-common --purge
 
@@ -1151,28 +1151,28 @@ apt-get -y autoremove php7.0-fpm php7.0-common --purge
 <p>Before upgrading MariaDB, we strongly recommend you to perform a backup of your MySQL databases.</p>
 </div>
 <h4 id="backup-your-databases">Backup your databases<a class="headerlink" href="#backup-your-databases" title="Permanent link">&para;</a></h4>
-<p>You can backup your MySQL databases with this simple bash script :</p>
+<p>You can backup your MySQL databases with this simple bash script:</p>
 <div class="codehilite"><pre><span></span>wget https://raw.githubusercontent.com/VirtuBox/bash-scripts/master/backup/mysqldump/mysqldump.sh -O mysqldump.sh
 chmod +x mysqldump.sh
 </pre></div>
 
-<p>Then perform a full backup :</p>
+<p>Then perform a full backup:</p>
 <div class="codehilite"><pre><span></span>./mysqldump.sh --full
 </pre></div>
 
 <p>This will backup the whole MySQL server and store the gzipped dump in /var/www/mysqldump</p>
-<p>Additionally you can make a copy of the <code class="codehilite"><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">mysql</span></code> directory :</p>
+<p>Additionally you can make a copy of the <code class="codehilite"><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">mysql</span></code> directory:</p>
 <div class="codehilite"><pre><span></span>sudo service mysql stop
 sudo cp -rf /var/lib/mysql /var/lib/mysql-bak
 sudo service mysql start
 </pre></div>
 
 <h4 id="upgrading-mariadb">Upgrading MariaDB<a class="headerlink" href="#upgrading-mariadb" title="Permanent link">&para;</a></h4>
-<p>At first, you need to remove the current MariaDB-server installed. To do so, use the command :</p>
+<p>At first, you need to remove the current MariaDB-server installed. To do so, use the command:</p>
 <div class="codehilite"><pre><span></span>sudo apt-get autoremove mariadb-server -y
 </pre></div>
 
-<p>Then you can reinstall the latest MariaDB-server version with WordOps :</p>
+<p>Then you can reinstall the latest MariaDB-server version with WordOps:</p>
 <div class="codehilite"><pre><span></span>wo stack install --mysql
 </pre></div>
                 

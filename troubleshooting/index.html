@@ -988,37 +988,37 @@
 <h2 id="common-issues">Common issues<a class="headerlink" href="#common-issues" title="Permanent link">&para;</a></h2>
 <h3 id="the-command-wo-update-failed">The command <code class="codehilite"><span class="n">wo</span> <span class="k">update</span></code> failed<a class="headerlink" href="#the-command-wo-update-failed" title="Permanent link">&para;</a></h3>
 <p>This is a known issue with WordOps v3.9.6 which has been fixed with the maintenance release v3.9.6.1.
-As a workaround you can either use the command <code class="codehilite"><span class="n">wo</span> <span class="k">update</span> <span class="c1">--beta</span></code> or run again the install command :</p>
+As a workaround you can either use the command <code class="codehilite"><span class="n">wo</span> <span class="k">update</span> <span class="c1">--beta</span></code> or run again the install command:</p>
 <div class="codehilite"><pre><span></span>wget -qO wo wops.cc <span class="o">&amp;&amp;</span> sudo bash wo
 </pre></div>
 
 <hr />
 <h3 id="wordops-failed-to-issue-ssl-certificate">WordOps failed to issue SSL certificate<a class="headerlink" href="#wordops-failed-to-issue-ssl-certificate" title="Permanent link">&para;</a></h3>
-<p>At first, make sure your domain is pointed to your server IP :</p>
+<p>At first, make sure your domain is pointed to your server IP:</p>
 <ul>
 <li><a href="http://www.site.tld">www.site.tld</a> + site.tld if you use the flag <code class="codehilite"><span class="o">-</span><span class="n">le</span></code> or <code class="codehilite"><span class="c1">--letsencrypt</span></code></li>
 <li>sub.site.tld if you use the flag <code class="codehilite"><span class="o">-</span><span class="n">le</span><span class="o">=</span><span class="n">subdomain</span></code> or <code class="codehilite"><span class="c1">--letsencrypt=subdomain</span></code></li>
 </ul>
-<p>Then if you need to cleanup the previous SSL certificate, you can use the following command to remove existant certificates and keys, as well as other Nginx configurations for your domain :</p>
+<p>Then if you need to cleanup the previous SSL certificate, you can use the following command to remove existant certificates and keys, as well as other Nginx configurations for your domain:</p>
 <div class="codehilite"><pre><span></span>wo site update site.tld --letsencrypt<span class="o">=</span>clean
 </pre></div>
 
 <h3 id="nginx-cpu-usage-is-very-high">Nginx CPU usage is very high<a class="headerlink" href="#nginx-cpu-usage-is-very-high" title="Permanent link">&para;</a></h3>
 <p>This issue seems to be related to brotli but, but even after investigation, we haven't be able to find the cause of this issue yet.</p>
-<p>You can disable brotli compression by running the following command :</p>
+<p>You can disable brotli compression by running the following command:</p>
 <div class="codehilite"><pre><span></span>sudo sed -i <span class="s1">&#39;s/brotli on;/brotli off;/&#39;</span> /etc/nginx/nginx.conf
 sudo sed -i <span class="s1">&#39;s/brotli_static on;/brotli_static off;/&#39;</span> /etc/nginx/nginx.conf
 sudo nginx -t <span class="o">&amp;&amp;</span> sudo service nginx restart
 </pre></div>
 
 <h3 id="when-i-update-a-page-changes-are-not-applied-on-the-site">When I update a page, changes are not applied on the site<a class="headerlink" href="#when-i-update-a-page-changes-are-not-applied-on-the-site" title="Permanent link">&para;</a></h3>
-<p>If you are using Nginx fastcgi_cache, please make sure :</p>
+<p>If you are using Nginx fastcgi_cache, please make sure:</p>
 <ul>
 <li>Nginx-helper plugin is enabled</li>
 <li>the option "purge cache" is enabled in Settings &gt; Nginx-Helper</li>
 <li>the caching method is defined on Nginx Fastcgi cache</li>
 </ul>
-<p>If you are using Redis-cache, please make sure :</p>
+<p>If you are using Redis-cache, please make sure:</p>
 <ul>
 <li>Nginx-helper plugin is enabled</li>
 <li>the option "purge cache" is enabled in Settings &gt; Nginx-Helper</li>
@@ -1026,7 +1026,7 @@ sudo nginx -t <span class="o">&amp;&amp;</span> sudo service nginx restart
 <li>the prefix defined is <code class="codehilite"><span class="n">nginx</span><span class="o">-</span><span class="k">cache</span><span class="p">:</span></code></li>
 </ul>
 <h3 id="wordops-commands-are-not-working">WordOps commands are not working<a class="headerlink" href="#wordops-commands-are-not-working" title="Permanent link">&para;</a></h3>
-<p>If the error output looks like :</p>
+<p>If the error output looks like:</p>
 <div class="codehilite"><pre><span></span>Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
   File <span class="s2">&quot;/usr/local/bin/wo&quot;</span>, line <span class="m">6</span>, in &lt;module&gt;
     from pkg_resources import load_entry_point
@@ -1045,7 +1045,7 @@ sudo nginx -t <span class="o">&amp;&amp;</span> sudo service nginx restart
 pkg_resources.DistributionNotFound: The <span class="s1">&#39;wo==3.9.8.2&#39;</span> distribution was not found and is required by the application
 </pre></div>
 
-<p>Just remove the executable <code class="codehilite"><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="k">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">wo</span></code> and reinstall WordOps :</p>
+<p>Just remove the executable <code class="codehilite"><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="k">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">wo</span></code> and reinstall WordOps:</p>
 <div class="codehilite"><pre><span></span>sudo rm /usr/local/bin/wo <span class="o">&amp;&amp;</span> wget -qO wo wops.cc <span class="o">&amp;&amp;</span> sudo bash wo
 </pre></div>
                 
