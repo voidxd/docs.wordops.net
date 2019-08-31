@@ -620,6 +620,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#secure-wordops-backend-automatically" class="md-nav__link">
+    Secure WordOps backend automatically
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#using-another-certificate" class="md-nav__link">
     Using another certificate
   </a>
@@ -899,6 +906,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#secure-wordops-backend-automatically" class="md-nav__link">
+    Secure WordOps backend automatically
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#using-another-certificate" class="md-nav__link">
     Using another certificate
   </a>
@@ -945,12 +959,35 @@
                 
                 
                 <h1 id="how-to-secure-wordops-backend-with-lets-encrypt-ssl-certificate">How to secure WordOps backend with Let's Encrypt SSL certificate<a class="headerlink" href="#how-to-secure-wordops-backend-with-lets-encrypt-ssl-certificate" title="Permanent link">&para;</a></h1>
-<p>From the release v3.9.8.1 and onward, WordOps will automatically secure the backend on port 22222 with the first SSL certificate issued on the server. So you just have to create basic site with the arguments <code class="codehilite"><span class="c1">--letsencrypt</span></code> or <code class="codehilite"><span class="o">-</span><span class="n">le</span></code> to secure the backend.</p>
+<h2 id="secure-wordops-backend-automatically">Secure WordOps backend automatically<a class="headerlink" href="#secure-wordops-backend-automatically" title="Permanent link">&para;</a></h2>
+<p>From the release v3.9.8.1 and onward, WordOps will automatically secure the backend on port 22222 with the first SSL certificate issued on the server.
+So you just have to create basic site with the arguments <code class="codehilite"><span class="c1">--letsencrypt</span></code> or <code class="codehilite"><span class="o">-</span><span class="n">le</span></code> to secure the backend.</p>
+<p>Example :</p>
+<p>if your server hostname is properly configured (read below), you can use :</p>
+<div class="codehilite"><pre><span></span>wo site create server.domain.tld -le
+</pre></div>
+
+<p>Then you will be able to access to the backend with the adress : <code class="codehilite"><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">server</span><span class="p">.</span><span class="k">domain</span><span class="p">.</span><span class="n">tld</span><span class="p">:</span><span class="mi">22222</span></code></p>
+<details class="info"><summary>Proper server hostname configuration</summary><p>Server hostname isn't only a name, it's the server public identity on the network. If your server is directly connected to internet(not behind a NAT),
+it should have a valid hostname.</p>
+<p>A <strong>valid hostname</strong> should looks like : myservername.yourdomain.tld</p>
+<ul>
+<li>myservername is the server name</li>
+<li>yourdomain.tld is one of your domains</li>
+</ul>
+<p>To edit hostname properly, use the command :</p>
+<div class="codehilite"><pre><span></span>hostnamectl set-hostname &lt;yourserver.hostname.tld&gt;
+</pre></div>
+
+<p>To apply the new hostname, a reboot is required.
+The last step and the most important, you should create the proper DNS records to make the subdomain myservername.yourdomain.tld pointing to your server IP.</p>
+</details>
 <h2 id="using-another-certificate">Using another certificate<a class="headerlink" href="#using-another-certificate" title="Permanent link">&para;</a></h2>
 <h3 id="secure-wordops-backend-with-the-same-certificate-than-another-site">Secure WordOps backend with the same certificate than another site<a class="headerlink" href="#secure-wordops-backend-with-the-same-certificate-than-another-site" title="Permanent link">&para;</a></h3>
 <p>If you already have a site secured with Let's Encrypt, you just have to copy the <code class="codehilite"><span class="n">ssl</span><span class="p">.</span><span class="n">conf</span></code> file stored in <code class="codehilite"><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">site</span><span class="p">.</span><span class="n">tld</span><span class="o">/</span><span class="n">conf</span><span class="o">/</span><span class="n">nginx</span></code>.</p>
 <div class="codehilite"><pre><span></span><span class="nv">DOMAIN_NAME</span><span class="o">=</span>site.ltd
-sudo grep <span class="s2">&quot;ssl_&quot;</span> /var/www/<span class="si">${</span><span class="nv">DOMAIN_NAME</span><span class="si">}</span>/conf/nginx/ssl.conf &gt; /var/www/22222/conf/nginx/ssl.conf
+sudo grep <span class="s2">&quot;ssl_&quot;</span> <span class="se">\</span>
+ /var/www/<span class="si">${</span><span class="nv">DOMAIN_NAME</span><span class="si">}</span>/conf/nginx/ssl.conf &gt; /var/www/22222/conf/nginx/ssl.conf
 </pre></div>
 
 <p>Then reload Nginx:</p>
