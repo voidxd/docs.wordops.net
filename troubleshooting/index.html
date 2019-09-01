@@ -755,6 +755,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#bug-reporting-guidelines" class="md-nav__link">
+    Bug reporting guidelines
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#common-issues" class="md-nav__link">
     Common issues
   </a>
@@ -772,13 +779,6 @@
           <li class="md-nav__item">
   <a href="#wordops-failed-to-issue-ssl-certificate" class="md-nav__link">
     WordOps failed to issue SSL certificate
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nginx-cpu-usage-is-very-high" class="md-nav__link">
-    Nginx CPU usage is very high
   </a>
   
 </li>
@@ -930,6 +930,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#bug-reporting-guidelines" class="md-nav__link">
+    Bug reporting guidelines
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#common-issues" class="md-nav__link">
     Common issues
   </a>
@@ -947,13 +954,6 @@
           <li class="md-nav__item">
   <a href="#wordops-failed-to-issue-ssl-certificate" class="md-nav__link">
     WordOps failed to issue SSL certificate
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nginx-cpu-usage-is-very-high" class="md-nav__link">
-    Nginx CPU usage is very high
   </a>
   
 </li>
@@ -997,6 +997,15 @@
                 
                 
                 <h1 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h1>
+<h2 id="bug-reporting-guidelines">Bug reporting guidelines<a class="headerlink" href="#bug-reporting-guidelines" title="Permanent link">&para;</a></h2>
+<p>You are facing an issue with WordOps ? Please ask you the following questions before opening an issue on Github or creating a post on the forum :</p>
+<ul>
+<li>Are you using the latest release of WordOps ? -&gt; if not, update WordOps first and try again to see if your issue still exist.</li>
+<li>Is it a known issue ? -&gt; use the search feature in the documentation, in the forum and in Github issues to check if it's a known issue</li>
+<li>Have you checked the logs ? -&gt; always check the content of <code class="codehilite"><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">wo</span><span class="o">/</span><span class="n">wordops</span><span class="p">.</span><span class="n">log</span></code> to check what is exactly the task which failed</li>
+<li>Is the issue directly related to WordOps ? -&gt; for questions or support, please use the community forum.</li>
+</ul>
+<p>Then, if the issue still exist and if there is no solution or workaround available, feel free to open an <a href="https://github.com/WordOps/WordOps/issues">issue on Github</a></p>
 <h2 id="common-issues">Common issues<a class="headerlink" href="#common-issues" title="Permanent link">&para;</a></h2>
 <h3 id="the-command-wo-update-failed">The command <code class="codehilite"><span class="n">wo</span> <span class="k">update</span></code> failed<a class="headerlink" href="#the-command-wo-update-failed" title="Permanent link">&para;</a></h3>
 <p>This is a known issue with WordOps v3.9.6 which has been fixed with the maintenance release v3.9.6.1.
@@ -1015,14 +1024,7 @@ As a workaround you can either use the command <code class="codehilite"><span cl
 <div class="codehilite"><pre><span></span>wo site update site.tld --letsencrypt<span class="o">=</span>clean
 </pre></div>
 
-<h3 id="nginx-cpu-usage-is-very-high">Nginx CPU usage is very high<a class="headerlink" href="#nginx-cpu-usage-is-very-high" title="Permanent link">&para;</a></h3>
-<p>This issue seems to be related to brotli but, but even after investigation, we haven't be able to find the cause of this issue yet.</p>
-<p>You can disable brotli compression by running the following command:</p>
-<div class="codehilite"><pre><span></span>sudo sed -i <span class="s1">&#39;s/brotli on;/brotli off;/&#39;</span> /etc/nginx/nginx.conf
-sudo sed -i <span class="s1">&#39;s/brotli_static on;/brotli_static off;/&#39;</span> /etc/nginx/nginx.conf
-sudo nginx -t <span class="o">&amp;&amp;</span> sudo service nginx restart
-</pre></div>
-
+<hr />
 <h3 id="when-i-update-a-page-changes-are-not-applied-on-the-site">When I update a page, changes are not applied on the site<a class="headerlink" href="#when-i-update-a-page-changes-are-not-applied-on-the-site" title="Permanent link">&para;</a></h3>
 <p>If you are using Nginx fastcgi_cache, please make sure:</p>
 <ul>
