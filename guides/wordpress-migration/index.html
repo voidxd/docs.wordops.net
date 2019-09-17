@@ -38,7 +38,7 @@
     
     
       
-        <title>Wordpress migration - WordOps Documentation</title>
+        <title>WordPress sites migration - WordOps Documentation</title>
       
     
     
@@ -87,6 +87,10 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
+      <a href="#wordpress-sites-migration" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -109,7 +113,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Wordpress migration
+                WordPress sites migration
               
             </span>
           
@@ -638,10 +642,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
     
     <label class="md-nav__link" for="nav-6">
       Guides
@@ -686,6 +692,192 @@
     <a href="../manage-ssl-certificates/" title="LetsEncrypt SSL certificates" class="md-nav__link">
       LetsEncrypt SSL certificates
     </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        WordPress sites migration
+      </label>
+    
+    <a href="./" title="WordPress sites migration" class="md-nav__link md-nav__link--active">
+      WordPress sites migration
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#context" class="md-nav__link">
+    Context
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-the-previous-server-old-srv" class="md-nav__link">
+    On the previous server (OLD-SRV)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dump-wordpress-database" class="md-nav__link">
+    Dump WordPress database
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-the-new-server-wo-srv" class="md-nav__link">
+    On the new server (WO-SRV)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initial-server-update" class="md-nav__link">
+    Initial server update
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-wordops-and-main-stacks" class="md-nav__link">
+    Install WordOps and main stacks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-wordpress-site-with-same-domain" class="md-nav__link">
+    Create wordpress site with same domain
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cleanup-default-wp-database-and-remove-files" class="md-nav__link">
+    Cleanup default WP database and remove files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-a-password-less-ssh-access-between-your-servers" class="md-nav__link">
+    Setup a password-less ssh access between your servers
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generate-ssh-keys" class="md-nav__link">
+    Generate SSH-Keys
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-ssh-public-key-to-old-srv" class="md-nav__link">
+    Add SSH Public key to OLD-SRV
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-login-without-password" class="md-nav__link">
+    SSH Login without password
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-alias-and-config" class="md-nav__link">
+    SSH Alias and config
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transfer-files-from-old-srv-to-new-srv" class="md-nav__link">
+    Transfer files from OLD-SRV to NEW-SRV
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#do-not-copy-the-file-wp-configphp" class="md-nav__link">
+    Do not copy the file wp-config.php
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restore-the-database-on-new-srv" class="md-nav__link">
+    Restore the database on NEW-SRV
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lets-encrypt" class="md-nav__link">
+    Let's Encrypt
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -791,8 +983,8 @@
 
 
   <li class="md-nav__item">
-    <a href="https://community.wordops.io/slack" title="Slack" class="md-nav__link">
-      Slack
+    <a href="https://chat.wordops.net" title="Chat" class="md-nav__link">
+      Chat
     </a>
   </li>
 
@@ -833,6 +1025,173 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#context" class="md-nav__link">
+    Context
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-the-previous-server-old-srv" class="md-nav__link">
+    On the previous server (OLD-SRV)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dump-wordpress-database" class="md-nav__link">
+    Dump WordPress database
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-the-new-server-wo-srv" class="md-nav__link">
+    On the new server (WO-SRV)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initial-server-update" class="md-nav__link">
+    Initial server update
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-wordops-and-main-stacks" class="md-nav__link">
+    Install WordOps and main stacks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-wordpress-site-with-same-domain" class="md-nav__link">
+    Create wordpress site with same domain
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cleanup-default-wp-database-and-remove-files" class="md-nav__link">
+    Cleanup default WP database and remove files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-a-password-less-ssh-access-between-your-servers" class="md-nav__link">
+    Setup a password-less ssh access between your servers
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generate-ssh-keys" class="md-nav__link">
+    Generate SSH-Keys
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-ssh-public-key-to-old-srv" class="md-nav__link">
+    Add SSH Public key to OLD-SRV
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-login-without-password" class="md-nav__link">
+    SSH Login without password
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-alias-and-config" class="md-nav__link">
+    SSH Alias and config
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transfer-files-from-old-srv-to-new-srv" class="md-nav__link">
+    Transfer files from OLD-SRV to NEW-SRV
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#do-not-copy-the-file-wp-configphp" class="md-nav__link">
+    Do not copy the file wp-config.php
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restore-the-database-on-new-srv" class="md-nav__link">
+    Restore the database on NEW-SRV
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lets-encrypt" class="md-nav__link">
+    Let's Encrypt
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
@@ -841,9 +1200,108 @@
                   <a href="https://github.com/WordOps/docs.wordops.net/edit/master/docs/guides/wordpress-migration.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Wordpress migration</h1>
-                
-                
+                <h1 id="wordpress-sites-migration">WordPress sites migration<a class="headerlink" href="#wordpress-sites-migration" title="Permanent link">&para;</a></h1>
+<h2 id="context">Context<a class="headerlink" href="#context" title="Permanent link">&para;</a></h2>
+<p>You want to migrate a WordPress site hosted on a server running EEv3 or WordOps to a new one running with WordOps.
+The site you want to migrate was created with the flag <code class="codehilite"><span class="c1">--wpredis</span></code></p>
+<p>In our example :</p>
+<ul>
+<li>new server name is WO-SRV with IP 10.0.0.1</li>
+<li>the previous server is OLD-SRV with IP 192.168.0.1</li>
+<li>site domain is mydomain.tld</li>
+</ul>
+<h2 id="on-the-previous-server-old-srv">On the previous server (OLD-SRV)<a class="headerlink" href="#on-the-previous-server-old-srv" title="Permanent link">&para;</a></h2>
+<h3 id="dump-wordpress-database">Dump WordPress database<a class="headerlink" href="#dump-wordpress-database" title="Permanent link">&para;</a></h3>
+<p>Go into your site directory and dump WordPress database with WP-CLI</p>
+<div class="codehilite"><pre><span></span><span class="nb">cd</span> /var/www/mydomain.tld/htdocs
+wp db <span class="nb">export</span> --allow-root
+</pre></div>
+
+<h2 id="on-the-new-server-wo-srv">On the new server (WO-SRV)<a class="headerlink" href="#on-the-new-server-wo-srv" title="Permanent link">&para;</a></h2>
+<h3 id="initial-server-update">Initial server update<a class="headerlink" href="#initial-server-update" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>apt-get update <span class="o">&amp;&amp;</span> apt-get dist-upgrade -y <span class="o">&amp;&amp;</span> apt-get autoremove --purge -y <span class="o">&amp;&amp;</span> apt-get autoclean
+</pre></div>
+
+<h3 id="install-wordops-and-main-stacks">Install WordOps and main stacks<a class="headerlink" href="#install-wordops-and-main-stacks" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>wget -qO wo wops.cc <span class="o">&amp;&amp;</span> sudo bash wo
+wo stack install
+</pre></div>
+
+<h3 id="create-wordpress-site-with-same-domain">Create wordpress site with same domain<a class="headerlink" href="#create-wordpress-site-with-same-domain" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>wo site create mydomain.tld --wpredis
+</pre></div>
+
+<h3 id="cleanup-default-wp-database-and-remove-files">Cleanup default WP database and remove files<a class="headerlink" href="#cleanup-default-wp-database-and-remove-files" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>sudo -u www-data -H wp db clean --yes --path<span class="o">=</span>/var/www/mydomain.tld/htdocs
+rm -rf /var/www/mydomain.tld/htdocs/*
+</pre></div>
+
+<h3 id="setup-a-password-less-ssh-access-between-your-servers">Setup a password-less ssh access between your servers<a class="headerlink" href="#setup-a-password-less-ssh-access-between-your-servers" title="Permanent link">&para;</a></h3>
+<h4 id="generate-ssh-keys">Generate SSH-Keys<a class="headerlink" href="#generate-ssh-keys" title="Permanent link">&para;</a></h4>
+<p>If the user on the new server do not have ssh-keys yet, you can generate them with the following command :</p>
+<div class="codehilite"><pre><span></span>ssh-keygen -t ed25519
+</pre></div>
+
+<p>Then just press enter to confirm ssh key path.
+Your public ssh key should be available in the directory <code class="codehilite"><span class="o">~/</span><span class="p">.</span><span class="n">ssh</span><span class="o">/</span></code> ( <code class="codehilite"><span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="p">.</span><span class="n">ssh</span><span class="o">/</span></code> if you are logged in as root )</p>
+<h4 id="add-ssh-public-key-to-old-srv">Add SSH Public key to OLD-SRV<a class="headerlink" href="#add-ssh-public-key-to-old-srv" title="Permanent link">&para;</a></h4>
+<p>You can use the following command to automatically add the public SSH Key to the server :</p>
+<div class="codehilite"><pre><span></span>ssh-copy-id root@192.168.0.1
+</pre></div>
+
+<p>Otherwise, you can still display the public ssh-key with the command <code class="codehilite"><span class="n">cat</span> <span class="o">~/</span><span class="p">.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_ed25519</span><span class="p">.</span><span class="n">pub</span></code> and copy it manually in the file <code class="codehilite"><span class="o">~/</span><span class="p">.</span><span class="n">ssh</span><span class="o">/</span><span class="n">authorized_keys</span></code> of the other server.</p>
+<h4 id="ssh-login-without-password">SSH Login without password<a class="headerlink" href="#ssh-login-without-password" title="Permanent link">&para;</a></h4>
+<p>You should now be able to login from the server where you generated the SSH Keys to the other one without password :</p>
+<div class="codehilite"><pre><span></span>ssh root@192.168.0.1
+</pre></div>
+
+<h4 id="ssh-alias-and-config">SSH Alias and config<a class="headerlink" href="#ssh-alias-and-config" title="Permanent link">&para;</a></h4>
+<p>If you prefer to use an alias to login to OLD-SRV rather than using the IP, or if you want to define a custom SSH port, you just have to create/edit the file <code class="codehilite"><span class="o">~/</span><span class="p">.</span><span class="n">ssh</span><span class="o">/</span><span class="n">config</span></code> and to define settings this way :</p>
+<div class="codehilite"><pre><span></span>Host OLD-SRV
+  Hostname <span class="m">192</span>.168.0.1
+  Port <span class="m">12345</span>
+</pre></div>
+
+<p>Then you will be able to login with :</p>
+<div class="codehilite"><pre><span></span>ssh root@OLD-SRV
+</pre></div>
+
+<p>or even with</p>
+<div class="codehilite"><pre><span></span>ssh OLD-SRV
+</pre></div>
+
+<h3 id="transfer-files-from-old-srv-to-new-srv">Transfer files from OLD-SRV to NEW-SRV<a class="headerlink" href="#transfer-files-from-old-srv-to-new-srv" title="Permanent link">&para;</a></h3>
+<p>To safely migrate files from OLD-SRV to NEW-SRV, we will use rsync because it's fast and secure (files transfer is done over SSH).
+If you have configured password-less SSH login with the previous steps, and defined an alias into <code class="codehilite"><span class="o">~/</span><span class="p">.</span><span class="n">ssh</span><span class="o">/</span><span class="n">config</span></code> you can use the following command to copy files from OLD-SRV to NEW-SRV</p>
+<div class="codehilite"><pre><span></span>rsync -avzh --progress --ignore-existing <span class="se">\</span>
+root@OLD-SRV:/var/www/mydomain.tld/htdocs/ <span class="se">\</span>
+/var/www/mydomain.tld/htdocs/
+</pre></div>
+
+<p>If you haven't created the file ~/.ssh/config and use custom SSH ports, you can define SSH port with rsync by using the following command :</p>
+<div class="codehilite"><pre><span></span>rsync -avzh -e <span class="s2">&quot;ssh -p 12345&quot;</span> <span class="se">\</span>
+--progress --ignore-existing <span class="se">\</span>
+root@old_server_IP:/var/www/mydomain.tld/htdocs/ <span class="se">\</span>
+/var/www/mydomain.tld/htdocs/
+</pre></div>
+
+<h4 id="do-not-copy-the-file-wp-configphp">Do not copy the file wp-config.php<a class="headerlink" href="#do-not-copy-the-file-wp-configphp" title="Permanent link">&para;</a></h4>
+<p>With WordOps or EasyEngine v3, wp-config.php default path is <code class="codehilite"><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">mydomain</span><span class="p">.</span><span class="n">tld</span></code>. If you moved it into htdocs directory, it was probably transfered with rsync during the previous step. In this case remove it or rename it before importing the database on the new server, otherwise WP-CLI may not be able to login into MySQL.</p>
+<p>Command example to keep previous wp-config.php file as backup :</p>
+<div class="codehilite"><pre><span></span>mv /var/www/mydomain.tld/htdocs/wp-config.php /var/www/mydomain.tld/wp-config.php.bak
+</pre></div>
+
+<h3 id="restore-the-database-on-new-srv">Restore the database on NEW-SRV<a class="headerlink" href="#restore-the-database-on-new-srv" title="Permanent link">&para;</a></h3>
+<p>We will use WP-CLI to easily import the database dump we have previously created on OLD-SRV.</p>
+<div class="codehilite"><pre><span></span><span class="nb">cd</span> /var/www/mydomain.tld/htdocs
+wp db import my_domain_tld-2019-07-25-XX44z4.sql --allow-root
+rm mydomain_co-2019-07-25-XX44z4.sql
+</pre></div>
+
+<h3 id="lets-encrypt">Let's Encrypt<a class="headerlink" href="#lets-encrypt" title="Permanent link">&para;</a></h3>
+<p>If your site was secured with a Let's Encrypt SSL certificate, you can issue a new certificate on NEW-SRV with the command :</p>
+<div class="codehilite"><pre><span></span>wo site update mydomain.tld -le
+</pre></div>
                 
                   
                 
@@ -860,6 +1318,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../manage-ssl-certificates/" title="LetsEncrypt SSL certificates" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                LetsEncrypt SSL certificates
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../wordops-with-digitalocean-volume/" title="WordOps With DigitalOcean volumes" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                WordOps With DigitalOcean volumes
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
