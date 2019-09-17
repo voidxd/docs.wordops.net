@@ -755,8 +755,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#on-the-new-server-wo-srv" class="md-nav__link">
-    On the new server (WO-SRV)
+  <a href="#on-the-new-server-new-srv" class="md-nav__link">
+    On the new server (NEW-SRV)
   </a>
   
     <nav class="md-nav">
@@ -1066,8 +1066,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#on-the-new-server-wo-srv" class="md-nav__link">
-    On the new server (WO-SRV)
+  <a href="#on-the-new-server-new-srv" class="md-nav__link">
+    On the new server (NEW-SRV)
   </a>
   
     <nav class="md-nav">
@@ -1206,7 +1206,7 @@
 The site you want to migrate was created with the flag <code class="codehilite"><span class="c1">--wpredis</span></code></p>
 <p>In our example :</p>
 <ul>
-<li>new server name is WO-SRV with IP 10.0.0.1</li>
+<li>new server name is NEW-SRV with IP 10.0.0.1</li>
 <li>the previous server is OLD-SRV with IP 192.168.0.1</li>
 <li>site domain is mydomain.tld</li>
 </ul>
@@ -1217,7 +1217,7 @@ The site you want to migrate was created with the flag <code class="codehilite">
 wp db <span class="nb">export</span> --allow-root
 </pre></div>
 
-<h2 id="on-the-new-server-wo-srv">On the new server (WO-SRV)<a class="headerlink" href="#on-the-new-server-wo-srv" title="Permanent link">&para;</a></h2>
+<h2 id="on-the-new-server-new-srv">On the new server (NEW-SRV)<a class="headerlink" href="#on-the-new-server-new-srv" title="Permanent link">&para;</a></h2>
 <h3 id="initial-server-update">Initial server update<a class="headerlink" href="#initial-server-update" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span>apt-get update <span class="o">&amp;&amp;</span> apt-get dist-upgrade -y <span class="o">&amp;&amp;</span> apt-get autoremove --purge -y <span class="o">&amp;&amp;</span> apt-get autoclean
 </pre></div>
