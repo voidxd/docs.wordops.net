@@ -91,7 +91,7 @@
 body,
 input {
     color: black;
-    font-family: Roboto;
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .codehilite>pre {
