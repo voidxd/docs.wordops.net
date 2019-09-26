@@ -556,6 +556,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#harden-ssh-security" class="md-nav__link">
+    Harden SSH security
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#change-ssh-port" class="md-nav__link">
+    Change SSH port
+  </a>
+  
+</li>
+      
       
       
       
@@ -937,6 +951,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#harden-ssh-security" class="md-nav__link">
+    Harden SSH security
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#change-ssh-port" class="md-nav__link">
+    Change SSH port
+  </a>
+  
+</li>
+      
       
       
       
@@ -986,6 +1014,22 @@
 <td><code class="codehilite"><span class="c1">--ip</span></code></td>
 <td>Set the list of IP(s) allowed to access without authentification</td>
 </tr>
+<tr>
+<td><code class="codehilite"><span class="c1">--ssh</span></code></td>
+<td>Harden SSH security</td>
+</tr>
+<tr>
+<td><code class="codehilite"><span class="c1">--sshport</span></code></td>
+<td>Set custom ssh port (default: 22)</td>
+</tr>
+<tr>
+<td><code class="codehilite"><span class="c1">--allowpassword</span></code></td>
+<td>Allow password authentification when hardening SSH security</td>
+</tr>
+<tr>
+<td><code class="codehilite"><span class="c1">--force</span></code></td>
+<td>Force hardening SSH security without being prompt for confirmation</td>
+</tr>
 </tbody>
 </table>
 <p>WordOps uses <a href="https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/">Basic Auth</a> to protect the backend from unauthorize people. To change the authorization method, backend's port,... You can use <code class="codehilite"><span class="n">wo</span> <span class="n">secure</span></code> command.</p>
@@ -1016,6 +1060,30 @@ Successfully added IP address in acl.conf file
 </pre></div>
 
 <p>You can also edit directly the file <code class="codehilite"><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">common</span><span class="o">/</span><span class="n">acl</span><span class="p">.</span><span class="n">conf</span></code></p>
+<h2 id="harden-ssh-security">Harden SSH security<a class="headerlink" href="#harden-ssh-security" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>To harden SSH security, WordOps render the configuration sshd_config from a template. In this template, root authentification with password is forbidden and by default password authentification is disabled. You can use the flag <code class="codehilite"><span class="c1">--allowpassword</span></code> with <code class="codehilite"><span class="c1">--ssh</span></code> to allow password authentification, but before running this command please make sure you will not be locked out of your server. Using password-less authentification with SSH keys is highly recommended.</p>
+</div>
+<p>To harden SSH security you can use the command :</p>
+<div class="codehilite"><pre><span></span>wo secure --ssh
+</pre></div>
+
+<p>Additionally, if you want to allow password authentification (not recommended), you can use :</p>
+<div class="codehilite"><pre><span></span>wo secure --ssh --allowpassword
+</pre></div>
+
+<h2 id="change-ssh-port">Change SSH port<a class="headerlink" href="#change-ssh-port" title="Permanent link">&para;</a></h2>
+<p>To avoid bruteforce on SSH, it's recommended to use another port than the default port (22).</p>
+<p>Usage :</p>
+<div class="codehilite"><pre><span></span>wo secure --sshport &lt;port&gt;
+</pre></div>
+
+<p>Exemple :</p>
+<div class="codehilite"><pre><span></span>wo secure --sshport <span class="m">2022</span>
+</pre></div>
+
+<p>WordOps will automatically allow the new SSH port if UFW is enabled.</p>
                 
                   
                 

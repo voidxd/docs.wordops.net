@@ -943,16 +943,16 @@
                 
                 
                 <h1 id="how-to-set-default-language-for-wordpress-install">How to set default language for WordPress install<a class="headerlink" href="#how-to-set-default-language-for-wordpress-install" title="Permanent link">&para;</a></h1>
-<p>WordOps uses WP-Cli to install and perform other tasks on WordPress blogs.</p>
+<p>WordOps uses WP-CLI to install and perform other tasks on WordPress blogs.</p>
 <p>The default language for new blogs is <code class="codehilite"><span class="n">en_US</span></code> but it can be easily adapted to any other locale.</p>
-<p>WP-Cli expects a configuration file to be placed on <code class="codehilite"><span class="o">~/</span><span class="p">.</span><span class="n">wp</span><span class="o">-</span><span class="n">cli</span><span class="o">/</span><span class="n">config</span><span class="p">.</span><span class="n">yml</span></code>. We won't cover all its possibilities right now, only the configuration required to customize the localisation.</p>
+<p>WP-CLI expects a configuration file to be placed on <code class="codehilite"><span class="o">~/</span><span class="p">.</span><span class="n">wp</span><span class="o">-</span><span class="n">cli</span><span class="o">/</span><span class="n">config</span><span class="p">.</span><span class="n">yml</span></code>. We won't cover all its possibilities right now, only the configuration required to customize the localisation.</p>
 <p>For example, in order to have WordPress in Brazilian Portuguese the <code class="codehilite"><span class="n">config</span><span class="p">.</span><span class="n">yml</span></code> file would be:</p>
 <div class="codehilite"><pre><span></span><span class="nt">core download</span><span class="p">:</span>
   <span class="nt">locale</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">pt_BR</span>
 </pre></div>
 
 <h2 id="caveats">Caveats<a class="headerlink" href="#caveats" title="Permanent link">&para;</a></h2>
-<p>There is a "caveat" one should be aware of: when a new version os WordPress is released it usually does not have translations for all possible locales. Setting up a configuration file like the suggestion above might lead to WP-Cli (thus WordOps) to behave inconsistently.</p>
+<p>There is a "caveat" one should be aware of: when a new version os WordPress is released it usually does not have translations for all possible locales. Setting up a configuration file like the suggestion above might lead to WP-CLI (thus WordOps) to behave inconsistently.</p>
 <h2 id="how-to-change-locale-of-a-blog-already-installed">How to change locale of a blog already installed<a class="headerlink" href="#how-to-change-locale-of-a-blog-already-installed" title="Permanent link">&para;</a></h2>
 <p>In order to avoid such inconsistence, perhaps it's wiser to install WP in <code class="codehilite"><span class="n">en_US</span></code> as usual, then later change its locale. The root user would do:</p>
 <div class="codehilite"><pre><span></span><span class="nb">cd</span> /var/www/example.com/htdocs
