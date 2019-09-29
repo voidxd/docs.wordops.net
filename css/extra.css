@@ -106,8 +106,7 @@ input {
 }
 
 .md-typeset {
-    font-size: .75rem;
-    line-height: 1.4;
+    font-size: .65rem;
 }
 
 .md-typeset__table td code {
