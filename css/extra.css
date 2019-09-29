@@ -93,6 +93,7 @@ input {
     color: black;
     font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.5;
+    font-size: 14px;
 }
 
 .codehilite>pre {
