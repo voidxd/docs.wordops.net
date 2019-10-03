@@ -1188,17 +1188,17 @@ This feature is optional to issue domain and subdomain certificates, but is requ
 <li><code class="codehilite"><span class="c1">--dns=dns_cf</span></code>: enable DNS API mode with Cloudflare.</li>
 </ul>
 <p>For an existant secured with a simple SSL certificate (site + <a href="http://www.site.tld">www.site.tld</a>) with DigitalOcean DNS API</p>
-<div class="codehilite"><pre><span></span>wo site update site.tld -le --dns<span class="o">=</span>dns_do
+<div class="codehilite"><pre><span></span>wo site update site.tld -le --dns<span class="o">=</span>dns_dgon
 </pre></div>
 
 <ul>
 <li><code class="codehilite"><span class="o">-</span><span class="n">le</span></code>: issue a certificate for <code class="codehilite"><span class="k">domain</span><span class="p">.</span><span class="n">tld</span></code> + <code class="codehilite"><span class="n">www</span><span class="p">.</span><span class="k">domain</span><span class="p">.</span><span class="n">tld</span></code></li>
-<li><code class="codehilite"><span class="c1">--dns=dns_do</span></code>: enable DNS API mode with DigitalOcean</li>
+<li><code class="codehilite"><span class="c1">--dns=dns_dgon</span></code>: enable DNS API mode with DigitalOcean</li>
 </ul>
 <h2 id="informations">Informations<a class="headerlink" href="#informations" title="Permanent link">&para;</a></h2>
 <ul>
 <li>You can also use DNS API to issue domain and subdomain certificates.</li>
-<li><code class="codehilite"><span class="c1">--dns=dns_cf</span></code> define the DNS provider to use. With DigitalOcean, it would be <code class="codehilite"><span class="c1">--dns=dns_do</span></code></li>
+<li><code class="codehilite"><span class="c1">--dns=dns_cf</span></code> define the DNS provider to use. With DigitalOcean, it would be <code class="codehilite"><span class="c1">--dns=dns_dgon</span></code></li>
 <li>After issuing a first certificate using DNS API, your API credentials will be saved in <code class="codehilite"><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">letsencrypt</span><span class="o">/</span><span class="n">config</span><span class="o">/</span><span class="n">account</span><span class="p">.</span><span class="n">conf</span></code>. You do not need to define them anymore.</li>
 </ul>
                 
