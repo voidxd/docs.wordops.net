@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.2">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
     
     
       
@@ -1129,11 +1129,17 @@ As a workaround you can either use the command <code class="codehilite"><span cl
 
 <hr />
 <h2 id="wordops-failed-to-issue-ssl-certificate">WordOps failed to issue SSL certificate<a class="headerlink" href="#wordops-failed-to-issue-ssl-certificate" title="Permanent link">&para;</a></h2>
-<p>At first, make sure your domain is pointed to your server IP:</p>
+<p>If you are using DNS API validation :</p>
 <ul>
-<li><a href="http://www.site.tld">www.site.tld</a> + site.tld if you use the flag <code class="codehilite"><span class="o">-</span><span class="n">le</span></code> or <code class="codehilite"><span class="c1">--letsencrypt</span></code></li>
-<li>sub.site.tld if you use the flag <code class="codehilite"><span class="o">-</span><span class="n">le</span><span class="o">=</span><span class="n">subdomain</span></code> or <code class="codehilite"><span class="c1">--letsencrypt=subdomain</span></code></li>
+<li>Make sure your API credentials has been properly saved by acme.sh in <code class="codehilite"><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">letsencrypt</span><span class="o">/</span><span class="n">config</span><span class="o">/</span><span class="n">account</span><span class="p">.</span><span class="n">conf</span></code></li>
+<li>Check acme.sh documentation about DNS API to see if there are changes with your DNS API Provider : <a href="https://github.com/Neilpang/acme.sh/wiki/dnsapi">https://github.com/Neilpang/acme.sh/wiki/dnsapi</a></li>
 </ul>
+<p>If you are using the default webroot validation :</p>
+<p>Make sure your domain is pointing to your server IP as well as <code class="codehilite"><span class="n">www</span></code> alias if it's not a subodmain</p>
+<p>If you are behind a load-balancer or a proxy, and need to force WO to issue a certificate even if the domain doesn't resolve your server IP, you can use the flag <code class="codehilite"><span class="c1">--force</span></code></p>
+<div class="codehilite"><pre><span></span>wo site update site.tld -le --force
+</pre></div>
+
 <p>Then if you need to cleanup the previous SSL certificate, you can use the following command to remove existant certificates and keys, as well as other Nginx configurations for your domain:</p>
 <div class="codehilite"><pre><span></span>wo site update site.tld --letsencrypt<span class="o">=</span>clean
 </pre></div>
@@ -1250,7 +1256,7 @@ pkg_resources.DistributionNotFound: The <span class="s1">&#39;wo==3.9.8.2&#39;</
       
     </div>
     
-      <script src="../../assets/javascripts/application.c648116f.js"></script>
+      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       

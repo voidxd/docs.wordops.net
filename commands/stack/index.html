@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.2">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
     
     
       
@@ -1425,6 +1425,11 @@
 <td>APT package</td>
 <td>Sendmail MTA</td>
 </tr>
+<tr>
+<td><code class="codehilite"><span class="c1">--ngxblocker</span></code></td>
+<td>Binary</td>
+<td>Ultimate Nginx bad bots blocker</td>
+</tr>
 </tbody>
 </table>
 <h3 id="packages-types">Packages types<a class="headerlink" href="#packages-types" title="Permanent link">&para;</a></h3>
@@ -1535,7 +1540,7 @@
 </tbody>
 </table>
 <p><code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">upgrade</span></code> make sure packages repositories are properly added, then it upgrade packages and for main stacks (Nginx, PHP-FPM &amp; MySQL, Redis), it also update configurations from the templates included in the current WordOps release and apply optimizations (especially for MySQL &amp; Redis)</p>
-<p>Currently <code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">upgrade</span> <span class="c1">--mysql</span></code> will only update the package from the current MariaDB repository, but will not perform upgrades between major releases (10.1 -&gt; 10.3), mostly because there is a risk of failures when upgrading MariaDB, and we will have to run more tests to make sure our upgrading process is stable and will not impact your sites availability.</p>
+<p>Currently <code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">upgrade</span> <span class="c1">--mysql</span></code> will only update the package from the current MariaDB repository, but will not perform upgrades between major releases (10.1 -&gt; 10.3), mostly because there is a risk of failure when upgrading MariaDB, and we will have to run more tests to make sure our upgrading process is stable and will not impact your sites availability.</p>
 <h2 id="stack-remove">stack remove<a class="headerlink" href="#stack-remove" title="Permanent link">&para;</a></h2>
 <p>Remove stacks (without removing configurations or data for APT packages)</p>
 <p>Usage:</p>
@@ -1706,7 +1711,7 @@
       
     </div>
     
-      <script src="../../assets/javascripts/application.c648116f.js"></script>
+      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
