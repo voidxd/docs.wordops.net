@@ -62,4 +62,4 @@
 [321.037955, "o", "\u001b[94mConfiguring packages            [\u001b[0m\u001b[92mOK\u001b[0m\u001b[94m]\u001b[0m\r\n\u001b[94m\u001b[0mHTTP Auth User Name: WordOps\u001b[0m\r\n"]
 [321.038591, "o", "\u001b[94m\u001b[0mHTTP Auth Password : xXgQhquKBCFgjMO9wp1mMtVO\u001b[0m\r\n\u001b[94m\u001b[0mWordOps backend is available on https://195.201.39.188:22222 or https://wo.vtbx.cf:22222\u001b[0m\r\n\u001b[94mSuccessfully installed packages\u001b[0m\r\n"]
 [321.137322, "o", "\u001b]0;root@wo: ~\u0007root@wo:~# "]
-[1041.278371, "o", "logout\r\n"]
+[324.278371, "o", "logout\r\n"]
