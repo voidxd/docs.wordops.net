@@ -204,7 +204,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../about/from-easyengine-to-wordops/" class="md-tabs__link">
+        <a href="../../about/give-wordops-github-star/" class="md-tabs__link">
           About
         </a>
       
@@ -371,6 +371,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../about/give-wordops-github-star/" title="Give WordOps a Github star" class="md-nav__link">
+      Give WordOps a Github star
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../about/from-easyengine-to-wordops/" title="From EasyEngine to WordOps" class="md-nav__link">
       From EasyEngine to WordOps
     </a>
@@ -385,18 +397,6 @@
   <li class="md-nav__item">
     <a href="../../about/changelog/" title="Changelog" class="md-nav__link">
       Changelog
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../about/give-wordops-github-star/" title="Give WordOps a Github star" class="md-nav__link">
-      Give WordOps a Github star
     </a>
   </li>
 
@@ -1733,6 +1733,10 @@
 <div class="codehilite"><pre><span></span>wo site create site.tld --wpce
 </pre></div>
 
+<p>Enable Ultimate Nginx bad blocker on new site</p>
+<div class="codehilite"><pre><span></span>wo site create site.tld --ngxblocker
+</pre></div>
+
 <h4 id="cheatsheet">Cheatsheet<a class="headerlink" href="#cheatsheet" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
@@ -2003,12 +2007,12 @@
 <td>issue Let's Encrypt certificate with DNS validation. default: <code class="codehilite"><span class="n">dns_cf</span></code></td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--hsts</span></code></td>
-<td>Enable HSTS on site secured with Let's Encrypt</td>
+<td><code class="codehilite"><span class="c1">--hsts</span></code>, <code class="codehilite"><span class="c1">--hsts=off</span></code></td>
+<td>Enable or disable HSTS on site secured with Let's Encrypt</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--hsts=off</span></code></td>
-<td>Disable HSTS</td>
+<td><code class="codehilite"><span class="c1">--ngxblocker</span></code>, <code class="codehilite"><span class="c1">--ngxblocker=off</span></code></td>
+<td>Enable or disable Ultimate Nginx bad blocker</td>
 </tr>
 </tbody>
 </table>
