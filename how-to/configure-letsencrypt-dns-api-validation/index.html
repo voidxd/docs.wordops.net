@@ -509,6 +509,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/wordops-structure/" title="WordOps structure" class="md-nav__link">
+      WordOps structure
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1149,10 +1161,6 @@
                 
                 
                 <h1 id="lets-encrypt-dns-api-configuration">Let's Encrypt DNS API configuration<a class="headerlink" href="#lets-encrypt-dns-api-configuration" title="Permanent link">&para;</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This feature is available with WordOps v3.9.6 and onward</p>
-</div>
 <p>WordOps use acme.sh to handle SSL certificates, which supports domain validation using DNS API.
 This feature is optional to issue domain and subdomain certificates, but is required to issue wildcard certificates.</p>
 <h2 id="dns-api-configuration">DNS API configuration<a class="headerlink" href="#dns-api-configuration" title="Permanent link">&para;</a></h2>
@@ -1194,6 +1202,11 @@ This feature is optional to issue domain and subdomain certificates, but is requ
 </div>
 <h3 id="step-3-issue-your-certificate">Step 3: issue your certificate<a class="headerlink" href="#step-3-issue-your-certificate" title="Permanent link">&para;</a></h3>
 <p>For a new site secured with a wildcard SSL certificates with Cloudflare DNS API</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you are using <code class="codehilite"><span class="n">sudo</span></code> to run wo commands, you need to use <code class="codehilite"><span class="n">sudo</span> <span class="o">-</span><span class="n">E</span></code> to keep DNS API crendentials variables available for acme.sh
+So just put <code class="codehilite"><span class="n">sudo</span> <span class="o">-</span><span class="n">E</span></code> before the following commands instead of just <code class="codehilite"><span class="n">sudo</span></code>.</p>
+</div>
 <div class="codehilite"><pre><span></span>wo site create site.tld --wp --letsencrypt<span class="o">=</span>wildcard --dns<span class="o">=</span>dns_cf
 </pre></div>
 
