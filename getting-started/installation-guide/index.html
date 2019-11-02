@@ -543,8 +543,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#clone-the-github-repository" class="md-nav__link">
-    Clone the github repository
+  <a href="#create-wordops-directories" class="md-nav__link">
+    create WordOps directories
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-pip" class="md-nav__link">
+    Update PIP
   </a>
   
 </li>
@@ -1175,8 +1182,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#clone-the-github-repository" class="md-nav__link">
-    Clone the github repository
+  <a href="#create-wordops-directories" class="md-nav__link">
+    create WordOps directories
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-pip" class="md-nav__link">
+    Update PIP
   </a>
   
 </li>
@@ -1258,34 +1272,42 @@ sudo bash install
 <h2 id="manual-installation">Manual Installation<a class="headerlink" href="#manual-installation" title="Permanent link">&para;</a></h2>
 <p>If you prefer to perform yourself the same steps than our installer script, here how to install WordOps manually.</p>
 <h3 id="install-wordops-dependencies">Install WordOps dependencies<a class="headerlink" href="#install-wordops-dependencies" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="c1"># On Ubuntu</span>
-apt-get install build-essential bash-completion curl gzip python3 <span class="se">\</span>
-python3-apt python3-setuptools python3-dev sqlite3 git tar <span class="se">\</span>
-software-properties-common pigz gnupg2 cron ccze rsync -y
+<div class="codehilite"><pre><span></span><span class="c1"># update packages list</span>
+apt-get update
+
+<span class="c1"># On Ubuntu</span>
+apt-get -option<span class="o">=</span>Dpkg::options::<span class="o">=</span>--force-confmiss --option<span class="o">=</span>Dpkg::options::<span class="o">=</span>--force-confold --assume-yes install <span class="se">\</span>
+build-essential curl gzip python3-pip python3-wheel python3-apt python3-setuptools python3-dev sqlite3 git tar software-properties-common pigz <span class="se">\</span>
+gnupg2 cron ccze rsync apt-transport-https tree haveged ufw unattended-upgrades tzdata ntp
 
 <span class="c1"># On Debian</span>
-apt-get install build-essential bash-completion curl gzip dirmngr <span class="se">\</span>
-sudo python3 python3-apt python3-setuptools python3-dev  <span class="se">\</span>
-ca-certificates sqlite3 git tar software-properties-common <span class="se">\</span>
-pigz apt-transport-https gnupg2 cron ccze rsync -y
+apt-get -option<span class="o">=</span>Dpkg::options::<span class="o">=</span>--force-confmiss --option<span class="o">=</span>Dpkg::options::<span class="o">=</span>--force-confold --assume-yes install <span class="se">\</span>
+build-essential curl gzip dirmngr sudo python3-pip python3-wheel python3-apt python3-setuptools python3-dev ca-certificates sqlite3 git tar <span class="se">\</span>
+software-properties-common pigz apt-transport-https gnupg2 cron ccze rsync tree haveged ufw unattended-upgrades tzdata ntp
 </pre></div>
 
-<h3 id="clone-the-github-repository">Clone the github repository<a class="headerlink" href="#clone-the-github-repository" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>git clone https://github.com/WordOps/WordOps.git
+<h3 id="create-wordops-directories">create WordOps directories<a class="headerlink" href="#create-wordops-directories" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>mkdir -p /var/log/wo /var/lib/wo/tmp /var/lib/wo-backup
 </pre></div>
 
-<p>create log directory</p>
-<div class="codehilite"><pre><span></span>mkdir -p /var/log/wo
+<h3 id="update-pip">Update PIP<a class="headerlink" href="#update-pip" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>python3 -m pip install -U pip
+python3 -m pip install -U setuptools wheel
 </pre></div>
 
 <h3 id="install-wordops">Install WordOps<a class="headerlink" href="#install-wordops" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="nb">cd</span> WordOps/
-python3 setup.py install
+<div class="codehilite"><pre><span></span><span class="c1"># install wordops from PyPi</span>
+python3 -m pip install -U wordops
+
+<span class="c1"># copy configuration</span>
+cp -rf /usr/local/lib/python3.*/dist-packages/usr/* /usr/
+cp -rn /usr/local/lib/python3.*/dist-packages/etc/* /etc/
+cp -f /usr/local/lib/python3.*/dist-packages/etc/bash_completion.d/wo_auto.rc /etc/bash_completion.d/wo_auto.rc
 </pre></div>
 
 <h3 id="install-acmesh">Install acme.sh<a class="headerlink" href="#install-acmesh" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="c1"># clone the repository</span>
-git clone &lt;https://github.com/Neilpang/acme.sh.git&gt; /opt/acme.sh -q
+git clone https://github.com/Neilpang/acme.sh.git /opt/acme.sh -q
 
 <span class="c1"># create conf directory</span>
 mkdir -p /etc/letsencrypt/<span class="o">{</span>config,live,renewal<span class="o">}</span>
@@ -1296,6 +1318,9 @@ mkdir -p /etc/letsencrypt/<span class="o">{</span>config,live,renewal<span class
             --home /etc/letsencrypt <span class="se">\</span>
             --config-home /etc/letsencrypt/config <span class="se">\</span>
             --cert-home /etc/letsencrypt/renewal
+
+<span class="c1"># enable auto-upgrade</span>
+/etc/letsencrypt/acme.sh --config-home <span class="s1">&#39;/etc/letsencrypt/config&#39;</span> --upgrade --auto-upgrade
 
 <span class="c1"># create .well-known directory</span>
 mkdir -p /var/www/html/.well-known/acme-challenge
