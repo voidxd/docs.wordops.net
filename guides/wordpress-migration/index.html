@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.5.0">
     
     
       
@@ -42,7 +42,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -53,7 +53,7 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
     
     
       
@@ -1393,6 +1393,14 @@ The site you want to migrate was created with the flag <code class="codehilite">
 wp db <span class="nb">export</span> --allow-root
 </pre></div>
 
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>If WP-CLI isn't installed on your server, you can get it by running the following commands :
+<div class="codehilite"><pre><span></span>curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+chmod +x wp-cli.phar
+sudo mv wp-cli.phar /usr/local/bin/wp
+</pre></div></p>
+</div>
 <h2 id="on-the-new-server-new-srv">On the new server (NEW-SRV)<a class="headerlink" href="#on-the-new-server-new-srv" title="Permanent link">&para;</a></h2>
 <h3 id="initial-server-update">Initial server update<a class="headerlink" href="#initial-server-update" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span>apt-get update <span class="o">&amp;&amp;</span> apt-get dist-upgrade -y <span class="o">&amp;&amp;</span> apt-get autoremove --purge -y <span class="o">&amp;&amp;</span> apt-get autoclean
@@ -1566,7 +1574,7 @@ rm mydomain_co-2019-07-25-XX44z4.sql
       
     </div>
     
-      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
+      <script src="../../assets/javascripts/application.a8b5e56f.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
