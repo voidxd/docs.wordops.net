@@ -1334,7 +1334,7 @@
 </table>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>Options are the same for <code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">install</span></code>, <code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">remove</span></code> and <code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">purge</span></code></p>
+<p>Options are the same for <code class="codehilite"><span class="err">wo stack install</span></code>, <code class="codehilite"><span class="err">wo stack remove</span></code> and <code class="codehilite"><span class="err">wo stack purge</span></code></p>
 </div>
 <p>Stack available are:</p>
 <table>
@@ -1347,112 +1347,112 @@
 </thead>
 <tbody>
 <tr>
-<td><code class="codehilite"><span class="c1">--web</span></code></td>
+<td><code class="codehilite"><span class="err">--web</span></code></td>
 <td>Group</td>
 <td>Nginx, PHP, MySQL, WP-CLI</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--admin</span></code></td>
+<td><code class="codehilite"><span class="err">--admin</span></code></td>
 <td>Group</td>
 <td>phpMyAdmin, Adminer, Dashboard, Netdata, MySQLTuner ...</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--utils</span></code></td>
+<td><code class="codehilite"><span class="err">--utils</span></code></td>
 <td>Group</td>
 <td>OpcacheGUI, Webgrind, Anemometer</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--nginx</span></code></td>
+<td><code class="codehilite"><span class="err">--nginx</span></code></td>
 <td>APT package</td>
 <td>nginx stack</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--php</span></code></td>
+<td><code class="codehilite"><span class="err">--php</span></code></td>
 <td>APT package</td>
 <td>PHP7.2-FPM stack</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--php73</span></code></td>
+<td><code class="codehilite"><span class="err">--php73</span></code></td>
 <td>APT package</td>
 <td>PHP7.3-FPM stack</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--mysql</span></code></td>
+<td><code class="codehilite"><span class="err">--mysql</span></code></td>
 <td>APT package</td>
 <td>MariaDB stack</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--redis</span></code></td>
+<td><code class="codehilite"><span class="err">--redis</span></code></td>
 <td>APT package</td>
 <td>Redis stack</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--wpcli</span></code></td>
+<td><code class="codehilite"><span class="err">--wpcli</span></code></td>
 <td>Binary</td>
 <td>WP-CLI : WordPress CLI</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--phpmyadmin</span></code></td>
+<td><code class="codehilite"><span class="err">--phpmyadmin</span></code></td>
 <td>Web App</td>
 <td>phpMyAdmin : Web interface for MySQL</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--composer</span></code></td>
+<td><code class="codehilite"><span class="err">--composer</span></code></td>
 <td>Binary</td>
 <td>Composer : PHP dependencies manager</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--netdata</span></code></td>
+<td><code class="codehilite"><span class="err">--netdata</span></code></td>
 <td>Binary</td>
 <td>Netdata : Real-time monitoring suite</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--dashboard</span></code></td>
+<td><code class="codehilite"><span class="err">--dashboard</span></code></td>
 <td>Web App</td>
 <td>WordOps dashboard</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--extplorer</span></code></td>
+<td><code class="codehilite"><span class="err">--extplorer</span></code></td>
 <td>Web App</td>
 <td>eXtplorer Filemanager</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--adminer</span></code></td>
+<td><code class="codehilite"><span class="err">--adminer</span></code></td>
 <td>Web App</td>
 <td>adminer (phpmyadmin alternative)</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--fail2ban</span></code></td>
+<td><code class="codehilite"><span class="err">--fail2ban</span></code></td>
 <td>APT package</td>
 <td>Fail2ban : Bruteforce protection</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--phpredisadmin</span></code></td>
+<td><code class="codehilite"><span class="err">--phpredisadmin</span></code></td>
 <td>Web App</td>
 <td>phpredisadmin : Web interface for Redis</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--proftpd</span></code></td>
+<td><code class="codehilite"><span class="err">--proftpd</span></code></td>
 <td>APT package</td>
 <td>proftpd stack : FTP server</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--mysqltuner</span></code></td>
+<td><code class="codehilite"><span class="err">--mysqltuner</span></code></td>
 <td>Binary</td>
 <td>MySQLTuner stack : MySQL tuning tool</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--ufw</span></code></td>
+<td><code class="codehilite"><span class="err">--ufw</span></code></td>
 <td>APT package</td>
 <td>UFW : Firewall</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--sendmail</span></code></td>
+<td><code class="codehilite"><span class="err">--sendmail</span></code></td>
 <td>APT package</td>
 <td>Sendmail MTA</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--ngxblocker</span></code></td>
+<td><code class="codehilite"><span class="err">--ngxblocker</span></code></td>
 <td>Binary</td>
 <td>Ultimate Nginx bad bots blocker</td>
 </tr>
@@ -1469,13 +1469,13 @@
 <div class="codehilite"><pre><span></span>wo stack install <span class="o">[</span>options<span class="o">]</span>
 </pre></div>
 
-<p>Without options, the stack <code class="codehilite"><span class="c1">--web</span></code>, <code class="codehilite"><span class="c1">--admin</span></code>, <code class="codehilite"><span class="c1">--utils</span></code> will be installed</p>
+<p>Without options, the stack <code class="codehilite"><span class="err">--web</span></code>, <code class="codehilite"><span class="err">--admin</span></code>, <code class="codehilite"><span class="err">--utils</span></code> will be installed</p>
 <h3 id="recommended-install">Recommended install<a class="headerlink" href="#recommended-install" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span>wo stack install
 </pre></div>
 
 <p><asciinema-player src="/images/stackinstall.cast" autoplay loop cols="125" rows="30"></asciinema-player></p>
-<p>This will install the <code class="codehilite"><span class="c1">--web</span></code> stack and <code class="codehilite"><span class="c1">--admin</span></code> stack.</p>
+<p>This will install the <code class="codehilite"><span class="err">--web</span></code> stack and <code class="codehilite"><span class="err">--admin</span></code> stack.</p>
 <p>Nginx, PHP 7.2, MariaDB, Netdata, Fail2Ban, WordOps dashboard, phpMyAdmin, Adminer, MySQLtuner, OpcacheGUI</p>
 <h3 id="web">Web<a class="headerlink" href="#web" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span>wo stack install --web
@@ -1503,69 +1503,69 @@
 </thead>
 <tbody>
 <tr>
-<td><code class="codehilite"><span class="c1">--all</span></code></td>
+<td><code class="codehilite"><span class="err">--all</span></code></td>
 <td>Upgrade all stack</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--web</span></code></td>
+<td><code class="codehilite"><span class="err">--web</span></code></td>
 <td>Upgrade web stack</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--admin</span></code></td>
+<td><code class="codehilite"><span class="err">--admin</span></code></td>
 <td>Upgrade admin tools stack</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--nginx</span></code></td>
+<td><code class="codehilite"><span class="err">--nginx</span></code></td>
 <td>Upgrade Nginx stack</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--php</span></code></td>
+<td><code class="codehilite"><span class="err">--php</span></code></td>
 <td>Upgrade PHP 7.2 stack</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--php73</span></code></td>
+<td><code class="codehilite"><span class="err">--php73</span></code></td>
 <td>Upgrade PHP 7.3 stack</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--mysql</span></code></td>
+<td><code class="codehilite"><span class="err">--mysql</span></code></td>
 <td>Upgrade MySQL stack</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--wpcli</span></code></td>
+<td><code class="codehilite"><span class="err">--wpcli</span></code></td>
 <td>Upgrade WPCLI</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--redis</span></code></td>
+<td><code class="codehilite"><span class="err">--redis</span></code></td>
 <td>Upgrade Redis</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--netdata</span></code></td>
+<td><code class="codehilite"><span class="err">--netdata</span></code></td>
 <td>Upgrade Netdata</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--dashboard</span></code></td>
+<td><code class="codehilite"><span class="err">--dashboard</span></code></td>
 <td>Upgrade WordOps Dashboard</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--composer</span></code></td>
+<td><code class="codehilite"><span class="err">--composer</span></code></td>
 <td>Upgrade Composer</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--phpmyadmin</span></code></td>
+<td><code class="codehilite"><span class="err">--phpmyadmin</span></code></td>
 <td>Upgrade phpMyAdmin</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--no-prompt</span></code></td>
+<td><code class="codehilite"><span class="err">--no-prompt</span></code></td>
 <td>Upgrade Packages without any prompt</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--force</span></code></td>
+<td><code class="codehilite"><span class="err">--force</span></code></td>
 <td>Force Packages upgrade without any prompt</td>
 </tr>
 </tbody>
 </table>
-<p><code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">upgrade</span></code> make sure packages repositories are properly added, then it upgrade packages and for main stacks (Nginx, PHP-FPM &amp; MySQL, Redis), it also update configurations from the templates included in the current WordOps release and apply optimizations (especially for MySQL &amp; Redis)</p>
-<p>Currently <code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">upgrade</span> <span class="c1">--mysql</span></code> will only update the package from the current MariaDB repository, but will not perform upgrades between major releases (10.1 -&gt; 10.3), mostly because there is a risk of failure when upgrading MariaDB, and we will have to run more tests to make sure our upgrading process is stable and will not impact your sites availability.</p>
+<p><code class="codehilite"><span class="err">wo stack upgrade</span></code> make sure packages repositories are properly added, then it upgrade packages and for main stacks (Nginx, PHP-FPM &amp; MySQL, Redis), it also update configurations from the templates included in the current WordOps release and apply optimizations (especially for MySQL &amp; Redis)</p>
+<p>Currently <code class="codehilite"><span class="err">wo stack upgrade --mysql</span></code> will only update the package from the current MariaDB repository, but will not perform upgrades between major releases (10.1 -&gt; 10.3), mostly because there is a risk of failure when upgrading MariaDB, and we will have to run more tests to make sure our upgrading process is stable and will not impact your sites availability.</p>
 <h2 id="stack-remove">stack remove<a class="headerlink" href="#stack-remove" title="Permanent link">&para;</a></h2>
 <p>Remove stacks (without removing configurations or data for APT packages)</p>
 <p>Usage:</p>
@@ -1581,21 +1581,21 @@
 </thead>
 <tbody>
 <tr>
-<td><code class="codehilite"><span class="c1">--all</span></code></td>
+<td><code class="codehilite"><span class="err">--all</span></code></td>
 <td>Remove all stacks at once</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--force</span></code></td>
+<td><code class="codehilite"><span class="err">--force</span></code></td>
 <td>Force install/remove/purge without prompt</td>
 </tr>
 </tbody>
 </table>
-<p>For APT packages, <code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">remove</span></code> will just uninstall package without deleting their configurations or data. For binaries or web app, it will do the same than <code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">purge</span></code></p>
+<p>For APT packages, <code class="codehilite"><span class="err">wo stack remove</span></code> will just uninstall package without deleting their configurations or data. For binaries or web app, it will do the same than <code class="codehilite"><span class="err">wo stack purge</span></code></p>
 <h2 id="stack-purge">stack purge<a class="headerlink" href="#stack-purge" title="Permanent link">&para;</a></h2>
 <p>Remove and purge stacks (including configurations and data)</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Please be careful when using <code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">purge</span></code> because it will remove APT packages but also purge all configurations or data, including MySQL databases, Redis databases or Nginx vhosts.</p>
+<p>Please be careful when using <code class="codehilite"><span class="err">wo stack purge</span></code> because it will remove APT packages but also purge all configurations or data, including MySQL databases, Redis databases or Nginx vhosts.</p>
 </div>
 <p>Usage:</p>
 <div class="codehilite"><pre><span></span>wo stack purge &lt;stack&gt; <span class="o">[</span>options<span class="o">]</span>

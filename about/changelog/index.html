@@ -3220,7 +3220,7 @@
 <h2 id="v3103-2019-11-11">v3.10.3 - 2019-11-11<a class="headerlink" href="#v3103-2019-11-11" title="Permanent link">&para;</a></h2>
 <h3 id="added">Added<a class="headerlink" href="#added" title="Permanent link">&para;</a></h3>
 <ul>
-<li>[ACME] Display warning about sudo usage when issuing certificate with DNS API validation (require <code class="codehilite"><span class="n">sudo</span> <span class="o">-</span><span class="n">E</span></code>)</li>
+<li>[ACME] Display warning about sudo usage when issuing certificate with DNS API validation (require <code class="codehilite"><span class="err">sudo -E</span></code>)</li>
 </ul>
 <h3 id="changed">Changed<a class="headerlink" href="#changed" title="Permanent link">&para;</a></h3>
 <ul>
@@ -3240,18 +3240,18 @@
 <h2 id="v3102-2019-11-06">v3.10.2 - 2019-11-06<a class="headerlink" href="#v3102-2019-11-06" title="Permanent link">&para;</a></h2>
 <h3 id="added_1">Added<a class="headerlink" href="#added_1" title="Permanent link">&para;</a></h3>
 <ul>
-<li>[STACK] nanorc syntax highlighting for nano editor : <code class="codehilite"><span class="c1">--nanorc</span></code></li>
+<li>[STACK] nanorc syntax highlighting for nano editor : <code class="codehilite"><span class="err">--nanorc</span></code></li>
 </ul>
 <h3 id="changed_1">Changed<a class="headerlink" href="#changed_1" title="Permanent link">&para;</a></h3>
 <ul>
-<li><code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">remove</span><span class="o">/</span><span class="n">purge</span></code> without argument print help instead of removing main stacks</li>
+<li><code class="codehilite"><span class="err">wo stack remove/purge</span></code> without argument print help instead of removing main stacks</li>
 </ul>
 <h3 id="fixed_1">Fixed<a class="headerlink" href="#fixed_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Import rtCamp:EasyEngine GPG key to avoid issues with previous nginx repository</li>
 <li>Unable to issue certificate for a domain if a subdomain certificate exist</li>
 <li>Incorrect WP-CLI path site_url_https function</li>
-<li><code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">upgrade</span> <span class="c1">--ngxblocker</span></code> not working properly</li>
+<li><code class="codehilite"><span class="err">wo stack upgrade --ngxblocker</span></code> not working properly</li>
 </ul>
 <h2 id="v3101-2019-10-30">v3.10.1 - 2019-10-30<a class="headerlink" href="#v3101-2019-10-30" title="Permanent link">&para;</a></h2>
 <h3 id="fixed_2">Fixed<a class="headerlink" href="#fixed_2" title="Permanent link">&para;</a></h3>
@@ -3264,31 +3264,31 @@
 <li>WordOps is now installed inside a wheel with pip (easier, cleaner and safer) from PyPi</li>
 <li>Redis 5.0.6 package backported to Debian 8/9/10</li>
 <li>Custom motd to display a message if a new WordOps release is available</li>
-<li>Run <code class="codehilite"><span class="n">mysql_upgrade</span></code> during MySQL upgrade with <code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">upgrade</span></code> to perform migration if needed</li>
-<li><code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">upgrade</span> <span class="c1">--ngxblocker</span></code> to update ngxblocker blocklist</li>
+<li>Run <code class="codehilite"><span class="err">mysql_upgrade</span></code> during MySQL upgrade with <code class="codehilite"><span class="err">wo stack upgrade</span></code> to perform migration if needed</li>
+<li><code class="codehilite"><span class="err">wo stack upgrade --ngxblocker</span></code> to update ngxblocker blocklist</li>
 </ul>
 <h3 id="changed_2">Changed<a class="headerlink" href="#changed_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Sysctl tweaks are applied during stack install and removed from install script</li>
 <li>Nginx &amp; MariaDB systemd tweaks are removed from install script and applied during stacks install/upgrade</li>
-<li>Initial creation of .gitconfig is displayed the first time you run the command <code class="codehilite"><span class="n">wo</span></code></li>
-<li>Added <code class="codehilite"><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">php</span><span class="o">/</span><span class="n">sessions</span><span class="o">/</span></code> to open_basedir to allow php sessions storage</li>
+<li>Initial creation of .gitconfig is displayed the first time you run the command <code class="codehilite"><span class="err">wo</span></code></li>
+<li>Added <code class="codehilite"><span class="err">/var/lib/php/sessions/</span></code> to open_basedir to allow php sessions storage</li>
 <li>WordOps now check if a repository already exist before trying to adding it again.</li>
 <li>Improved SSL certificate error messages by displaying domain IP and server IP</li>
-<li>Version check before updating WordOps with <code class="codehilite"><span class="n">wo</span> <span class="k">update</span></code> is now directly handled by <code class="codehilite"><span class="n">wo</span></code></li>
+<li>Version check before updating WordOps with <code class="codehilite"><span class="err">wo update</span></code> is now directly handled by <code class="codehilite"><span class="err">wo</span></code></li>
 <li>Refactored WordOps download function with python3-requests</li>
-<li>MySQL backup path changed to <code class="codehilite"><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">wo</span><span class="o">-</span><span class="n">backup</span><span class="o">/</span><span class="n">mysql</span></code></li>
-<li>Do not check anymore if stack are installed with apt in <code class="codehilite"><span class="n">wo</span> <span class="n">service</span></code> but only if there is a systemd service</li>
-<li>Refactored <code class="codehilite"><span class="c1">--letsencrypt=renew</span></code>. Require the flag <code class="codehilite"><span class="c1">--force</span></code> if certificate expiration is more than 45 days</li>
+<li>MySQL backup path changed to <code class="codehilite"><span class="err">/var/lib/wo-backup/mysql</span></code></li>
+<li>Do not check anymore if stack are installed with apt in <code class="codehilite"><span class="err">wo service</span></code> but only if there is a systemd service</li>
+<li>Refactored <code class="codehilite"><span class="err">--letsencrypt=renew</span></code>. Require the flag <code class="codehilite"><span class="err">--force</span></code> if certificate expiration is more than 45 days</li>
 <li>Improve netdata stack upgrade with install from source detection and updater fallback</li>
 </ul>
 <h3 id="fixed_3">Fixed<a class="headerlink" href="#fixed_3" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Incorrect PHP-FPM log path is <code class="codehilite"><span class="n">wo</span> <span class="n">log</span></code></li>
+<li>Incorrect PHP-FPM log path is <code class="codehilite"><span class="err">wo log</span></code></li>
 <li>force-ssl.conf not removed after removing a site</li>
-<li><code class="codehilite"><span class="n">wo</span> <span class="n">clean</span> <span class="c1">--opcache</span></code> not working with invalid SSL certificate</li>
-<li><code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">install</span> <span class="c1">--cheat</span></code> wasn't working properly previously</li>
-<li><code class="codehilite"><span class="n">wo</span> <span class="n">info</span></code> failure depending on php-fpm pool name. ConfigParser will now detect the section name.</li>
+<li><code class="codehilite"><span class="err">wo clean --opcache</span></code> not working with invalid SSL certificate</li>
+<li><code class="codehilite"><span class="err">wo stack install --cheat</span></code> wasn't working properly previously</li>
+<li><code class="codehilite"><span class="err">wo info</span></code> failure depending on php-fpm pool name. ConfigParser will now detect the section name.</li>
 </ul>
 <h2 id="v3994-2019-10-18">v3.9.9.4 -  2019-10-18<a class="headerlink" href="#v3994-2019-10-18" title="Permanent link">&para;</a></h2>
 <h3 id="changed_3">Changed<a class="headerlink" href="#changed_3" title="Permanent link">&para;</a></h3>
@@ -3298,7 +3298,7 @@
 <h3 id="fixed_4">Fixed<a class="headerlink" href="#fixed_4" title="Permanent link">&para;</a></h3>
 <ul>
 <li>GPG keys error with previous EasyEngine Nginx repository</li>
-<li>Issue with <code class="codehilite"><span class="c1">--ngxblocker</span></code> stack removal/purge</li>
+<li>Issue with <code class="codehilite"><span class="err">--ngxblocker</span></code> stack removal/purge</li>
 <li>Install/Update issues with python3 setup.py</li>
 <li>WordOps deploying SSL certificate even if acme.sh failed</li>
 </ul>
@@ -3313,44 +3313,44 @@
 </ul>
 <h3 id="fixed_5">Fixed<a class="headerlink" href="#fixed_5" title="Permanent link">&para;</a></h3>
 <ul>
-<li><code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">upgrade</span></code> when using nginx-ee</li>
-<li><code class="codehilite"><span class="n">wo</span> <span class="n">secure</span> <span class="c1">--auth</span></code></li>
-<li><code class="codehilite"><span class="n">wo</span> <span class="n">secure</span> <span class="c1">--sshport</span></code> not working with default ssh config</li>
+<li><code class="codehilite"><span class="err">wo stack upgrade</span></code> when using nginx-ee</li>
+<li><code class="codehilite"><span class="err">wo secure --auth</span></code></li>
+<li><code class="codehilite"><span class="err">wo secure --sshport</span></code> not working with default ssh config</li>
 <li>Issues after APT repositories informations changed</li>
-<li><code class="codehilite"><span class="n">www</span></code> was added to WordPress site url with subdomains <a href="https://github.com/WordOps/WordOps/issues/178">Issue #178</a></li>
+<li><code class="codehilite"><span class="err">www</span></code> was added to WordPress site url with subdomains <a href="https://github.com/WordOps/WordOps/issues/178">Issue #178</a></li>
 <li>Issuing certificate with acme.sh for sub.sub-domains not working</li>
 </ul>
 <h2 id="v3992-2019-10-04">v3.9.9.2 - 2019-10-04<a class="headerlink" href="#v3992-2019-10-04" title="Permanent link">&para;</a></h2>
 <h3 id="added_4">Added<a class="headerlink" href="#added_4" title="Permanent link">&para;</a></h3>
 <ul>
 <li>[STACK] Nginx server_names_hash_bucket_size automated fix</li>
-<li>[STACK] Nginx configuration rollback in case of failure after <code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">upgrade</span> <span class="c1">--nginx</span></code></li>
-<li>[STACK] Nginx ultimate bad bots blocker with <code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">install</span> <span class="c1">--ngxblocker</span></code></li>
+<li>[STACK] Nginx configuration rollback in case of failure after <code class="codehilite"><span class="err">wo stack upgrade --nginx</span></code></li>
+<li>[STACK] Nginx ultimate bad bots blocker with <code class="codehilite"><span class="err">wo stack install --ngxblocker</span></code></li>
 <li>[STACK] Added support for custom Nginx compiled from source</li>
 <li>[STACK] Rollback configuration with Git in case of failure during service reload/restart</li>
-<li>[SITE] Enable or disable Nginx ultimate bad bots blocker with <code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">update</span> <span class="n">site</span><span class="p">.</span><span class="n">tld</span> <span class="c1">--ngxblocker/--ngxblocker=off</span></code></li>
+<li>[SITE] Enable or disable Nginx ultimate bad bots blocker with <code class="codehilite"><span class="err">wo site update site.tld --ngxblocker/--ngxblocker=off</span></code></li>
 </ul>
 <h3 id="changed_5">Changed<a class="headerlink" href="#changed_5" title="Permanent link">&para;</a></h3>
 <ul>
 <li>[CORE] Query acme.sh database directly to check if a certificate exist</li>
-<li>[SITE] <code class="codehilite"><span class="c1">--letsencrypt=renew</span></code> is deprecated because not it's not required with acme.sh</li>
+<li>[SITE] <code class="codehilite"><span class="err">--letsencrypt=renew</span></code> is deprecated because not it's not required with acme.sh</li>
 </ul>
 <h3 id="fixed_6">Fixed<a class="headerlink" href="#fixed_6" title="Permanent link">&para;</a></h3>
 <ul>
-<li>[SITE] Issues with root_domain variable with <code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">update</span></code></li>
+<li>[SITE] Issues with root_domain variable with <code class="codehilite"><span class="err">wo site update</span></code></li>
 <li>[SECURE] Wrong sftp-server path in sshd_config</li>
-<li>[SITE] Git error when using flag <code class="codehilite"><span class="c1">--vhostonly</span></code></li>
+<li>[SITE] Git error when using flag <code class="codehilite"><span class="err">--vhostonly</span></code></li>
 <li>[SITE] Wrong plugin name displayed when installing Cache-Enabler</li>
 </ul>
 <h2 id="v3991-2019-09-26">v3.9.9.1 - 2019-09-26<a class="headerlink" href="#v3991-2019-09-26" title="Permanent link">&para;</a></h2>
 <h3 id="added_5">Added<a class="headerlink" href="#added_5" title="Permanent link">&para;</a></h3>
 <ul>
-<li>[SECURE] Allow new ssh port with UFW when running <code class="codehilite"><span class="n">wo</span> <span class="n">secure</span> <span class="c1">--sshport</span></code></li>
+<li>[SECURE] Allow new ssh port with UFW when running <code class="codehilite"><span class="err">wo secure --sshport</span></code></li>
 <li>[STACK] Additional Nginx directives to prevent access to log files or backup from web browser</li>
 <li>[CORE] apt-mirror-updater to select the fastest debian/ubuntu mirror with automatic switching between mirrors if the current mirror is being updated</li>
-<li>[SITE] add <code class="codehilite"><span class="c1">--force</span></code> to force Let's Encrypt certificate issuance even if DNS check fail</li>
+<li>[SITE] add <code class="codehilite"><span class="err">--force</span></code> to force Let's Encrypt certificate issuance even if DNS check fail</li>
 <li>[STACK] check if another mta is installed before installing sendmail</li>
-<li>[SECURE] <code class="codehilite"><span class="c1">--allowpassword</span></code> to allow password when using <code class="codehilite"><span class="c1">--ssh</span></code> with <code class="codehilite"><span class="n">wo</span> <span class="n">secure</span></code></li>
+<li>[SECURE] <code class="codehilite"><span class="err">--allowpassword</span></code> to allow password when using <code class="codehilite"><span class="err">--ssh</span></code> with <code class="codehilite"><span class="err">wo secure</span></code></li>
 </ul>
 <h3 id="changed_6">Changed<a class="headerlink" href="#changed_6" title="Permanent link">&para;</a></h3>
 <ul>
@@ -3361,18 +3361,18 @@
 </ul>
 <h3 id="fixed_7">Fixed<a class="headerlink" href="#fixed_7" title="Permanent link">&para;</a></h3>
 <ul>
-<li>[STACK] UFW setup after removing all stacks with <code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">purge</span> <span class="c1">--all</span></code></li>
+<li>[STACK] UFW setup after removing all stacks with <code class="codehilite"><span class="err">wo stack purge --all</span></code></li>
 <li>[CONFIG] Invalid CORS header</li>
 <li>[STACK] PHP-FPM stack upgrade failure due to pool configuration</li>
 </ul>
 <h2 id="v399-2019-09-24">v3.9.9 - 2019-09-24<a class="headerlink" href="#v399-2019-09-24" title="Permanent link">&para;</a></h2>
 <h3 id="added_6">Added<a class="headerlink" href="#added_6" title="Permanent link">&para;</a></h3>
 <ul>
-<li>[STACK]  UFW now available as a stack with flag <code class="codehilite"><span class="c1">--ufw</span></code></li>
-<li>[SECURE] <code class="codehilite"><span class="n">wo</span> <span class="n">secure</span> <span class="c1">--ssh</span></code> to harden ssh security</li>
-<li>[SECURE] <code class="codehilite"><span class="n">wo</span> <span class="n">secure</span> <span class="c1">--sshport</span></code> to change ssh port</li>
+<li>[STACK]  UFW now available as a stack with flag <code class="codehilite"><span class="err">--ufw</span></code></li>
+<li>[SECURE] <code class="codehilite"><span class="err">wo secure --ssh</span></code> to harden ssh security</li>
+<li>[SECURE] <code class="codehilite"><span class="err">wo secure --sshport</span></code> to change ssh port</li>
 <li>[SITE] check domain DNS records before issuing a new certificate without DNS API</li>
-<li>[STACK] Acme challenge with DNS Alias mode <code class="codehilite"><span class="c1">--dnsalias=aliasdomain.tld</span></code> <a href="https://github.com/Neilpang/acme.sh/wiki/DNS-alias-mode">acme.sh wiki</a></li>
+<li>[STACK] Acme challenge with DNS Alias mode <code class="codehilite"><span class="err">--dnsalias=aliasdomain.tld</span></code> <a href="https://github.com/Neilpang/acme.sh/wiki/DNS-alias-mode">acme.sh wiki</a></li>
 </ul>
 <h3 id="changed_7">Changed<a class="headerlink" href="#changed_7" title="Permanent link">&para;</a></h3>
 <ul>
@@ -3381,14 +3381,14 @@
 <li>[STACK] Log error improved with acme.sh depending on the acme challenge (DNS API or Webroot)</li>
 <li>[INSTALL] Removed UFW setup from install script</li>
 <li>[APP] phpMyAdmin updated to v4.9.1</li>
-<li>[STACK] Commit possible Nginx configuration changes into Git before and after performing tasks (in <code class="codehilite"><span class="n">wo</span> <span class="n">secure</span></code> for example)</li>
+<li>[STACK] Commit possible Nginx configuration changes into Git before and after performing tasks (in <code class="codehilite"><span class="err">wo secure</span></code> for example)</li>
 <li>[CORE] Update deprecated handlers and hooks registration</li>
 </ul>
 <h3 id="fixed_8">Fixed<a class="headerlink" href="#fixed_8" title="Permanent link">&para;</a></h3>
 <ul>
-<li>[STACK] <code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">purge</span> <span class="c1">--all</span></code> failure if mysql isn't installed</li>
+<li>[STACK] <code class="codehilite"><span class="err">wo stack purge --all</span></code> failure if mysql isn't installed</li>
 <li>[INSTALL] Fix EEv3 files cleanup</li>
-<li>[SECURE] Incorrect variable usage in <code class="codehilite"><span class="n">wo</span> <span class="n">secure</span> <span class="c1">--port</span></code></li>
+<li>[SECURE] Incorrect variable usage in <code class="codehilite"><span class="err">wo secure --port</span></code></li>
 <li>[INSTALL] Fix backup_ee function in install script</li>
 </ul>
 <h2 id="v39812-2019-09-20">v3.9.8.12 - 2019-09-20<a class="headerlink" href="#v39812-2019-09-20" title="Permanent link">&para;</a></h2>
@@ -3398,7 +3398,7 @@
 <li>[CORE] Improved SSL certificates management from previous letsencrypt or certbot install</li>
 <li>[CORE] Use a separate python file for gitconfig during installation to redirect setup.py output into logs</li>
 <li>[CORE] updated cement to v2.8.2</li>
-<li>[CORE] removed old <code class="codehilite"><span class="c1">--experimental flag</span></code></li>
+<li>[CORE] removed old <code class="codehilite"><span class="err">--experimental flag</span></code></li>
 <li>[CORE] Improve and simplify install script</li>
 </ul>
 <h3 id="fixed_9">Fixed<a class="headerlink" href="#fixed_9" title="Permanent link">&para;</a></h3>
@@ -3415,7 +3415,7 @@
 <h3 id="fixed_10">Fixed<a class="headerlink" href="#fixed_10" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Redis-server configuration and start</li>
-<li>Nginx upgrade with <code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">upgrade</span></code></li>
+<li>Nginx upgrade with <code class="codehilite"><span class="err">wo stack upgrade</span></code></li>
 </ul>
 <h2 id="v39810-2019-09-04">v3.9.8.10 - 2019-09-04<a class="headerlink" href="#v39810-2019-09-04" title="Permanent link">&para;</a></h2>
 <h3 id="changed_10">Changed<a class="headerlink" href="#changed_10" title="Permanent link">&para;</a></h3>
@@ -3445,9 +3445,9 @@
 <h3 id="fixed_12">Fixed<a class="headerlink" href="#fixed_12" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Several typo or syntax errors</li>
-<li><code class="codehilite"><span class="n">wo</span>  <span class="n">site</span></code> errors due to broken symlinks for access.log or error.log</li>
-<li><code class="codehilite"><span class="n">wo</span> <span class="n">clean</span></code> error due to unused memcached flag</li>
-<li>MySQL database and user variables overwrited in <code class="codehilite"><span class="n">wo</span> <span class="n">site</span></code></li>
+<li><code class="codehilite"><span class="err">wo  site</span></code> errors due to broken symlinks for access.log or error.log</li>
+<li><code class="codehilite"><span class="err">wo clean</span></code> error due to unused memcached flag</li>
+<li>MySQL database and user variables overwrited in <code class="codehilite"><span class="err">wo site</span></code></li>
 </ul>
 <h2 id="v3988-2019-09-02">v3.9.8.8 - 2019-09-02<a class="headerlink" href="#v3988-2019-09-02" title="Permanent link">&para;</a></h2>
 <h3 id="added_8">Added<a class="headerlink" href="#added_8" title="Permanent link">&para;</a></h3>
@@ -3474,11 +3474,11 @@
 <h2 id="v3987-2019-08-31">v3.9.8.7 - 2019-08-31<a class="headerlink" href="#v3987-2019-08-31" title="Permanent link">&para;</a></h2>
 <h3 id="changed_12">Changed<a class="headerlink" href="#changed_12" title="Permanent link">&para;</a></h3>
 <ul>
-<li>WordPress default permalinks structure from <code class="codehilite"><span class="o">/%</span><span class="k">year</span><span class="o">%/%</span><span class="n">monthnum</span><span class="o">%/%</span><span class="k">day</span><span class="o">%/%</span><span class="n">postname</span><span class="o">%/</span></code> -&gt; <code class="codehilite"><span class="o">/%</span><span class="n">postname</span><span class="o">%/</span></code></li>
+<li>WordPress default permalinks structure from <code class="codehilite"><span class="err">/%year%/%monthnum%/%day%/%postname%/</span></code> -&gt; <code class="codehilite"><span class="err">/%postname%/</span></code></li>
 </ul>
 <h3 id="fixed_14">Fixed<a class="headerlink" href="#fixed_14" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Error with <code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">upgrade</span> <span class="c1">--nginx</span></code></li>
+<li>Error with <code class="codehilite"><span class="err">wo stack upgrade --nginx</span></code></li>
 <li>Install/update script version check</li>
 <li>clamAV stack install</li>
 </ul>
@@ -3487,7 +3487,7 @@
 <ul>
 <li>Subdomains are automatically secured with an existant Wildcard LetsEncrypt SSL certificate.
 (If a wildcard certificate exist, WordOps will use this certificate for subdomains instead of issuing new certificates)</li>
-<li>MySQL &amp; Redis stack to <code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">remove</span><span class="o">/</span><span class="n">purge</span></code></li>
+<li>MySQL &amp; Redis stack to <code class="codehilite"><span class="err">wo stack remove/purge</span></code></li>
 <li>Dump MySQL databases before purging MySQL Stack</li>
 </ul>
 <h3 id="changed_13">Changed<a class="headerlink" href="#changed_13" title="Permanent link">&para;</a></h3>
@@ -3497,8 +3497,8 @@
 </ul>
 <h3 id="fixed_15">Fixed<a class="headerlink" href="#fixed_15" title="Permanent link">&para;</a></h3>
 <ul>
-<li>cache-enabler plugin not installed and configured with <code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">update</span> <span class="n">site</span><span class="p">.</span><span class="n">tld</span> <span class="c1">--wpce</span></code></li>
-<li>possible issue with domain variable in <code class="codehilite"><span class="c1">--letsencrypt=wildcard</span></code></li>
+<li>cache-enabler plugin not installed and configured with <code class="codehilite"><span class="err">wo site update site.tld --wpce</span></code></li>
+<li>possible issue with domain variable in <code class="codehilite"><span class="err">--letsencrypt=wildcard</span></code></li>
 <li>python3-mysqldb not available on Debian 8 (Jessie)</li>
 <li>Fix mysql variable skip-name-resolved</li>
 </ul>
@@ -3510,16 +3510,16 @@
 <h3 id="fixed_16">Fixed<a class="headerlink" href="#fixed_16" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Fix Netdata install on Raspbian 9/10</li>
-<li><code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">remove</span><span class="o">/</span><span class="n">purge</span></code> confirmation</li>
+<li><code class="codehilite"><span class="err">wo stack remove/purge</span></code> confirmation</li>
 <li>Nginx error after removing a SSL certificate used to secure WordOps backend</li>
-<li><code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">install</span> <span class="c1">--all</span></code></li>
+<li><code class="codehilite"><span class="err">wo stack install --all</span></code></li>
 <li>ProFTPd fail2ban rules set twice if removed and reinstalled</li>
-<li><code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">update</span></code></li>
+<li><code class="codehilite"><span class="err">wo site update</span></code></li>
 </ul>
 <h2 id="v3984-2019-08-28">v3.9.8.4 - 2019-08-28<a class="headerlink" href="#v3984-2019-08-28" title="Permanent link">&para;</a></h2>
 <h3 id="added_10">Added<a class="headerlink" href="#added_10" title="Permanent link">&para;</a></h3>
 <ul>
-<li>cht.sh stack: linux online cheatsheet. Usage: <code class="codehilite"><span class="n">cheat</span> <span class="o">&lt;</span><span class="n">command</span><span class="o">&gt;</span></code>. Example for tar: <code class="codehilite"><span class="n">cheat</span> <span class="n">tar</span></code></li>
+<li>cht.sh stack: linux online cheatsheet. Usage: <code class="codehilite"><span class="err">cheat &lt;command&gt;</span></code>. Example for tar: <code class="codehilite"><span class="err">cheat tar</span></code></li>
 <li>ClamAV anti-virus with weekly cronjob to update signatures database</li>
 <li>Internal function to add daily cronjobs</li>
 <li>Additional comment to detect previous configuration tuning (MariaDB &amp; Redis)</li>
@@ -3532,26 +3532,26 @@
 </ul>
 <h3 id="changed_15">Changed<a class="headerlink" href="#changed_15" title="Permanent link">&para;</a></h3>
 <ul>
-<li>eXplorer filemanager isn't installed with WordOps dashboard anymore, and a flag <code class="codehilite"><span class="c1">--extplorer</span></code> is available. But it's still installed when running the command <code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">install</span></code></li>
+<li>eXplorer filemanager isn't installed with WordOps dashboard anymore, and a flag <code class="codehilite"><span class="err">--extplorer</span></code> is available. But it's still installed when running the command <code class="codehilite"><span class="err">wo stack install</span></code></li>
 <li>Template rendering function now check for a .custom file before overwriting a configuration by default.</li>
-<li>flag <code class="codehilite"><span class="c1">--letsencrypt=subdomain</span></code> is not required anymore, you can use <code class="codehilite"><span class="c1">--letsencrypt</span></code> or <code class="codehilite"><span class="o">-</span><span class="n">le</span></code></li>
-<li>Simplifiy and decrease duration of <code class="codehilite"><span class="n">apt</span><span class="o">-</span><span class="k">key</span></code> GPG keys import</li>
+<li>flag <code class="codehilite"><span class="err">--letsencrypt=subdomain</span></code> is not required anymore, you can use <code class="codehilite"><span class="err">--letsencrypt</span></code> or <code class="codehilite"><span class="err">-le</span></code></li>
+<li>Simplifiy and decrease duration of <code class="codehilite"><span class="err">apt-key</span></code> GPG keys import</li>
 </ul>
 <h3 id="fixed_17">Fixed<a class="headerlink" href="#fixed_17" title="Permanent link">&para;</a></h3>
 <ul>
-<li>typo error in <code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">update</span></code>: <a href="https://github.com/WordOps/WordOps/pull/126">PR #126</a></li>
+<li>typo error in <code class="codehilite"><span class="err">wo site update</span></code>: <a href="https://github.com/WordOps/WordOps/pull/126">PR #126</a></li>
 </ul>
 <h2 id="v3983-2019-08-22">v3.9.8.3 - 2019-08-22<a class="headerlink" href="#v3983-2019-08-22" title="Permanent link">&para;</a></h2>
 <h3 id="changed_16">Changed<a class="headerlink" href="#changed_16" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Nginx package OpenSSL configuration improvements (TLS v1.3 now available on all operating systems supported by WordOps)</li>
-<li>remove user prompt for confirmation with <code class="codehilite"><span class="n">wo</span> <span class="k">update</span></code></li>
-<li>Nginx stack will not be upgraded with <code class="codehilite"><span class="n">wo</span> <span class="k">update</span></code> anymore. This can be done at anytime with <code class="codehilite"><span class="n">wo</span> <span class="n">upgrade</span> <span class="c1">--nginx</span></code></li>
+<li>remove user prompt for confirmation with <code class="codehilite"><span class="err">wo update</span></code></li>
+<li>Nginx stack will not be upgraded with <code class="codehilite"><span class="err">wo update</span></code> anymore. This can be done at anytime with <code class="codehilite"><span class="err">wo upgrade --nginx</span></code></li>
 <li>Databases name and user are now semi-randomly generated (0-8 letters from the domain + 8 random caracters)</li>
 </ul>
 <h3 id="fixed_18">Fixed<a class="headerlink" href="#fixed_18" title="Permanent link">&para;</a></h3>
 <ul>
-<li><code class="codehilite"><span class="n">wo</span> <span class="n">upgrade</span></code> output</li>
+<li><code class="codehilite"><span class="err">wo upgrade</span></code> output</li>
 <li>Database name or database user length</li>
 </ul>
 <h2 id="v3982-2019-08-20">v3.9.8.2 - 2019-08-20<a class="headerlink" href="#v3982-2019-08-20" title="Permanent link">&para;</a></h2>
@@ -3559,9 +3559,9 @@
 <ul>
 <li>Additional cache expection for Easy Digital Downloads <a href="https://github.com/WordOps/WordOps/pull/120">PR #120</a></li>
 <li>Additional settings to support mobile with WP-Rocket</li>
-<li>Add the ability to block nginx configuration overwriting by adding a file .custom. Example with /etc/nginx/conf.d/webp.conf -&gt; <code class="codehilite"><span class="n">touch</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">conf</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">webp</span><span class="p">.</span><span class="n">conf</span><span class="p">.</span><span class="n">custom</span></code></li>
+<li>Add the ability to block nginx configuration overwriting by adding a file .custom. Example with /etc/nginx/conf.d/webp.conf -&gt; <code class="codehilite"><span class="err">touch /etc/nginx/conf.d/webp.conf.custom</span></code></li>
 <li>If there is a custom file, WordOps will write the configuration in a file named fileconf.conf.orig to let users implement possible changes</li>
-<li>UFW minimal configuration during install. Can be disabled with the flag <code class="codehilite"><span class="o">-</span><span class="n">w</span></code>, <code class="codehilite"><span class="c1">--wufw</span></code> or <code class="codehilite"><span class="c1">--without-ufw</span></code>. Example: <code class="codehilite"><span class="n">wget</span> <span class="o">-</span><span class="n">qO</span> <span class="n">wo</span> <span class="n">wops</span><span class="p">.</span><span class="n">cc</span> <span class="o">&amp;&amp;</span> <span class="n">sudo</span> <span class="n">bash</span> <span class="n">wo</span> <span class="o">-</span><span class="n">w</span></code></li>
+<li>UFW minimal configuration during install. Can be disabled with the flag <code class="codehilite"><span class="err">-w</span></code>, <code class="codehilite"><span class="err">--wufw</span></code> or <code class="codehilite"><span class="err">--without-ufw</span></code>. Example: <code class="codehilite"><span class="err">wget -qO wo wops.cc &amp;&amp; sudo bash wo -w</span></code></li>
 </ul>
 <h3 id="fixed_19">Fixed<a class="headerlink" href="#fixed_19" title="Permanent link">&para;</a></h3>
 <ul>
@@ -3579,9 +3579,9 @@
 <h3 id="fixed_20">Fixed<a class="headerlink" href="#fixed_20" title="Permanent link">&para;</a></h3>
 <ul>
 <li>MySQLTuner installation</li>
-<li><code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">remove</span><span class="o">/</span><span class="n">purge</span> <span class="c1">--all</span></code></li>
+<li><code class="codehilite"><span class="err">wo stack remove/purge --all</span></code></li>
 <li>variable substitution in install script</li>
-<li><code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">upgrade</span> <span class="c1">--phpmyadmin/--dashboard</span></code></li>
+<li><code class="codehilite"><span class="err">wo stack upgrade --phpmyadmin/--dashboard</span></code></li>
 <li>phpmyadmin blowfish_secret key length</li>
 <li>Cement App not exiting on close in case of error</li>
 </ul>
@@ -3590,10 +3590,10 @@
 <ul>
 <li>Allow web browser caching for json and webmanifest files</li>
 <li>nginx-core.mustache template used to render nginx.conf during stack setup</li>
-<li>APT Packages configuration step with <code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">upgrade</span></code> to apply new configurations</li>
+<li>APT Packages configuration step with <code class="codehilite"><span class="err">wo stack upgrade</span></code> to apply new configurations</li>
 <li>Cloudflare restore real_ip configuration</li>
-<li>WP-Rocket plugin support with the flag <code class="codehilite"><span class="c1">--wprocket</span></code></li>
-<li>Cache-Enabler plugin support with the flag <code class="codehilite"><span class="c1">--wpce</span></code></li>
+<li>WP-Rocket plugin support with the flag <code class="codehilite"><span class="err">--wprocket</span></code></li>
+<li>Cache-Enabler plugin support with the flag <code class="codehilite"><span class="err">--wpce</span></code></li>
 <li>Install unattended-upgrade and enable automated security updates</li>
 <li>Enable time synchronization with ntp</li>
 <li>Additional cache exception for woocommerce</li>
@@ -3607,7 +3607,7 @@
 <li>Cleanup templates by removing all doublons (with/without php7) and replacing them with variables</li>
 <li>Updated Nginx to v1.16.1 in response to HTTP/2 vulnerabilites discovered</li>
 <li>Disable temporary adding swap feature (not working)</li>
-<li><code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">upgrade</span> <span class="c1">--nginx</span></code> is now able to apply new configurations during <code class="codehilite"><span class="n">wo</span> <span class="k">update</span></code>, it highly reduce upgrade duration</li>
+<li><code class="codehilite"><span class="err">wo stack upgrade --nginx</span></code> is now able to apply new configurations during <code class="codehilite"><span class="err">wo update</span></code>, it highly reduce upgrade duration</li>
 </ul>
 <h3 id="fixed_21">Fixed<a class="headerlink" href="#fixed_21" title="Permanent link">&para;</a></h3>
 <ul>
@@ -3620,7 +3620,7 @@
 </ul>
 <h2 id="v3971-2019-08-09">v3.9.7.1 - 2019-08-09<a class="headerlink" href="#v3971-2019-08-09" title="Permanent link">&para;</a></h2>
 <ul>
-<li>APT Packages configuration step with <code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">upgrade</span></code> to apply new configurations</li>
+<li>APT Packages configuration step with <code class="codehilite"><span class="err">wo stack upgrade</span></code> to apply new configurations</li>
 <li>Cloudflare restore real_ip configuration</li>
 </ul>
 <h3 id="changed_19">Changed<a class="headerlink" href="#changed_19" title="Permanent link">&para;</a></h3>
@@ -3633,7 +3633,7 @@
 </ul>
 <h3 id="fixed_23">Fixed<a class="headerlink" href="#fixed_23" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Missing import in <code class="codehilite"><span class="n">wo</span> <span class="n">sync</span></code></li>
+<li>Missing import in <code class="codehilite"><span class="err">wo sync</span></code></li>
 <li>redis.conf incorrect permissions</li>
 </ul>
 <h2 id="v397-2019-08-02">v3.9.7 - 2019-08-02<a class="headerlink" href="#v397-2019-08-02" title="Permanent link">&para;</a></h2>
@@ -3645,16 +3645,16 @@
 <li>Proftpd stack now secured with TLS</li>
 <li>New Nginx package built with Brotli from operating system libraries</li>
 <li>Brotli configuration with only well compressible MIME types</li>
-<li>WordPress site url automatically updated to <code class="codehilite"><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="k">domain</span><span class="p">.</span><span class="n">tld</span></code> when using <code class="codehilite"><span class="o">-</span><span class="n">le</span><span class="o">/</span><span class="c1">--letsencrypt</span></code> flag</li>
+<li>WordPress site url automatically updated to <code class="codehilite"><span class="c">https://domain.tld</span></code> when using <code class="codehilite"><span class="err">-le/--letsencrypt</span></code> flag</li>
 <li>More informations during certificate issuance about validation mode selected</li>
-<li><code class="codehilite"><span class="c1">--php72</span></code> as alternative for <code class="codehilite"><span class="c1">--php</span></code></li>
-<li>Automated removal of the deprecated variable <code class="codehilite"><span class="n">ssl</span> <span class="k">on</span><span class="p">;</span></code> in previous Nginx ssl.conf</li>
+<li><code class="codehilite"><span class="err">--php72</span></code> as alternative for <code class="codehilite"><span class="err">--php</span></code></li>
+<li>Automated removal of the deprecated variable <code class="codehilite"><span class="err">ssl on;</span></code> in previous Nginx ssl.conf</li>
 <li>Project Contributing guidelines</li>
 <li>Project Code of conduct</li>
 </ul>
 <h3 id="changed_20">Changed<a class="headerlink" href="#changed_20" title="Permanent link">&para;</a></h3>
 <ul>
-<li><code class="codehilite"><span class="n">wo</span> <span class="n">maintenance</span></code> refactored</li>
+<li><code class="codehilite"><span class="err">wo maintenance</span></code> refactored</li>
 <li>Improved debug log</li>
 <li>Updated Nginx configuration process to not overwrite files with custom data (htpasswd-wo, acl.conf etc..)</li>
 <li>Adminer updated to v4.7.2</li>
@@ -3668,76 +3668,76 @@
 <ul>
 <li>Kernel tweaks were not applied without server reboot</li>
 <li>Fail2ban standalone install</li>
-<li><code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">purge</span> <span class="c1">--all</span></code> error due to PHP7.3 check</li>
+<li><code class="codehilite"><span class="err">wo stack purge --all</span></code> error due to PHP7.3 check</li>
 <li>Nginx helper configuration during plugin install for Nginx fastcgi_cache and redis-cache</li>
 <li>phpRedisAdmin stack installation</li>
 <li>Fixed Travis CI build on pull requests</li>
-<li>Nginx <code class="codehilite"><span class="n">server_names_hash_bucket_size</span></code> variable error after WordOps upgrade</li>
+<li>Nginx <code class="codehilite"><span class="err">server_names_hash_bucket_size</span></code> variable error after WordOps upgrade</li>
 </ul>
 <h2 id="v3962-2019-07-24">v3.9.6.2 - 2019-07-24<a class="headerlink" href="#v3962-2019-07-24" title="Permanent link">&para;</a></h2>
 <h3 id="changed_21">Changed<a class="headerlink" href="#changed_21" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Improve <code class="codehilite"><span class="n">wo</span> <span class="k">update</span></code> process duration</li>
+<li>Improve <code class="codehilite"><span class="err">wo update</span></code> process duration</li>
 <li>Improve package install/upgrade/remove process</li>
 </ul>
 <h3 id="fixed_25">Fixed<a class="headerlink" href="#fixed_25" title="Permanent link">&para;</a></h3>
 <ul>
 <li>phpMyAdmin archive download link archive</li>
-<li>Arguments <code class="codehilite"><span class="c1">--letsencrypt=clean/purge</span></code></li>
+<li>Arguments <code class="codehilite"><span class="err">--letsencrypt=clean/purge</span></code></li>
 <li>Incorrect directory removal during stack upgrade</li>
 </ul>
 <h2 id="v3961-2019-07-23">v3.9.6.1 - 2019-07-23<a class="headerlink" href="#v3961-2019-07-23" title="Permanent link">&para;</a></h2>
 <h3 id="fixed_26">Fixed<a class="headerlink" href="#fixed_26" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Typo in  <code class="codehilite"><span class="c1">--letsencrypt=subdomain</span></code></li>
+<li>Typo in  <code class="codehilite"><span class="err">--letsencrypt=subdomain</span></code></li>
 <li>phpMyAdmin upgrade archive extraction</li>
-<li>Error in the command <code class="codehilite"><span class="n">wo</span> <span class="k">update</span></code>. Please <code class="codehilite"><span class="n">wo</span> <span class="k">update</span> <span class="c1">--beta</span></code> as workaround</li>
+<li>Error in the command <code class="codehilite"><span class="err">wo update</span></code>. Please <code class="codehilite"><span class="err">wo update --beta</span></code> as workaround</li>
 </ul>
 <h2 id="v396-2019-07-20">v3.9.6 - 2019-07-20<a class="headerlink" href="#v396-2019-07-20" title="Permanent link">&para;</a></h2>
 <h3 id="added_15">Added<a class="headerlink" href="#added_15" title="Permanent link">&para;</a></h3>
 <ul>
 <li>New Nginx package on Ubuntu with Cloudflare HTTP/2 HPACK and Dynamic TLS records</li>
-<li>phpMyAdmin upgrade with <code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">upgrade</span> <span class="c1">--phpmyadmin</span></code></li>
+<li>phpMyAdmin upgrade with <code class="codehilite"><span class="err">wo stack upgrade --phpmyadmin</span></code></li>
 <li>Wildcard SSL Certificates support with DNS validation</li>
 <li>Let's Encrypt DNS API support (Cloudflare, DigitalOcean, etc ..) on domain, subdomain, and wildcard</li>
-<li>Flag <code class="codehilite"><span class="c1">--letsencrypt=clean</span></code> to purge a previous SSL configuration</li>
+<li>Flag <code class="codehilite"><span class="err">--letsencrypt=clean</span></code> to purge a previous SSL configuration</li>
 <li>Support for Debian 10 buster (testing - not ready for production)</li>
 <li>Fail2ban with custom jails to secure WordPress &amp; SSH</li>
-<li>Variable <code class="codehilite"><span class="n">keylength</span></code> in /etc/wo/wo.conf to define letsencrypt certificate keylenght</li>
+<li>Variable <code class="codehilite"><span class="err">keylength</span></code> in /etc/wo/wo.conf to define letsencrypt certificate keylenght</li>
 <li>ProFTPd stack with UFW &amp; Fail2ban configurationz</li>
-<li>Beta branch and command <code class="codehilite"><span class="n">wo</span> <span class="k">update</span> <span class="c1">--beta</span></code> for beta releases</li>
+<li>Beta branch and command <code class="codehilite"><span class="err">wo update --beta</span></code> for beta releases</li>
 <li>Extra directives in wp-config.php (limit posts revisions, set max_memory, enable auto-update for minor-releases)</li>
 </ul>
 <h3 id="fixed_27">Fixed<a class="headerlink" href="#fixed_27" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Nginx was not reloaded after enabling HSTS</li>
 <li>Netdata, Composer &amp; Fail2Ban stack remove and purge</li>
-<li>WordPress not installed by <code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">update</span></code> with basic php73 sites</li>
+<li>WordPress not installed by <code class="codehilite"><span class="err">wo site update</span></code> with basic php73 sites</li>
 </ul>
 <h2 id="v3954-2019-07-13">v3.9.5.4 - 2019-07-13<a class="headerlink" href="#v3954-2019-07-13" title="Permanent link">&para;</a></h2>
 <h3 id="added_16">Added<a class="headerlink" href="#added_16" title="Permanent link">&para;</a></h3>
 <ul>
 <li>New Nginx package on Ubuntu with TLS v1.3 support (OpenSSL 1.1.1c)</li>
-<li>Netdata upgrade with <code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">upgrade</span> <span class="c1">--netdata</span></code></li>
+<li>Netdata upgrade with <code class="codehilite"><span class="err">wo stack upgrade --netdata</span></code></li>
 <li>Netdata stack remove/purge</li>
 </ul>
 <h3 id="changed_22">Changed<a class="headerlink" href="#changed_22" title="Permanent link">&para;</a></h3>
 <ul>
-<li>phpRedisAdmin is now installed with the stack <code class="codehilite"><span class="c1">--admin</span></code></li>
+<li>phpRedisAdmin is now installed with the stack <code class="codehilite"><span class="err">--admin</span></code></li>
 <li>Remove memcached - not required anymore</li>
 </ul>
 <h3 id="fixed_28">Fixed<a class="headerlink" href="#fixed_28" title="Permanent link">&para;</a></h3>
 <ul>
 <li>phpRedisAdmin installation</li>
 <li>Duplicated locations /robots.txt after upgrade to v3.9.5.3</li>
-<li>Let's Encrypt stack <code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">update</span> <span class="c1">--letsencrypt/--letsencrypt=off</span></code></li>
+<li>Let's Encrypt stack <code class="codehilite"><span class="err">wo site update --letsencrypt/--letsencrypt=off</span></code></li>
 <li>pt-query-advisor dead link</li>
 <li>Netdata persistant configuration</li>
 </ul>
 <h2 id="v3953-2019-06-18">v3.9.5.3 - 2019-06-18<a class="headerlink" href="#v3953-2019-06-18" title="Permanent link">&para;</a></h2>
 <h3 id="added_17">Added<a class="headerlink" href="#added_17" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Argument <code class="codehilite"><span class="c1">--preserve</span></code> with the command <code class="codehilite"><span class="n">wo</span> <span class="k">update</span></code> to keep current Nginx configuration</li>
+<li>Argument <code class="codehilite"><span class="err">--preserve</span></code> with the command <code class="codehilite"><span class="err">wo update</span></code> to keep current Nginx configuration</li>
 </ul>
 <h3 id="fixed_29">Fixed<a class="headerlink" href="#fixed_29" title="Permanent link">&para;</a></h3>
 <ul>
@@ -3747,8 +3747,8 @@
 <h3 id="added_18">Added<a class="headerlink" href="#added_18" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Non-interactive install/upgrade</li>
-<li>Argument <code class="codehilite"><span class="c1">--force</span></code> with the command <code class="codehilite"><span class="n">wo</span> <span class="k">update</span></code></li>
-<li>Argument <code class="codehilite"><span class="o">-</span><span class="n">s</span><span class="o">|</span><span class="c1">--silent</span></code> to perform non interactive installation</li>
+<li>Argument <code class="codehilite"><span class="err">--force</span></code> with the command <code class="codehilite"><span class="err">wo update</span></code></li>
+<li>Argument <code class="codehilite"><span class="err">-s|--silent</span></code> to perform non interactive installation</li>
 </ul>
 <h3 id="changed_23">Changed<a class="headerlink" href="#changed_23" title="Permanent link">&para;</a></h3>
 <ul>
@@ -3757,7 +3757,7 @@
 <h3 id="fixed_30">Fixed<a class="headerlink" href="#fixed_30" title="Permanent link">&para;</a></h3>
 <ul>
 <li>WP_CACHE_KEY_SALT set twice with wpredis</li>
-<li>WordOps version check when using <code class="codehilite"><span class="n">wo</span> <span class="k">update</span></code></li>
+<li>WordOps version check when using <code class="codehilite"><span class="err">wo update</span></code></li>
 <li>robots.txt file download if not created</li>
 <li>PHP-FPM socket path in stub_status.conf: PR <a href="https://github.com/WordOps/WordOps/pull/82">#82</a></li>
 </ul>
@@ -3775,7 +3775,7 @@
 <li>Install script handle migration from EEv3</li>
 <li>load-balancing on unix socket for php-fpm</li>
 <li>stub_status vhost for metrics</li>
-<li><code class="codehilite"><span class="c1">--letsencrypt=subdomain</span></code> option</li>
+<li><code class="codehilite"><span class="err">--letsencrypt=subdomain</span></code> option</li>
 <li>opcache optimization for php-fpm</li>
 <li>EasyEngine configuration backup before migration</li>
 <li>EasyEngine configuration cleanup after migration</li>
@@ -3790,7 +3790,7 @@
 <li>Cache exception for Easy Digital Download</li>
 <li>Additional cache exceptions for Woocommerce</li>
 <li>MySQL monitoring with Netdata</li>
-<li>WordOps-dashboard on 22222, can be installed with <code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">install</span></code></li>
+<li>WordOps-dashboard on 22222, can be installed with <code class="codehilite"><span class="err">wo stack install</span></code></li>
 <li>Extplorer filemanager in WordOps backend</li>
 <li>Enable OSCP Stapling with Let's Encrypt</li>
 <li>Compress database backup with pigz (faster than gzip) before updating sites</li>

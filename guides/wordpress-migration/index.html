@@ -1379,7 +1379,7 @@
                 <h1 id="wordpress-sites-migration">WordPress sites migration<a class="headerlink" href="#wordpress-sites-migration" title="Permanent link">&para;</a></h1>
 <h2 id="context">Context<a class="headerlink" href="#context" title="Permanent link">&para;</a></h2>
 <p>You want to migrate a WordPress site hosted on a server running EEv3 or WordOps to a new one running with WordOps.
-The site you want to migrate was created with the flag <code class="codehilite"><span class="c1">--wpredis</span></code></p>
+The site you want to migrate was created with the flag <code class="codehilite"><span class="err">--wpredis</span></code></p>
 <p>In our example :</p>
 <ul>
 <li>new server name is NEW-SRV with IP 10.0.0.1</li>
@@ -1427,20 +1427,20 @@ rm -rf /var/www/mydomain.tld/htdocs/*
 </pre></div>
 
 <p>Then just press enter to confirm ssh key path.
-Your public ssh key should be available in the directory <code class="codehilite"><span class="o">~/</span><span class="p">.</span><span class="n">ssh</span><span class="o">/</span></code> ( <code class="codehilite"><span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="p">.</span><span class="n">ssh</span><span class="o">/</span></code> if you are logged in as root )</p>
+Your public ssh key should be available in the directory <code class="codehilite"><span class="err">~/.ssh/</span></code> ( <code class="codehilite"><span class="err">/root/.ssh/</span></code> if you are logged in as root )</p>
 <h4 id="add-ssh-public-key-to-old-srv">Add SSH Public key to OLD-SRV<a class="headerlink" href="#add-ssh-public-key-to-old-srv" title="Permanent link">&para;</a></h4>
 <p>You can use the following command to automatically add the public SSH Key to the server :</p>
 <div class="codehilite"><pre><span></span>ssh-copy-id root@192.168.0.1
 </pre></div>
 
-<p>Otherwise, you can still display the public ssh-key with the command <code class="codehilite"><span class="n">cat</span> <span class="o">~/</span><span class="p">.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_ed25519</span><span class="p">.</span><span class="n">pub</span></code> and copy it manually in the file <code class="codehilite"><span class="o">~/</span><span class="p">.</span><span class="n">ssh</span><span class="o">/</span><span class="n">authorized_keys</span></code> of the other server.</p>
+<p>Otherwise, you can still display the public ssh-key with the command <code class="codehilite"><span class="err">cat ~/.ssh/id_ed25519.pub</span></code> and copy it manually in the file <code class="codehilite"><span class="err">~/.ssh/authorized_keys</span></code> of the other server.</p>
 <h4 id="ssh-login-without-password">SSH Login without password<a class="headerlink" href="#ssh-login-without-password" title="Permanent link">&para;</a></h4>
 <p>You should now be able to login from the server where you generated the SSH Keys to the other one without password :</p>
 <div class="codehilite"><pre><span></span>ssh root@192.168.0.1
 </pre></div>
 
 <h4 id="ssh-alias-and-config">SSH Alias and config<a class="headerlink" href="#ssh-alias-and-config" title="Permanent link">&para;</a></h4>
-<p>If you prefer to use an alias to login to OLD-SRV rather than using the IP, or if you want to define a custom SSH port, you just have to create/edit the file <code class="codehilite"><span class="o">~/</span><span class="p">.</span><span class="n">ssh</span><span class="o">/</span><span class="n">config</span></code> and to define settings this way :</p>
+<p>If you prefer to use an alias to login to OLD-SRV rather than using the IP, or if you want to define a custom SSH port, you just have to create/edit the file <code class="codehilite"><span class="err">~/.ssh/config</span></code> and to define settings this way :</p>
 <div class="codehilite"><pre><span></span>Host OLD-SRV
   Hostname <span class="m">192</span>.168.0.1
   Port <span class="m">12345</span>
@@ -1456,7 +1456,7 @@ Your public ssh key should be available in the directory <code class="codehilite
 
 <h3 id="transfer-files-from-old-srv-to-new-srv">Transfer files from OLD-SRV to NEW-SRV<a class="headerlink" href="#transfer-files-from-old-srv-to-new-srv" title="Permanent link">&para;</a></h3>
 <p>To safely migrate files from OLD-SRV to NEW-SRV, we will use rsync because it's fast and secure (files transfer is done over SSH).
-If you have configured password-less SSH login with the previous steps, and defined an alias into <code class="codehilite"><span class="o">~/</span><span class="p">.</span><span class="n">ssh</span><span class="o">/</span><span class="n">config</span></code> you can use the following command to copy files from OLD-SRV to NEW-SRV</p>
+If you have configured password-less SSH login with the previous steps, and defined an alias into <code class="codehilite"><span class="err">~/.ssh/config</span></code> you can use the following command to copy files from OLD-SRV to NEW-SRV</p>
 <div class="codehilite"><pre><span></span>rsync -avzh --progress --ignore-existing <span class="se">\</span>
 root@OLD-SRV:/var/www/mydomain.tld/htdocs/ <span class="se">\</span>
 /var/www/mydomain.tld/htdocs/
@@ -1470,7 +1470,7 @@ root@old_server_IP:/var/www/mydomain.tld/htdocs/ <span class="se">\</span>
 </pre></div>
 
 <h4 id="do-not-copy-the-file-wp-configphp">Do not copy the file wp-config.php<a class="headerlink" href="#do-not-copy-the-file-wp-configphp" title="Permanent link">&para;</a></h4>
-<p>With WordOps or EasyEngine v3, wp-config.php default path is <code class="codehilite"><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">mydomain</span><span class="p">.</span><span class="n">tld</span></code>. If you moved it into htdocs directory, it was probably transfered with rsync during the previous step. In this case remove it or rename it before importing the database on the new server, otherwise WP-CLI may not be able to login into MySQL.</p>
+<p>With WordOps or EasyEngine v3, wp-config.php default path is <code class="codehilite"><span class="err">/var/www/mydomain.tld</span></code>. If you moved it into htdocs directory, it was probably transfered with rsync during the previous step. In this case remove it or rename it before importing the database on the new server, otherwise WP-CLI may not be able to login into MySQL.</p>
 <p>Command example to keep previous wp-config.php file as backup :</p>
 <div class="codehilite"><pre><span></span>mv /var/www/mydomain.tld/htdocs/wp-config.php /var/www/mydomain.tld/wp-config.php.bak
 </pre></div>

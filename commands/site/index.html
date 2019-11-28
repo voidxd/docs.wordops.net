@@ -1724,7 +1724,7 @@
 <div class="codehilite"><pre><span></span>wo site create site.tld --mysql
 </pre></div>
 
-<p>NOTE: You can find MySQL database details in <code class="codehilite"><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">site</span><span class="p">.</span><span class="n">tld</span><span class="o">/</span><span class="n">wo</span><span class="o">-</span><span class="n">config</span><span class="p">.</span><span class="n">php</span></code>.</p>
+<p>NOTE: You can find MySQL database details in <code class="codehilite"><span class="err">/var/www/site.tld/wo-config.php</span></code>.</p>
 <h4 id="proxy-site">Proxy site<a class="headerlink" href="#proxy-site" title="Permanent link">&para;</a></h4>
 <p>To create site with Proxy configuration you can use --proxy during site creation</p>
 <div class="codehilite"><pre><span></span>wo site create site.tld --proxy<span class="o">=</span><span class="m">127</span>.0.0.1:3000
@@ -1774,39 +1774,39 @@
 <tbody>
 <tr>
 <td><strong>NO Cache</strong></td>
-<td><code class="codehilite"><span class="c1">--wp</span></code></td>
-<td><code class="codehilite"><span class="c1">--wpsubdir</span></code></td>
-<td><code class="codehilite"><span class="c1">--wpsubdomain</span></code></td>
+<td><code class="codehilite"><span class="err">--wp</span></code></td>
+<td><code class="codehilite"><span class="err">--wpsubdir</span></code></td>
+<td><code class="codehilite"><span class="err">--wpsubdomain</span></code></td>
 </tr>
 <tr>
 <td><strong>WP Super Cache plugin</strong></td>
-<td><code class="codehilite"><span class="c1">--wpsc</span></code></td>
-<td><code class="codehilite"><span class="c1">--wpsubdir --wpsc</span></code></td>
-<td><code class="codehilite"><span class="c1">--wpsubdomain --wpsc</span></code></td>
+<td><code class="codehilite"><span class="err">--wpsc</span></code></td>
+<td><code class="codehilite"><span class="err">--wpsubdir --wpsc</span></code></td>
+<td><code class="codehilite"><span class="err">--wpsubdomain --wpsc</span></code></td>
 </tr>
 <tr>
 <td><strong>Nginx fastcgi_cache</strong></td>
-<td><code class="codehilite"><span class="c1">--wpfc</span></code></td>
-<td><code class="codehilite"><span class="c1">--wpsubdir --wpfc</span></code></td>
-<td><code class="codehilite"><span class="c1">--wpsubdomain --wpfc</span></code></td>
+<td><code class="codehilite"><span class="err">--wpfc</span></code></td>
+<td><code class="codehilite"><span class="err">--wpsubdir --wpfc</span></code></td>
+<td><code class="codehilite"><span class="err">--wpsubdomain --wpfc</span></code></td>
 </tr>
 <tr>
 <td><strong>Redis cache</strong></td>
-<td><code class="codehilite"><span class="c1">--wpredis</span></code></td>
-<td><code class="codehilite"><span class="c1">--wpsubdir --wpredis</span></code></td>
-<td><code class="codehilite"><span class="c1">--wpsubdomain --wpredis</span></code></td>
+<td><code class="codehilite"><span class="err">--wpredis</span></code></td>
+<td><code class="codehilite"><span class="err">--wpsubdir --wpredis</span></code></td>
+<td><code class="codehilite"><span class="err">--wpsubdomain --wpredis</span></code></td>
 </tr>
 <tr>
 <td><strong>WP-Rocket plugin</strong></td>
-<td><code class="codehilite"><span class="c1">--wprocket</span></code></td>
-<td><code class="codehilite"><span class="c1">--wpsubdir --wprocket</span></code></td>
-<td><code class="codehilite"><span class="c1">--wpsubdomain --wprocket</span></code></td>
+<td><code class="codehilite"><span class="err">--wprocket</span></code></td>
+<td><code class="codehilite"><span class="err">--wpsubdir --wprocket</span></code></td>
+<td><code class="codehilite"><span class="err">--wpsubdomain --wprocket</span></code></td>
 </tr>
 <tr>
 <td><strong>Cache-Enabler plugin</strong></td>
-<td><code class="codehilite"><span class="c1">--wpce</span></code></td>
-<td><code class="codehilite"><span class="c1">--wpsubdir --wpce</span></code></td>
-<td><code class="codehilite"><span class="c1">--wpsubdomain --wpce</span></code></td>
+<td><code class="codehilite"><span class="err">--wpce</span></code></td>
+<td><code class="codehilite"><span class="err">--wpsubdir --wpce</span></code></td>
+<td><code class="codehilite"><span class="err">--wpsubdomain --wpce</span></code></td>
 </tr>
 </tbody>
 </table>
@@ -1866,15 +1866,15 @@
 <p class="admonition-title">Info</p>
 <p>More example in our guide about <a href="/how-to/configure-letsencrypt-dns-api-validation">DNS API configuration</a></p>
 </div>
-<p>After you define those variables with the command <code class="codehilite"><span class="n">export</span></code>, you can issue your certificate with</p>
+<p>After you define those variables with the command <code class="codehilite"><span class="err">export</span></code>, you can issue your certificate with</p>
 <div class="codehilite"><pre><span></span>wo site create site.tld --wp --letsencrypt<span class="o">=</span>wildcard --dns<span class="o">=</span>dns_cf
 </pre></div>
 
 <ul>
-<li><code class="codehilite"><span class="c1">--dns=dns_cf</span></code> can be replaced with another DNS provider supported by acme.sh. For DigitalOcean, it would be <code class="codehilite"><span class="c1">--dns=dns_dgon</span></code></li>
+<li><code class="codehilite"><span class="err">--dns=dns_cf</span></code> can be replaced with another DNS provider supported by acme.sh. For DigitalOcean, it would be <code class="codehilite"><span class="err">--dns=dns_dgon</span></code></li>
 </ul>
 <h4 id="hsts">HSTS<a class="headerlink" href="#hsts" title="Permanent link">&para;</a></h4>
-<p>Additionally you can enable HSTS on your site by adding the flag <code class="codehilite"><span class="c1">--hsts</span></code> with <code class="codehilite"><span class="c1">--letsencrypt</span></code></p>
+<p>Additionally you can enable HSTS on your site by adding the flag <code class="codehilite"><span class="err">--hsts</span></code> with <code class="codehilite"><span class="err">--letsencrypt</span></code></p>
 <div class="codehilite"><pre><span></span>wo site create site.tld --wp --letsencrypt --hsts
 </pre></div>
 
@@ -1891,7 +1891,7 @@
 <h2 id="site-update">site update<a class="headerlink" href="#site-update" title="Permanent link">&para;</a></h2>
 <p>Update site configuration</p>
 <h3 id="pre-update-policy">Pre-update policy<a class="headerlink" href="#pre-update-policy" title="Permanent link">&para;</a></h3>
-<p><code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">update</span></code> command follows following procedure while updating current site.</p>
+<p><code class="codehilite"><span class="err">wo site update</span></code> command follows following procedure while updating current site.</p>
 <p>Before Updating any site:</p>
 <ul>
 <li>Creates nginx configuration backup for site.</li>
@@ -1959,89 +1959,89 @@
 </thead>
 <tbody>
 <tr>
-<td><code class="codehilite"><span class="c1">--html</span></code></td>
+<td><code class="codehilite"><span class="err">--html</span></code></td>
 <td>update to html site</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--php</span></code></td>
+<td><code class="codehilite"><span class="err">--php</span></code></td>
 <td>update to php site</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--mysql</span></code></td>
+<td><code class="codehilite"><span class="err">--mysql</span></code></td>
 <td>update to MySQL + PHP site</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--php73</span></code></td>
+<td><code class="codehilite"><span class="err">--php73</span></code></td>
 <td>update site to PHP 7.3</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--php73=off</span></code></td>
+<td><code class="codehilite"><span class="err">--php73=off</span></code></td>
 <td>disable PHP 7.3</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--wp</span></code></td>
+<td><code class="codehilite"><span class="err">--wp</span></code></td>
 <td>update site to WordPress without cache</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--wpfc</span></code></td>
+<td><code class="codehilite"><span class="err">--wpfc</span></code></td>
 <td>update site to WordPress with fastcgi_cache</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--wpsc</span></code></td>
+<td><code class="codehilite"><span class="err">--wpsc</span></code></td>
 <td>update site to WordPress with wp-super-cache plugin</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--wpredis</span></code></td>
+<td><code class="codehilite"><span class="err">--wpredis</span></code></td>
 <td>update site to WordPress with redis-cache</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--wprocket</span></code></td>
+<td><code class="codehilite"><span class="err">--wprocket</span></code></td>
 <td>update site to WordPress with WP-Rocket plugin</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--wpce</span></code></td>
+<td><code class="codehilite"><span class="err">--wpce</span></code></td>
 <td>update site to WordPress with Cache-Enabler plugin</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--wpsubdir</span></code></td>
+<td><code class="codehilite"><span class="err">--wpsubdir</span></code></td>
 <td>update site to WordPress multisite on subdirectories</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--wpsubdomain</span></code></td>
+<td><code class="codehilite"><span class="err">--wpsubdomain</span></code></td>
 <td>update site to WordPress multisite on subdomains</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--password</span></code></td>
+<td><code class="codehilite"><span class="err">--password</span></code></td>
 <td>update admin password for a WordPress site</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--letsencrypt</span></code>,<code class="codehilite"><span class="o">-</span><span class="n">le</span></code></td>
+<td><code class="codehilite"><span class="err">--letsencrypt</span></code>,<code class="codehilite"><span class="err">-le</span></code></td>
 <td>secure site with Let's Encrypt SSL certificate</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--letsencrypt=wildcard</span></code></td>
+<td><code class="codehilite"><span class="err">--letsencrypt=wildcard</span></code></td>
 <td>secure site/multisite with a wildcard SSL certificates</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--letsencrypt=off</span></code></td>
+<td><code class="codehilite"><span class="err">--letsencrypt=off</span></code></td>
 <td>disable Let's Encrypt SSL certificate</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--dns</span></code>, <code class="codehilite"><span class="c1">--dns=&lt;dns api provider&gt;</span></code></td>
-<td>issue Let's Encrypt certificate with DNS validation. default: <code class="codehilite"><span class="n">dns_cf</span></code></td>
+<td><code class="codehilite"><span class="err">--dns</span></code>, <code class="codehilite"><span class="err">--dns=&lt;dns api provider&gt;</span></code></td>
+<td>issue Let's Encrypt certificate with DNS validation. default: <code class="codehilite"><span class="err">dns_cf</span></code></td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--hsts</span></code>, <code class="codehilite"><span class="c1">--hsts=off</span></code></td>
+<td><code class="codehilite"><span class="err">--hsts</span></code>, <code class="codehilite"><span class="err">--hsts=off</span></code></td>
 <td>Enable or disable HSTS on site secured with Let's Encrypt</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--ngxblocker</span></code>, <code class="codehilite"><span class="c1">--ngxblocker=off</span></code></td>
+<td><code class="codehilite"><span class="err">--ngxblocker</span></code>, <code class="codehilite"><span class="err">--ngxblocker=off</span></code></td>
 <td>Enable or disable Ultimate Nginx bad blocker</td>
 </tr>
 </tbody>
 </table>
 <h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h3>
-<p>Update a WordPress site without cache (<code class="codehilite"><span class="c1">--wp</span></code>), to WordPress with Nginx fastcgi_cache</p>
+<p>Update a WordPress site without cache (<code class="codehilite"><span class="err">--wp</span></code>), to WordPress with Nginx fastcgi_cache</p>
 <div class="codehilite"><pre><span></span>wo site update site.tld --wpfc
 </pre></div>
 
@@ -2078,15 +2078,15 @@
 </thead>
 <tbody>
 <tr>
-<td><code class="codehilite"><span class="c1">--no-prompt</span></code></td>
+<td><code class="codehilite"><span class="err">--no-prompt</span></code></td>
 <td>delete website without confirmation prompt</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--files</span></code></td>
+<td><code class="codehilite"><span class="err">--files</span></code></td>
 <td>delete only website files</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--db</span></code></td>
+<td><code class="codehilite"><span class="err">--db</span></code></td>
 <td>delete only database</td>
 </tr>
 </tbody>

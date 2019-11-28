@@ -1228,8 +1228,8 @@
 <p>In this guide, we will explain how to issue a Let's Encrypt SSL certificate to secure your site and the different options available.</p>
 <p>To issue a SSL certificate with WordOps, you can use the following arguments with the commands:</p>
 <ul>
-<li><code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">create</span></code></li>
-<li><code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">update</span></code></li>
+<li><code class="codehilite"><span class="err">wo site create</span></code></li>
+<li><code class="codehilite"><span class="err">wo site update</span></code></li>
 </ul>
 <table>
 <thead>
@@ -1240,21 +1240,21 @@
 </thead>
 <tbody>
 <tr>
-<td><code class="codehilite"><span class="c1">--letsencrypt</span></code> / <code class="codehilite"><span class="o">-</span><span class="n">le</span></code></td>
+<td><code class="codehilite"><span class="err">--letsencrypt</span></code> / <code class="codehilite"><span class="err">-le</span></code></td>
 <td>issue a SSL certificate for domain or subdomain</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--letsencrypt=wildcard</span></code></td>
+<td><code class="codehilite"><span class="err">--letsencrypt=wildcard</span></code></td>
 <td>issue a wildcard SSL certificate: <strong>domain.tld + *.domain.tld</strong></td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="c1">--dns</span></code> / <code class="codehilite"><span class="c1">--dns=&lt;dns_api&gt;</span></code></td>
+<td><code class="codehilite"><span class="err">--dns</span></code> / <code class="codehilite"><span class="err">--dns=&lt;dns_api&gt;</span></code></td>
 <td>use DNS API validation for Acme challenge. <strong>required for wildcard certificates</strong></td>
 </tr>
 </tbody>
 </table>
-<p><code class="codehilite"><span class="o">-</span><span class="n">le</span></code> is an alias for <code class="codehilite"><span class="c1">--letsencrypt</span></code>. You can use this alias with all letsencrypt commands.</p>
-<p>For example, <code class="codehilite"><span class="c1">--letsencrypt=wildcard</span></code> is the same than <code class="codehilite"><span class="o">-</span><span class="n">le</span><span class="o">=</span><span class="n">wildcard</span></code></p>
+<p><code class="codehilite"><span class="err">-le</span></code> is an alias for <code class="codehilite"><span class="err">--letsencrypt</span></code>. You can use this alias with all letsencrypt commands.</p>
+<p>For example, <code class="codehilite"><span class="err">--letsencrypt=wildcard</span></code> is the same than <code class="codehilite"><span class="err">-le=wildcard</span></code></p>
 <h2 id="issuing-a-certificate">Issuing a certificate<a class="headerlink" href="#issuing-a-certificate" title="Permanent link">&para;</a></h2>
 <h3 id="webroot-mode">Webroot mode<a class="headerlink" href="#webroot-mode" title="Permanent link">&para;</a></h3>
 <p>By default WordOps use the Webroot mode to validate the domain. This mode doesn't require any additional configuration.</p>

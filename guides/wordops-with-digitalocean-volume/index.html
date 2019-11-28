@@ -1151,15 +1151,15 @@
 <h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
 <p>1) Create Droplet.</p>
 <p>2) Add volume –&gt; Automatically format and mount</p>
-<p><em>This guide is based as if your volume would be named: <code class="codehilite"><span class="n">YOUR</span><span class="o">-</span><span class="n">VOLUME</span></code></em></p>
+<p><em>This guide is based as if your volume would be named: <code class="codehilite"><span class="err">YOUR-VOLUME</span></code></em></p>
 <p>3)  Login to the droplet from the console, will ask for root password change.</p>
-<p>4) Create directory <code class="codehilite"><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span></code> where we will mount the volume and WordOps will be installed.</p>
+<p>4) Create directory <code class="codehilite"><span class="err">/var/www</span></code> where we will mount the volume and WordOps will be installed.</p>
 <div class="codehilite"><pre><span></span>mkdir -p /var/www
 </pre></div>
 
 <h2 id="mounting-the-volume">Mounting the volume<a class="headerlink" href="#mounting-the-volume" title="Permanent link">&para;</a></h2>
-<p><em>Steps 5 and 6 are according to DigitalOcean -&gt; Volumes -&gt; 'More' tab of <code class="codehilite"><span class="n">YOUR</span><span class="o">-</span><span class="n">VOLUME</span></code> -&gt; Config instructions</em></p>
-<p>5) Mount Digital Ocean's volume in <code class="codehilite"><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span></code></p>
+<p><em>Steps 5 and 6 are according to DigitalOcean -&gt; Volumes -&gt; 'More' tab of <code class="codehilite"><span class="err">YOUR-VOLUME</span></code> -&gt; Config instructions</em></p>
+<p>5) Mount Digital Ocean's volume in <code class="codehilite"><span class="err">/var/www</span></code></p>
 <div class="codehilite"><pre><span></span>mount -o discard,defaults,noatime /dev/disk/by-id/scsi-0DO_Volume_YOUR-VOLUME /var/www
 </pre></div>
 
@@ -1172,7 +1172,7 @@
 <div class="codehilite"><pre><span></span>wget -qO wo wops.cc <span class="o">&amp;&amp;</span> sudo bash wo
 </pre></div>
 
-<p>You can enable autocomplete right after install with: <code class="codehilite"><span class="k">source</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">bash_completion</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">wo_auto</span><span class="p">.</span><span class="n">rc</span></code></p>
+<p>You can enable autocomplete right after install with: <code class="codehilite"><span class="err">source /etc/bash_completion.d/wo_auto.rc</span></code></p>
 <p>8)  Install WordOps stacks (optional)</p>
 <div class="codehilite"><pre><span></span>wo stack install
 </pre></div>
@@ -1180,7 +1180,7 @@
 <p><strong>And that's it!</strong></p>
 <h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Just check with <code class="codehilite"><span class="n">df</span> <span class="o">-</span><span class="n">h</span></code> or in netdata if <code class="codehilite"><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span></code> is shown with the correct size of your volume.</li>
+<li>Just check with <code class="codehilite"><span class="err">df -h</span></code> or in netdata if <code class="codehilite"><span class="err">/var/www/</span></code> is shown with the correct size of your volume.</li>
 </ul>
                 
                   

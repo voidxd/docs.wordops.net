@@ -1147,9 +1147,9 @@
                 
                 
                 <h1 id="common-issues">Common issues<a class="headerlink" href="#common-issues" title="Permanent link">&para;</a></h1>
-<h2 id="the-command-wo-update-failed">The command <code class="codehilite"><span class="n">wo</span> <span class="k">update</span></code> failed<a class="headerlink" href="#the-command-wo-update-failed" title="Permanent link">&para;</a></h2>
+<h2 id="the-command-wo-update-failed">The command <code class="codehilite"><span class="err">wo update</span></code> failed<a class="headerlink" href="#the-command-wo-update-failed" title="Permanent link">&para;</a></h2>
 <p>This is a known issue with WordOps v3.9.6 which has been fixed with the maintenance release v3.9.6.1.
-As a workaround you can either use the command <code class="codehilite"><span class="n">wo</span> <span class="k">update</span> <span class="c1">--beta</span></code> or run again the install command:</p>
+As a workaround you can either use the command <code class="codehilite"><span class="err">wo update --beta</span></code> or run again the install command:</p>
 <div class="codehilite"><pre><span></span>wget -qO wo wops.cc <span class="o">&amp;&amp;</span> sudo bash wo
 </pre></div>
 
@@ -1157,12 +1157,12 @@ As a workaround you can either use the command <code class="codehilite"><span cl
 <h2 id="wordops-failed-to-issue-ssl-certificate">WordOps failed to issue SSL certificate<a class="headerlink" href="#wordops-failed-to-issue-ssl-certificate" title="Permanent link">&para;</a></h2>
 <p>If you are using DNS API validation :</p>
 <ul>
-<li>Make sure your API credentials has been properly saved by acme.sh in <code class="codehilite"><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">letsencrypt</span><span class="o">/</span><span class="n">config</span><span class="o">/</span><span class="n">account</span><span class="p">.</span><span class="n">conf</span></code></li>
+<li>Make sure your API credentials has been properly saved by acme.sh in <code class="codehilite"><span class="err">/etc/letsencrypt/config/account.conf</span></code></li>
 <li>Check acme.sh documentation about DNS API to see if there are changes with your DNS API Provider : <a href="https://github.com/Neilpang/acme.sh/wiki/dnsapi">https://github.com/Neilpang/acme.sh/wiki/dnsapi</a></li>
 </ul>
 <p>If you are using the default webroot validation :</p>
-<p>Make sure your domain is pointing to your server IP as well as <code class="codehilite"><span class="n">www</span></code> alias if it's not a subodmain</p>
-<p>If you are behind a load-balancer or a proxy, and need to force WO to issue a certificate even if the domain doesn't resolve your server IP, you can use the flag <code class="codehilite"><span class="c1">--force</span></code></p>
+<p>Make sure your domain is pointing to your server IP as well as <code class="codehilite"><span class="err">www</span></code> alias if it's not a subodmain</p>
+<p>If you are behind a load-balancer or a proxy, and need to force WO to issue a certificate even if the domain doesn't resolve your server IP, you can use the flag <code class="codehilite"><span class="err">--force</span></code></p>
 <div class="codehilite"><pre><span></span>wo site update site.tld -le --force
 </pre></div>
 
@@ -1183,7 +1183,7 @@ As a workaround you can either use the command <code class="codehilite"><span cl
 <li>Nginx-helper plugin is enabled</li>
 <li>the option "purge cache" is enabled in Settings &gt; Nginx-Helper</li>
 <li>the caching method is defined on Redis Cache</li>
-<li>the prefix defined is <code class="codehilite"><span class="n">nginx</span><span class="o">-</span><span class="k">cache</span><span class="p">:</span></code></li>
+<li>the prefix defined is <code class="codehilite"><span class="c">nginx-cache:</span></code></li>
 </ul>
 <h2 id="wordops-commands-are-not-working">WordOps commands are not working<a class="headerlink" href="#wordops-commands-are-not-working" title="Permanent link">&para;</a></h2>
 <p>If the error output looks like:</p>
@@ -1205,7 +1205,7 @@ As a workaround you can either use the command <code class="codehilite"><span cl
 pkg_resources.DistributionNotFound: The <span class="s1">&#39;wo==3.9.8.2&#39;</span> distribution was not found and is required by the application
 </pre></div>
 
-<p>Just remove the executable <code class="codehilite"><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="k">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">wo</span></code> and reinstall WordOps:</p>
+<p>Just remove the executable <code class="codehilite"><span class="err">/usr/local/bin/wo</span></code> and reinstall WordOps:</p>
 <div class="codehilite"><pre><span></span>sudo rm /usr/local/bin/wo <span class="o">&amp;&amp;</span> wget -qO wo wops.cc <span class="o">&amp;&amp;</span> sudo bash wo
 </pre></div>
                 

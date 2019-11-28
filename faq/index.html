@@ -1161,7 +1161,7 @@
                 <h1 id="faq">F.A.Q<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h1>
 <h2 id="general">General<a class="headerlink" href="#general" title="Permanent link">&para;</a></h2>
 <h3 id="what-is-wordops">What is WordOps ?<a class="headerlink" href="#what-is-wordops" title="Permanent link">&para;</a></h3>
-<p>WordOps is a command line tool which ease server administration and WordPress deployment by providing the ability to setup an optimized LEMP stack (Nginx, PHP, MySQL) with simple command like <code class="codehilite"><span class="n">wo</span> <span class="n">stack</span> <span class="n">install</span> <span class="c1">--nginx</span></code>.</p>
+<p>WordOps is a command line tool which ease server administration and WordPress deployment by providing the ability to setup an optimized LEMP stack (Nginx, PHP, MySQL) with simple command like <code class="codehilite"><span class="err">wo stack install --nginx</span></code>.</p>
 <h3 id="what-are-wordops-main-features">What are WordOps main features ?<a class="headerlink" href="#what-are-wordops-main-features" title="Permanent link">&para;</a></h3>
 <p>WordOps not only installs and configures the packages needed to deploy a site (Nginx, PHP, MariaDB) but it also takes care of creating Nginx vhosts and the database, installing WordPress and even get a Let's Encrypt SSL certificate, all in one command line. It support multiple cache backend for WordPress, including Nginx fastcgi_cache, Redis cache (full-page cache + object cache) or wp-super-cache, based on a highly optimized Nginx configuration and an hardened security with strict location directives.</p>
 <h3 id="which-operating-systems-are-supported-by-wordops">Which operating systems are supported by WordOps ?<a class="headerlink" href="#which-operating-systems-are-supported-by-wordops" title="Permanent link">&para;</a></h3>
@@ -1184,33 +1184,33 @@ Support for other linux distribution isn't planned.</p>
 <tbody>
 <tr>
 <td>fastcgi_cache</td>
-<td><code class="codehilite"><span class="c1">--wpfc</span></code></td>
+<td><code class="codehilite"><span class="err">--wpfc</span></code></td>
 <td>the simplest solution, because it do not rely on any plugin excepted nginx_helper used to purge cache after content updates</td>
 </tr>
 <tr>
 <td>redis-cache</td>
-<td><code class="codehilite"><span class="c1">--wpredis</span></code></td>
+<td><code class="codehilite"><span class="err">--wpredis</span></code></td>
 <td>powerful solution which support multi-server setup and it provide full-page cache in redis via Nginx + object-cache via Redis-Object-Cache plugin (optional)</td>
 </tr>
 <tr>
 <td>wp-super-cache</td>
-<td><code class="codehilite"><span class="c1">--wpsc</span></code></td>
+<td><code class="codehilite"><span class="err">--wpsc</span></code></td>
 <td>basic solution based on a plugin which create and serve static html files.</td>
 </tr>
 <tr>
 <td>wp-rocket</td>
-<td><code class="codehilite"><span class="c1">--wprocket</span></code></td>
+<td><code class="codehilite"><span class="err">--wprocket</span></code></td>
 <td>solution based on a popular premium plugin with several additional features, compatible with Woocommerce and the most part of plugins</td>
 </tr>
 <tr>
 <td>cache-enabler</td>
-<td><code class="codehilite"><span class="c1">--wpce</span></code></td>
+<td><code class="codehilite"><span class="err">--wpce</span></code></td>
 <td>solution based on an open-source plugin from keycdn</td>
 </tr>
 </tbody>
 </table>
 <h3 id="how-to-access-to-wordops-dashboard">How to access to WordOps Dashboard ?<a class="headerlink" href="#how-to-access-to-wordops-dashboard" title="Permanent link">&para;</a></h3>
-<p>WordOps dashboard is available on <code class="codehilite"><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">YOUR</span><span class="p">.</span><span class="n">SERVER</span><span class="p">.</span><span class="n">IP</span><span class="p">:</span><span class="mi">22222</span></code> or <code class="codehilite"><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">YOUR</span><span class="p">.</span><span class="n">SERVER</span><span class="p">.</span><span class="n">HOSTNAME</span><span class="p">:</span><span class="mi">22222</span></code></p>
+<p>WordOps dashboard is available on <code class="codehilite"><span class="c">https://YOUR.SERVER.IP:22222</span></code> or <code class="codehilite"><span class="c">https://YOUR.SERVER.HOSTNAME:22222</span></code></p>
 <h3 id="what-is-the-userpassword-of-the-web-filemanager">What is the user/password of the web filemanager ?<a class="headerlink" href="#what-is-the-userpassword-of-the-web-filemanager" title="Permanent link">&para;</a></h3>
 <p>By default, user is admin and password too. After you logged in for the first time, you will have to change this password</p>
 <h3 id="why-do-i-get-warning-from-my-web-browser-when-opening-wordops-backend">Why do I get warning from my web browser when opening WordOps backend ?<a class="headerlink" href="#why-do-i-get-warning-from-my-web-browser-when-opening-wordops-backend" title="Permanent link">&para;</a></h3>

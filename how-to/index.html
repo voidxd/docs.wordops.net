@@ -1238,7 +1238,7 @@
 
 <hr />
 <h3 id="get-the-mysql-root-password">Get the MySQL root password<a class="headerlink" href="#get-the-mysql-root-password" title="Permanent link">&para;</a></h3>
-<p>MySQL root password is stored in the file <code class="codehilite"><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">mysql</span><span class="o">/</span><span class="n">conf</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">my</span><span class="p">.</span><span class="n">cnf</span></code></p>
+<p>MySQL root password is stored in the file <code class="codehilite"><span class="err">/etc/mysql/conf.d/my.cnf</span></code></p>
 <h3 id="display-mysql-user-and-password-of-a-site">Display MySQL user and password of a site<a class="headerlink" href="#display-mysql-user-and-password-of-a-site" title="Permanent link">&para;</a></h3>
 <p>You can use the command:</p>
 <div class="codehilite"><pre><span></span>wo site info site.tld
@@ -1264,8 +1264,8 @@ https://site.tld:22222
 
 <hr />
 <h3 id="renew-a-lets-encrypt-ssl-certificates-with-wordops">Renew a Let's Encrypt SSL Certificates with WordOps<a class="headerlink" href="#renew-a-lets-encrypt-ssl-certificates-with-wordops" title="Permanent link">&para;</a></h3>
-<p>Previously with EasyEngine v3, Let's Encrypt certificates were renewed by running the command <code class="codehilite"><span class="n">ee</span> <span class="n">site</span> <span class="k">update</span> <span class="c1">--le=renew --all</span></code> with a cronjob.</p>
-<p>You may have noticed the command <code class="codehilite"><span class="n">site</span> <span class="k">update</span> <span class="c1">--le=renew</span></code> still exist in WordOps, but you shouln't need it because WordOps use the awesome acme client acme.sh to issue and handle Let's Encrypt SSL certificates. All certificates are <strong>automatically renewed every 60 days</strong> by acme.sh using a cronjob.</p>
+<p>Previously with EasyEngine v3, Let's Encrypt certificates were renewed by running the command <code class="codehilite"><span class="err">ee site update --le=renew --all</span></code> with a cronjob.</p>
+<p>You may have noticed the command <code class="codehilite"><span class="err">site update --le=renew</span></code> still exist in WordOps, but you shouln't need it because WordOps use the awesome acme client acme.sh to issue and handle Let's Encrypt SSL certificates. All certificates are <strong>automatically renewed every 60 days</strong> by acme.sh using a cronjob.</p>
 <p>However, if you really need to renew your certificates, you can directly use acme.sh to renew all certificates with the following command:</p>
 <div class="codehilite"><pre><span></span>acme.sh --renew-all --ecc
 </pre></div>

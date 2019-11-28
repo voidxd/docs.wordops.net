@@ -1189,7 +1189,7 @@ This feature is optional to issue domain and subdomain certificates, but is requ
 <li>your Global API Key available in your <a href="https://dash.cloudflare.com/profile">Cloudflare profile</a></li>
 </ul>
 <h3 id="step-2-set-your-credentials-with-acmesh-variables">Step 2: set your credentials with acme.sh variables<a class="headerlink" href="#step-2-set-your-credentials-with-acmesh-variables" title="Permanent link">&para;</a></h3>
-<p>Before issuing your first SSL certificate with DNS API, you have to define your API credentials with the command <code class="codehilite"><span class="n">export</span></code> :</p>
+<p>Before issuing your first SSL certificate with DNS API, you have to define your API credentials with the command <code class="codehilite"><span class="err">export</span></code> :</p>
 <p>Example for Cloudflare:</p>
 <div class="codehilite"><pre><span></span><span class="nb">export</span> <span class="nv">CF_Key</span><span class="o">=</span><span class="s2">&quot;sdfsdfsdfljlbjkljlkjsdfoiwje&quot;</span>
 <span class="nb">export</span> <span class="nv">CF_Email</span><span class="o">=</span><span class="s2">&quot;xxxx@sss.com&quot;</span>
@@ -1216,29 +1216,29 @@ This feature is optional to issue domain and subdomain certificates, but is requ
 <p>For a new site secured with a wildcard SSL certificates with Cloudflare DNS API</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>If you are using <code class="codehilite"><span class="n">sudo</span></code> to run wo commands, you need to use <code class="codehilite"><span class="n">sudo</span> <span class="o">-</span><span class="n">E</span></code> to keep DNS API crendentials variables available for acme.sh
-So just put <code class="codehilite"><span class="n">sudo</span> <span class="o">-</span><span class="n">E</span></code> before the following commands instead of just <code class="codehilite"><span class="n">sudo</span></code>.</p>
+<p>If you are using <code class="codehilite"><span class="err">sudo</span></code> to run wo commands, you need to use <code class="codehilite"><span class="err">sudo -E</span></code> to keep DNS API crendentials variables available for acme.sh
+So just put <code class="codehilite"><span class="err">sudo -E</span></code> before the following commands instead of just <code class="codehilite"><span class="err">sudo</span></code>.</p>
 </div>
 <div class="codehilite"><pre><span></span>wo site create site.tld --wp --letsencrypt<span class="o">=</span>wildcard --dns<span class="o">=</span>dns_cf
 </pre></div>
 
 <ul>
-<li><code class="codehilite"><span class="c1">--letsencrypt=wildcard</span></code>: issue a wildcard certificate <code class="codehilite"><span class="k">domain</span><span class="p">.</span><span class="n">tld</span></code> + <code class="codehilite"><span class="o">*</span><span class="p">.</span><span class="k">domain</span><span class="p">.</span><span class="n">tld</span></code></li>
-<li><code class="codehilite"><span class="c1">--dns=dns_cf</span></code>: enable DNS API mode with Cloudflare.</li>
+<li><code class="codehilite"><span class="err">--letsencrypt=wildcard</span></code>: issue a wildcard certificate <code class="codehilite"><span class="err">domain.tld</span></code> + <code class="codehilite"><span class="err">*.domain.tld</span></code></li>
+<li><code class="codehilite"><span class="err">--dns=dns_cf</span></code>: enable DNS API mode with Cloudflare.</li>
 </ul>
 <p>For an existant secured with a simple SSL certificate (site + <a href="http://www.site.tld">www.site.tld</a>) with DigitalOcean DNS API</p>
 <div class="codehilite"><pre><span></span>wo site update site.tld -le --dns<span class="o">=</span>dns_dgon
 </pre></div>
 
 <ul>
-<li><code class="codehilite"><span class="o">-</span><span class="n">le</span></code>: issue a certificate for <code class="codehilite"><span class="k">domain</span><span class="p">.</span><span class="n">tld</span></code> + <code class="codehilite"><span class="n">www</span><span class="p">.</span><span class="k">domain</span><span class="p">.</span><span class="n">tld</span></code></li>
-<li><code class="codehilite"><span class="c1">--dns=dns_dgon</span></code>: enable DNS API mode with DigitalOcean</li>
+<li><code class="codehilite"><span class="err">-le</span></code>: issue a certificate for <code class="codehilite"><span class="err">domain.tld</span></code> + <code class="codehilite"><span class="err">www.domain.tld</span></code></li>
+<li><code class="codehilite"><span class="err">--dns=dns_dgon</span></code>: enable DNS API mode with DigitalOcean</li>
 </ul>
 <h2 id="informations">Informations<a class="headerlink" href="#informations" title="Permanent link">&para;</a></h2>
 <ul>
 <li>You can also use DNS API to issue domain and subdomain certificates.</li>
-<li><code class="codehilite"><span class="c1">--dns=dns_cf</span></code> define the DNS provider to use. With DigitalOcean, it would be <code class="codehilite"><span class="c1">--dns=dns_dgon</span></code></li>
-<li>After issuing a first certificate using DNS API, your API credentials will be saved in <code class="codehilite"><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">letsencrypt</span><span class="o">/</span><span class="n">config</span><span class="o">/</span><span class="n">account</span><span class="p">.</span><span class="n">conf</span></code>. You do not need to define them anymore.</li>
+<li><code class="codehilite"><span class="err">--dns=dns_cf</span></code> define the DNS provider to use. With DigitalOcean, it would be <code class="codehilite"><span class="err">--dns=dns_dgon</span></code></li>
+<li>After issuing a first certificate using DNS API, your API credentials will be saved in <code class="codehilite"><span class="err">/etc/letsencrypt/config/account.conf</span></code>. You do not need to define them anymore.</li>
 </ul>
                 
                   

@@ -1411,43 +1411,43 @@
 <li><a href="https://pypi.org/project/distro/">distro</a></li>
 </ul>
 <h3 id="structure">Structure<a class="headerlink" href="#structure" title="Permanent link">&para;</a></h3>
-<p>WordOps application can be found in the <code class="codehilite"><span class="n">wo</span></code> directory of the github repository
+<p>WordOps application can be found in the <code class="codehilite"><span class="err">wo</span></code> directory of the github repository
 Here the structure of WordOps with additional comments</p>
-<div class="codehilite"><pre><span></span><span class="n">wo</span>
-<span class="err">├──</span> <span class="n">cli</span> <span class="o">#</span> <span class="n">the</span> <span class="n">main</span> <span class="n">directory</span> <span class="k">of</span> <span class="n">the</span> <span class="n">application</span>
-<span class="err">│</span>   <span class="err">├──</span> <span class="n">__init__</span><span class="p">.</span><span class="n">py</span>
-<span class="err">│</span>   <span class="err">├──</span> <span class="n">bootstrap</span><span class="p">.</span><span class="n">py</span> <span class="o">#</span> <span class="n">Cement</span> <span class="n">framework</span>
-<span class="err">│</span>   <span class="err">├──</span> <span class="n">controllers</span> <span class="o">#</span> <span class="n">Cement</span> <span class="n">framework</span>
-<span class="err">│</span>   <span class="err">├──</span> <span class="n">ext</span> <span class="o">#</span> <span class="n">Cement</span> <span class="n">framework</span>
-<span class="err">│</span>   <span class="err">├──</span> <span class="n">main</span><span class="p">.</span><span class="n">py</span> <span class="o">#</span> <span class="n">Cement</span> <span class="n">framework</span>
-<span class="err">│</span>   <span class="err">├──</span> <span class="n">plugins</span> <span class="o">#</span> <span class="n">WordOps</span> <span class="n">commands</span> <span class="p">(</span><span class="n">stack</span><span class="p">,</span> <span class="n">site</span><span class="p">,</span> <span class="k">update</span> <span class="p">..</span> <span class="n">etc</span><span class="p">)</span>
-<span class="err">│</span>   <span class="err">└──</span> <span class="n">templates</span> <span class="o">#</span> <span class="n">WordOps</span> <span class="n">configuration</span> <span class="k">template</span>
-<span class="err">├──</span> <span class="n">core</span> <span class="o">#</span> <span class="n">main</span> <span class="n">functions</span> <span class="n">used</span> <span class="k">in</span> <span class="n">WordOps</span> <span class="n">plugins</span>
-<span class="err">└──</span> <span class="n">utils</span> <span class="o">#</span> <span class="n">testing</span> <span class="n">helper</span>
+<div class="codehilite"><pre><span></span><span class="err">wo</span>
+<span class="err">├── cli # the main directory of the application</span>
+<span class="err">│   ├── __init__.py</span>
+<span class="err">│   ├── bootstrap.py # Cement framework</span>
+<span class="err">│   ├── controllers # Cement framework</span>
+<span class="err">│   ├── ext # Cement framework</span>
+<span class="err">│   ├── main.py # Cement framework</span>
+<span class="err">│   ├── plugins # WordOps commands (stack, site, update .. etc)</span>
+<span class="err">│   └── templates # WordOps configuration template</span>
+<span class="err">├── core # main functions used in WordOps plugins</span>
+<span class="err">└── utils # testing helper</span>
 </pre></div>
 
 <p>Plugins Directory:
 Here the list of plugins with the related command or a short description</p>
-<div class="codehilite"><pre><span></span>├── <span class="nv">plugins</span>
-│   ├── <span class="nv">__init__</span>.<span class="nv">py</span>
-│   ├── <span class="nv">clean</span>.<span class="nv">py</span> # <span class="nv">wo</span> <span class="nv">clean</span>
-│   ├── <span class="nv">debug</span>.<span class="nv">py</span> # <span class="nv">wo</span> <span class="nv">debug</span>
-│   ├── <span class="nv">import_slow_log</span>.<span class="nv">py</span> # <span class="nv">wo</span> <span class="nv">import</span><span class="o">-</span><span class="nv">slow</span><span class="o">-</span><span class="nv">log</span> <span class="ss">(</span><span class="nv">from</span> <span class="nv">EE</span> <span class="nv">v3</span><span class="ss">)</span>
-│   ├── <span class="nv">info</span>.<span class="nv">py</span> # <span class="nv">wo</span> <span class="nv">info</span>
-│   ├── <span class="nv">log</span>.<span class="nv">py</span> # <span class="nv">wo</span> <span class="nv">log</span>
-│   ├── <span class="nv">maintenance</span>.<span class="nv">py</span> # <span class="nv">wo</span> <span class="nv">maintenance</span>
-│   ├── <span class="nv">models</span>.<span class="nv">py</span> # <span class="nv">site</span> <span class="nv">information</span> <span class="nv">structure</span> <span class="k">for</span> <span class="nv">WO</span> <span class="nv">internal</span> <span class="nv">DB</span>
-│   ├── <span class="nv">secure</span>.<span class="nv">py</span> # <span class="nv">wo</span> <span class="nv">secure</span>
-│   ├── <span class="nv">site</span>.<span class="nv">py</span> # <span class="nv">wo</span> <span class="nv">site</span>
-│   ├── <span class="nv">site_functions</span>.<span class="nv">py</span> # <span class="nv">functions</span> <span class="nv">used</span> <span class="nv">by</span> <span class="nv">site</span>.<span class="nv">py</span>
-│   ├── <span class="nv">sitedb</span>.<span class="nv">py</span> # <span class="nv">WO</span> <span class="nv">internal</span> <span class="nv">SQlite3</span> <span class="nv">database</span> <span class="nv">functions</span>
-│   ├── <span class="nv">stack</span>.<span class="nv">py</span> # <span class="nv">wo</span> <span class="nv">stack</span> <span class="nv">install</span><span class="o">/</span><span class="nv">remove</span><span class="o">/</span><span class="nv">purge</span>
-│   ├── <span class="nv">stack_migrate</span>.<span class="nv">py</span> # <span class="nv">wo</span> <span class="nv">stack</span> <span class="nv">migrate</span>
-│   ├── <span class="nv">stack_pref</span>.<span class="nv">py</span> # <span class="nv">stack</span> <span class="nv">configuration</span> <span class="nv">used</span> <span class="nv">by</span> <span class="nv">stack</span>.<span class="nv">py</span> <span class="o">&amp;</span> <span class="nv">stack_upgrade</span>.<span class="nv">py</span>
-│   ├── <span class="nv">stack_services</span>.<span class="nv">py</span> # <span class="nv">wo</span> <span class="nv">stack</span> <span class="nv">start</span><span class="o">/</span><span class="nv">stop</span><span class="o">/</span><span class="nv">restart</span><span class="o">/</span><span class="nv">reload</span>
-│   ├── <span class="nv">stack_upgrade</span>.<span class="nv">py</span> # <span class="nv">wo</span> <span class="nv">stack</span> <span class="nv">upgrade</span>
-│   ├── <span class="nv">sync</span>.<span class="nv">py</span> # <span class="nv">wo</span> <span class="nv">sync</span>
-│   └── <span class="nv">update</span>.<span class="nv">py</span> # <span class="nv">wo</span> <span class="nv">update</span>
+<div class="codehilite"><pre><span></span><span class="err">├── plugins</span>
+<span class="err">│   ├── __init__.py</span>
+<span class="err">│   ├── clean.py # wo clean</span>
+<span class="err">│   ├── debug.py # wo debug</span>
+<span class="err">│   ├── import_slow_log.py # wo import-slow-log (from EE v3)</span>
+<span class="err">│   ├── info.py # wo info</span>
+<span class="err">│   ├── log.py # wo log</span>
+<span class="err">│   ├── maintenance.py # wo maintenance</span>
+<span class="err">│   ├── models.py # site information structure for WO internal DB</span>
+<span class="err">│   ├── secure.py # wo secure</span>
+<span class="err">│   ├── site.py # wo site</span>
+<span class="err">│   ├── site_functions.py # functions used by site.py</span>
+<span class="err">│   ├── sitedb.py # WO internal SQlite3 database functions</span>
+<span class="err">│   ├── stack.py # wo stack install/remove/purge</span>
+<span class="err">│   ├── stack_migrate.py # wo stack migrate</span>
+<span class="err">│   ├── stack_pref.py # stack configuration used by stack.py &amp; stack_upgrade.py</span>
+<span class="err">│   ├── stack_services.py # wo stack start/stop/restart/reload</span>
+<span class="err">│   ├── stack_upgrade.py # wo stack upgrade</span>
+<span class="err">│   ├── sync.py # wo sync</span>
+<span class="err">│   └── update.py # wo update</span>
 </pre></div>
 
 <h3 id="developement-environnment">Developement Environnment<a class="headerlink" href="#developement-environnment" title="Permanent link">&para;</a></h3>

@@ -1260,31 +1260,31 @@
 
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>Before installing WordOps, the install script will backup all previous EasyEngine configurations. You will find them after the installation in <code class="codehilite"><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">wo</span><span class="o">-</span><span class="n">backup</span></code>.</p>
+<p>Before installing WordOps, the install script will backup all previous EasyEngine configurations. You will find them after the installation in <code class="codehilite"><span class="err">/var/lib/wo-backup</span></code>.</p>
 </div>
 <p>It will also create all new Nginx configurations before syncing the old nginx directory with the new one. This way, if you have added custom Nginx configuration, you will find them at the same place than before the migration.</p>
 <h2 id="post-installation-steps">Post installation steps<a class="headerlink" href="#post-installation-steps" title="Permanent link">&para;</a></h2>
-<p>After installing WordOps, if all your sites are still working properly, you can start using WordOps the same way than EasyEngine. For sites previously created with EasyEngine, you will have to changes some settings in their configuration to use WordOps new configurations. This can be done with the command <code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">update</span></code> or by editing manually their configuration with the command <code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="n">edit</span></code>.</p>
+<p>After installing WordOps, if all your sites are still working properly, you can start using WordOps the same way than EasyEngine. For sites previously created with EasyEngine, you will have to changes some settings in their configuration to use WordOps new configurations. This can be done with the command <code class="codehilite"><span class="err">wo site update</span></code> or by editing manually their configuration with the command <code class="codehilite"><span class="err">wo site edit</span></code>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>If some sites are still using php5.6 or php7.0 and are not compatible with newer PHP versions, do not change their vhost configuration. WordOps minimum and default PHP version is PHP 7.2. Additionally, sites previously created with <code class="codehilite"><span class="c1">--w3tc</span></code>  will have to use another cache option as we deprecated this stack.</p>
+<p>If some sites are still using php5.6 or php7.0 and are not compatible with newer PHP versions, do not change their vhost configuration. WordOps minimum and default PHP version is PHP 7.2. Additionally, sites previously created with <code class="codehilite"><span class="err">--w3tc</span></code>  will have to use another cache option as we deprecated this stack.</p>
 </div>
 <h3 id="updating-site-configuration">Updating site configuration<a class="headerlink" href="#updating-site-configuration" title="Permanent link">&para;</a></h3>
 <p>You have the choice between two method to update your site configuration:</p>
 <ul>
 <li>
-<p>With the command <code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">update</span></code> (recommended)</p>
+<p>With the command <code class="codehilite"><span class="err">wo site update</span></code> (recommended)</p>
 </li>
 <li>
-<p>Manually with the command <code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="n">edit</span></code></p>
+<p>Manually with the command <code class="codehilite"><span class="err">wo site edit</span></code></p>
 </li>
 </ul>
-<h4 id="using-the-command-wo-site-update">Using the command <code class="codehilite"><span class="n">wo</span> <span class="n">site</span> <span class="k">update</span></code><a class="headerlink" href="#using-the-command-wo-site-update" title="Permanent link">&para;</a></h4>
+<h4 id="using-the-command-wo-site-update">Using the command <code class="codehilite"><span class="err">wo site update</span></code><a class="headerlink" href="#using-the-command-wo-site-update" title="Permanent link">&para;</a></h4>
 <p>The easiest way to update your site with the new WordOps configurations is to use the command:</p>
 <div class="codehilite"><pre><span></span>wo site update site.tld &lt;options&gt;
 </pre></div>
 
-<p>To update your sites configuration, you can enable PHP 7.3 on your site with the argument <code class="codehilite"><span class="c1">--php73</span></code> and then disable it with the argument <code class="codehilite"><span class="c1">--php73=off</span></code> to use PHP 7.2.
+<p>To update your sites configuration, you can enable PHP 7.3 on your site with the argument <code class="codehilite"><span class="err">--php73</span></code> and then disable it with the argument <code class="codehilite"><span class="err">--php73=off</span></code> to use PHP 7.2.
 This will regenerate your site Nginx vhost and apply the new configuration.</p>
 <p><strong>Example</strong>:</p>
 <div class="codehilite"><pre><span></span><span class="c1"># enable PHP 7.3 to regenerate site configuration</span>
@@ -1302,13 +1302,13 @@ wo site update site.tld --php73<span class="o">=</span>off
 <p class="admonition-title">Info</p>
 <p>You will be prompt to choose a text editor, if you are new to linux, we recommend you to choose nano.</p>
 </div>
-<p>In Nginx vhost configuration, you will find several lines beginning with <code class="codehilite"><span class="k">include</span></code>.</p>
-<p>To use new WordOps configuration, you just have to replace the path of the configuration set after <code class="codehilite"><span class="k">include</span></code>.  For example <code class="codehilite"><span class="k">include</span> <span class="nv">common</span><span class="o">/</span><span class="nv">locations</span>.<span class="nv">conf</span><span class="c1">;</span></code> have to be replaced by <code class="codehilite"><span class="k">include</span> <span class="nv">common</span><span class="o">/</span><span class="nv">locations</span><span class="o">-</span><span class="nv">wo</span>.<span class="nv">conf</span><span class="c1">;</span></code>.</p>
+<p>In Nginx vhost configuration, you will find several lines beginning with <code class="codehilite"><span class="err">include</span></code>.</p>
+<p>To use new WordOps configuration, you just have to replace the path of the configuration set after <code class="codehilite"><span class="err">include</span></code>.  For example <code class="codehilite"><span class="err">include common/locations.conf;</span></code> have to be replaced by <code class="codehilite"><span class="err">include common/locations-wo.conf;</span></code>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Make sure to not remove the <code class="codehilite"><span class="p">;</span></code> at the end of the line when updating Nginx configuration.</p>
+<p>Make sure to not remove the <code class="codehilite"><span class="err">;</span></code> at the end of the line when updating Nginx configuration.</p>
 </div>
-<p>For all WordPress related configuration files like <code class="codehilite"><span class="n">wpsc</span><span class="p">.</span><span class="n">conf</span></code> or <code class="codehilite"><span class="n">wpfc</span><span class="o">-</span><span class="n">php7</span><span class="p">.</span><span class="n">conf</span></code>, new configurations files are just named <code class="codehilite"><span class="n">wpsc</span><span class="o">-</span><span class="n">php72</span><span class="p">.</span><span class="n">conf</span></code> or <code class="codehilite"><span class="n">wpfc</span><span class="o">-</span><span class="n">php72</span><span class="p">.</span><span class="n">conf</span></code>.</p>
+<p>For all WordPress related configuration files like <code class="codehilite"><span class="err">wpsc.conf</span></code> or <code class="codehilite"><span class="err">wpfc-php7.conf</span></code>, new configurations files are just named <code class="codehilite"><span class="err">wpsc-php72.conf</span></code> or <code class="codehilite"><span class="err">wpfc-php72.conf</span></code>.</p>
 <p>There are some exceptions, list here:</p>
 <table>
 <thead>
@@ -1361,7 +1361,7 @@ chmod +x mysqldump.sh
 </pre></div>
 
 <p>This will backup the whole MySQL server and store the gzipped dump in /var/www/mysqldump</p>
-<p>Additionally you can make a copy of the <code class="codehilite"><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">mysql</span></code> directory:</p>
+<p>Additionally you can make a copy of the <code class="codehilite"><span class="err">/var/lib/mysql</span></code> directory:</p>
 <div class="codehilite"><pre><span></span>sudo service mysql stop
 sudo cp -rf /var/lib/mysql /var/lib/mysql-bak
 sudo service mysql start
