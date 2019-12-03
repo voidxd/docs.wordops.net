@@ -758,8 +758,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#php-73" class="md-nav__link">
-    PHP 7.3
+  <a href="#php-73-php-74" class="md-nav__link">
+    PHP 7.3 &amp; PHP 7.4
   </a>
   
 </li>
@@ -1518,8 +1518,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#php-73" class="md-nav__link">
-    PHP 7.3
+  <a href="#php-73-php-74" class="md-nav__link">
+    PHP 7.3 &amp; PHP 7.4
   </a>
   
 </li>
@@ -1854,9 +1854,7 @@
 <p><strong>Since the release v3.9.8.4</strong>, WordOps will automatically detect if the site is a domain or a subdomain, and will not issue a certificate for www alias with subdomains</p>
 <h5 id="wildcard">Wildcard<a class="headerlink" href="#wildcard" title="Permanent link">&para;</a></h5>
 <p><strong>Since the release v3.9.6</strong>, WordOps supports Let's Encrypt Wildcard SSL certificates with DNS API validation. Before issuing a wildcard certificate, it require to define the DNS API crendentials for acme.sh.</p>
-<video align="center" src="/images/wo-wildcard.webm" width="720" autoplay loop>
-</video>
-
+<p><asciinema-player src="/images/wositecreatewildcard.cast" autoplay loop cols="120" rows="30"></asciinema-player></p>
 <p>Example with Cloudflare DNS:</p>
 <div class="codehilite"><pre><span></span><span class="nb">export</span> <span class="nv">CF_Key</span><span class="o">=</span><span class="s2">&quot;d7eab56a903f25dd4xxxxxxxxxxxxxxxxxxxx&quot;</span>
 <span class="nb">export</span> <span class="nv">CF_Email</span><span class="o">=</span><span class="s2">&quot;email@domain.com&quot;</span>
@@ -1878,14 +1876,22 @@
 <div class="codehilite"><pre><span></span>wo site create site.tld --wp --letsencrypt --hsts
 </pre></div>
 
-<h4 id="php-73">PHP 7.3<a class="headerlink" href="#php-73" title="Permanent link">&para;</a></h4>
+<h4 id="php-73-php-74">PHP 7.3 &amp; PHP 7.4<a class="headerlink" href="#php-73-php-74" title="Permanent link">&para;</a></h4>
 <p>To create site with PHP 7.3 you can use --php73 during site creation</p>
 <p>For example, you can create WordPress site running on PHP 7.3 using following command:</p>
 <div class="codehilite"><pre><span></span>wo site create site.tld --wp --php73
 </pre></div>
 
+<p>For a WordPress site running on PHP 7.4:</p>
+<div class="codehilite"><pre><span></span>wo site create site.tld --wp --php74
+</pre></div>
+
 <p>To create simple php site running with PHP 7.3 with no database, you can use this command:</p>
 <div class="codehilite"><pre><span></span>wo site create site.tld --php73
+</pre></div>
+
+<p>This is the same with PHP 7.4:</p>
+<div class="codehilite"><pre><span></span>wo site create site.tld --php74
 </pre></div>
 
 <h2 id="site-update">site update<a class="headerlink" href="#site-update" title="Permanent link">&para;</a></h2>
@@ -1971,12 +1977,16 @@
 <td>update to MySQL + PHP site</td>
 </tr>
 <tr>
+<td><code class="codehilite"><span class="err">--php72</span></code></td>
+<td>update site to PHP 7.2</td>
+</tr>
+<tr>
 <td><code class="codehilite"><span class="err">--php73</span></code></td>
 <td>update site to PHP 7.3</td>
 </tr>
 <tr>
-<td><code class="codehilite"><span class="err">--php73=off</span></code></td>
-<td>disable PHP 7.3</td>
+<td><code class="codehilite"><span class="err">--php74</span></code></td>
+<td>update site to PHP 7.4</td>
 </tr>
 <tr>
 <td><code class="codehilite"><span class="err">--wp</span></code></td>
@@ -2049,8 +2059,12 @@
 <div class="codehilite"><pre><span></span>wo site update site.tld --php73
 </pre></div>
 
-<p>Disable PHP 7.3 and use PHP 7.2:</p>
-<div class="codehilite"><pre><span></span>wo site update site.tld --php73<span class="o">=</span>off
+<p>Update a site running with PHP 7.3 to PHP 7.2</p>
+<div class="codehilite"><pre><span></span>wo site update site.tld --php72
+</pre></div>
+
+<p>Update a site running with PHP 7.2 or PHP 7.3 to PHP 7.4</p>
+<div class="codehilite"><pre><span></span>wo site update site.tld --php74
 </pre></div>
 
 <p>Update a WordPress site wiht Nginx fastcgi_cache to WordPress with redis-cache</p>
@@ -2059,6 +2073,7 @@
 
 <h2 id="site-info">site info<a class="headerlink" href="#site-info" title="Permanent link">&para;</a></h2>
 <p>Get site information including cache backend, PHP version or user database credentials</p>
+<p><asciinema-player src="/images/wositeinfo.cast" autoplay loop cols="120" rows="30"></asciinema-player></p>
 <p>Usage:</p>
 <div class="codehilite"><pre><span></span>wo site info <span class="o">[</span>&lt;site_name&gt;<span class="o">]</span>
 </pre></div>
@@ -2093,6 +2108,7 @@
 </table>
 <h2 id="site-edit">site edit<a class="headerlink" href="#site-edit" title="Permanent link">&para;</a></h2>
 <p>Edit site Nginx configuration</p>
+<p><asciinema-player src="/images/wositeedit.cast" autoplay loop cols="125" rows="30"></asciinema-player></p>
 <p>Usage:</p>
 <div class="codehilite"><pre><span></span>wo site edit <span class="o">[</span>&lt;site_name&gt;<span class="o">]</span>
 </pre></div>
@@ -2100,18 +2116,21 @@
 <p>You will be prompted to choose the text editor you prefer. Nano is highly recommended for beginners.</p>
 <h2 id="site-cd">site cd<a class="headerlink" href="#site-cd" title="Permanent link">&para;</a></h2>
 <p>Move into a site webroot directory</p>
+<p><asciinema-player src="/images/wositecd.cast" autoplay loop cols="125" rows="30"></asciinema-player></p>
 <p>Usage:</p>
 <div class="codehilite"><pre><span></span>wo site <span class="nb">cd</span>  <span class="o">[</span>&lt;site_name&gt;<span class="o">]</span>
 </pre></div>
 
 <h2 id="site-list">site list<a class="headerlink" href="#site-list" title="Permanent link">&para;</a></h2>
 <p>List all sites managed with WordOps</p>
+<p><asciinema-player src="/images/wositelist.cast" autoplay loop cols="125" rows="30"></asciinema-player></p>
 <p>Usage:</p>
 <div class="codehilite"><pre><span></span>wo site list
 </pre></div>
 
 <h2 id="site-show">site show<a class="headerlink" href="#site-show" title="Permanent link">&para;</a></h2>
 <p>Display site Nginx configuration</p>
+<p><asciinema-player src="/images/wositeshow.cast" autoplay loop cols="125" rows="30"></asciinema-player></p>
 <p>Usage:</p>
 <div class="codehilite"><pre><span></span>wo site show  <span class="o">[</span>&lt;site_name&gt;<span class="o">]</span>
 </pre></div>
