@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.5.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.5.1">
     
     
       
@@ -563,6 +563,13 @@
         <li class="md-nav__item">
   <a href="#enabling-ufw-firewall" class="md-nav__link">
     Enabling UFW Firewall
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-an-alias-for-sudo-wo" class="md-nav__link">
+    Creating an alias for sudo wo
   </a>
   
 </li>
@@ -1167,6 +1174,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#creating-an-alias-for-sudo-wo" class="md-nav__link">
+    Creating an alias for sudo wo
+  </a>
+  
+</li>
+      
       
       
       
@@ -1317,6 +1331,14 @@ You haven't saved them ? Don't worry, you can change them at anytime with the co
 <p>If you haven't already configured a firewall on your server, you can use WordOps to automatically configure UFW with a minimal rules set for WordOps.</p>
 <div class="codehilite"><pre><span></span>wo stack install --ufw
 </pre></div>
+
+<h2 id="creating-an-alias-for-sudo-wo">Creating an alias for sudo wo<a class="headerlink" href="#creating-an-alias-for-sudo-wo" title="Permanent link">&para;</a></h2>
+<p>If you want to be able to use directly the command <code class="codehilite"><span class="err">wo</span></code> as non-root user, you can add a bash alias to automatically add <code class="codehilite"><span class="err">sudo</span></code> in front of the command <code class="codehilite"><span class="err">wo</span></code>.</p>
+<p>Use the following command to add the alias :</p>
+<div class="codehilite"><pre><span></span><span class="nb">echo</span> -e <span class="s2">&quot;alias wo=&#39;sudo -E wo&#39;&quot;</span> &gt;&gt; <span class="nv">$HOME</span>/.bashrc
+</pre></div>
+
+<p>Then apply it with <code class="codehilite"><span class="err">source $HOME/.bashrc</span></code></p>
                 
                   
                 
@@ -1405,7 +1427,7 @@ You haven't saved them ? Don't worry, you can change them at anytime with the co
       
     </div>
     
-      <script src="../../assets/javascripts/application.a8b5e56f.js"></script>
+      <script src="../../assets/javascripts/application.8e03edeb.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
