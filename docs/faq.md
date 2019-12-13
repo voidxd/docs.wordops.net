@@ -41,7 +41,7 @@ WordOps dashboard is available on `https://YOUR.SERVER.IP:22222` or `https://YOU
 
 ### What is the user/password of the web filemanager ?
 
-By default, user is admin and password too. After you logged in for the first time, you will have to change this password
+By default, user is `admin` and password is `admin`. After you logged in for the first time, you will have to change this password
 
 ### Why do I get warning from my web browser when opening WordOps backend ?
 
